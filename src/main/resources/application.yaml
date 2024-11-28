@@ -1,3 +1,14 @@
 spring:
   application:
     name: app
+  datasource:
+    url: jdbc:mysql://localhost:3306/dawproject
+    username: root
+    password: 1234
+    diverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    database:
+      platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddlAuto: create
