@@ -47,9 +47,7 @@ public class SecurityConfig {
     }
 
     public AuthenticationSuccessHandler successHandler(){
-        return ((request, response, authentication) ->{
-            response.sendRedirect("/redireccion-session");
-        });
+        return ((request, response, authentication) -> response.sendRedirect("/redireccion-session"));
 }
 
 
