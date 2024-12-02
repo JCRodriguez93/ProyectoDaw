@@ -1,0 +1,1411 @@
+openapi: 3.0.0
+info:
+  title: API de Gestión de Productos para Tatuajes
+  description: API para manejar usuarios, roles, productos, categorías, pedidos y más.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+    description: Servidor local
+paths:
+  /roles:
+    get:
+      summary: Listar roles
+      operationId: getRoles
+      tags:
+        - Roles
+      responses:
+        '200':
+          description: Lista de roles obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RoleListResponse'
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No se encontraron roles
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo rol
+      tags:
+        - Roles
+      security:
+        - bearerAuth: []
+      description: "Permite a los administradores crear un nuevo rol."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role_name:
+                  type: string
+                  example: "USER"
+      responses:
+        '201':
+          description: Rol creado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleResponse'
+        '400':
+          description: Datos inválidos enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: No autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'         
+  /users:
+    get:
+      summary: Listar usuarios (solo administradores)
+      operationId: getUsers
+      tags:
+        - Usuarios
+      security:
+        - bearerAuth: [] # Autenticación necesaria
+      responses:
+        '200':
+          description: Lista de usuarios obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserListResponse'
+        '403':
+          description: Prohibido (solo administradores)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo usuario
+      operationId: createUser
+      tags:
+        - Usuarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: Usuario creado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          description: Datos inválidos enviados (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '409':
+          description: Conflicto (por ejemplo, email ya registrado)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /users/{userId}:
+    put:
+      summary: Actualizar un usuario existente (solo el propio usuario o administrador)
+      operationId: updateUser
+      tags:
+        - Usuarios
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      security:
+        - bearerAuth: [] # Solo usuarios autenticados
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserResponse'
+      responses:
+        '200':
+          description: Usuario actualizado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          description: Datos inválidos enviados (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Usuario no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar un usuario (solo el propio usuario o administrador)
+      operationId: deleteUser
+      tags:
+        - Usuarios
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      security:
+        - bearerAuth: [] # Solo usuarios autenticados
+      responses:
+        '204':
+          description: Usuario eliminado con éxito
+        '404':
+          description: Usuario no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'  
+  /admin/categories:
+    post:
+      summary: Crear nueva categoría
+      tags:
+        - Categorías
+      security:
+        - bearerAuth: []
+      description: "Solo los administradores pueden crear categorías."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Nombre de la nueva categoría
+                  example: "Tintes"
+                description:
+                  type: string
+                  description: Descripción de la nueva categoría
+                  example: "Tintes y pigmentos de colores variados"
+      responses:
+        '201':
+          description: Categoría creada con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '403':
+          description: No tienes permisos para realizar esta acción
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          description: Datos inválidos enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /categories:
+    get:
+      summary: Listar categorías
+      operationId: getCategories
+      tags:
+        - Categorías
+      responses:
+        '200':
+          description: Lista de categorías obtenida con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryListResponse'
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No se encontraron categorías
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /categories/{categoryId}:
+    put:
+      summary: Actualizar una categoría
+      tags:
+        - Categorías
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          description: ID único de la categoría a actualizar
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Nuevo nombre de la categoría
+                  example: "Máquinas de Tatuar (Actualizado)"
+                description:
+                  type: string
+                  description: Nueva descripción de la categoría
+                  example: "Actualización de descripción para esta categoría"
+      responses:
+        '200':
+          description: Categoría actualizada con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '400':
+          description: Datos inválidos enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Categoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+        summary: Eliminar una categoría
+        tags:
+          - Categorías
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: categoryId
+            in: path
+            required: true
+            description: ID único de la categoría a eliminar
+            schema:
+              type: integer
+              example: 1
+        responses:
+          '204':
+            description: Categoría eliminada con éxito (sin contenido)
+          '401':
+            description: No autorizado
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '404':
+            description: Categoría no encontrada
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '409':
+            description: Conflicto (por ejemplo, la categoría tiene subcategorías asociadas y no puede eliminarse)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '500':
+            description: Error interno del servidor
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+  /categories/{categoryId}/subcategories:
+    get:
+      summary: Listar subcategorías de una categoría
+      tags:
+        - Subcategorías
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          description: ID único de la categoría para listar sus subcategorías
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Lista de subcategorías obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubcategoryResponse'
+        '400':
+          description: Solicitud inválida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No se encontraron subcategorías para la categoría
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear nueva subcategoría
+      tags:
+        - Subcategorías
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          description: ID único de la categoría para agregar la subcategoría
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Nombre de la nueva subcategoría
+                  example: "Subcategoría 1"
+                description:
+                  type: string
+                  description: Descripción de la nueva subcategoría
+                  example: "Descripción de la nueva subcategoría"
+      responses:
+        '201':
+          description: Subcategoría creada con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubcategoryResponse'
+        '400':
+          description: Datos inválidos enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: No tienes permisos para crear una subcategoría
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Categoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /categories/{categoryId}/subcategories/{subcategoryId}:
+    put:
+      summary: Actualizar una subcategoría
+      tags:
+        - Subcategorías
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          description: ID único de la categoría
+          schema:
+            type: integer
+            example: 1
+        - name: subcategoryId
+          in: path
+          required: true
+          description: ID único de la subcategoría a actualizar
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Nuevo nombre de la subcategoría
+                  example: "Subcategoría 1 Actualizada"
+                description:
+                  type: string
+                  description: Nueva descripción de la subcategoría
+                  example: "Descripción actualizada de la subcategoría"
+      responses:
+        '200':
+          description: Subcategoría actualizada con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubcategoryResponse'
+        '400':
+          description: Datos inválidos enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: No tienes permisos para actualizar esta subcategoría
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Subcategoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+        summary: Eliminar una subcategoría
+        tags:
+          - Subcategorías
+        security:
+          - bearerAuth: []
+        parameters:
+          - name: categoryId
+            in: path
+            required: true
+            description: ID único de la categoría
+            schema:
+              type: integer
+              example: 1
+          - name: subcategoryId
+            in: path
+            required: true
+            description: ID único de la subcategoría a eliminar
+            schema:
+              type: integer
+              example: 1
+        responses:
+          '204':
+            description: Subcategoría eliminada con éxito (sin contenido)
+          '401':
+            description: No autorizado (Unauthorized)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '403':
+            description: No tienes permisos para eliminar esta subcategoría
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '404':
+            description: Subcategoría no encontrada
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '409':
+            description: Conflicto (por ejemplo, la subcategoría está asociada a productos y no puede eliminarse)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '500':
+            description: Error interno del servidor
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'         
+  /products:
+    get:
+        summary: Listar productos
+        operationId: getProducts
+        tags:
+          - Productos
+        responses:
+          '200':
+            description: Lista de productos obtenida con éxito
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    success:
+                      type: boolean
+                      description: Indicador de éxito
+                      example: true
+                    message:
+                      type: string
+                      description: Mensaje adicional
+                      example: "Productos obtenidos correctamente"
+                    products:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Product'
+          '400':
+            description: Solicitud inválida (Bad Request)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '401':
+            description: No autorizado (Unauthorized)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '404':
+            description: No se encontraron productos
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '500':
+            description: Error interno del servidor (Internal Server Error)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+    post:
+        summary: Crear un nuevo producto
+        operationId: createProduct
+        tags:
+          - Productos
+        security:
+          - bearerAuth: []
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        responses:
+          '201':
+            description: Producto creado con éxito
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ProductResponse'
+          '400':
+            description: Datos inválidos enviados (Bad Request)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '401':
+            description: No autorizado (Unauthorized)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '404':
+            description: Subcategoría no encontrada (Not Found)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+          '500':
+            description: Error interno del servidor (Internal Server Error)
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ErrorResponse'
+  /products/{productId}:
+    put:
+      summary: Actualizar un producto
+      operationId: updateProduct
+      tags:
+        - Productos
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Nuevo nombre de producto"
+                description:
+                  type: string
+                  example: "Descripción actualizada del producto."
+                price:
+                  type: number
+                  format: float
+                  example: 100.50
+                subcategoryId:
+                  type: integer
+                  example: 2
+      responses:
+        '200':
+          description: Producto actualizado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Datos inválidos enviados (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Producto no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar un producto
+      operationId: deleteProduct
+      tags:
+        - Productos
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '204':
+          description: Producto eliminado con éxito
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Producto no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /orders:
+    get:
+      summary: Listar pedidos
+      operationId: getOrders
+      tags:
+        - Pedidos
+      responses:
+        '200':
+          description: Lista de pedidos obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: No se encontraron pedidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo pedido
+      operationId: createOrder
+      tags:
+        - Pedidos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Pedido creado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Datos inválidos enviados (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /orders/{orderId}:
+    put:
+      summary: Actualizar un pedido
+      operationId: updateOrder
+      tags:
+        - Pedidos
+      parameters:
+        - in: path
+          name: orderId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum: [pendiente, pagado, cancelado]
+                  example: "pagado"
+      responses:
+        '200':
+          description: Pedido actualizado con éxito
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '400':
+          description: Datos inválidos enviados (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Pedido no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar un pedido
+      operationId: deleteOrder
+      tags:
+        - Pedidos
+      parameters:
+        - in: path
+          name: orderId
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '204':
+          description: Pedido eliminado con éxito
+        '400':
+          description: Solicitud inválida (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Pedido no encontrado (Not Found)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor (Internal Server Error)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /order_details:
+    get:
+      summary: Listar detalles de un pedido
+      operationId: getOrderDetails
+      tags:
+        - Detalles de pedidos
+      parameters:
+        - name: order_id
+          in: query
+          description: ID del pedido cuyos detalles se quieren listar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Lista de detalles del pedido obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderDetailResponse'
+        '400':
+          description: Solicitud inválida (Bad Request)
+        '404':
+          description: No se encontraron detalles para el pedido especificado
+        '500':
+          description: Error interno del servidor
+  
+    put:
+      summary: Actualizar un detalle del pedido (solo admin)
+      operationId: updateOrderDetail
+      tags:
+        - Detalles de pedidos
+      requestBody:
+        description: Datos actualizados para el detalle del pedido
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderDetail'
+      parameters:
+        - name: order_id
+          in: query
+          description: ID del pedido al que pertenece el detalle a actualizar
+          required: true
+          schema:
+            type: integer
+        - name: detail_id
+          in: query
+          description: ID del detalle del pedido a actualizar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalle del pedido actualizado con éxito
+        '400':
+          description: Solicitud inválida
+        '404':
+          description: No se encontró el detalle del pedido
+        '500':
+          description: Error interno del servidor
+  
+    delete:
+      summary: Eliminar un detalle del pedido (solo admin)
+      operationId: deleteOrderDetail
+      tags:
+        - Detalles de pedidos
+      parameters:
+        - name: order_id
+          in: query
+          description: ID del pedido al que pertenece el detalle a eliminar
+          required: true
+          schema:
+            type: integer
+        - name: detail_id
+          in: query
+          description: ID del detalle del pedido a eliminar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detalle del pedido eliminado con éxito
+        '400':
+          description: Solicitud inválida
+        '404':
+          description: No se encontró el detalle del pedido
+        '500':
+          description: Error interno del servidor
+components:
+  securitySchemes:
+      bearerAuth:
+        type: http
+        scheme: bearer
+        bearerFormat: JWT
+  schemas:
+    # Esquema de respuesta individual para un rol
+    RoleResponse:
+      type: object
+      properties:
+        id_role:
+          type: integer
+          description: ID único del rol
+          example: 1
+        role_name:
+          type: string
+          description: Nombre del rol (por ejemplo, ADMIN o USER)
+          example: "ADMIN"
+    # Esquema de respuesta para una lista de roles
+    RoleListResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/RoleResponse'
+    # Esquema de respuesta individual para un usuario
+    UserResponse:
+      type: object
+      properties:
+        id_user:
+          type: integer
+          description: ID único del usuario
+          example: 1
+        user_name:
+          type: string
+          description: Nombre del usuario
+          example: "Jorge"
+        email:
+          type: string
+          format: email
+          description: Dirección de correo electrónico del usuario
+          example: "jorge@example.com"
+        role:
+          type: object
+          description: Rol asignado al usuario
+          properties:
+            id_role:
+              type: integer
+              description: ID único del rol
+              example: 1
+            role_name:
+              type: string
+              description: Nombre del rol
+              example: "ADMIN"
+    # Esquema de respuesta para una lista de usuarios
+    UserListResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/UserResponse'
+    # Esquema de solicitud para crear un usuario
+    CreateUserRequest:
+      type: object
+      properties:
+        user_name:
+          type: string
+          description: Nombre del usuario
+          example: "Jorge"
+        email:
+          type: string
+          format: email
+          description: Dirección de correo electrónico del usuario
+          example: "jorge@example.com"
+        password:
+          type: string
+          format: password
+          description: Contraseña del usuario
+          example: "password123"
+        role_id:
+          type: integer
+          description: ID del rol asignado al usuario
+          example: 2     
+    CategoryResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID único de la categoría
+          example: 1
+        name:
+          type: string
+          description: Nombre de la categoría
+          example: "Máquinas de Tatuar"
+        description:
+          type: string
+          description: Descripción de la categoría
+          example: "Descripción de la categoría de máquinas de tatuar"
+    CategoryListResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/CategoryResponse'
+    SubcategoryResponse:
+      type: object
+      properties:
+        id_subcategory:
+          type: integer
+          example: 1
+        id_category:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Subcategoría 1"
+        description:
+          type: string
+          example: "Descripción de la subcategoría"     
+    ProductResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Indicador de si la operación fue exitosa
+          example: true
+        message:
+          type: string
+          description: Mensaje adicional sobre el resultado de la operación
+          example: "Producto creado con éxito"
+        product:
+          $ref: '#/components/schemas/Product'
+    OrderResponse:
+      type: object
+      properties:
+        orderId:
+          type: integer
+          example: 123
+        userId:
+          type: integer
+          example: 1
+        status:
+          type: string
+          example: "Pending"
+        totalAmount:
+          type: number
+          format: float
+          example: 150.75
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              productId:
+                type: integer
+                example: 101
+              quantity:
+                type: integer
+                example: 2
+              price:
+                type: number
+                format: float
+                example: 50.25
+    OrderDetailResponse:
+      type: object
+      properties:
+        detailId:
+          type: integer
+          example: 101
+        orderId:
+          type: integer
+          example: 1
+        productId:
+          type: integer
+          example: 202
+        quantity:
+          type: integer
+          example: 3
+        price:
+          type: number
+          format: float
+          example: 30.5
+        total:
+          type: number
+          format: float
+          example: 91.5
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Unauthorized"
+        message:
+          type: string
+          example: "You do not have permission to perform this action."
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID único del producto
+          example: 1
+        name:
+          type: string
+          description: Nombre del producto
+          example: "Tatuadora Profesional"
+        description:
+          type: string
+          description: Descripción del producto
+          example: "Máquina de tatuar profesional de alta calidad"
+        price:
+          type: number
+          format: float
+          description: Precio del producto
+          example: 150.50
+        stock:
+          type: integer
+          description: Cantidad de stock disponible
+          example: 20
+        category:
+          type: string
+          description: Categoría del producto
+          example: "Máquinas de Tatuar"
+        subcategory:
+          type: string
+          description: Subcategoría del producto
+          example: "Máquinas"
+      required:
+        - name
+        - description
+        - price
+        - stock
+        - category
+    Order:
+      type: object
+      properties:
+        id_order:
+          type: integer
+          example: 1
+        user_id:
+          type: integer
+          example: 1
+        total_price:
+          type: number
+          format: float
+          example: 299.99
+        order_date:
+          type: string
+          format: date
+          example: "2024-11-28"
+    OrderDetail:
+      type: object
+      properties:
+        id_order_detail:
+          type: integer
+          example: 1
+        order_id:
+          type: integer
+          example: 1
+        product_id:
+          type: integer
+          example: 1
+        quantity:
+          type: integer
+          example: 2
+        total_price:
+          type: number
+          format: float
+          example: 399.98
+security:
+  - bearerAuth: []
+    

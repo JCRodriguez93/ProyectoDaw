@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Inicio</title>
+    <!-- Enlazando el archivo CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Bienvenido, <span th:text="${nombre}">Usuario</span>!</h1>
+</header>
+
+<section>
+    <p>¡Hola! Este es un ejemplo de una página de inicio utilizando Spring Boot y Thymeleaf.</p>
+    <button th:text="'Clic para saludar'"></button>
+</section>
+
+<!-- Enlazando el archivo JS -->
+<script th:src="@{/js/scripts.js}"></script>
+</body>
+</html>
