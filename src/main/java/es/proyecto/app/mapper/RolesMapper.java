@@ -14,22 +14,18 @@ public interface RolesMapper {
 
     RolesMapper INSTANCE = Mappers.getMapper(RolesMapper.class);
 
-    @Mapping(source = "id_role", target = "id_role")
-    @Mapping(source = "role_name", target = "role_name")
+    // Mapea de RolesEntity a RoleResponse
+    @Mapping(source = "idRole", target = "idRole")
+    @Mapping(source = "roleName", target = "roleName")
     RoleResponse toApiDomain(RolesEntity source);
 
-    // Método para convertir una lista de RolesEntity a RoleListResponse
-    default RoleListResponse toApiDomainList(List<RolesEntity> source) {
-        RoleListResponse roleListResponse = new RoleListResponse();
-        List<RoleResponse> roleResponses = toApiDomain(source);  // Convierte la lista de RolesEntity a RoleResponse
-        roleListResponse.addAll(roleResponses);  // Agrega todos los RoleResponse a RoleListResponse
-        return roleListResponse;
-    }
+    RoleListResponse toApiDomainList(RolesEntity source);
 
-    // Mapeo de una lista de RolesEntity a una lista de RoleResponse
-    List<RoleResponse> toApiDomain(List<RolesEntity> source);
+    List<RoleListResponse> toApiDomainList(List<RolesEntity> source);
 
-    @Mapping(source = "id_role", target = "id_role")
-    @Mapping(source = "role_name", target = "role_name")
-    RolesEntity toEntity(RoleResponse source);
+    // Mapea de RoleResponse a RolesEntity
+    @Mapping(source = "idRole", target = "idRole")
+    @Mapping(source = "roleName", target = "roleName")
+    @Mapping(target = "users", ignore = true)
+    RolesEntity toEntity(RoleResponse source );
 }
