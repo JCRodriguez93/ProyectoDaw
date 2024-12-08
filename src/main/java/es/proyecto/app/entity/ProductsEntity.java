@@ -21,10 +21,6 @@ public class ProductsEntity {
     @Column(name = "id_product")
     private int idProduct;
 
-    @ManyToOne
-    @JoinColumn(name = "id_subcategory", referencedColumnName = "id_subcategory", nullable = false)
-    private SubcategoryEntity subcategory;
-
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
@@ -33,4 +29,8 @@ public class ProductsEntity {
 
     @Column(name = "price", nullable = false, precision = 10)
     private double price;
+
+    @ManyToOne
+    @JoinColumn(name = "id_subcategory", referencedColumnName = "id_subcategory", nullable = false)
+    private SubcategoryEntity subcategory;
 }
