@@ -74,3 +74,59 @@ CREATE TABLE Order_Details (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+
+-- crear datos de ejemplo
+
+INSERT INTO Roles (role_name) VALUES
+('admin'),
+('usuario');
+
+
+-- Insertar categorías
+INSERT INTO Category (name, description) VALUES
+('Tatuaje', 'Productos relacionados con tatuajes'),
+('Piercing', 'Productos relacionados con piercings'),
+('Cicatrización', 'Productos para el cuidado y cicatrización'),
+('Muebles y Equipo', 'Mobiliario y equipos para estudios de tatuaje'),
+('Consumibles e Higiene', 'Productos de consumo e higiene');
+
+-- Insertar subcategorías
+INSERT INTO Subcategory (id_category, name, description) VALUES
+(1, 'Máquinas de Tatuaje', 'Máquinas especializadas para tatuar'),
+(1, 'Agujas', 'Agujas para tatuajes de diferentes tamaños'),
+(1, 'Pigmentos', 'Tintas y colores para tatuajes'),
+(2, 'Joyas', 'Joyas y adornos para piercings'),
+(2, 'Microdermal', 'Implantes y accesorios microdermales'),
+(3, 'Tatuaje', 'Productos para cicatrización de tatuajes'),
+(4, 'Mobiliario', 'Sillas y camillas para estudios de tatuaje'),
+(5, 'Protección Personal', 'Guantes, mascarillas, etc.');
+
+
+-- Insertar productos
+INSERT INTO Products (id_subcategory, name, description, price) VALUES
+(1, 'Máquina de Tatuaje Pro', 'Máquina profesional de tatuajes', 150.00),
+(2, 'Agujas 5RL', 'Paquete de agujas 5RL', 12.50),
+(3, 'Pigmento Negro', 'Tinta negra de alta calidad', 25.00),
+(4, 'Piercing de Titanio', 'Piercing de alta calidad en titanio', 8.99),
+(5, 'Microdermal Básico', 'Microdermal para principiantes', 15.99),
+(7, 'Camilla Ajustable', 'Camilla ajustable para tatuajes', 300.00),
+(8, 'Guantes Desechables', 'Caja de 100 guantes desechables', 10.00);
+
+
+-- Insertar usuarios
+INSERT INTO Users (user_name, email, password, role_id) VALUES
+('admin1', 'admin1@tatuajes.com', 'admin123', 1),  -- El 'admin' tiene role_id 1
+('usuario1', 'usuario1@tatuajes.com', 'user123', 2),  -- El 'usuario' tiene role_id 2
+('usuario2', 'usuario2@tatuajes.com', 'user456', 2);  -- El 'usuario' tiene role_id 2
+
+
+
+
+-- Insertar órdenes (asociadas a los usuarios)
+INSERT INTO Orders (id_user, status) VALUES
+(1, 'pendiente'),
+(2, 'pagado'),
+(3, 'cancelado');
+
+

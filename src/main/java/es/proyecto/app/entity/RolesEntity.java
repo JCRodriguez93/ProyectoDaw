@@ -26,9 +26,6 @@ public class RolesEntity {
     @Column(name = "role_name", nullable = false, unique = true, length = 50)
     private String roleName;
 
-//    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<UsersEntity> users;
-
 
     public Integer getIdRole() {
         return idRole;

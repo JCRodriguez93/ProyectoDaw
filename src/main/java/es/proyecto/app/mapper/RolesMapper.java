@@ -16,7 +16,6 @@ public interface RolesMapper {
     // Mapea de RolesEntity a RoleResponse
     @Mapping(source = "idRole", target = "idRole")
     @Mapping(source = "roleName", target = "roleName")
-   // @Mapping(target = "users", ignore = true)
     Role toApiDomain(RolesEntity source);
     List<Role> toApiDomain(List<RolesEntity> source);
 
@@ -24,6 +23,5 @@ public interface RolesMapper {
     // Mapea de RoleResponse a RolesEntity
     @Mapping(source = "idRole", target = "idRole")
     @Mapping(source = "roleName", target = "roleName")
-  //  @Mapping(target = "users", ignore = true)
     RolesEntity toEntity(Role source );
 }
