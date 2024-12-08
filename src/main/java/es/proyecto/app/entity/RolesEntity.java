@@ -26,8 +26,9 @@ public class RolesEntity {
     @Column(name = "role_name", nullable = false, unique = true, length = 50)
     private String roleName;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<UsersEntity> users;
+//    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<UsersEntity> users;
+
 
     public Integer getIdRole() {
         return idRole;
@@ -43,13 +44,5 @@ public class RolesEntity {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
-    }
-
-    public Set<UsersEntity> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<UsersEntity> users) {
-        this.users = users;
     }
 }
