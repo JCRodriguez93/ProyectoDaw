@@ -216,6 +216,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+  /Products:
+    get:
+      summary: Obtener todos los productos
+      description: "Permite a cualquier usuario obtener la lista de productos disponibles."
+      operationId: getProducts
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Lista de productos obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                title: ProductsResponse
+                properties:
+                  products:
+                    type: array
+                    description: Lista de productos disponibles
+                    items:
+                      $ref: "#/components/schemas/Products"
+        "404":
+          description: No se encontraron productos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 
 
 
@@ -300,6 +334,37 @@ components:
         description:
           type: string
           description: Descripción de la subcategoría
+
+    Products:
+      type: object
+      properties:
+        idProduct:
+          type: integer
+          format: int32
+          description: Identificador único del producto
+        idSubcategory:
+          type: integer
+          format: int32
+          description: Identificador único de la subcategoría asociada
+        name:
+          type: string
+          description: Nombre del producto
+          maxLength: 100
+        description:
+          type: string
+          description: Descripción detallada del producto
+        price:
+          type: number
+          format: float
+          description: Precio del producto con hasta dos decimales
+      required:
+        - idSubcategory
+        - name
+        - price
+
+
+
+
 
 
 

@@ -29,18 +29,10 @@ public class CategoriesService {
 
     public List<Category> getAllCategories() {
 
-        return mapper.toApiDomain(repository.findAll());
+        return mapper.toApiDomainList(repository.findAll());
+
     }
 
-
-
-//    public RolesEntity getCategoryById(Integer id) {
-//
-//        return repository.findById(id).orElse(null);
-//    }
-//    public void updateRole(RolesEntity rolesEntity) {
-//        repository.save(rolesEntity);
-//    }
 }
 
 

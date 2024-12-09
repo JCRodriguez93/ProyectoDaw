@@ -30,13 +30,9 @@ public class SubcategoryEntity {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "id_category", referencedColumnName = "id_category", nullable = false)
-    private CategoryEntity category;
-
-    @OneToMany(mappedBy = "subcategory", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ProductsEntity> products;
-
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "id_category")
+    private CategoryEntity category; // Asegúrate de que esta propiedad exista y esté bien configurada
 
     public int getIdSubcategory() {
         return idSubcategory;
@@ -68,13 +64,5 @@ public class SubcategoryEntity {
 
     public void setCategory(CategoryEntity category) {
         this.category = category;
-    }
-
-    public Set<ProductsEntity> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<ProductsEntity> products) {
-        this.products = products;
     }
 }

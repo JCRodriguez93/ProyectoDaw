@@ -19,21 +19,20 @@ public interface CategoryMapper {
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    @Mapping(source = "subcategories", target = "subcategories") // Mapea las subcategorías
+    @Mapping(source = "subcategories", target = "subcategories")
     Category toApiDomain(CategoryEntity source);
-    List<Category> toApiDomain(List<CategoryEntity> source);
 
-
-
-    // Mapea una lista de CategoryEntity a una lista de Category
-    //List<Category> toApiDomain(List<CategoryEntity> source);
+    // Mapea SubcategoryEntity a Subcategory
+    @Mapping(source = "idSubcategory", target = "idSubcategory")
+    @Mapping(source = "name", target = "name")
+    @Mapping(source = "description", target = "description")
+    Subcategory toApiDomain(SubcategoryEntity source);
+    List<Category> toApiDomainList(List<CategoryEntity> source);
 
     // Mapea de Category a CategoryEntity
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    @Mapping(target = "subcategories", ignore = true) // Ignora las subcategorías al mapear hacia la entidad
+    @Mapping(target = "subcategories", ignore = true)
     CategoryEntity toEntity(Category source);
-
-
 }
