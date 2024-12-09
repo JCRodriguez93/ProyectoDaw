@@ -21,13 +21,25 @@ public class RolesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_role")
-    private int idRole;
+    private Integer idRole;
 
     @Column(name = "role_name", nullable = false, unique = true, length = 50)
     private String roleName;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<UsersEntity> users;
 
+    public Integer getIdRole() {
+        return idRole;
+    }
 
+    public void setIdRole(Integer idRole) {
+        this.idRole = idRole;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }

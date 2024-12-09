@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface RolesRepository extends JpaRepository<RolesEntity, Integer> {
 
     // Consulta personalizada para encontrar un rol por su nombre
-    @Query("SELECT r FROM RolesEntity r WHERE r.roleName = ?1")
-    Optional<RolesEntity> findByRoleName(String roleName);
+    @Query("SELECT r FROM RolesEntity r WHERE r.idRole = ?1")
+    Optional<RolesEntity> findRoleById(String idRole);
 }

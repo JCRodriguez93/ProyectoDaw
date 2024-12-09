@@ -30,7 +30,57 @@ public class UsersEntity {
     @Column(name = "password", nullable = false, length = 255)
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id", referencedColumnName = "id_role")
+    @Column(name = "role_id", nullable = false, length = 255)
+    private Integer roleId;
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "role_id", referencedColumnName = "id_role", insertable = false, updatable = false)
     private RolesEntity role;
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public RolesEntity getRole() {
+        return role;
+    }
+
+    public void setRole(RolesEntity role) {
+        this.role = role;
+    }
 }

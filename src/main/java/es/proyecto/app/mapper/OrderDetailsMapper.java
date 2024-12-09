@@ -1,7 +1,7 @@
 package es.proyecto.app.mapper;
 
 import es.proyecto.app.entity.OrderDetailsEntity;
-import es.swagger.codegen.models.OrderDetailResponse;
+import es.swagger.codegen.models.OrderDetails;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -13,20 +13,23 @@ public interface OrderDetailsMapper {
 
     OrderDetailsMapper INSTANCE = Mappers.getMapper(OrderDetailsMapper.class);
 
-    @Mapping(source = "id_detail", target = "detailId")
-    @Mapping(source = "id_order", target = "orderId")
-    @Mapping(source = "id_product", target = "productId")
+    // Mapea de OrderDetailsEntity a OrderDetail (API Model)
+    @Mapping(source = "idDetail", target = "idDetail")
+    @Mapping(source = "order.idOrder", target = "idOrder")
+    @Mapping(source = "product.idProduct", target = "idProduct")
     @Mapping(source = "quantity", target = "quantity")
-    @Mapping(source = "total_price", target = "total")
-    @Mapping(source = "product.name", target = "product_name")
-    OrderDetailResponse toApiDomain(OrderDetailsEntity source);
+    OrderDetails toApiDomain(OrderDetailsEntity source);
 
-    List<OrderDetailResponse> toApiDomain(List<OrderDetailsEntity> source);
-
-    @Mapping(source = "detailId", target = "id_detail")
-    @Mapping(source = "orderId", target = "id_order")
-    @Mapping(source = "productId", target = "id_product")
+    // Mapea de OrderDetail a OrderDetailsEntity
+    @Mapping(source = "idDetail", target = "idDetail")
+    @Mapping(source = "idOrder", target = "order.idOrder")
+    @Mapping(source = "idProduct", target = "product.idProduct")
     @Mapping(source = "quantity", target = "quantity")
-    @Mapping(source = "total", target = "total_price")
-    OrderDetailsEntity toEntity(OrderDetailResponse source);
+    OrderDetailsEntity toEntity(OrderDetails source);
+
+    // Mapea listas de OrderDetailsEntity a listas de OrderDetail
+    List<OrderDetails> toApiDomainList(List<OrderDetailsEntity> source);
+
+    // Mapea listas de OrderDetail a listas de OrderDetailsEntity
+    List<OrderDetailsEntity> toEntityList(List<OrderDetails> source);
 }

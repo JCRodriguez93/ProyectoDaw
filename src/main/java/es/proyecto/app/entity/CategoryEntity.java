@@ -29,6 +29,39 @@ public class CategoryEntity {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true) // Cambiar 'mappedBy' a 'category'
     private Set<SubcategoryEntity> subcategories;
+
+    public int getIdCategory() {
+        return idCategory;
+    }
+
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<SubcategoryEntity> getSubcategories() {
+        return subcategories;
+    }
+
+    public void setSubcategories(Set<SubcategoryEntity> subcategories) {
+        this.subcategories = subcategories;
+    }
 }
+

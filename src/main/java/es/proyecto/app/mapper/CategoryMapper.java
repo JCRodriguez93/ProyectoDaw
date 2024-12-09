@@ -1,8 +1,9 @@
 package es.proyecto.app.mapper;
 
 import es.proyecto.app.entity.CategoryEntity;
-import es.swagger.codegen.models.CategoryResponse;
-import es.swagger.codegen.models.CategoryListResponse;
+import es.proyecto.app.entity.SubcategoryEntity;
+import es.swagger.codegen.models.Category;
+import es.swagger.codegen.models.Subcategory;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -14,23 +15,24 @@ public interface CategoryMapper {
 
     CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
 
-    @Mapping(source = "id_category", target = "id")
+    // Mapea de CategoryEntity a Category (API Model)
+    @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    CategoryResponse toApiDomain(CategoryEntity source);
+    @Mapping(source = "subcategories", target = "subcategories")
+    Category toApiDomain(CategoryEntity source);
 
-    // Mapear una lista de CategoryEntity a CategoryListResponse
-    default CategoryListResponse toApiDomainList(List<CategoryEntity> source) {
-        CategoryListResponse response = new CategoryListResponse();
-        response.addAll(toApiDomainListItems(source)); // Usar addAll para agregar los elementos a la lista
-        return response;
-    }
-
-    // Esta función convierte la lista de CategoryEntity a una lista de CategoryResponse
-    List<CategoryResponse> toApiDomainListItems(List<CategoryEntity> source);
-
-    @Mapping(source = "id", target = "id_category")
+    // Mapea SubcategoryEntity a Subcategory
+    @Mapping(source = "idSubcategory", target = "idSubcategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    CategoryEntity toEntity(CategoryResponse source);
+    Subcategory toApiDomain(SubcategoryEntity source);
+    List<Category> toApiDomainList(List<CategoryEntity> source);
+
+    // Mapea de Category a CategoryEntity
+    @Mapping(source = "idCategory", target = "idCategory")
+    @Mapping(source = "name", target = "name")
+    @Mapping(source = "description", target = "description")
+    @Mapping(target = "subcategories", ignore = true)
+    CategoryEntity toEntity(Category source);
 }

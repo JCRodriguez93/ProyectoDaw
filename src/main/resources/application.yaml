@@ -6,6 +6,9 @@ spring:
     username: root
     password: 1234
     diverClassName: com.mysql.cj.jdbc.Driver
+    # quitar lo de security enabled false cuando acabe de probar cosas.
+    security:
+      enabled: false;
   jpa:
     database:
       platform: org.hibernate.dialect.MySQL8Dialect
