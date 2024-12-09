@@ -29,7 +29,7 @@ public class CategoryEntity {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true) // Cambiar 'mappedBy' a 'category'
+    @OneToMany(mappedBy = "idSubcategory", cascade = CascadeType.ALL, orphanRemoval = true) // Cambiar 'mappedBy' a 'category'
     private Set<SubcategoryEntity> subcategories;
 
     public int getIdCategory() {

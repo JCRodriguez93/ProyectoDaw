@@ -32,7 +32,7 @@ public class SubcategoryEntity {
 
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "id_category")
-    private CategoryEntity category; // Asegúrate de que esta propiedad exista y esté bien configurada
+    private CategoryEntity category;
 
     public int getIdSubcategory() {
         return idSubcategory;
