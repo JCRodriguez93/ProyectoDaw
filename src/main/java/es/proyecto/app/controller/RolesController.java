@@ -33,17 +33,14 @@ public class RolesController implements RolesApi {
 
 
             if (rolesEntityList.isEmpty()) {
-                log.error("No roles found");
                 throw RolesException.NO_ROLE_FOUND_EXCEPTION;
             }
 
 
             RoleResponse response = new RoleResponse();
             response.setRoles(rolesEntityList);
-            log.info("Successfully fetched all roles");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (RolesException e) {
-            log.error("Error fetching all roles: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -55,7 +52,6 @@ public class RolesController implements RolesApi {
 
         try {
             if (!isValidId(idRole)) {
-                log.error("Invalid ID provided: {}", idRole);
                    throw RolesException.INVALID_ID_EXCEPTION;
             }
             RolesEntity rolesEntity = rolesService.getRoleById(Integer.parseInt(idRole));
@@ -66,7 +62,6 @@ public class RolesController implements RolesApi {
 
             return ResponseEntity.ok().build();
         } catch (NumberFormatException e) {
-            log.error("Error updating role with ID {}: {}", idRole, e.getMessage());
             throw new RolesException("Error updating role");
         }
 

@@ -38,17 +38,14 @@ public class SubcategoriesController implements SubcategoryApi {
 
 
             if (subcategoryList.isEmpty()) {
-                log.error("No subcategories found");
                 throw SubcategoryException.NO_SUBCATEGORY_FOUND_EXCEPTION;
             }
 
 
             SubcategoriesResponse response = new SubcategoriesResponse();
             response.setSubcategories(subcategoryList);
-            log.info("Successfully fetched all subcategories");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (RolesException e) {
-            log.error("Error fetching all subcategories: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

@@ -34,17 +34,14 @@ public class ProductsController implements ProductsApi {
 
 
             if (productsList.isEmpty()) {
-                log.error("No categories found");
                 throw ProductException.NO_PRODUCT_FOUND_EXCEPTION;
             }
 
 
             ProductsResponse response = new ProductsResponse();
             response.setProducts(productsList);
-            log.info("Successfully fetched all products");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (CategoryException e) {
-            log.error("Error fetching all products: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

@@ -33,4 +33,45 @@ public class ProductsEntity {
     @ManyToOne
     @JoinColumn(name = "id_subcategory", referencedColumnName = "id_subcategory", nullable = false)
     private SubcategoryEntity subcategory;
+
+
+    public int getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(int idProduct) {
+        this.idProduct = idProduct;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public SubcategoryEntity getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(SubcategoryEntity subcategory) {
+        this.subcategory = subcategory;
+    }
 }

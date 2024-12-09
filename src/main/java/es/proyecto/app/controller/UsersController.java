@@ -37,17 +37,14 @@ public class UsersController implements UsersApi {
 
 
             if (userList.isEmpty()) {
-                log.error("No roles found");
                 throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
 
 
             UserResponse response = new UserResponse();
             response.setUsers(userList);
-            log.info("Successfully fetched all users");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (UsersException e) {
-            log.error("Error fetching all users: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
