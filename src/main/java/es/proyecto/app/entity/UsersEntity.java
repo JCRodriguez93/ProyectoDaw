@@ -19,7 +19,7 @@ public class UsersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
-    private int idUser;
+    private Integer idUser;
 
     @Column(name = "user_name", nullable = false, length = 50)
     private String userName;
@@ -79,7 +79,6 @@ public class UsersEntity {
     public RolesEntity getRole() {
         return role;
     }
-
     public void setRole(RolesEntity role) {
         this.role = role;
     }

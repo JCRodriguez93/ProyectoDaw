@@ -249,6 +249,73 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+  /Orders:
+    get:
+      summary: Obtener todos los pedidos
+      description: "Permite a cualquier usuario obtener la lista de pedidos realizados."
+      operationId: getOrders
+      tags:
+        - Orders
+      responses:
+        "200":
+          description: Lista de pedidos obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                title: OrdersResponse
+                properties:
+                  orders:
+                    type: array
+                    description: Lista de pedidos realizados
+                    items:
+                      $ref: "#/components/schemas/Orders"
+        "404":
+          description: No se encontraron pedidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /Order_Details:
+    get:
+      summary: Obtener todos los detalles de pedidos
+      description: "Permite a cualquier usuario obtener la lista de detalles de pedidos realizados."
+      operationId: getOrderDetails
+      tags:
+        - Order_Details
+      responses:
+        "200":
+          description: Lista de detalles de pedidos obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                title: OrderDetailsResponse
+                properties:
+                  orderDetails:
+                    type: array
+                    description: Lista de detalles de los pedidos
+                    items:
+                      $ref: "#/components/schemas/Order_Details"
+        "404":
+          description: No se encontraron detalles de pedidos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 
 
 
@@ -363,8 +430,61 @@ components:
         - price
 
 
+    Orders:
+      type: object
+      properties:
+        idOrder:
+          type: integer
+          format: int32
+          description: Identificador único del pedido
+        idUser:
+          type: integer
+          format: int32
+          description: Identificador único del usuario que realizó el pedido
+        date:
+          type: string
+          format: date-time
+          description: Fecha y hora en que se realizó el pedido
+          example: "2024-12-08T14:30:00"
+        status:
+          $ref: "#/components/schemas/OrderStatus"  # Referencia directa al esquema
+      required:
+        - idUser
+        - date
+        - status
 
 
+
+
+    OrderStatus:
+      type: string
+      enum: ['pendiente','pagado','cancelado']
+      default: 'pendiente'
+
+    Order_Details:
+      type: object
+      properties:
+        idDetail:
+          type: integer
+          format: int32
+          description: Identificador único del detalle del pedido
+        idOrder:
+          type: integer
+          format: int32
+          description: Identificador único del pedido asociado
+        idProduct:
+          type: integer
+          format: int32
+          description: Identificador único del producto incluido en el pedido
+        quantity:
+          type: integer
+          format: int32
+          description: Cantidad de productos solicitados en el detalle
+          minimum: 1
+      required:
+        - idOrder
+        - idProduct
+        - quantity
 
 
 

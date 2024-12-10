@@ -54,8 +54,8 @@ CREATE TABLE Products (
 CREATE TABLE Orders (
     id_order INT AUTO_INCREMENT PRIMARY KEY,       
     id_user INT NOT NULL,
-    date DATETIME DEFAULT CURRENT_TIMESTAMP,        
-    status ENUM('pendiente', 'pagado', 'cancelado') DEFAULT 'pendiente',  
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pendiente', 'pagado', 'cancelado') DEFAULT 'pendiente',
     FOREIGN KEY (id_user) REFERENCES Users(id_user)
         ON DELETE CASCADE
         ON UPDATE CASCADE
