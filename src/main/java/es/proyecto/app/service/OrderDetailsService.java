@@ -1,11 +1,8 @@
 package es.proyecto.app.service;
 
 import es.proyecto.app.mapper.OrderDetailsMapper;
-import es.proyecto.app.mapper.OrderMapper;
 import es.proyecto.app.repository.OrderDetailsRepository;
-import es.proyecto.app.repository.OrdersRepository;
 import es.swagger.codegen.models.OrderDetails;
-import es.swagger.codegen.models.Orders;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +23,10 @@ public class OrderDetailsService {
     @Autowired
     private OrderDetailsRepository repository;
 
-    public List<OrderDetails> getAllOrders() {
+    public List<OrderDetails> getAllOrderDetails() {
 
         return mapper.toApiDomainList(repository.findAll());
 
     }
 
 }
-
-

@@ -20,8 +20,14 @@ public class OrderDetailsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detail")
-    private int idDetail;
+    private Integer idDetail;
 
+    /*TODO: con datos de ejemplo manualmente insertados esto funciona, lo que no funciona
+    lo que no funciona es por qué no recibe los datos referentes a las tablas
+    - pedidos
+    - productos
+    habrá que seguir investigando.
+     */
     @ManyToOne
     @JoinColumn(name = "id_order", referencedColumnName = "id_order", nullable = false)
     private OrdersEntity order;

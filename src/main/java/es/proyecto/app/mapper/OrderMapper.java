@@ -16,14 +16,14 @@ public interface OrderMapper {
     // Mapea de OrdersEntity a Order (API Model)
     @Mapping(source = "idOrder", target = "idOrder")
     @Mapping(source = "user.idUser", target = "idUser")
-    @Mapping(source = "date", target = "date")
+    @Mapping(target = "date" , ignore = true)
     @Mapping(source = "status", target = "status")
     Orders toApiDomain(OrdersEntity source);
 
     // Mapea de Order a OrdersEntity
     @Mapping(source = "idOrder", target = "idOrder")
     @Mapping(source = "idUser", target = "user.idUser")
-    @Mapping(source = "date", target = "date")
+    @Mapping(target = "date" , ignore = true)
     @Mapping(source = "status", target = "status")
     OrdersEntity toEntity(Orders source);
 

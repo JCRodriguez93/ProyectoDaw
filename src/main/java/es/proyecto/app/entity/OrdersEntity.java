@@ -1,5 +1,6 @@
 package es.proyecto.app.entity;
 
+import es.swagger.codegen.models.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Validated
 @Entity
@@ -28,18 +30,13 @@ public class OrdersEntity {
     private UsersEntity user;
 
     @Column(name = "date", nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
-    private java.time.LocalDateTime date;
+    private java.time.OffsetDateTime date;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false, columnDefinition = "ENUM('pendiente', 'pagado', 'cancelado') DEFAULT 'pendiente'")
+    @Column(name = "status", nullable = false)
     private OrderStatus status;
 
-    // Enum for the order status
-    public enum OrderStatus {
-        PENDIENTE,
-        PAGADO,
-        CANCELADO
-    }
+
 
     public int getIdOrder() {
         return idOrder;
@@ -57,11 +54,11 @@ public class OrdersEntity {
         this.user = user;
     }
 
-    public LocalDateTime getDate() {
+    public OffsetDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(OffsetDateTime date) {
         this.date = date;
     }
 

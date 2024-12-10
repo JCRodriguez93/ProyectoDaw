@@ -1,17 +1,10 @@
 package es.proyecto.app.controller;
 
 
-import es.proyecto.app.entity.RolesEntity;
-import es.proyecto.app.error.RolesException;
 import es.proyecto.app.error.UsersException;
-import es.proyecto.app.service.RolesService;
 import es.proyecto.app.service.UsersService;
-import es.swagger.codegen.api.RolesApi;
 import es.swagger.codegen.api.UsersApi;
-import es.swagger.codegen.models.Role;
-import es.swagger.codegen.models.RoleResponse;
-import es.swagger.codegen.models.User;
-import es.swagger.codegen.models.UserResponse;
+import es.swagger.codegen.models.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +22,8 @@ public class UsersController implements UsersApi {
 
     @Autowired
     private UsersService usersService;
+
+
 
     @Override
     public ResponseEntity<UserResponse> getUsers() {
@@ -48,4 +43,6 @@ public class UsersController implements UsersApi {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
 }
