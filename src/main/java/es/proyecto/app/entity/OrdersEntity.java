@@ -8,8 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 @Validated
 @Entity
@@ -23,26 +23,31 @@ public class OrdersEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_order")
-    private int idOrder;
+    private Integer idOrder;
 
     @ManyToOne
     @JoinColumn(name = "id_user", referencedColumnName = "id_user", nullable = false)
-    private UsersEntity user;
+    private UsersEntity user;  // Relación con UserEntity
 
-    @Column(name = "date", nullable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
-    private java.time.OffsetDateTime date;
+    @Column(name = "total_quantity", nullable = false)
+    private Integer totalQuantity;
+
+    @Column(name = "total_price", nullable = false)
+    private BigDecimal totalPrice;
+
+    @Column(name = "date", nullable = false)
+    private LocalDateTime date;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    private OrderStatus status;
+    @Column(name = "order_status", nullable = false)
+    private OrderStatus orderStatus;  // Enum con los estados del pedido
 
 
-
-    public int getIdOrder() {
+    public Integer getIdOrder() {
         return idOrder;
     }
 
-    public void setIdOrder(int idOrder) {
+    public void setIdOrder(Integer idOrder) {
         this.idOrder = idOrder;
     }
 
@@ -54,19 +59,35 @@ public class OrdersEntity {
         this.user = user;
     }
 
-    public OffsetDateTime getDate() {
+    public Integer getTotalQuantity() {
+        return totalQuantity;
+    }
+
+    public void setTotalQuantity(Integer totalQuantity) {
+        this.totalQuantity = totalQuantity;
+    }
+
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(OffsetDateTime date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
-    public OrderStatus getStatus() {
-        return status;
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

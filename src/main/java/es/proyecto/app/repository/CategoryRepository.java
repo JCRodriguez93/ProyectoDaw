@@ -11,10 +11,7 @@ import java.util.Optional;
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer> {
 
-    // Consulta personalizada para encontrar una categoría por su nombre
-    @Query("SELECT c FROM CategoryEntity c WHERE c.name = ?1")
-    Optional<CategoryEntity> findByName(String name);
 
-    @Query("SELECT DISTINCT c FROM CategoryEntity c LEFT JOIN FETCH c.subcategories")
-    List<CategoryEntity> findAllCategoriesWithSubcategories();
+
+
 }

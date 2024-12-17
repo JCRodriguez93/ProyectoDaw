@@ -15,28 +15,22 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    // Mapea de ProductsEntity a Product (API Model)
+    // Mapea de ProductEntity a Product
     @Mapping(source = "idProduct", target = "idProduct")
+    @Mapping(source = "idSubcategory.idSubcategory", target = "idSubcategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
     @Mapping(source = "price", target = "price")
-   // @Mapping(source = "subcategory", target = "idSubcategory")
     Products toApiDomain(ProductsEntity source);
+    List<Products> toApiDomain(List<ProductsEntity> source);
 
-    // Mapea de SubcategoryEntity a Subcategory (anidado en Product)
-    @Mapping(source = "idSubcategory", target = "idSubcategory")
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "description", target = "description")
-    Subcategory toApiDomain(SubcategoryEntity source);
-
-    // Lista de ProductsEntity a lista de Product
-    List<Products> toApiDomainList(List<ProductsEntity> source);
-
-    // Mapea de Product a ProductsEntity
+    // Mapea de Product a ProductEntity
     @Mapping(source = "idProduct", target = "idProduct")
+    @Mapping(source = "idSubcategory", target = "idSubcategory.idSubcategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
     @Mapping(source = "price", target = "price")
-   // @Mapping(source = "subcategory", target = "subcategory")
     ProductsEntity toEntity(Products source);
+
+
 }

@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 
+import java.math.BigDecimal;
+
 @Validated
 @Entity
 @Table(name = "Products")
@@ -21,18 +23,21 @@ public class ProductsEntity {
     @Column(name = "id_product")
     private int idProduct;
 
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
-
-    @Column(name = "description", columnDefinition = "TEXT")
-    private String description;
-
-    @Column(name = "price", nullable = false, precision = 10)
-    private double price;
-
     @ManyToOne
     @JoinColumn(name = "id_subcategory", referencedColumnName = "id_subcategory", nullable = false)
-    private SubcategoryEntity subcategory;
+    private SubcategoryEntity idSubcategory;  // Relación con SubcategoryEntity
+
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;  // Precio en DECIMAL(10,2)
+
+
+    // Getters y setters generados por Lombok
 
 
     public int getIdProduct() {
@@ -59,19 +64,19 @@ public class ProductsEntity {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public SubcategoryEntity getSubcategory() {
-        return subcategory;
+    public SubcategoryEntity getIdSubcategory() {
+        return idSubcategory;
     }
 
-    public void setSubcategory(SubcategoryEntity subcategory) {
-        this.subcategory = subcategory;
+    public void setIdSubcategory(SubcategoryEntity idSubcategory) {
+        this.idSubcategory = idSubcategory;
     }
 }

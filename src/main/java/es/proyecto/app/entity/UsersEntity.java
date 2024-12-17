@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import java.time.LocalDateTime;
 
 @Validated
 @Entity
@@ -21,20 +22,25 @@ public class UsersEntity {
     @Column(name = "id_user")
     private int idUser;
 
-    @Column(name = "user_name", nullable = false, length = 50)
+    @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "email", nullable = false, length = 100, unique = true)
+    @Column(name = "user_surname", nullable = false)
+    private String userSurname;
+
+    @Column(name = "birth_date", nullable = false)
+    private LocalDateTime birthDate;
+
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 255)
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "role_id", nullable = false, length = 255)
-    private Integer roleId;
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "role_id", referencedColumnName = "id_role", insertable = false, updatable = false)
-    private RolesEntity role;
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id_role", nullable = false)
+    private RolesEntity roleId;  // Representa la relación con RoleEntity
+
 
     public int getIdUser() {
         return idUser;
@@ -52,20 +58,28 @@ public class UsersEntity {
         this.userName = userName;
     }
 
+    public String getUserSurname() {
+        return userSurname;
+    }
+
+    public void setUserSurname(String userSurname) {
+        this.userSurname = userSurname;
+    }
+
+    public LocalDateTime getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDateTime birthDate) {
+        this.birthDate = birthDate;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
     }
 
     public String getPassword() {
@@ -76,11 +90,11 @@ public class UsersEntity {
         this.password = password;
     }
 
-    public RolesEntity getRole() {
-        return role;
+    public RolesEntity getRoleId() {
+        return roleId;
     }
 
-    public void setRole(RolesEntity role) {
-        this.role = role;
+    public void setRoleId(RolesEntity roleId) {
+        this.roleId = roleId;
     }
 }
