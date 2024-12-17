@@ -1,14 +1,11 @@
 package es.proyecto.app.entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-
-import java.util.Set;
 
 @Validated
 @Entity
@@ -24,16 +21,17 @@ public class SubcategoryEntity {
     @Column(name = "id_subcategory")
     private int idSubcategory;
 
-    @Column(name = "name", nullable = false, length = 50)
+    @ManyToOne
+    @JoinColumn(name = "id_category", referencedColumnName = "id_category", nullable = false)
+    private CategoryEntity category;  // Relación con CategoryEntity
+
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(name = "description")
     private String description;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "id_category")
-    private CategoryEntity category;
-
+    // Métodos getter y setter
     public int getIdSubcategory() {
         return idSubcategory;
     }

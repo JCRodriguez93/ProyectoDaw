@@ -24,7 +24,7 @@ public class ProductsService {
     private ProductsRepository repository;
 
     public List<Products> getAllProducts() {
-        return mapper.toApiDomainList(repository.findAll());
+        return mapper.toApiDomain(repository.findAll());
     }
 
 

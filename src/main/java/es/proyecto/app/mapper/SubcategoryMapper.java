@@ -12,16 +12,18 @@ public interface SubcategoryMapper {
 
     SubcategoryMapper INSTANCE = Mappers.getMapper(SubcategoryMapper.class);
 
-    /**
-     * Convierte SubcategoryEntity a Subcategory.
-     */
+    // Mapea de SubcategoryEntity a Subcategory
     @Mapping(source = "idSubcategory", target = "idSubcategory")
+    @Mapping(source = "category.idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
     Subcategory toApiDomain(SubcategoryEntity source);
-
-    /**
-     * Convierte una lista de SubcategoryEntity a una lista de Subcategory.
-     */
     List<Subcategory> toApiDomain(List<SubcategoryEntity> source);
+
+    // Mapea de Subcategory a SubcategoryEntity
+    @Mapping(source = "idSubcategory", target = "idSubcategory")
+    @Mapping(source = "idCategory", target = "category.idCategory")
+    @Mapping(source = "name", target = "name")
+    @Mapping(source = "description", target = "description")
+    SubcategoryEntity toEntity(Subcategory source);
 }

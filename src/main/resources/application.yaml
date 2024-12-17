@@ -8,10 +8,15 @@ spring:
     diverClassName: com.mysql.cj.jdbc.Driver
     # quitar lo de security enabled false cuando acabe de probar cosas.
     security:
-      enabled: false;
+      enabled: false
   jpa:
     database:
       platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     hibernate:
       ddlAuto: create
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+    api-docs:
+      path: /v3/api-docs

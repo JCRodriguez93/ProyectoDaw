@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import java.util.Set;
-
 
 @Validated
 @Entity
@@ -21,11 +19,10 @@ public class RolesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_role")
-    private Integer idRole;
+    private int idRole;
 
-    @Column(name = "role_name", nullable = false, unique = true, length = 50)
+    @Column(name = "role_name", unique = true, nullable = false)
     private String roleName;
-
 
     public Integer getIdRole() {
         return idRole;

@@ -6,8 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import java.util.Set;
 
+import java.util.Set;
 
 @Validated
 @Entity
@@ -23,14 +23,12 @@ public class CategoryEntity {
     @Column(name = "id_category")
     private int idCategory;
 
-    @Column(name = "name", nullable = false, length = 50, unique = true)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @Column(name = "description", columnDefinition = "TEXT")
+    @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "idSubcategory", cascade = CascadeType.ALL, orphanRemoval = true) // Cambiar 'mappedBy' a 'category'
-    private Set<SubcategoryEntity> subcategories;
 
     public int getIdCategory() {
         return idCategory;
@@ -55,13 +53,4 @@ public class CategoryEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public Set<SubcategoryEntity> getSubcategories() {
-        return subcategories;
-    }
-
-    public void setSubcategories(Set<SubcategoryEntity> subcategories) {
-        this.subcategories = subcategories;
-    }
 }
-

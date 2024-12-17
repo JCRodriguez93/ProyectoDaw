@@ -13,15 +13,14 @@ public interface RolesMapper {
 
     RolesMapper INSTANCE = Mappers.getMapper(RolesMapper.class);
 
-    // Mapea de RolesEntity a RoleResponse
+    // Mapea de RoleEntity a Role
     @Mapping(source = "idRole", target = "idRole")
     @Mapping(source = "roleName", target = "roleName")
     Role toApiDomain(RolesEntity source);
     List<Role> toApiDomain(List<RolesEntity> source);
 
-
-    // Mapea de RoleResponse a RolesEntity
+    // Mapea de Role a RoleEntity
     @Mapping(source = "idRole", target = "idRole")
     @Mapping(source = "roleName", target = "roleName")
-    RolesEntity toEntity(Role source );
+    RolesEntity toEntity(Role source);
 }

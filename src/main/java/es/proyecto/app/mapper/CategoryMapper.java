@@ -15,24 +15,16 @@ public interface CategoryMapper {
 
     CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
 
-    // Mapea de CategoryEntity a Category (API Model)
+    // Mapea de CategoryEntity a Category
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    @Mapping(source = "subcategories", target = "subcategories")
     Category toApiDomain(CategoryEntity source);
-
-    // Mapea SubcategoryEntity a Subcategory
-    @Mapping(source = "idSubcategory", target = "idSubcategory")
-    @Mapping(source = "name", target = "name")
-    @Mapping(source = "description", target = "description")
-    Subcategory toApiDomain(SubcategoryEntity source);
-    List<Category> toApiDomainList(List<CategoryEntity> source);
+    List<Category> toApiDomain(List<CategoryEntity> source);
 
     // Mapea de Category a CategoryEntity
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
-    @Mapping(target = "subcategories", ignore = true)
     CategoryEntity toEntity(Category source);
 }
