@@ -13,11 +13,11 @@ import java.time.LocalDateTime;
 
 @Validated
 @Entity
-@Table(name = "Orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "Orders")
 public class OrdersEntity {
 
     @Id
@@ -43,51 +43,5 @@ public class OrdersEntity {
     private OrderStatus orderStatus;  // Enum con los estados del pedido
 
 
-    public Integer getIdOrder() {
-        return idOrder;
-    }
 
-    public void setIdOrder(Integer idOrder) {
-        this.idOrder = idOrder;
-    }
-
-    public UsersEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UsersEntity user) {
-        this.user = user;
-    }
-
-    public Integer getTotalQuantity() {
-        return totalQuantity;
-    }
-
-    public void setTotalQuantity(Integer totalQuantity) {
-        this.totalQuantity = totalQuantity;
-    }
-
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(OrderStatus orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 }

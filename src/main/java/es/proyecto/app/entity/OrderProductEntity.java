@@ -1,8 +1,18 @@
 package es.proyecto.app.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 
+@Validated
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name = "Order_Products")
 public class OrderProductEntity {
     @Id
@@ -22,35 +32,5 @@ public class OrderProductEntity {
     private Integer quantity;
 
 
-    public Integer getIdOrderProduct() {
-        return idOrderProduct;
-    }
 
-    public void setIdOrderProduct(Integer idOrderProduct) {
-        this.idOrderProduct = idOrderProduct;
-    }
-
-    public OrdersEntity getIdOrder() {
-        return idOrder;
-    }
-
-    public void setIdOrder(OrdersEntity idOrder) {
-        this.idOrder = idOrder;
-    }
-
-    public ProductsEntity getIdProduct() {
-        return idProduct;
-    }
-
-    public void setIdProduct(ProductsEntity idProduct) {
-        this.idProduct = idProduct;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 }

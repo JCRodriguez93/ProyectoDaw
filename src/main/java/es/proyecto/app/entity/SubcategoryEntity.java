@@ -9,11 +9,11 @@ import org.springframework.validation.annotation.Validated;
 
 @Validated
 @Entity
-@Table(name = "Subcategory")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "Subcategory")
 public class SubcategoryEntity {
 
     @Id
@@ -31,36 +31,5 @@ public class SubcategoryEntity {
     @Column(name = "description")
     private String description;
 
-    // Métodos getter y setter
-    public int getIdSubcategory() {
-        return idSubcategory;
-    }
 
-    public void setIdSubcategory(int idSubcategory) {
-        this.idSubcategory = idSubcategory;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public CategoryEntity getCategory() {
-        return category;
-    }
-
-    public void setCategory(CategoryEntity category) {
-        this.category = category;
-    }
 }

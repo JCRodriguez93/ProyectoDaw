@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
 
 @Validated
 @Entity
-@Table(name = "Users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "Users")
 public class UsersEntity {
 
     @Id
@@ -42,59 +42,5 @@ public class UsersEntity {
     private RolesEntity roleId;  // Representa la relación con RoleEntity
 
 
-    public int getIdUser() {
-        return idUser;
-    }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserSurname() {
-        return userSurname;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
-    }
-
-    public LocalDateTime getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDateTime birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public RolesEntity getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(RolesEntity roleId) {
-        this.roleId = roleId;
-    }
 }

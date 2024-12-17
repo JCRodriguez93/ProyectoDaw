@@ -9,11 +9,11 @@ import org.springframework.validation.annotation.Validated;
 
 @Validated
 @Entity
-@Table(name = "Roles")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "Roles")
 public class RolesEntity {
 
     @Id
@@ -24,19 +24,5 @@ public class RolesEntity {
     @Column(name = "role_name", unique = true, nullable = false)
     private String roleName;
 
-    public Integer getIdRole() {
-        return idRole;
-    }
 
-    public void setIdRole(Integer idRole) {
-        this.idRole = idRole;
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
 }

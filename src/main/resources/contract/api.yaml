@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: API de Gestión de Roles
-  description: API para manejar roles en el sistema de productos de tatuajes.
+  title: Proyecto DAW - Empresa de Tatuajes
+  description: API para manejar el back-end de una empresa de tatuajes.
   version: 1.0.0
 servers:
   - url: http://localhost:8080/api
@@ -150,6 +150,212 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo usuario
+      description: "Permite a cualquier persona crear una nueva cuenta de usuario."
+      operationId: createUser
+      tags:
+        - Users
+      requestBody:
+        description: Datos del nuevo usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserCreatedResponse"
+        '400':
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /Users/{idUser}:
+    get:
+      summary: Obtener datos de un usuario por su ID
+      description: "Permite obtener los datos de un usuario autenticado mediante su ID único."
+      operationId: getUserById
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idUser
+          in: path
+          required: true
+          description: ID único del usuario que se desea obtener
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Usuario encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"  # Esquema que representa un usuario
+        '400':
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Acceso denegado (Forbidden)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Usuario no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      summary: Actualizar datos de usuario
+      description: "Permite a los usuarios autenticados actualizar su propia información. No se permite cambiar el rol ni el ID del usuario."
+      operationId: updateUser
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idUser
+          in: path
+          required: true
+          description: ID único del usuario que se desea actualizar
+          schema:
+            type: integer
+      requestBody:
+        description: Nuevos datos del usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"  # Aquí referenciamos el esquema "User"
+      responses:
+        "200":
+          description: Usuario actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UpdateResponse"
+        '400':
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Acceso denegado (Forbidden)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Usuario no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar usuario
+      description: "Permite a los usuarios autenticados eliminar su propia cuenta."
+      operationId: deleteUser
+      tags:
+        - Users
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idUser
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID único del usuario que se desea eliminar
+      responses:
+        "200":
+          description: Usuario eliminado exitosamente.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteResponse"
+        '400':
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: No autorizado (Unauthorized)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Acceso denegado (Forbidden)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Usuario no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+
+
+
+
+
+
+
+
   /Category:
     get:
       summary: Obtener todas las categorías
@@ -547,6 +753,45 @@ components:
             $ref: '#/components/schemas/OrderStatus'
       required:
         - orderStatuses
+
+
+
+    UserCreatedResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Usuario creado correctamente."
+        user:
+          $ref: "#/components/schemas/User"
+
+    DeleteResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Mensaje indicando el éxito de la operación.
+      required:
+        - message
+
+    UpdateResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Usuario actualizado correctamente."
+        updatedUser:
+          $ref: "#/components/schemas/User"
+      required:
+        - message
+        - updatedUser
+
+
+
+
+
+
+
 
 
 
