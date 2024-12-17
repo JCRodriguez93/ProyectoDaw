@@ -241,8 +241,6 @@ paths:
       operationId: updateUser
       tags:
         - Users
-      security:
-        - bearerAuth: []
       parameters:
         - name: idUser
           in: path
@@ -256,44 +254,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"  # Aquí referenciamos el esquema "User"
+              $ref: "#/components/schemas/User"
       responses:
         "200":
-          description: Usuario actualizado exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/UpdateResponse"
-        '400':
-          description: Solicitud incorrecta (Bad Request)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '401':
-          description: No autorizado (Unauthorized)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '403':
-          description: Acceso denegado (Forbidden)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '404':
-          description: Usuario no encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '500':
-          description: Error interno del servidor
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+          description: Usuario actualizado satisfactoriamente.
+        "400":
+          description: Error en la solicitud o datos incorrectos.
+        "404":
+          description: Usuario no encontrado.
+        "500":
+          description: Error interno del servidor.
+
+
+
+
+
+
     delete:
       summary: Eliminar usuario
       description: "Permite a los usuarios autenticados eliminar su propia cuenta."

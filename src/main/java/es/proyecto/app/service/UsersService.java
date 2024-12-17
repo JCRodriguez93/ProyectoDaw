@@ -1,6 +1,8 @@
 package es.proyecto.app.service;
 
+import es.proyecto.app.entity.RolesEntity;
 import es.proyecto.app.entity.UsersEntity;
+import es.proyecto.app.error.UsersException;
 import es.proyecto.app.mapper.UsersMapper;
 import es.proyecto.app.repository.RolesRepository;
 import es.proyecto.app.repository.UsersRepository;
@@ -68,6 +70,10 @@ public class UsersService {
      * @return Usuario actualizado o null si no se encuentra.
      */
     public HttpStatus updateUser(Integer idUser, User user) {
+        Optional<RolesEntity> role = rolesRepository.findById(user.getRoleId());
+        if(role.isEmpty()) {
+            throw new UsersException("User role not found.");
+        }
         Optional<UsersEntity> existingUser = repository.findById(idUser);
         if(existingUser.isEmpty()){
             return HttpStatus.NOT_FOUND;

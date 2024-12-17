@@ -112,9 +112,9 @@ public class UsersController implements UsersApi {
         }
     }
 
-
     @Override
-    public ResponseEntity<UpdateResponse> updateUser(Integer idUser, User body) {
+    public ResponseEntity<Void> updateUser(Integer idUser, User body) {
+
         try {
             if (body == null) {
                 log.error("Null body provided");
@@ -141,6 +141,13 @@ public class UsersController implements UsersApi {
             log.error("Error updating employee with id {}: {}", idUser, e.getMessage());
             throw new UsersException("Error updating employee");
         }
+
+
+
+
+
+
+
     }
 
 
