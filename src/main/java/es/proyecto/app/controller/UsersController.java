@@ -1,7 +1,6 @@
 package es.proyecto.app.controller;
 
 
-import es.proyecto.app.entity.UsersEntity;
 import es.proyecto.app.error.UsersException;
 import es.proyecto.app.service.UsersService;
 import es.swagger.codegen.api.UsersApi;
@@ -28,18 +27,18 @@ public class UsersController implements UsersApi {
     @Override
     public ResponseEntity<UserCreatedResponse> createUser(User body) {
         if (body == null) {
-            log.error("Null body provided");
+       //     log.error("Null body provided");
             throw new UsersException("Null body provided");
         }
 
         if (body.getUserName() == null || body.getUserName().isEmpty()) {
-            log.error("Invalid employee name");
+            log.error("Invalid user name");
             throw  UsersException.MISSING_USER_NAME_EXCEPTION;
         }
 
         usersService.createUser(body);
 
-        log.info("Employee created successfully: {}", body.getIdUser());
+       // log.info("user created successfully: {}", body.getIdUser());
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -55,17 +54,17 @@ public class UsersController implements UsersApi {
         User deletedUser = usersService.getUserById(idUser);
 
         if (deletedUser == null) {
-            log.error("Employee with id {} not found", idUser);
+            log.error("user with id {} not found", idUser);
             throw UsersException.NO_USER_FOUND_EXCEPTION;
         }
 
         try {
             usersService.deleteUser(idUser);
-            log.info("Employee with id {} deleted successfully", idUser);
+            log.info("user with id {} deleted successfully", idUser);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            log.error("Error deleting employee with id {}: {}", idUser, e.getMessage());
-            throw new UsersException("Error deleting employee with id " + idUser);
+            log.error("Error deleting user with id {}: {}", idUser, e.getMessage());
+            throw new UsersException("Error deleting user with id " + idUser);
         }
     }
 
@@ -73,21 +72,21 @@ public class UsersController implements UsersApi {
     public ResponseEntity<User> getUserById(Integer idUser) {
         try {
             if (!isValidId(String.valueOf(idUser))) {
-                log.error("Invalid employee ID format: {}", idUser);
+                log.error("Invalid user ID format: {}", idUser);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
             User empleado = usersService.getUserById(idUser);
 
             if (empleado == null) {
-                log.info("Employee with id {} not found", idUser);
+                log.info("user with id {} not found", idUser);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                log.info("Employee with id {} retrieved successfully", idUser);
+                log.info("user with id {} retrieved successfully", idUser);
                 return new ResponseEntity<>(empleado, HttpStatus.OK);
             }
         } catch (Exception e) {
-            log.error("Error retrieving employee with id {}: {}", idUser, e.getMessage());
+            log.error("Error retrieving user with id {}: {}", idUser, e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -97,13 +96,9 @@ public class UsersController implements UsersApi {
     public ResponseEntity<UserResponse> getUsers() {
         try {
             List<User> userList = usersService.getAllUsers();
-
-
             if (userList.isEmpty()) {
                 throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
-
-
             UserResponse response = new UserResponse();
             response.setUsers(userList);
             return new ResponseEntity<>(response, HttpStatus.OK);
@@ -121,25 +116,25 @@ public class UsersController implements UsersApi {
                 throw UsersException.NULL_BODY_EXCEPTION;
             }
             if (body.getIdUser() == null) {
-                log.error("Employee ID is required for updating");
+                log.error("user ID is required for updating");
                 throw UsersException.MISSING_ID_EXCEPTION;
             }
 
             User existingEmployee = usersService.getUserById(idUser);
             if (existingEmployee == null) {
-                log.error("No employee found with ID {}", idUser);
+                log.error("No user found with ID {}", idUser);
                 throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
             HttpStatus status = usersService.updateUser(idUser, body);
-            log.info("Employee with id {} updated successfully", idUser);
+            log.info("user with id {} updated successfully", idUser);
             return new ResponseEntity<>(status);
 
         } catch (NumberFormatException e) {
             log.error("Invalid ID format: {}", idUser);
             throw UsersException.INVALID_USER_ID_EXCEPTION;
         } catch (Exception e) {
-            log.error("Error updating employee with id {}: {}", idUser, e.getMessage());
-            throw new UsersException("Error updating employee");
+            log.error("Error updating user with id {}: {}", idUser, e.getMessage());
+            throw new UsersException("Error updating user");
         }
 
 
@@ -159,5 +154,4 @@ public class UsersController implements UsersApi {
             return false;
         }
     }
-
 }

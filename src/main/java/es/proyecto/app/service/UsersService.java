@@ -61,8 +61,6 @@ public class UsersService {
         return HttpStatus.CREATED;
     }
 
-
-
     /**
      * Actualizar un usuario existente.
      * @param idUser ID del usuario a actualizar.
@@ -82,7 +80,6 @@ public class UsersService {
         repository.save(mapper.toEntity(user));
         return HttpStatus.OK;
     }
-
 
     /**
      * Eliminar un usuario por su ID.
