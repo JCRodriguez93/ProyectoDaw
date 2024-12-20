@@ -36,9 +36,10 @@ public class UsersController implements UsersApi {
             throw  UsersException.MISSING_USER_NAME_EXCEPTION;
         }
 
+        //TODO: verificar que el correo electrónico no está repetido
         usersService.createUser(body);
 
-       // log.info("user created successfully: {}", body.getIdUser());
+        log.info("user created successfully: {}", body.getIdUser());
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -47,7 +48,7 @@ public class UsersController implements UsersApi {
     @Override
     public ResponseEntity<DeleteResponse> deleteUser(Integer idUser) {
         if (!isValidId(String.valueOf(idUser))) {
-            log.error("Invalid user ID format: {}", idUser);
+            log.error("Delete failure. Invalid user ID format: {}", idUser);
             throw UsersException.INVALID_USER_ID_EXCEPTION;
         }
 
@@ -120,8 +121,8 @@ public class UsersController implements UsersApi {
                 throw UsersException.MISSING_ID_EXCEPTION;
             }
 
-            User existingEmployee = usersService.getUserById(idUser);
-            if (existingEmployee == null) {
+            User existingUser = usersService.getUserById(idUser);
+            if (existingUser == null) {
                 log.error("No user found with ID {}", idUser);
                 throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
