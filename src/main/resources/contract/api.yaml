@@ -516,11 +516,6 @@ paths:
 
 
 
-
-
-
-
-
   /Subcategory:
     get:
       summary: Obtener todas las subcategorías
@@ -554,6 +549,155 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear una nueva subcategoría
+      description: "Permite a los administradores crear una nueva subcategoría proporcionando los datos requeridos."
+      operationId: createSubcategory
+      tags:
+        - Subcategories
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: Datos de la nueva subcategoría
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Subcategory"
+      responses:
+        "201":
+          description: Subcategoría creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Subcategory"
+        "400":
+          description: Solicitud incorrecta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /Subcategory/{idSubcategory}:
+    get:
+      summary: Obtener una subcategoría por ID
+      description: "Permite a cualquier usuario obtener los datos de una subcategoría específica mediante su ID único."
+      operationId: getSubcategoryById
+      tags:
+        - Subcategories
+      parameters:
+        - name: idSubcategory
+          in: path
+          required: true
+          description: ID único de la subcategoría a obtener
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Subcategoría obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Subcategory"
+        "404":
+          description: Subcategoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      summary: Actualizar una subcategoría por ID
+      description: "Permite a los administradores actualizar los datos de una subcategoría específica."
+      operationId: updateSubcategory
+      tags:
+        - Subcategories
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idSubcategory
+          in: path
+          required: true
+          description: ID único de la subcategoría a actualizar
+          schema:
+            type: integer
+      requestBody:
+        description: Nuevos datos para la subcategoría
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Subcategory"
+      responses:
+        "200":
+          description: Subcategoría actualizada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Subcategory"
+        "400":
+          description: Solicitud incorrecta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Subcategoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar una subcategoría por ID
+      description: "Permite a los administradores eliminar una subcategoría específica mediante su ID único."
+      operationId: deleteSubcategory
+      tags:
+        - Subcategories
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idSubcategory
+          in: path
+          required: true
+          description: ID único de la subcategoría a eliminar
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Subcategoría eliminada exitosamente
+        "404":
+          description: Subcategoría no encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+
+
   /Products:
     get:
       summary: Obtener todos los productos
@@ -587,6 +731,159 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo producto
+      description: "Permite a los administradores crear un nuevo producto proporcionando los datos requeridos."
+      operationId: createProduct
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: Datos del nuevo producto
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Products"
+      responses:
+        "201":
+          description: Producto creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Products"
+        "400":
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /Products/{idProduct}:
+    get:
+      summary: Obtener un producto por ID
+      description: "Permite a cualquier usuario obtener los detalles de un producto específico mediante su ID único."
+      operationId: getProductById
+      tags:
+        - Products
+      parameters:
+        - name: idProduct
+          in: path
+          required: true
+          description: ID único del producto a obtener
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Products"
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      summary: Actualizar un producto por ID
+      description: "Permite a los administradores actualizar los datos de un producto específico mediante su ID único."
+      operationId: updateProduct
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idProduct
+          in: path
+          required: true
+          description: ID único del producto a actualizar
+          schema:
+            type: integer
+      requestBody:
+        description: Nuevos datos del producto
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Products"
+      responses:
+        "200":
+          description: Producto actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Products"
+        "400":
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar un producto por ID
+      description: "Permite a los administradores eliminar un producto específico mediante su ID único."
+      operationId: deleteProduct
+      tags:
+        - Products
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: idProduct
+          in: path
+          required: true
+          description: ID único del producto a eliminar
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Producto eliminado exitosamente
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+
+
+
+
+
+
   /Orders:
     get:
       summary: Obtener todos los pedidos
@@ -620,6 +917,153 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+    post:
+      summary: Crear un nuevo pedido
+      description: "Permite a un usuario realizar un nuevo pedido. El pedido es creado con la información proporcionada."
+      operationId: createOrder
+      tags:
+        - Orders
+      requestBody:
+        description: Datos del nuevo pedido
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Orders"
+      responses:
+        "201":
+          description: Pedido creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Orders"
+        "400":
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /Orders/{idOrder}:
+    get:
+      summary: Obtener un pedido por ID
+      description: "Permite a un usuario obtener los detalles de un pedido específico mediante su ID único."
+      operationId: getOrderById
+      tags:
+        - Orders
+      parameters:
+        - name: idOrder
+          in: path
+          required: true
+          description: ID único del pedido a obtener
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Pedido encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Orders"
+        "404":
+          description: Pedido no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      summary: Actualizar un pedido por ID
+      description: "Permite a un usuario actualizar los datos de un pedido específico mediante su ID único."
+      operationId: updateOrder
+      tags:
+        - Orders
+      parameters:
+        - name: idOrder
+          in: path
+          required: true
+          description: ID único del pedido a actualizar
+          schema:
+            type: integer
+      requestBody:
+        description: Nuevos datos del pedido
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Orders"
+      responses:
+        "200":
+          description: Pedido actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Orders"
+        "400":
+          description: Solicitud incorrecta (Bad Request)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "404":
+          description: Pedido no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      summary: Eliminar un pedido por ID
+      description: "Permite a un usuario eliminar un pedido específico mediante su ID único."
+      operationId: deleteOrder
+      tags:
+        - Orders
+      parameters:
+        - name: idOrder
+          in: path
+          required: true
+          description: ID único del pedido a eliminar
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Pedido eliminado exitosamente
+        "404":
+          description: Pedido no encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+
+
+
+
+
+
+
 
 
 
@@ -754,8 +1198,6 @@ components:
           format: double
           description: Precio del producto con exactamente dos decimales
       required:
-        - idProduct
-        - idSubcategory
         - name
         - price
 

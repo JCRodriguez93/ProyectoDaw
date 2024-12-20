@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * CategoryController es la implementación de CategoriesApi.
+ * CategoryController es la implementación de CategoryApi.
  */
 @Slf4j
 @RestController
@@ -39,6 +39,10 @@ public class CategoriesController implements CategoryApi {
             throw  CategoryException.MISSING_CATEGORY_NAME_EXCEPTION;
         }
 
+        if (categoriesService.getCategoryByName(body.getName())) {
+            log.error("Category already exists with name: {}", body.getName());
+            throw CategoryException.CATEGORY_ALREADY_EXISTS_EXCEPTION;
+        }
         categoriesService.createCategory(body);
 
         log.info("category created successfully: {}", body.getIdCategory());
@@ -56,7 +60,7 @@ public class CategoriesController implements CategoryApi {
         Category deleteCategory = categoriesService.getCategoryById(idCategory);
 
         if (deleteCategory == null) {
-            log.error("Employee with id {} not found", idCategory);
+            log.error("Category with id {} not found", idCategory);
             throw CategoryException.NO_CATEGORY_FOUND_EXCEPTION;
         }
 
@@ -65,8 +69,8 @@ public class CategoriesController implements CategoryApi {
             log.info("Employee with id {} deleted successfully", idCategory);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            log.error("Error deleting employee with id {}: {}", idCategory, e.getMessage());
-            throw new UsersException("Error deleting employee with id " + idCategory);
+            log.error("Error deleting category with id {}: {}", idCategory, e.getMessage());
+            throw new CategoryException("Error deleting category with id " + idCategory);
         }
     }
 
@@ -117,13 +121,13 @@ public class CategoriesController implements CategoryApi {
             }
             if (body.getIdCategory() == null) {
                 log.error("category ID is required for updating");
-                //throw CategoryException.MISSING_CATEGORY_ID_EXCEPTION;
+                throw CategoryException.MISSING_CATEGORY_ID_EXCEPTION;
             }
 
             Category existingEmployee = categoriesService.getCategoryById(idCategory);
             if (existingEmployee == null) {
                 log.error("No category found with ID {}", idCategory);
-                throw UsersException.NO_USER_FOUND_EXCEPTION;
+                throw CategoryException.NO_CATEGORY_FOUND_EXCEPTION;
             }
             HttpStatus status = categoriesService.updateCategory(idCategory, body);
             log.info("Category with id {} updated successfully", idCategory);
