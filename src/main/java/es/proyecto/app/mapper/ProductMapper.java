@@ -21,6 +21,8 @@ public interface ProductMapper {
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
     @Mapping(source = "price", target = "price")
+    @Mapping(source = "imageUrl", target = "imageUrl")
+
     Products toApiDomain(ProductsEntity source);
     List<Products> toApiDomain(List<ProductsEntity> source);
 
@@ -30,6 +32,7 @@ public interface ProductMapper {
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
     @Mapping(source = "price", target = "price")
+    @Mapping(source = "imageUrl", target = "imageUrl")
     ProductsEntity toEntity(Products source);
 
 

@@ -1,10 +1,7 @@
 package es.proyecto.app.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 @Validated
@@ -19,11 +16,15 @@ public class SubcategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_subcategory")
-    private int idSubcategory;
+    private Integer idSubcategory;
 
-    @ManyToOne
+
+
+    @ToString.Exclude
+    @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "id_category", referencedColumnName = "id_category", nullable = false)
     private CategoryEntity category;  // Relación con CategoryEntity
+
 
     @Column(name = "name", nullable = false)
     private String name;

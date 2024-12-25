@@ -27,7 +27,9 @@ public class CategoriesService {
     private CategoryRepository categoryRepository;
 
     public List<Category> getAllCategories() {
-        return mapper.toApiDomain(categoryRepository.findAll());
+        List<CategoryEntity> categoryEntities = categoryRepository.findAll();
+        return mapper.toApiDomain(categoryEntities); // MapStruct para convertir entidades a modelos
+
     }
 
     public HttpStatus createCategory(Category idCategory) {

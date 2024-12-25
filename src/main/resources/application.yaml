@@ -15,6 +15,9 @@ spring:
     show-sql: true
     hibernate:
       ddlAuto: create
+  thymeleaf:
+    prefix: classpath:/templates/ # Directorio donde estarán tus plantillas Thymeleaf
+    suffix: .html                # Extensión de los archivos Thymeleaf
   springdoc:
     swagger-ui:
       path: /swagger-ui.html

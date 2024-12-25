@@ -1,4 +1,4 @@
---DROP DATABASE IF EXISTS dawproject;
+DROP DATABASE IF EXISTS dawproject;
 
 -- Crear la base de datos
 CREATE DATABASE dawproject;
@@ -15,7 +15,7 @@ CREATE TABLE Users (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
     user_name VARCHAR(50) NOT NULL,
     user_surname VARCHAR(50) NOT NULL,
-    birth_date DATE NOT NULL,
+    birth_date DATETIME NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role_id INT NOT NULL,
@@ -48,6 +48,7 @@ CREATE TABLE Products (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
+    image_url VARCHAR(255),
     FOREIGN KEY (id_subcategory) REFERENCES Subcategory(id_subcategory)
         ON DELETE CASCADE
         ON UPDATE CASCADE
@@ -60,7 +61,7 @@ CREATE TABLE Orders (
     total_quantity INT NOT NULL, -- Cantidad total de productos
     total_price DECIMAL(10, 2) NOT NULL, -- Precio total del pedido
     date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    order_status ENUM('pendiente', 'pagado', 'cancelado') DEFAULT 'pendiente',
+    order_status ENUM('PENDIENTE', 'PAGADO', 'CANCELADO') DEFAULT 'PENDIENTE',
     FOREIGN KEY (id_user) REFERENCES Users(id_user)
         ON DELETE CASCADE
         ON UPDATE CASCADE
@@ -79,5 +80,3 @@ CREATE TABLE Order_Products (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
-
-

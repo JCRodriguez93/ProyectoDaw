@@ -7,6 +7,7 @@ import es.proyecto.app.service.CategoriesService;
 import es.swagger.codegen.api.CategoryApi;
 import es.swagger.codegen.models.CategoriesResponse;
 import es.swagger.codegen.models.Category;
+import es.swagger.codegen.models.CategoryListResponse;
 import es.swagger.codegen.models.DeleteResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

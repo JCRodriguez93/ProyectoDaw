@@ -7,6 +7,101 @@ servers:
   - url: http://localhost:8080/api
     description: Servidor local
 paths:
+
+  # mirar como hacer el login
+  /auth/register:
+    post:
+      summary: Registrar un nuevo usuario
+      tags:
+        - Authentication
+      operationId: registerUser
+      requestBody:
+        description: Datos necesarios para registrar un usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        "201":
+          description: Usuario registrado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "400":
+          description: Datos inválidos (por ejemplo, falta algún campo obligatorio)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "409":
+          description: Conflicto (por ejemplo, el email ya está en uso)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+
+  /auth/login:
+    post:
+      summary: Iniciar sesión
+      tags:
+        - Authentication
+      operationId: loginUser
+      requestBody:
+        description: Credenciales necesarias para autenticar al usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        "200":
+          description: Inicio de sesión exitoso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "400":
+          description: Datos inválidos (credenciales faltantes o formato incorrecto)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "401":
+          description: Credenciales incorrectas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "403":
+          description: Acceso denegado (usuario bloqueado, no activado, etc.)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        "500":
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+
+
+
+
+  # ----------------------------
+
+
+
+
+
   /roles:
     get:
       summary: Obtener todos los roles
@@ -326,14 +421,10 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
 
-
-
-
-
   /Category:
     get:
       summary: Obtener todas las categorías
-      description: "Permite a cualquier usuario obtener la lista de categorías disponibles."
+      description: "Permite a cualquier usuario obtener la lista de categorías disponibles, incluyendo sus subcategorías."
       operationId: getCategories
       tags:
         - Categories
@@ -350,7 +441,18 @@ paths:
                     type: array
                     description: Lista de categorías disponibles
                     items:
-                      $ref: "#/components/schemas/Category"
+                      $ref: "#/components/schemas/Category"  # Aquí debe referenciar la clase Category
+                      properties:
+                        id_category:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        subcategories:
+                          type: array
+                          items:
+                            $ref: "#/components/schemas/Subcategory"
         "404":
           description: No se encontraron categorías
           content:
@@ -394,7 +496,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ErrorResponse"
+                $ref: '#/components/schemas/ErrorResponse'
+
+
   /Category/{idCategory}:
     get:
       summary: Obtener una categoría por ID
@@ -513,6 +617,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
+
+
+
+
+
+
 
 
 
@@ -1132,46 +1242,39 @@ components:
     Category:
       type: object
       properties:
-        idCategory:
+        id_category:
           type: integer
-          format: int32
-          description: Identificador único de la categoría
+          description: "Identificador único de la categoría"
         name:
           type: string
-          description: Nombre de la categoría
-          maxLength: 50
+          description: "Nombre de la categoría"
         description:
           type: string
-          description: Descripción de la categoría
-          nullable: true  # Especifica que puede ser null si no es obligatorio en la base de datos
-      required:
-        - idCategory
-        - name
+          description: "Descripción de la categoría"
+        subcategories:
+          type: array
+          description: "Lista de subcategorías asociadas a esta categoría"
+          items:
+            $ref: "#/components/schemas/Subcategory"
 
-    # Subcategorías actualizadas (no tocar)
     Subcategory:
       type: object
       properties:
-        idSubcategory:
+        id_subcategory:
           type: integer
-          format: int32
-          description: Identificador único de la subcategoría
-        idCategory:
+          description: "Identificador único de la subcategoría"
+        id_category:
           type: integer
-          format: int32
-          description: Identificador único de la categoría asociada
+          description: "Identificador de la categoría a la que pertenece esta subcategoría"
         name:
           type: string
-          description: Nombre de la subcategoría
-          maxLength: 50
+          description: "Nombre de la subcategoría"
         description:
           type: string
-          description: Descripción de la subcategoría
-          nullable: true  # Indica que la descripción puede ser opcional
-      required:
-        - idSubcategory
-        - idCategory
-        - name
+          description: "Descripción de la subcategoría"
+
+
+
 
     # Productos actualizados (no tocar)
     Products:
@@ -1197,6 +1300,10 @@ components:
           type: number
           format: double
           description: Precio del producto con exactamente dos decimales
+        imageUrl:
+          type: string
+          description: URL o ruta de la imagen del producto
+      nullable: true
       required:
         - name
         - price
@@ -1364,6 +1471,66 @@ components:
 
 
 
+
+
+
+
+
+
+
+
+
+
+    RegisterRequest:
+      type: object
+      properties:
+        userName:
+          type: string
+        userSurname:
+          type: string
+        userBirth:
+          type: string
+          format: date-time
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+        roleId:
+          type: integer
+      required:
+        - userName
+        - userSurname
+        - userBirth
+        - email
+        - password
+        - roleId
+
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+      required:
+        - email
+        - password
+
+    AuthResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Error interno del servidor."
+        token:
+          type: string
+          description: Token JWT generado para el usuario
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        message:
+          type: string
+          example: "Inicio de sesión exitoso"
 
 
 
