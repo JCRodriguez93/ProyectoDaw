@@ -1,0 +1,12 @@
+/* Estilo para los iconos de redes sociales */
+.social-icon-img {
+    font-size: 40px; /* Tamaño del icono */
+    color: #007bff; /* Color predeterminado */
+  }
+
+  /* Estilo adicional para los hashtags */
+  .social-hashtag {
+    font-size: 1.2rem;
+    color: #007bff;
+    text-decoration: none;
+  }

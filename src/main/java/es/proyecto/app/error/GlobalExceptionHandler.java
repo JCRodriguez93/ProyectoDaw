@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(CategoryException.class)
-    public ResponseEntity<String> handleCategoryException(CategoryException ex) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+    @ExceptionHandler(io.jsonwebtoken.ExpiredJwtException.class)
+    public ResponseEntity<String> handleExpiredJwtException() {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("El token ha expirado");
+    }
+
+    @ExceptionHandler(io.jsonwebtoken.JwtException.class)
+    public ResponseEntity<String> handleJwtException() {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token no válido");
     }
 }

@@ -1,0 +1,139 @@
+
+/** MENÚ DE OPCIONES A COMPRAR */
+.menu {
+  display: flex;
+  justify-content: center;
+  /* Centra el menú horizontalmente */
+  align-items: center;
+  /* Alinea los elementos verticalmente */
+  list-style: none;
+  /* Elimina los puntos de las listas */
+  padding: 0;
+  margin: 0;
+  /* Quita los márgenes adicionales */
+  background-color: var(--color-gris-oscuro);
+  /* Fondo del menú */
+  border-top: 2px solid #ccc;
+  /* Línea superior para separar del contenido */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  /* Centra los items de la navbar */
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-beige);
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+  /* Ocultar el submenú por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f4f4f4;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  /* Mostrar el submenú al pasar el ratón */
+}
+
+.dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .header {
+      flex-direction: column;
+  }
+
+  .search-bar {
+      max-width: 300px;
+  }
+
+  .icon-group {
+      position: static;
+      margin-top: 10px;
+      justify-content: center;
+  }
+
+  .menu {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+/* Menú sticky: este estará pegado al hacer scroll hacia abajo */
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegurarte de que se muestre por encima del contenido */
+}
+
+
+/* Asegurar que el contenido se ajusta debajo del menú sticky */
+
+
+
+/* Secciones de contenido */
+.content-section {
+  transition: margin-top 0.3s ease;
+
+  height: 300px; /* Altura para cada sección */
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+  padding-top: 110px; /* Ajusta el padding superior para dar espacio al header */
+
+}
+
+
+/* Personalizar el ancho de la barra de búsqueda */
+.search-bar input {
+  max-width: 300px;  /* Ajusta este valor a tu preferencia */
+}

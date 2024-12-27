@@ -19,12 +19,17 @@ public interface CategoryMapper {
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
+    @Mapping(source = "subcategories", target = "subcategories") // Usa el SubcategoryMapper
     Category toApiDomain(CategoryEntity source);
+
     List<Category> toApiDomain(List<CategoryEntity> source);
 
     // Mapea de Category a CategoryEntity
     @Mapping(source = "idCategory", target = "idCategory")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "description", target = "description")
+    @Mapping(source = "subcategories", target = "subcategories")
     CategoryEntity toEntity(Category source);
+
+
 }

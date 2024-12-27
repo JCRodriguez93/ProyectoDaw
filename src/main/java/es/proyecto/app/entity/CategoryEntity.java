@@ -1,12 +1,10 @@
 package es.proyecto.app.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
 import java.util.Set;
 
 @Validated
@@ -21,7 +19,7 @@ public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_category")
-    private int idCategory;
+    private Integer idCategory;
 
     @Column(name = "name", unique = true, nullable = false)
     private String name;
@@ -29,6 +27,8 @@ public class CategoryEntity {
     @Column(name = "description")
     private String description;
 
-
+    @ToString.Exclude
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER ,  cascade = CascadeType.ALL)
+    private List<SubcategoryEntity> subcategories;
 
 }

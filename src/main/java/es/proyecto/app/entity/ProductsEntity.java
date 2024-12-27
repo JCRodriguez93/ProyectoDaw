@@ -36,6 +36,7 @@ public class ProductsEntity {
     @Column(name = "price", nullable = false)
     private BigDecimal price;  // Precio en DECIMAL(10,2)
 
-
+    @Column(name = "image_url")
+    private String imageUrl;
 
 }
