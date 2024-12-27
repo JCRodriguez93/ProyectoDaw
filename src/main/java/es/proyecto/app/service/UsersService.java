@@ -26,6 +26,8 @@ public class UsersService {
 
     private final UsersMapper mapper = UsersMapper.INSTANCE;
 
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
     @Autowired
     private UsersRepository repository;
     @Autowired
@@ -52,13 +54,13 @@ public class UsersService {
 
     /**
      * Crear un nuevo usuario.
+     *
      * @param user Datos del usuario a crear.
-     * @return Usuario creado.
      */
-    public HttpStatus createUser(User user) {
+    public void createUser(User user) {
+
         UsersEntity entity = mapper.toEntity(user);
         repository.save(entity);
-        return HttpStatus.CREATED;
     }
 
     /**

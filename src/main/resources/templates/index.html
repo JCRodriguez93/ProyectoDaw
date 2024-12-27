@@ -1,23 +1,409 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
 
 <head>
     <meta charset="UTF-8">
-    <title>Página de Inicio</title>
-    <!-- Enlazando el archivo CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cargar Bootstrap (solo una versión) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Hojas de estilo personalizadas -->
     <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/carousel.css}">
+    <link rel="stylesheet" th:href="@{/css/productos.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/socials.css}">
+    <link rel="stylesheet" th:href="@{/css/newsletter.css}">
+
+    <title>Interfaz de mierda</title>
+
+
 </head>
+
 <body>
-<header>
-    <h1>Bienvenido, <span th:text="${nombre}">Usuario</span>!</h1>
+<header class="bg-dark text-light">
+    <div class="container-fluid">
+        <div class="row align-items-center py-2">
+            <!-- Logo -->
+            <div class="col-12 col-md-3 text-center text-md-start mb-2 mb-md-0">
+                <img th:src="@{/img/logo.png}" alt="Logo de la empresa" class="img-fluid" style="max-height: 50px;">
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="col-12 col-md-6 my-2 my-md-0">
+                <form class="d-flex justify-content-center search-bar">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+
+            <!-- Iconos -->
+            <div class="col-12 col-md-3 text-center text-md-end mt-3 mt-md-0">
+                <div class="d-flex justify-content-center justify-content-md-end align-items-center">
+                    <!-- Icono de Login -->
+                    <a href="/login" class="text-light me-3">
+                        <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <!-- Mensaje de bienvenida -->
+                    <span id="welcome-message" class="me-3 text-light">Bienvenido, Usuario</span>
+                    <!-- Icono de Carrito -->
+                    <a href="/Orders" class="text-light">
+                        <i class="bi bi-cart-fill" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Menú de opciones -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mx-auto" id="menu-category">
+                    <!-- Iterar categorías -->
+                    <li class="nav-item dropdown" th:each="category : ${categories}">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false" th:text="${category.name}">
+                            Nombre de la categoría
+                        </a>
+                        <!-- Subcategorías -->
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                            <li th:each="subcategory : ${category.subcategories}">
+                                <a class="dropdown-item" href="#" th:text="${subcategory.name}">Subcategoría</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
 </header>
 
-<section>
-    <p>¡Hola! Este es un ejemplo de una página de inicio utilizando Spring Boot y Thymeleaf.</p>
-    <button th:text="'Clic para saludar'"></button>
+
+<!-- Sección del carrusel -->
+<main class="container mt-5 pt-5">
+    <div id="carousel">
+        <button class="carousel-btn prev" onclick="prevSlide()">&#60;</button>
+        <div class="carousel-images">
+            <div class="carousel-slide">
+                <img th:src="@{/img/tatt1.png}" alt="Slide 1" class="carousel-image"
+                     onclick="redirectTo('https://google.com')">
+                <div class="carousel-caption">
+                    <h5>Slide 1</h5>
+                    <p>Descripción del primer slide.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img th:src="@{/img/tatt2.png}" alt="Slide 2" class="carousel-image"
+                     onclick="redirectTo('https://google.com')">
+                <div class="carousel-caption">
+                    <h5>Slide 2</h5>
+                    <p>Descripción del segundo slide.</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img th:src="@{/img/tatt3.png}" alt="Slide 3" class="carousel-image"
+                     onclick="redirectTo('https://google.com')">
+                <div class="carousel-caption">
+                    <h5>Slide 3</h5>
+                    <p>Descripción del tercer slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn next" onclick="nextSlide()">&#62;</button>
+    </div>
+
+</main>
+
+
+<section class="products py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Productos Destacados</h2>
+        <div class="row g-4">
+            <!-- Producto 1 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 text-center" onclick="redirectTo('https://google.com')">
+                    <div class="image-container">
+                        <img th:src="@{img/manzana.jpg}" alt="Producto 1"
+                             class="card-img-top product-image">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h5 product-name">Producto 1</h3>
+                        <p class="card-text product-price text-primary fw-bold">$20.00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 text-center" onclick="redirectTo('https://bing.com')">
+                    <div class="image-container">
+                        <img th:src="@{/img/pera.jpg}" alt="Producto 2"
+                             class="card-img-top product-image">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h5 product-name">Producto 2</h3>
+                        <p class="card-text product-price text-primary fw-bold">$30.00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 text-center" onclick="redirectTo('https://example.com')">
+                    <div class="image-container">
+                        <img th:src="@{img/piña.jpg}" alt="Producto 3"
+                             class="card-img-top product-image">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h5 product-name">Producto 3</h3>
+                        <p class="card-text product-price text-primary fw-bold">$25.00</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 text-center" onclick="redirectTo('https://yahoo.com')">
+                    <div class="image-container">
+                        <img th:src="@{/img/limon.jpg}" alt="Producto 4"
+                             class="card-img-top product-image">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title h5 product-name">Producto 4</h3>
+                        <p class="card-text product-price text-primary fw-bold">$18.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Enlazando el archivo JS -->
-<script th:src="@{/js/scripts.js}"></script>
+
+<section class="py-5 bg-dark text-light">
+    <div class="container h-10">
+        <h2 class="text-center mb-4">Productos Populares</h2>
+        <div class="row h-100 align-items-stretch">
+            <!-- Sección izquierda como aside -->
+            <aside class="col-lg-5 p-0 h-100 d-none d-lg-block"> <!-- Se oculta en pantallas menores a lg -->
+                <img th:src="@{/img/pera.jpg}" alt="Producto Más Vendido" class="w-100 h-100"
+                     style="object-fit: cover;">
+            </aside>
+            <!-- Sección derecha -->
+            <div class="col-lg-7 d-flex align-items-center justify-content-center">
+
+                <div class="card shadow w-100">
+                    <div class="card-body text-center">
+
+                        <img th:src="@{/img/manzana.jpg}" alt="Producto Más Vendido"
+                             class="img-fluid rounded mb-3" style="max-width: 150px; height: 150px; object-fit: cover;">
+                        <h3 class="card-title">Producto Más Vendido</h3>
+                        <p class="card-text text-muted">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis similique delectus aut
+                            quibusdam adipisci laboriosam nulla error porro impedit, unde, velit corrupti corporis,
+                            nobis fugit veritatis obcaecati! Soluta, hic temporibus.
+                        </p>
+                        <!-- Controles de cantidad con botones laterales -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="input-group d-inline-flex align-items-center justify-content-center"
+                                 style="max-width: 200px;">
+                                <button class="btn btn-outline-secondary btn-sm" type="button" id="btn-decrease">-
+                                </button>
+                                <input type="number" class="form-control text-center no-spinners mx-2" value="1" min="1"
+                                       id="quantity-input" style="max-width: 70px;">
+                                <button class="btn btn-outline-secondary btn-sm" type="button" id="btn-increase">+
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="min-width: 100px;">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Sección Top Vendidos -->
+<section class="top-sellers py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Descripción de la sección (A la izquierda) -->
+            <div class="col-md-4">
+                <div class="top-sellers-description">
+                    <h2>Top Vendidos</h2>
+                    <p>Descubre los productos más populares entre nuestros clientes. ¡No te los pierdas!</p>
+                </div>
+            </div>
+
+            <!-- Productos (A la derecha) -->
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img th:src="@{/img/limon.jpg}" class="card-img-top product-image"
+                                 alt="Producto 1">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Producto 1</h5>
+                                <div class="product-rating text-warning">
+                                    &#9733; &#9733; &#9733; &#9733; &#9734;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="/img/manzana.jpg"
+                                 class="card-img-top product-image"
+                                 alt="Producto 2">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Producto 2</h5>
+                                <div class="product-rating text-warning">
+                                    &#9733; &#9733; &#9733; &#9734; &#9734;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img th:src="@{/img/pera.jpg}" class="card-img-top product-image"
+                                 alt="Producto 3">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Producto 3</h5>
+                                <div class="product-rating text-warning">
+                                    &#9733; &#9733; &#9734; &#9734; &#9734;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img th:src="@{/img/piña.jpg}" class="card-img-top product-image"
+                                 alt="Producto 4">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Producto 4</h5>
+                                <div class="product-rating text-warning">
+                                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="newsletter py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Descripción de la sección -->
+            <div class="col-md-6 text-center mb-4">
+                <h2 class="fw-bold">Suscríbete a nuestro boletín</h2>
+                <p>Recibe las últimas novedades, ofertas y consejos sobre productos de tatuaje directamente en tu
+                    bandeja de entrada.</p>
+
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <!-- Input reducido y alineado a la derecha -->
+                        <input type="email" class="form-control w-50 me-4" placeholder="Introduce tu correo" required>
+                        <!-- Botón con margen a la izquierda -->
+                        <button class="btn btn-primary" type="submit">Suscríbete</button>
+                    </div>
+                </form>
+
+                <!-- Redes sociales -->
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="https://facebook.com" target="_blank" class="social-icon me-3">
+                        <i class="bi bi-facebook social-icon-img"></i>
+                    </a>
+                    <a href="https://Instagram.com" target="_blank" class="social-icon me-3">
+                        <i class="bi bi-instagram social-icon-img"></i>
+                    </a>
+                    <a href="https://x.com" target="_blank" class="social-hashtag">#SigueElHashtag</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <!-- MI EMPRESA -->
+            <div class="col-md-3 mb-4">
+                <h3>MI EMPRESA</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">¿Quiénes somos?</a></li>
+                    <li><a href="#" class="footer-link">Contactos</a></li>
+                </ul>
+            </div>
+
+            <!-- COMPRA -->
+            <div class="col-md-3 mb-4">
+                <h3>COMPRA</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Anillos y Pendientes</a></li>
+                    <li><a href="#" class="footer-link">Máquinas de Tatuar</a></li>
+                    <li><a href="#" class="footer-link">Mobiliario</a></li>
+                    <li><a href="#" class="footer-link">Micropigmentación</a></li>
+                </ul>
+            </div>
+
+            <!-- INFORMACIÓN -->
+            <div class="col-md-3 mb-4">
+                <h3>INFORMACIÓN</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Método de pago</a></li>
+                    <li><a href="#" class="footer-link">Libro de reclamaciones</a></li>
+                    <li><a href="#" class="footer-link">Cambios y devoluciones</a></li>
+                    <li><a href="#" class="footer-link">Términos, condiciones y garantías</a></li>
+                    <li><a href="#" class="footer-link">Preguntas frecuentes (FAQ)</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACTO -->
+            <div class="col-md-3 mb-4">
+                <h3>CONTACTO</h3>
+                <ul class="list-unstyled">
+                    <li>Dirección: Calle Ficticia 123, Ciudad, País</li>
+                    <li>Teléfono: +123 456 7890</li>
+                    <li>Correo: contacto@empresa.com</li>
+                    <li>Horario: Lunes a Viernes, 9:00 - 18:00</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<script th:src="@{/js/elements-menu.js}"></script>
+<script th:src="@{/js/carousel.js}"></script>
+<script th:src="@{/js/menu-sticky.js}"></script>
+
+
+
+<script th:src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script th:src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

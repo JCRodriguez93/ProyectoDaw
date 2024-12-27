@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -28,4 +30,12 @@ public class PagesController {
         // Retornar el nombre de la plantilla Thymeleaf
         return "index"; // Thymeleaf buscará src/main/resources/templates/index.html
     }
+
+//    @GetMapping("/login")
+//    public String getLoginPage() {
+//        // Retorna la página de login
+//        return "login"; // Thymeleaf buscará src/main/resources/templates/login.html
+//    }
+
+
 }

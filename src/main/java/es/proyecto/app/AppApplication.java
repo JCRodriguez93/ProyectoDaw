@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 
 // Acordarse de dejar solamente el @SpringBootApplication cuando deje las pruebas.
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
+@SpringBootApplication()
 public class AppApplication {
 
 	public static void main(String[] args) {

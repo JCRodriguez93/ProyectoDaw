@@ -1531,6 +1531,11 @@ components:
         message:
           type: string
           example: "Inicio de sesión exitoso"
+      required:
+        - error
+        - token
+        - message
+
 
 
 
