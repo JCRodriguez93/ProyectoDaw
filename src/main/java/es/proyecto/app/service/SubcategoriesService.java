@@ -29,17 +29,14 @@ public class SubcategoriesService {
         return optionalSubcategoryEntity.map(mapper::toApiDomain).orElse(null);
     }
 
-
-    public void createSubcategory(Subcategory idSubcategory) {
-        SubcategoryEntity entity = mapper.toEntity(idSubcategory);
+    public void createSubcategory(Subcategory subcategory) {
+        SubcategoryEntity entity = mapper.toEntity(subcategory);
         subcategoryRepository.save(entity);
     }
 
-
     public HttpStatus updateSubcategory(Integer idSubcategory, Subcategory subcategory) {
-
         Optional<SubcategoryEntity> existingSubcategory = subcategoryRepository.findById(idSubcategory);
-        if(existingSubcategory.isEmpty()){
+        if (existingSubcategory.isEmpty()) {
             return HttpStatus.NOT_FOUND;
         }
         subcategory.setIdCategory(idSubcategory);
@@ -56,8 +53,7 @@ public class SubcategoriesService {
         }
     }
 
-
-
-
-
+    public boolean existsByNameAndCategory(String name, Integer idCategory) {
+        return subcategoryRepository.existsByNameAndCategory(name, idCategory);
+    }
 }

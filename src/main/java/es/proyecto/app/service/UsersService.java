@@ -82,7 +82,7 @@ public class UsersService {
         repository.save(mapper.toEntity(user));
         return HttpStatus.OK;
     }
-
+    public boolean existsByEmail(String email) { return repository.existsByEmail(email); }
     /**
      * Eliminar un usuario por su ID.
      * @param idUser ID del usuario a eliminar.

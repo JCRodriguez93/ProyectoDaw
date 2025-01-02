@@ -1,8 +1,6 @@
 package es.proyecto.app.controller;
 
-
 import es.proyecto.app.error.CategoryException;
-import es.proyecto.app.error.UsersException;
 import es.proyecto.app.service.CategoriesService;
 import es.swagger.codegen.api.CategoryApi;
 import es.swagger.codegen.models.CategoriesResponse;
@@ -26,17 +24,16 @@ public class CategoriesController implements CategoryApi {
     @Autowired
     private CategoriesService categoriesService;
 
-
     @Override
     public ResponseEntity<Category> createCategory(Category body) {
         if (body == null) {
-            // log.error("Null body provided");
-            throw new CategoryException("Null body provided");
+            log.error("Null body provided in createCategory");
+            throw new CategoryException("Null body provided in createCategory");
         }
 
         if (body.getName() == null || body.getName().isEmpty()) {
-            log.error("Invalid category name");
-            throw  CategoryException.MISSING_CATEGORY_NAME_EXCEPTION;
+            log.error("Invalid category name in createCategory");
+            throw CategoryException.MISSING_CATEGORY_NAME_EXCEPTION;
         }
 
         if (categoriesService.getCategoryByName(body.getName())) {
@@ -45,7 +42,7 @@ public class CategoriesController implements CategoryApi {
         }
         categoriesService.createCategory(body);
 
-        log.info("category created successfully: {}", body.getIdCategory());
+        log.info("Category created successfully: {}", body.getIdCategory());
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -53,20 +50,20 @@ public class CategoriesController implements CategoryApi {
     @Override
     public ResponseEntity<DeleteResponse> deleteCategory(Integer idCategory) {
         if (!isValidId(String.valueOf(idCategory))) {
-            log.error("Invalid category ID format: {}", idCategory);
-            throw UsersException.INVALID_USER_ID_EXCEPTION;
+            log.error("Invalid category ID format in deleteCategory: {}", idCategory);
+            throw CategoryException.INVALID_CATEGORY_ID_EXCEPTION;
         }
 
         Category deleteCategory = categoriesService.getCategoryById(idCategory);
 
         if (deleteCategory == null) {
-            log.error("Category with id {} not found", idCategory);
+            log.error("Category with id {} not found in deleteCategory", idCategory);
             throw CategoryException.NO_CATEGORY_FOUND_EXCEPTION;
         }
 
         try {
             categoriesService.deleteCategory(idCategory);
-            log.info("Employee with id {} deleted successfully", idCategory);
+            log.info("Category with id {} deleted successfully", idCategory);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             log.error("Error deleting category with id {}: {}", idCategory, e.getMessage());
@@ -83,8 +80,10 @@ public class CategoriesController implements CategoryApi {
             }
             CategoriesResponse response = new CategoriesResponse();
             response.setCategories(categoryList);
+            log.info("Successfully retrieved categories in getCategories");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (CategoryException e) {
+            log.error("Error retrieving categories in getCategories: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -93,21 +92,21 @@ public class CategoriesController implements CategoryApi {
     public ResponseEntity<Category> getCategoryById(Integer idCategory) {
         try {
             if (!isValidId(String.valueOf(idCategory))) {
-                log.error("Invalid Category ID format: {}", idCategory);
+                log.error("Invalid category ID format in getCategoryById: {}", idCategory);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
-            Category empleado = categoriesService.getCategoryById(idCategory);
+            Category category = categoriesService.getCategoryById(idCategory);
 
-            if (empleado == null) {
-                log.info("category with id {} not found", idCategory);
+            if (category == null) {
+                log.info("Category with id {} not found in getCategoryById", idCategory);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                log.info("category with id {} retrieved successfully", idCategory);
-                return new ResponseEntity<>(empleado, HttpStatus.OK);
+                log.info("Category with id {} retrieved successfully in getCategoryById", idCategory);
+                return new ResponseEntity<>(category, HttpStatus.OK);
             }
         } catch (Exception e) {
-            log.error("Error retrieving category with id {}: {}", idCategory, e.getMessage());
+            log.error("Error retrieving category with id {} in getCategoryById: {}", idCategory, e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -116,43 +115,39 @@ public class CategoriesController implements CategoryApi {
     public ResponseEntity<Void> updateCategory(Integer idCategory, Category body) {
         try {
             if (body == null) {
-                log.error("Null body provided");
+                log.error("Null body provided in updateCategory");
                 throw CategoryException.NULL_BODY_EXCEPTION;
             }
             if (body.getIdCategory() == null) {
-                log.error("category ID is required for updating");
+                log.error("Category ID is required for updating in updateCategory");
                 throw CategoryException.MISSING_CATEGORY_ID_EXCEPTION;
             }
 
-            Category existingEmployee = categoriesService.getCategoryById(idCategory);
-            if (existingEmployee == null) {
-                log.error("No category found with ID {}", idCategory);
+            Category existingCategory = categoriesService.getCategoryById(idCategory);
+            if (existingCategory == null) {
+                log.error("No category found with ID {} in updateCategory", idCategory);
                 throw CategoryException.NO_CATEGORY_FOUND_EXCEPTION;
             }
             HttpStatus status = categoriesService.updateCategory(idCategory, body);
-            log.info("Category with id {} updated successfully", idCategory);
+            log.info("Category with id {} updated successfully in updateCategory", idCategory);
             return new ResponseEntity<>(status);
 
         } catch (NumberFormatException e) {
-            log.error("Invalid ID format: {}", idCategory);
-            throw UsersException.INVALID_USER_ID_EXCEPTION;
+            log.error("Invalid ID format in updateCategory: {}", idCategory);
+            throw CategoryException.INVALID_CATEGORY_ID_EXCEPTION;
         } catch (Exception e) {
-            log.error("Error updating category with id {}: {}", idCategory, e.getMessage());
-            throw new UsersException("Error updating category");
+            log.error("Error updating category with id {} in updateCategory: {}", idCategory, e.getMessage());
+            throw new CategoryException("Error updating category");
         }
     }
-
-
-
 
     private boolean isValidId(String id) {
         try {
             Integer.parseInt(id);
             return true;
         } catch (NumberFormatException e) {
+            log.error("Invalid ID format in isValidId: {}", id);
             return false;
         }
     }
-
-
 }

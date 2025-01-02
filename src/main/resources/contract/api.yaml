@@ -1345,7 +1345,7 @@ components:
     # Estado de la orden (correcto - no tocar)
     OrderStatus:
       type: string
-      enum: ['PENDIENTE', 'PAGADO', 'CANCELADO']
+      enum: ['PENDIENTE', 'PAGADO', 'CANCELADO', 'CONFIRMADO']
       default: 'PENDIENTE'
 
     # Correcto (se supone)

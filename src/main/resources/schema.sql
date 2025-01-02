@@ -61,7 +61,7 @@ CREATE TABLE Orders (
     total_quantity INT NOT NULL, -- Cantidad total de productos
     total_price DECIMAL(10, 2) NOT NULL, -- Precio total del pedido
     date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    order_status ENUM('PENDIENTE', 'PAGADO', 'CANCELADO') DEFAULT 'PENDIENTE',
+    order_status ENUM('PENDIENTE', 'PAGADO', 'CANCELADO', 'CONFIRMADO') DEFAULT 'PENDIENTE',
     FOREIGN KEY (id_user) REFERENCES Users(id_user)
         ON DELETE CASCADE
         ON UPDATE CASCADE

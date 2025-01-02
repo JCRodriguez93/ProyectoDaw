@@ -136,4 +136,6 @@
 /* Personalizar el ancho de la barra de búsqueda */
 .search-bar input {
   max-width: 300px;  /* Ajusta este valor a tu preferencia */
+  border-radius: 8px; /* Bordes redondeados */
+
 }
