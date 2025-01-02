@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 <body>
-<section class="vh-100">
-    <div class="container-fluid h-100">
-        <div class="row h-100">
+<section class="vh-100 overflow-hidden">
+    <div class="container-fluid h-100 p-0">
+        <div class="row h-100 no-gutters">
             <!-- Formulario a la izquierda -->
-            <div class="col-md-6 d-flex align-items-center justify-content-center bg-light">
+            <div class="col-md-6 d-flex align-items-center justify-content-center bg-light h-100">
                 <div class="w-75">
                     <div class="text-center mb-4">
-                        <h1 class="fw-bold">Logo</h1>
+                        <img th:src="@{/img/indexlogo.png}"
+                             alt="Index image"
+                             class="img-fluid"
+                             style="width: 200px; height: 200px; object-fit: cover; object-position: center;">
                     </div>
                     <form th:action="@{/login}" method="post">
                         <h3 class="fw-normal mb-4 text-center">Log in</h3>
@@ -49,8 +52,8 @@
                 </div>
             </div>
             <!-- Imagen a la derecha -->
-            <div class="col-md-6 d-none d-md-block">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+            <div class="col-md-6 d-none d-md-block h-100 p-0">
+                <img th:src="@{/img/background-login.jpg}"
                      alt="Login image"
                      class="img-fluid h-100 w-100"
                      style="object-fit: cover; object-position: center;">

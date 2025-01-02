@@ -20,6 +20,9 @@ import java.time.LocalDateTime;
 @Table(name = "Orders")
 public class OrdersEntity {
 
+    //TODO: sería quizás interesante que la entidad pedidos tuviese un array de los productos que contiene el pedido
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_order")

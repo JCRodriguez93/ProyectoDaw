@@ -31,11 +31,11 @@ public class PagesController {
         return "index"; // Thymeleaf buscará src/main/resources/templates/index.html
     }
 
-//    @GetMapping("/login")
-//    public String getLoginPage() {
-//        // Retorna la página de login
-//        return "login"; // Thymeleaf buscará src/main/resources/templates/login.html
-//    }
+    @GetMapping("/login")
+    public String getLoginPage() {
+        // Retorna la página de login
+        return "login"; // Thymeleaf buscará src/main/resources/templates/login.html
+    }
 
 
 }
