@@ -32,3 +32,5 @@ spring:
       root: DEBUG
       org.springframework: DEBUG
       org.hibernate: DEBUG
+jwt:
+  expiration: 3600000

@@ -93,6 +93,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthResponse'
 
+  /auth/logout:
+    post:
+      summary: Cerrar sesión
+      tags:
+        - Authentication
+      operationId: logoutUser
+      responses:
+        "200":
+          description: Sesión cerrada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogoutResponse'
 
 
 
@@ -1517,6 +1530,20 @@ components:
       required:
         - email
         - password
+
+
+    LogoutResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: ""
+        message:
+          type: string
+          example: "Sesión cerrada exitosamente"
+      required:
+        - message
+
 
     AuthResponse:
       type: object
