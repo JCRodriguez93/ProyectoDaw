@@ -83,6 +83,8 @@ public class UsersService {
         return HttpStatus.OK;
     }
     public boolean existsByEmail(String email) { return repository.existsByEmail(email); }
+    public UsersEntity findByEmail(String email) { return repository.findByEmail(email); } // Añadir este método
+
     /**
      * Eliminar un usuario por su ID.
      * @param idUser ID del usuario a eliminar.

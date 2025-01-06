@@ -8,4 +8,7 @@ import org.springframework.data.repository.query.Param;
 public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
     @Query("SELECT CASE WHEN COUNT(u) > 0 THEN TRUE ELSE FALSE END FROM UsersEntity u WHERE u.email = :email")
     boolean existsByEmail(@Param("email") String email);
+
+
+    UsersEntity findByEmail(String email); // Añadir este método
 }
