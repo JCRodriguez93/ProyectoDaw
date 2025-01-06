@@ -108,6 +108,93 @@ paths:
                 $ref: '#/components/schemas/LogoutResponse'
 
 
+  /cart/{userId}:
+    get:
+      summary: Ver el carrito de compras
+      tags:
+        - Cart
+      operationId: viewCart
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del usuario
+      responses:
+        "200":
+          description: Productos en el carrito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderProductResponse'
+        "404":
+          description: Carrito no encontrado
+
+  /cart/add:
+    post:
+      summary: Añadir producto al carrito
+      tags:
+        - Cart
+      operationId: addProductToCart
+      requestBody:
+        description: Datos necesarios para añadir un producto al carrito
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddProductRequest'
+      responses:
+        "200":
+          description: Producto añadido al carrito
+        "400":
+          description: Datos inválidos
+
+  /cart/update:
+    put:
+      summary: Actualizar cantidad de producto en el carrito
+      tags:
+        - Cart
+      operationId: updateProductQuantity
+      requestBody:
+        description: Datos necesarios para actualizar la cantidad de un producto en el carrito
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProductRequest'
+      responses:
+        "200":
+          description: Cantidad de producto actualizada
+        "400":
+          description: Datos inválidos
+
+  /cart/remove:
+    delete:
+      summary: Eliminar producto del carrito
+      tags:
+        - Cart
+      operationId: removeProductFromCart
+      parameters:
+        - name: orderId
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: productId
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Producto eliminado del carrito
+        "400":
+          description: Datos inválidos
+
+
 
   # ----------------------------
 
@@ -1565,6 +1652,54 @@ components:
 
 
 
+
+    OrderProductResponse:
+      type: object
+      properties:
+        product:
+          $ref: '#/components/schemas/Products'
+        quantity:
+          type: integer
+          example: 2
+      required:
+        - product
+        - quantity
+    AddProductRequest:
+      type: object
+      properties:
+        orderId:
+          type: integer
+        productId:
+          type: integer
+        quantity:
+          type: integer
+      required:
+        - orderId
+        - productId
+        - quantity
+    UpdateProductRequest:
+      type: object
+      properties:
+        orderId:
+          type: integer
+        productId:
+          type: integer
+        quantity:
+          type: integer
+      required:
+        - orderId
+        - productId
+        - quantity
+    RemoveProductRequest:
+      type: object
+      properties:
+        orderId:
+          type: integer
+        productId:
+          type: integer
+      required:
+        - orderId
+        - productId
 
 
 

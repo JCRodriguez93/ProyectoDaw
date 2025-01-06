@@ -27,7 +27,7 @@ public class CategoryEntity {
     @Column(name = "description")
     private String description;
 
-    @ToString.Exclude
+    //TODO: la siguiente linea me resulta sospechosa de un fallo al obtener las entidades, obtiene las subentidades con el id_entity a null
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER ,  cascade = CascadeType.ALL)
     private List<SubcategoryEntity> subcategories;
 

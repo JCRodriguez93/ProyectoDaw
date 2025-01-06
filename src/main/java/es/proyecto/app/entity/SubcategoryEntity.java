@@ -19,8 +19,6 @@ public class SubcategoryEntity {
     private Integer idSubcategory;
 
 
-
-    @ToString.Exclude
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "id_category", referencedColumnName = "id_category", nullable = false)
     private CategoryEntity category;  // Relación con CategoryEntity
