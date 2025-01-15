@@ -39,7 +39,7 @@ public class UsersEntity {
 
     @ManyToOne
     @JoinColumn(name = "role_id", referencedColumnName = "id_role", nullable = false)
-    private RolesEntity roleId;  // Representa la relación con RoleEntity
+    private RolesEntity roleId;
 
 
 

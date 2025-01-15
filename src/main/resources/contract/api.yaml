@@ -120,7 +120,6 @@ paths:
           required: true
           schema:
             type: integer
-          description: ID del usuario
       responses:
         "200":
           description: Productos en el carrito
@@ -129,70 +128,37 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OrderProductResponse'
+                  $ref: '#/components/schemas/CartProductResponse'
         "404":
           description: Carrito no encontrado
 
-  /cart/add:
     post:
-      summary: Añadir producto al carrito
+      summary: Gestionar productos en el carrito (añadir, modificar, eliminar)
       tags:
         - Cart
-      operationId: addProductToCart
-      requestBody:
-        description: Datos necesarios para añadir un producto al carrito
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AddProductRequest'
-      responses:
-        "200":
-          description: Producto añadido al carrito
-        "400":
-          description: Datos inválidos
-
-  /cart/update:
-    put:
-      summary: Actualizar cantidad de producto en el carrito
-      tags:
-        - Cart
-      operationId: updateProductQuantity
-      requestBody:
-        description: Datos necesarios para actualizar la cantidad de un producto en el carrito
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdateProductRequest'
-      responses:
-        "200":
-          description: Cantidad de producto actualizada
-        "400":
-          description: Datos inválidos
-
-  /cart/remove:
-    delete:
-      summary: Eliminar producto del carrito
-      tags:
-        - Cart
-      operationId: removeProductFromCart
+      operationId: manageCart
       parameters:
-        - name: orderId
-          in: query
+        - name: userId
+          in: path
           required: true
           schema:
             type: integer
-        - name: productId
-          in: query
-          required: true
-          schema:
-            type: integer
+      requestBody:
+        description: Datos necesarios para gestionar productos en el carrito
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManageCartRequest'
       responses:
         "200":
-          description: Producto eliminado del carrito
+          description: Carrito actualizado
         "400":
           description: Datos inválidos
+        "404":
+          description: Producto no encontrado
+
+
 
 
 
@@ -1475,6 +1441,47 @@ components:
         - idProduct
         - quantity
 
+
+    Cart:
+      type: object
+      properties:
+        idCart:
+          type: integer
+          format: int32
+          description: Identificador único del carrito
+        idUser:
+          type: integer
+          format: int32
+          description: Identificador único del usuario
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              idProduct:
+                type: integer
+                format: int32
+                description: Identificador único del producto
+              quantity:
+                type: integer
+                format: int32
+                description: Cantidad de producto en el carrito
+      required:
+        - idCart
+        - idUser
+        - products
+
+
+
+
+
+
+
+
+
+
+
+
     # Listas de objetos
 
     UserListResponse:
@@ -1570,9 +1577,45 @@ components:
 
 
 
+    ManageCartRequest:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          description: ID del producto que se gestionará en el carrito.
+        quantity:
+          type: integer
+          description: Cantidad del producto. Obligatorio para `add` y `modify`.
+          example: 1
+        action:
+          type: string
+          enum: [add, modify, remove]
+          description: Acción a realizar en el carrito.
+          example: "add"
+      required:
+        - product_id
+        - action
 
-
-
+    CartProductResponse:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          description: ID del producto.
+        product_name:
+          type: string
+          description: Nombre del producto.
+        quantity:
+          type: integer
+          description: Cantidad de ese producto en el carrito.
+        price:
+          type: string
+          format: bigDecimal
+          description: Precio unitario del producto.
+        total_price:
+          type: string
+          format: bigDecimal
+          description: Precio total basado en la cantidad.
 
 
 
@@ -1664,42 +1707,67 @@ components:
       required:
         - product
         - quantity
+
+
+
     AddProductRequest:
       type: object
       properties:
-        orderId:
+        id_user:
           type: integer
-        productId:
+          description: ID del usuario
+        id_product:
           type: integer
+          description: ID del producto
         quantity:
           type: integer
-      required:
-        - orderId
-        - productId
-        - quantity
+          description: Cantidad del producto
+          minimum: 1
+
+
+
+
+
     UpdateProductRequest:
       type: object
       properties:
-        orderId:
+        id_cart:
           type: integer
-        productId:
+          description: ID del carrito
+        id_user:
           type: integer
+          description: ID del usuario
+        id_product:
+          type: integer
+          description: ID del producto
         quantity:
           type: integer
+          description: Nueva cantidad del producto
+          minimum: 1
       required:
-        - orderId
-        - productId
+        - id_cart
+        - id_user
+        - id_product
         - quantity
-    RemoveProductRequest:
-      type: object
-      properties:
-        orderId:
-          type: integer
-        productId:
-          type: integer
-      required:
-        - orderId
-        - productId
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -83,7 +83,7 @@ public class UsersService {
         return HttpStatus.OK;
     }
     public boolean existsByEmail(String email) { return repository.existsByEmail(email); }
-    public UsersEntity findByEmail(String email) { return repository.findByEmail(email); } // Añadir este método
+    public UsersEntity findByEmail(String email) { return repository.findByEmail(email); }
 
     /**
      * Eliminar un usuario por su ID.

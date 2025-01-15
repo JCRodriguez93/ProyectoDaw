@@ -8,6 +8,7 @@ public class UsersException extends RuntimeException {
     public static final UsersException MISSING_USER_NAME_EXCEPTION = new UsersException("User name is required for updating");
     public static final UsersException MISSING_ID_EXCEPTION = new UsersException("User ID is required for updating");
     public static final UsersException DUPLICATE_EMAIL_EXCEPTION = new UsersException("Duplicate email is not allowed");
+    public static final UsersException ERROR_UPDATING_USER_EXCEPTION = new UsersException("Error updating user");
 
     public UsersException(String message) {
         super(message);

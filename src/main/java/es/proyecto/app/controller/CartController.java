@@ -1,62 +1,83 @@
 package es.proyecto.app.controller;
 
-import es.proyecto.app.entity.OrderProductEntity;
-import es.proyecto.app.entity.OrdersEntity;
-import es.proyecto.app.service.OrdersService;
-import es.proyecto.app.mapper.ProductMapper;
+import es.proyecto.app.service.CartService;
 import es.swagger.codegen.api.CartApi;
-import es.swagger.codegen.models.AddProductRequest;
-import es.swagger.codegen.models.OrderProductResponse;
-import es.swagger.codegen.models.UpdateProductRequest;
+import es.swagger.codegen.models.CartProductResponse;
+import es.swagger.codegen.models.ManageCartRequest;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import java.util.List;
-import java.util.stream.Collectors;
 
-
-/*TODO: ver por qué postman no me muestra el carrito perteneciente a un usuario, siempre sale vacio.
-en la base de datos tampoco se añade el registro*/
-
+@Slf4j
 @RestController
 public class CartController implements CartApi {
 
     @Autowired
-    private OrdersService ordersService;
+    private CartService cartService;
+    private static final Logger logger = LoggerFactory.getLogger(CartController.class);
 
-    @Autowired
-    private ProductMapper productMapper;
 
-    @Override
-    public ResponseEntity<Void> addProductToCart(AddProductRequest body) {
-        ordersService.addProductToOrder(body.getOrderId(), body.getProductId(), body.getQuantity());
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Void> manageCart(Integer userId, ManageCartRequest body) {
+        logger.info("manageCart called with userId: {} and action: {}", userId, body.getAction());
+
+        if (body.getAction() == null) {
+            logger.error("Action is null");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+
+        boolean result;
+        switch (body.getAction()) {
+            case ADD:
+                logger.info("Attempting to add product to cart: productId={}, quantity={}", body.getProductId(), body.getQuantity());
+                result = cartService.addProductToCart(userId, body.getProductId(), body.getQuantity());
+                if (result) {
+                    logger.info("Product added successfully");
+                    return ResponseEntity.ok().build();
+                } else {
+                    logger.error("Failed to add product to cart");
+                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+                }
+            case MODIFY:
+                logger.info("Attempting to modify product in cart: productId={}, quantity={}", body.getProductId(), body.getQuantity());
+                result = cartService.modifyProductInCart(userId, body.getProductId(), body.getQuantity());
+                if (result) {
+                    logger.info("Product modified successfully");
+                    return ResponseEntity.ok().build();
+                } else {
+                    logger.error("Failed to modify product in cart");
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                }
+            case REMOVE:
+                logger.info("Attempting to remove product from cart: productId={}, quantity={}", body.getProductId(), body.getQuantity());
+                result = cartService.removeProductFromCart(userId, body.getProductId(), body.getQuantity());
+                if (result) {
+                    logger.info("Product removed successfully");
+                    return ResponseEntity.ok().build();
+                } else {
+                    logger.error("Failed to remove product from cart");
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+                }
+            default:
+                logger.error("Invalid action: {}", body.getAction());
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+        }
+
     }
 
-    @Override
-    public ResponseEntity<Void> removeProductFromCart(Integer orderId, Integer productId) {
-        ordersService.removeProductFromOrder(orderId, productId);
-        return ResponseEntity.ok().build();
-    }
-
-    @Override public ResponseEntity<Void> updateProductQuantity(UpdateProductRequest body) {
-        ordersService.updateProductQuantity(body.getOrderId(), body.getProductId(), body.getQuantity());
-        return ResponseEntity.ok().build(); }
 
     @Override
-    public ResponseEntity<List<OrderProductResponse>> viewCart(Integer userId) {
-        OrdersEntity currentOrder = ordersService.findCurrentOrderByUserId(userId);
-        List<OrderProductEntity> orderProducts = ordersService.findByOrderId(currentOrder.getIdOrder());
-        List<OrderProductResponse> response = orderProducts.stream()
-                .map(op -> {
-                    OrderProductResponse orderProductResponse = new OrderProductResponse();
-                    orderProductResponse.setProduct(productMapper.toApiDomain(op.getIdProduct()));
-                    orderProductResponse.setQuantity(op.getQuantity());
-                    return orderProductResponse;
-                })
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(response);
+    public ResponseEntity<List<CartProductResponse>> viewCart(Integer userId) {
+        List<CartProductResponse> cartProducts = cartService.viewCart(userId);
+        if (cartProducts.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(cartProducts);
     }
 }

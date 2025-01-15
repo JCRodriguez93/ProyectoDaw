@@ -21,7 +21,8 @@ import java.util.Optional;
 @Service
 public class CategoriesService {
 
-    private final CategoryMapper mapper = CategoryMapper.INSTANCE;
+    @Autowired
+    private CategoryMapper mapper; //sin el INSTANCE ya aparecen las subcategorias en vez de null.
 
     @Autowired
     private CategoryRepository categoryRepository;
