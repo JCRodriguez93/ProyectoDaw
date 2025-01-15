@@ -22,15 +22,12 @@ public class OrderProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_order", referencedColumnName = "id_order", nullable = false)
-    private OrdersEntity idOrder;  // Relación con OrderEntity
+    private OrdersEntity idOrder;
 
     @ManyToOne
     @JoinColumn(name = "id_product", referencedColumnName = "id_product", nullable = false)
-    private ProductsEntity idProduct;  // Relación con ProductEntity
+    private ProductsEntity idProduct;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
-
-
-
 }

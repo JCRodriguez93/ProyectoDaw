@@ -3,9 +3,7 @@ package es.proyecto.app.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.validation.annotation.Validated;
-
 import java.util.List;
-import java.util.Set;
 
 @Validated
 @Entity
@@ -27,8 +25,10 @@ public class CategoryEntity {
     @Column(name = "description")
     private String description;
 
-    @ToString.Exclude
     @OneToMany(mappedBy = "category", fetch = FetchType.EAGER ,  cascade = CascadeType.ALL)
     private List<SubcategoryEntity> subcategories;
+
+
+
 
 }

@@ -39,4 +39,5 @@ public class ProductsEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
+    //TODO: ver como le paso la imagen a los productos para que no den null (no importante)
 }

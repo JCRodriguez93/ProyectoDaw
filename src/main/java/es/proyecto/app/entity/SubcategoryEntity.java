@@ -19,11 +19,9 @@ public class SubcategoryEntity {
     private Integer idSubcategory;
 
 
-
-    @ToString.Exclude
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "id_category", referencedColumnName = "id_category", nullable = false)
-    private CategoryEntity category;  // Relación con CategoryEntity
+    private CategoryEntity category;
 
 
     @Column(name = "name", nullable = false)
@@ -31,6 +29,7 @@ public class SubcategoryEntity {
 
     @Column(name = "description")
     private String description;
+
 
 
 }

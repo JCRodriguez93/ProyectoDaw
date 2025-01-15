@@ -8,6 +8,7 @@ public class SubcategoryException extends RuntimeException {
     public static final SubcategoryException MISSING_SUBCATEGORY_NAME_EXCEPTION = new SubcategoryException("Subcategory name is required");
     public static final SubcategoryException MISSING_SUBCATEGORY_ID_EXCEPTION = new SubcategoryException("Subcategory ID is required");
     public static final SubcategoryException DUPLICATE_SUBCATEGORY_NAME_EXCEPTION = new SubcategoryException("Duplicate subcategory name is not allowed");
+    public static final SubcategoryException ERROR_UPDATING_SUBCATEGORY_EXCEPTION = new SubcategoryException("Error updating subcategory");
 
     public SubcategoryException(String message) {
         super(message);
