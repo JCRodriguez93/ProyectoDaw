@@ -13,15 +13,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
-  sql:
-    init:
-      platform: mysql
-      mode: always
-      schema-locations: classpath:schema.sql
-      data-locations: classpath:data.sql
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
   springdoc:
     swagger-ui:
       path: /swagger-ui.html

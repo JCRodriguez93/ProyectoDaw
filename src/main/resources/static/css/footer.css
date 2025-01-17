@@ -1,9 +1,0 @@
-.footer-link {
-    text-decoration: none;
-    color: white; /* Asegura que el enlace sea blanco inicialmente */
-    transition: color 0.3s ease;
-  }
-
-  .footer-link:hover {
-    color: #666060; /* Cambia a un color rojo en hover */
-  }
