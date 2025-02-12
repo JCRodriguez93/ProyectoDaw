@@ -130,7 +130,7 @@ public class UsersController implements UsersApi {
             User existingUser = usersService.getUserById(idUser);
             if (existingUser == null) {
                 logger.error("No user found with ID {} in updateUser", idUser);
-                throw UsersException.NO_USER_FOUND_EXCEPTION;
+                throw UsersException.NO_USER_FOUND_EXCEPTION;  // Cambia a esta excepción
             }
             HttpStatus status = usersService.updateUser(idUser, body);
             logger.info("User with id {} updated successfully in updateUser", idUser);
@@ -141,9 +141,10 @@ public class UsersController implements UsersApi {
             throw UsersException.INVALID_USER_ID_EXCEPTION;
         } catch (Exception e) {
             logger.error("Error updating user with id {} in updateUser: {}", idUser, e.getMessage());
-            throw  UsersException.ERROR_UPDATING_USER_EXCEPTION;
+            throw UsersException.ERROR_UPDATING_USER_EXCEPTION;
         }
     }
+
 
     private boolean isValidId(String id) {
         try {

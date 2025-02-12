@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 
 
-// Acordarse de dejar solamente el @SpringBootApplication cuando deje las pruebas.
-
 @SpringBootApplication()
 public class AppApplication {
 

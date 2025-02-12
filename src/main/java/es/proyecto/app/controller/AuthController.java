@@ -69,6 +69,18 @@ public class AuthController implements AuthApi {
     @Override
     public ResponseEntity<AuthResponse> registerUser(RegisterRequest body) {
         logger.info("Attempting to register user with email: {}", body.getEmail());
+
+        // Validación de datos nulos o vacíos
+        if (body == null || body.getEmail() == null || body.getPassword() == null) {
+            logger.error("Registration failed due to null or empty user data");
+            AuthResponse response = new AuthResponse();
+            response.setError("Los datos del usuario no pueden estar vacíos");
+            response.setToken("");
+            response.setMessage("Los datos del usuario no pueden estar vacíos");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
+        // Verificamos si el email ya está registrado
         if (usersService.existsByEmail(body.getEmail())) {
             logger.error("Email already in use: {}", body.getEmail());
             AuthResponse response = new AuthResponse();
@@ -80,6 +92,14 @@ public class AuthController implements AuthApi {
 
         // Obtener el rol "USER" utilizando RolesService
         RolesEntity userRole = rolesService.getRoleById(1);
+        if (userRole == null) {
+            logger.error("Role with ID 1 not found");
+            AuthResponse response = new AuthResponse();
+            response.setError("Rol de usuario no encontrado");
+            response.setToken("");
+            response.setMessage("Rol de usuario no encontrado");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
 
         // Crear User
         User newUser = new User()
