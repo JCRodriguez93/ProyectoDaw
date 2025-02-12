@@ -7,6 +7,8 @@ import io.jsonwebtoken.security.Keys;
 import javax.crypto.SecretKey;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class JwtTokenProvider {
@@ -15,6 +17,9 @@ public class JwtTokenProvider {
 
     @Value("${jwt.expiration}")
     private long jwtExpiration;
+
+    // Simulamos un almacenamiento en memoria para tokens invalidados
+    private Set<String> invalidatedTokens = new HashSet<>();
 
     public String generateToken(String email) {
         return Jwts.builder()
@@ -38,4 +43,10 @@ public class JwtTokenProvider {
         return Jwts.parserBuilder()
                 .setSigningKey(jwtSecret).build()
                 .parseClaimsJws(token).getBody().getSubject(); }
+
+
+    // Método para invalidar el token
+    public void invalidateToken(String token) {
+        invalidatedTokens.add(token);
+    }
 }
