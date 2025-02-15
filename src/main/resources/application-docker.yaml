@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/dawproject
+    username: root
+    password: 1234
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
