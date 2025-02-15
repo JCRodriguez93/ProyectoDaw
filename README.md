@@ -176,8 +176,8 @@ Permite generar API's y Modelos en base al fichero en  `/contract/api.yaml`. Se 
 ```
 
 # Endpoints para la gestión del microservicio
-
-## Endpoint: `/auth/register`
+<details>
+<summary>Endpoint: /auth/register</summary>
 
 ### Método: `POST`.
 
@@ -209,8 +209,10 @@ Este endpoint se utiliza para registrar un nuevo usuario en el sistema.
 - **500**: Error interno del servidor.
   - **Tipo de contenido**: `application/json`
   - **Esquema**: `AuthResponse` (definido en los componentes del esquema)
+</details>
 
-## Endpoint: `/auth/login`
+<details>
+<summary>Endpoint: /auth/login</summary>
 
 ### Método: `POST`.
 
@@ -246,7 +248,12 @@ Este endpoint se utiliza para iniciar sesión en el sistema.
   - **Tipo de contenido**: `application/json`
   - **Esquema**: `AuthResponse` (definido en los componentes del esquema)
 
-## Endpoint: `/auth/logout`
+</details>
+
+
+
+<details>
+<summary>Endpoint: /auth/logout</summary>
 
 ### Método: `POST`.
 
@@ -264,5 +271,5 @@ Este endpoint se utiliza para cerrar sesión en el sistema.
   - **Tipo de contenido**: `application/json`
   - **Esquema**: `LogoutResponse` (definido en los componentes del esquema)
  
-
+</details>
 ## (he de continuar con la descripción).
