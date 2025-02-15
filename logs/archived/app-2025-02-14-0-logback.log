@@ -1,0 +1,189 @@
+2025-02-14 22:53:12,150 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.AppApplicationTests]: AppApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:12,322 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.AppApplicationTests
+2025-02-14 22:53:12,657 INFO [main] org.springframework.boot.devtools.restart.RestartApplicationListener: Restart disabled due to context in which it is running
+2025-02-14 22:53:13,003 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2025-02-14 22:53:13,044 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AppApplicationTests using Java 17.0.13 with PID 1708 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-14 22:53:13,046 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-14 22:53:13,046 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-14 22:53:14,738 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 22:53:14,901 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 149 ms. Found 8 JPA repository interfaces.
+2025-02-14 22:53:15,822 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-02-14 22:53:16,570 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c76fce4
+2025-02-14 22:53:16,576 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-02-14 22:53:16,750 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-14 22:53:16,926 INFO [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-14 22:53:17,017 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-14 22:53:17,606 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-14 22:53:17,700 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-14 22:53:17,701 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-14 22:53:19,175 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-14 22:53:19,178 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:19,750 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-14 22:53:20,963 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14 22:53:21,027 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 767cefc0-37c9-4d6f-896d-de5712f73f6e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-14 22:53:21,046 INFO [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-14 22:53:22,521 INFO [main] org.springframework.boot.StartupInfoLogger: Started AppApplicationTests in 9.886 seconds (process running for 12.113)
+2025-02-14 22:53:23,207 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:23,250 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.AuthControllerTest
+2025-02-14 22:53:23,260 INFO [main] org.springframework.boot.devtools.restart.RestartApplicationListener: Restart disabled due to context in which it is running
+2025-02-14 22:53:23,293 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 1708 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-14 22:53:23,294 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-14 22:53:23,294 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-14 22:53:23,744 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 22:53:23,786 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 42 ms. Found 8 JPA repository interfaces.
+2025-02-14 22:53:24,457 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Starting...
+2025-02-14 22:53:24,515 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ecf9602
+2025-02-14 22:53:24,516 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Start completed.
+2025-02-14 22:53:24,574 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-14 22:53:24,588 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-14 22:53:24,633 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-14 22:53:24,637 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-14 22:53:24,638 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-14 22:53:24,990 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-14 22:53:24,991 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:25,397 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14 22:53:25,425 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 85392479-b61b-4611-a04f-b4978c27dc32
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-14 22:53:25,428 INFO [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-14 22:53:25,893 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 2.635 seconds (process running for 15.485)
+2025-02-14 22:53:25,947 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
+2025-02-14 22:53:26,036 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
+2025-02-14 22:53:26,047 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
+2025-02-14 22:53:26,059 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
+2025-02-14 22:53:26,059 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
+2025-02-14 22:53:26,073 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
+2025-02-14 22:53:26,074 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
+2025-02-14 22:53:26,085 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
+2025-02-14 22:53:26,086 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
+2025-02-14 22:53:26,097 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
+2025-02-14 22:53:26,098 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
+2025-02-14 22:53:26,116 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
+2025-02-14 22:53:26,119 INFO [main] es.proyecto.app.controller.AuthController: User registered successfully with email: newuser@test.com
+2025-02-14 22:53:26,288 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
+2025-02-14 22:53:26,290 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
+2025-02-14 22:53:26,291 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
+2025-02-14 22:53:26,298 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
+2025-02-14 22:53:26,299 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
+2025-02-14 22:53:26,300 ERROR [main] es.proyecto.app.controller.CartController: Failed to add product to cart
+2025-02-14 22:53:26,306 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
+2025-02-14 22:53:26,307 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
+2025-02-14 22:53:26,308 INFO [main] es.proyecto.app.controller.CartController: Product modified successfully
+2025-02-14 22:53:26,313 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: null
+2025-02-14 22:53:26,314 ERROR [main] es.proyecto.app.controller.CartController: Action is null
+2025-02-14 22:53:26,320 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
+2025-02-14 22:53:26,321 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
+2025-02-14 22:53:26,323 ERROR [main] es.proyecto.app.controller.CartController: Failed to modify product in cart
+2025-02-14 22:53:26,328 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
+2025-02-14 22:53:26,329 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
+2025-02-14 22:53:26,331 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
+2025-02-14 22:53:26,339 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
+2025-02-14 22:53:26,340 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
+2025-02-14 22:53:26,341 INFO [main] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-14 22:53:26,358 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.CategoriesControllerTest]: CategoriesControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:26,365 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.CategoriesControllerTest
+2025-02-14 22:53:26,449 ERROR [main] es.proyecto.app.controller.CategoriesController: Category with id 999 not found in deleteCategory
+2025-02-14 22:53:26,463 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 updated successfully in updateCategory
+2025-02-14 22:53:26,476 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 deleted successfully
+2025-02-14 22:53:26,491 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name in createCategory
+2025-02-14 22:53:26,502 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name in createCategory
+2025-02-14 22:53:26,518 ERROR [main] es.proyecto.app.controller.CategoriesController: No category found with ID 999 in updateCategory
+2025-02-14 22:53:26,519 ERROR [main] es.proyecto.app.controller.CategoriesController: Error updating category with id 999 in updateCategory: No category found with the specified ID
+2025-02-14 22:53:26,529 INFO [main] es.proyecto.app.controller.CategoriesController: Category created successfully: 1
+2025-02-14 22:53:26,541 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.OrdersControllerTest]: OrdersControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:26,546 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.OrdersControllerTest
+2025-02-14 22:53:26,616 INFO [main] es.proyecto.app.controller.OrdersController: Order created successfully: 1
+2025-02-14 22:53:26,647 INFO [main] es.proyecto.app.controller.OrdersController: Successfully fetched all orders in getOrders
+2025-02-14 22:53:26,660 ERROR [main] es.proyecto.app.controller.OrdersController: Invalid order status provided: null
+2025-02-14 22:53:26,674 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 deleted successfully
+2025-02-14 22:53:26,686 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 retrieved successfully in getOrderById
+2025-02-14 22:53:26,697 ERROR [main] es.proyecto.app.controller.OrdersController: Null body provided in createOrder
+2025-02-14 22:53:26,706 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 updated successfully in updateOrder
+2025-02-14 22:53:26,716 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.ProductsControllerTest]: ProductsControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:26,721 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.ProductsControllerTest
+2025-02-14 22:53:26,774 ERROR [main] es.proyecto.app.controller.ProductsController: Invalid product name in createProduct
+2025-02-14 22:53:26,786 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 retrieved successfully in getProductById
+2025-02-14 22:53:26,796 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 deleted successfully in deleteProduct
+2025-02-14 22:53:26,819 INFO [main] es.proyecto.app.controller.ProductsController: Product created successfully: 1
+2025-02-14 22:53:26,834 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 updated successfully in updateProduct
+2025-02-14 22:53:26,844 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.RolesControllerTest]: RolesControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:26,848 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.RolesControllerTest
+2025-02-14 22:53:26,859 ERROR [main] es.proyecto.app.controller.RolesController: Role with id 1 not found in putRoleId
+2025-02-14 22:53:26,860 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1 in putRoleId: No role found with the specified ID
+2025-02-14 22:53:26,871 ERROR [main] es.proyecto.app.controller.RolesController: Invalid ID format in isValidId: invalid
+2025-02-14 22:53:26,871 ERROR [main] es.proyecto.app.controller.RolesController: Invalid role ID format in putRoleId: invalid
+2025-02-14 22:53:26,872 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id invalid in putRoleId: Invalid ID provided for the role
+2025-02-14 22:53:26,889 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1 in putRoleId: Error updating role
+2025-02-14 22:53:26,901 INFO [main] es.proyecto.app.controller.RolesController: Role with id 1 updated successfully in putRoleId
+2025-02-14 22:53:26,918 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.SubcategoriesControllerTest]: SubcategoriesControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:26,923 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.SubcategoriesControllerTest
+2025-02-14 22:53:27,004 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name in createSubcategory
+2025-02-14 22:53:27,019 INFO [main] es.proyecto.app.controller.SubcategoriesController: Subcategory created successfully: null
+2025-02-14 22:53:27,032 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name in createSubcategory
+2025-02-14 22:53:27,043 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.Controller.UsersControllerTest]: UsersControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:27,047 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.Controller.UsersControllerTest
+2025-02-14 22:53:27,060 ERROR [main] es.proyecto.app.controller.UsersController: Invalid user name in createUser
+2025-02-14 22:53:27,071 INFO [main] es.proyecto.app.controller.UsersController: User created successfully: 1
+2025-02-14 22:53:27,082 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 updated successfully in updateUser
+2025-02-14 22:53:27,097 ERROR [main] es.proyecto.app.controller.UsersController: Duplicate email in createUser
+2025-02-14 22:53:27,116 ERROR [main] es.proyecto.app.controller.UsersController: User with id 1 not found in deleteUser
+2025-02-14 22:53:27,129 ERROR [main] es.proyecto.app.controller.UsersController: User ID is required for updating in updateUser
+2025-02-14 22:53:27,130 ERROR [main] es.proyecto.app.controller.UsersController: Error updating user with id 1 in updateUser: User ID is required for updating
+2025-02-14 22:53:27,142 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 not found in getUserById
+2025-02-14 22:53:27,152 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 retrieved successfully in getUserById
+2025-02-14 22:53:27,166 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 deleted successfully in deleteUser
+2025-02-14 22:53:27,190 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.endpointPerformance.MockMvcPerformanceTest]: MockMvcPerformanceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:27,237 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.endpointPerformance.MockMvcPerformanceTest
+2025-02-14 22:53:27,251 INFO [main] org.springframework.boot.devtools.restart.RestartApplicationListener: Restart disabled due to context in which it is running
+2025-02-14 22:53:27,313 INFO [main] org.springframework.boot.StartupInfoLogger: Starting MockMvcPerformanceTest using Java 17.0.13 with PID 1708 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-14 22:53:27,315 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-14 22:53:27,316 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-14 22:53:28,131 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-14 22:53:28,203 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 70 ms. Found 8 JPA repository interfaces.
+2025-02-14 22:53:28,432 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Starting...
+2025-02-14 22:53:28,463 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63ce19a
+2025-02-14 22:53:28,464 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Start completed.
+2025-02-14 22:53:28,491 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-14 22:53:28,498 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-14 22:53:28,517 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-14 22:53:28,519 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-14 22:53:28,520 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-14 22:53:28,721 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-14 22:53:28,723 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:28,993 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-14 22:53:29,008 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 6ac3194c-bc51-42b7-8258-3d1b225b2ec4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-14 22:53:29,010 INFO [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-14 22:53:29,334 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2025-02-14 22:53:29,335 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2025-02-14 22:53:29,340 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 3 ms
+2025-02-14 22:53:29,356 INFO [main] org.springframework.boot.StartupInfoLogger: Started MockMvcPerformanceTest in 2.106 seconds (process running for 18.947)
+2025-02-14 22:53:29,749 INFO [main] es.proyecto.app.controller.SubcategoriesController: Successfully fetched all subcategories in getSubcategories
+2025-02-14 22:53:29,985 INFO [main] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories in getCategories
+2025-02-14 22:53:30,014 INFO [main] es.proyecto.app.controller.RolesController: Successfully fetched all roles in getRoles
+2025-02-14 22:53:30,060 INFO [main] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-14 22:53:30,120 INFO [main] es.proyecto.app.controller.ProductsController: Successfully fetched all products in getProducts
+2025-02-14 22:53:30,161 INFO [main] es.proyecto.app.controller.OrdersController: Successfully fetched all orders in getOrders
+2025-02-14 22:53:30,183 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [es.proyecto.app.mapper.CategoryMapperTest]: CategoryMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-14 22:53:30,205 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration es.proyecto.app.AppApplication for test class es.proyecto.app.mapper.CategoryMapperTest
+2025-02-14 22:53:30,330 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:30,335 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-02-14 22:53:30,349 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-02-14 22:53:30,355 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:30,356 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown initiated...
+2025-02-14 22:53:30,396 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-2 - Shutdown completed.
+2025-02-14 22:53:30,401 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-14 22:53:30,402 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown initiated...
+2025-02-14 22:53:30,470 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-3 - Shutdown completed.
