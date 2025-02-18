@@ -91,7 +91,7 @@ public class AuthController implements AuthApi {
         }
 
         // Obtener el rol "USER" utilizando RolesService
-        RolesEntity userRole = rolesService.getRoleById(1);
+        RolesEntity userRole = rolesService.getRoleById(body.getRoleId());
         if (userRole == null) {
             logger.error("Role with ID 1 not found");
             AuthResponse response = new AuthResponse();
@@ -107,7 +107,7 @@ public class AuthController implements AuthApi {
                 .userSurname(body.getUserSurname())
                 .userBirth(body.getUserBirth())
                 .email(body.getEmail())
-                .password(passwordEncoder.encode(body.getPassword()))
+                .password(body.getPassword())
                 .roleId(userRole.getIdRole());
 
         usersService.createUser(newUser);

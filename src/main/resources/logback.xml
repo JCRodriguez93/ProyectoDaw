@@ -20,14 +20,21 @@
         </rollingPolicy>
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="File" />
-        <appender-ref ref="Console" />
-    </root>
+    <!-- Reducir logs innecesarios -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
 
-    <logger name="es.proyecto.app" level="DEBUG" additivity="false">
+    <!-- Mantener logs de mi aplicación -->
+    <logger name="es.proyecto.app" level="INFO" additivity="false">
         <appender-ref ref="File" />
         <appender-ref ref="Console" />
     </logger>
+
+    <!-- Mostrar solo advertencias y errores globales -->
+    <root level="WARN">
+        <appender-ref ref="File" />
+        <appender-ref ref="Console" />
+    </root>
 
 </configuration>

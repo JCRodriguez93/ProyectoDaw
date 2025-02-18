@@ -20,8 +20,7 @@ spring:
       path: /v3/api-docs
   logging:
     level:
-      root: DEBUG
-      org.springframework: DEBUG
-      org.hibernate: DEBUG
+      root: WARN
+      es.proyecto.app: INFO
 jwt:
   expiration: 3600000

@@ -10,6 +10,7 @@ import es.swagger.codegen.models.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -26,8 +27,8 @@ public class UsersService {
 
     private final UsersMapper mapper = UsersMapper.INSTANCE;
 
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
+    @Autowired
+   private PasswordEncoder passwordEncoder;
     @Autowired
     private UsersRepository repository;
     @Autowired
@@ -60,6 +61,7 @@ public class UsersService {
     public void createUser(User user) {
 
         UsersEntity entity = mapper.toEntity(user);
+        entity.setPassword(passwordEncoder.encode(user.getPassword()));
         repository.save(entity);
     }
 
@@ -71,15 +73,26 @@ public class UsersService {
      */
     public HttpStatus updateUser(Integer idUser, User user) {
         Optional<RolesEntity> role = rolesRepository.findById(user.getRoleId());
-        if(role.isEmpty()) {
+        if (role.isEmpty()) {
             throw new UsersException("User role not found.");
         }
+
         Optional<UsersEntity> existingUser = repository.findById(idUser);
-        if(existingUser.isEmpty()){
+        if (existingUser.isEmpty()) {
             return HttpStatus.NOT_FOUND;
         }
-        user.setIdUser(idUser);
-        repository.save(mapper.toEntity(user));
+
+        UsersEntity entityToUpdate = mapper.toEntity(user);
+        entityToUpdate.setIdUser(idUser);
+
+        // Encriptar la nueva contraseña solo si se ha proporcionado
+        if (user.getPassword() != null && !user.getPassword().isEmpty()) {
+            entityToUpdate.setPassword(passwordEncoder.encode(user.getPassword()));
+        } else {
+            entityToUpdate.setPassword(existingUser.get().getPassword()); // Mantener la contraseña actual
+        }
+
+        repository.save(entityToUpdate);
         return HttpStatus.OK;
     }
     public boolean existsByEmail(String email) { return repository.existsByEmail(email); }
