@@ -100,15 +100,12 @@ public class UsersService {
 
     /**
      * Eliminar un usuario por su ID.
+     *
      * @param idUser ID del usuario a eliminar.
-     * @return true si el usuario fue eliminado, false si no se encontró.
      */
-    public boolean deleteUser(Integer idUser) {
+    public void deleteUser(Integer idUser) {
         if (repository.existsById(idUser)) {
             repository.deleteById(idUser);
-            return true;
-        } else {
-            return false;
         }
     }
 }

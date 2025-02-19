@@ -29,11 +29,11 @@ public class ProductsController implements ProductsApi {
     @Override
     public ResponseEntity<Products> createProduct(Products body) {
         if (body == null) {
-            logger.error("Null body provided in createProduct");
+            logger.error("Null body provided");
             throw ProductException.NULL_BODY_EXCEPTION;
         }
         if (body.getName() == null || body.getName().isEmpty()) {
-            logger.error("Invalid product name in createProduct");
+            logger.error("Invalid product name");
             throw ProductException.MISSING_PRODUCT_NAME_EXCEPTION;
         }
 
@@ -43,26 +43,27 @@ public class ProductsController implements ProductsApi {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+
     @Override
     public ResponseEntity<Void> deleteProduct(Integer idProduct) {
         if (!isValidId(String.valueOf(idProduct))) {
-            logger.error("Invalid product ID format in deleteProduct: {}", idProduct);
+            logger.error("Invalid product ID format: {}", idProduct);
             throw ProductException.INVALID_PRODUCT_ID_EXCEPTION;
         }
 
         Products deleteProduct = productsService.geProductById(idProduct);
 
         if (deleteProduct == null) {
-            logger.error("Product with id {} not found in deleteProduct", idProduct);
+            logger.error("Product with id {} not found", idProduct);
             throw ProductException.NO_PRODUCT_FOUND_EXCEPTION;
         }
 
         try {
             productsService.deleteProduct(idProduct);
-            logger.info("Product with id {} deleted successfully in deleteProduct", idProduct);
+            logger.info("Product with id {} deleted successfully", idProduct);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            logger.error("Error deleting product with id {} in deleteProduct: {}", idProduct, e.getMessage());
+            logger.error("Error deleting product with id {}. Message: {}", idProduct, e.getMessage());
             throw new ProductException("Error deleting product with id " + idProduct);
         }
     }
@@ -71,21 +72,21 @@ public class ProductsController implements ProductsApi {
     public ResponseEntity<Products> getProductById(Integer idProduct) {
         try {
             if (!isValidId(String.valueOf(idProduct))) {
-                logger.error("Invalid product ID format in getProductById: {}", idProduct);
+                logger.error("Cannot get product by ID {}. Invalid ID format", idProduct);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
             Products products = productsService.geProductById(idProduct);
 
             if (products == null) {
-                logger.info("Product with id {} not found in getProductById", idProduct);
+                logger.info("Product with id {} not found", idProduct);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                logger.info("Product with id {} retrieved successfully in getProductById", idProduct);
+                logger.info("Product with id {} retrieved successfully", idProduct);
                 return new ResponseEntity<>(products, HttpStatus.OK);
             }
         } catch (Exception e) {
-            logger.error("Error retrieving product with id {} in getProductById: {}", idProduct, e.getMessage());
+            logger.error("Error retrieving product with id {}. Message: {}", idProduct, e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -95,16 +96,16 @@ public class ProductsController implements ProductsApi {
         try {
             List<Products> productsList = productsService.getAllProducts();
             if (productsList.isEmpty()) {
-                logger.error("No products found in getProducts");
+                logger.error("No products found");
                 throw ProductException.NO_PRODUCT_FOUND_EXCEPTION;
             }
 
             ProductsResponse response = new ProductsResponse();
             response.setProducts(productsList);
-            logger.info("Successfully fetched all products in getProducts");
+            logger.info("Successfully fetched all products");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (ProductException e) {
-            logger.error("Error fetching all products in getProducts: {}", e.getMessage());
+            logger.error("Error fetching all products: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -113,28 +114,28 @@ public class ProductsController implements ProductsApi {
     public ResponseEntity<Products> updateProduct(Integer idProduct, Products body) {
         try {
             if (body == null) {
-                logger.error("Null body provided in updateProduct");
+                logger.error("Cannot update product. Null body provided");
                 throw ProductException.NULL_BODY_EXCEPTION;
             }
             if (body.getIdProduct() == null) {
-                logger.error("Product ID is required for updating in updateProduct");
+                logger.error("Product ID is required for updating");
                 throw ProductException.MISSING_PRODUCT_ID_EXCEPTION;
             }
 
             Products existingProduct = productsService.geProductById(idProduct);
             if (existingProduct == null) {
-                logger.error("No product found with ID {} in updateProduct", idProduct);
+                logger.error("No product found with ID {}", idProduct);
                 throw ProductException.NO_PRODUCT_FOUND_EXCEPTION;
             }
             HttpStatus status = productsService.updateProduct(idProduct, body);
-            logger.info("Product with id {} updated successfully in updateProduct", idProduct);
+            logger.info("Product with id {} updated successfully", idProduct);
             return new ResponseEntity<>(status);
 
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in updateProduct: {}", idProduct);
+            logger.error("Invalid ID format: {}", idProduct);
             throw ProductException.INVALID_PRODUCT_ID_EXCEPTION;
         } catch (Exception e) {
-            logger.error("Error updating product with id {} in updateProduct: {}", idProduct, e.getMessage());
+            logger.error("Error updating product with id {}. Message: {}", idProduct, e.getMessage());
             throw  ProductException.ERROR_UPDATING_PRODUCT_EXCEPTION;
         }
     }

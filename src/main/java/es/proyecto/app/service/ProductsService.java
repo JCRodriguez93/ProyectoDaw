@@ -1,10 +1,8 @@
 package es.proyecto.app.service;
 
-import es.proyecto.app.entity.OrdersEntity;
 import es.proyecto.app.entity.ProductsEntity;
 import es.proyecto.app.mapper.ProductMapper;
 import es.proyecto.app.repository.ProductsRepository;
-import es.swagger.codegen.models.Orders;
 import es.swagger.codegen.models.Products;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,21 +30,18 @@ public class ProductsService {
         return mapper.toApiDomain(repository.findAll());
     }
 
-    public HttpStatus createProduct(Products idProduct) {
-        ProductsEntity entity = mapper.toEntity(idProduct);
+    public void createProduct(Products product) {
+        ProductsEntity entity = mapper.toEntity(product);
         repository.save(entity);
-        return HttpStatus.CREATED;
     }
+
     public Products geProductById(Integer idProduct) {
         Optional<ProductsEntity> optionalProductEntity = repository.findById(idProduct);
         return optionalProductEntity.map(mapper::toApiDomain).orElse(null);
     }
-    public boolean deleteProduct(Integer idProduct) {
+    public void deleteProduct(Integer idProduct) {
         if (repository.existsById(idProduct)) {
             repository.deleteById(idProduct);
-            return true;
-        } else {
-            return false;
         }
     }
     public HttpStatus updateProduct(Integer idProduct, Products product) {

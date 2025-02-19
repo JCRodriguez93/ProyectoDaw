@@ -1,0 +1,531 @@
+2025-02-18 20:24:51,921 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2025-02-18 20:24:52,058 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 20736 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 20:24:52,060 DEBUG [restartedMain] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-18 20:24:52,065 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 20:24:52,188 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 20:24:52,188 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 20:24:54,560 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-18 20:24:54,778 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 193 ms. Found 8 JPA repository interfaces.
+2025-02-18 20:24:56,523 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-02-18 20:24:56,553 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:24:56,560 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2025-02-18 20:24:56,560 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-18 20:24:56,715 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2025-02-18 20:24:56,715 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4527 ms
+2025-02-18 20:24:56,979 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-02-18 20:24:57,908 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7875710b
+2025-02-18 20:24:57,918 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-02-18 20:24:58,138 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-18 20:24:58,369 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-18 20:24:58,489 INFO [restartedMain] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-18 20:24:59,413 INFO [restartedMain] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-18 20:24:59,634 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 20:24:59,639 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 20:25:01,964 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-18 20:25:01,971 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:25:02,695 INFO [restartedMain] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-18 20:25:04,487 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 20:25:04,558 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: ce81de95-d376-419f-bc6b-6fa724472498
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 20:25:04,580 INFO [restartedMain] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-18 20:25:05,936 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-02-18 20:25:05,965 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:25:06,020 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2025-02-18 20:25:06,036 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.899 seconds (process running for 24.749)
+2025-02-18 20:26:32,019 INFO [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 20:26:32,019 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2025-02-18 20:26:32,021 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 0 ms
+2025-02-18 20:26:33,079 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: User created successfully: 3
+2025-02-18 20:26:43,109 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 20:27:31,460 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 20:27:47,357 ERROR [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Duplicate email in createUser
+2025-02-18 20:27:47,360 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: es.proyecto.app.error.UsersException: Duplicate email is not allowed] with root cause
+es.proyecto.app.error.UsersException: Duplicate email is not allowed
+	at es.proyecto.app.error.UsersException.<clinit>(UsersException.java:10)
+	at es.proyecto.app.controller.UsersController.createUser(UsersController.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at es.proyecto.app.controller.UsersController$$SpringCGLIB$$0.createUser(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-18 20:28:17,760 ERROR [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: User ID is required for updating in updateUser
+2025-02-18 20:28:17,760 ERROR [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Error updating user with id 4 in updateUser: User ID is required for updating
+2025-02-18 20:28:17,764 ERROR [http-nio-8080-exec-7] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: es.proyecto.app.error.UsersException: Error updating user] with root cause
+es.proyecto.app.error.UsersException: Error updating user
+	at es.proyecto.app.error.UsersException.<clinit>(UsersException.java:11)
+	at es.proyecto.app.controller.UsersController.createUser(UsersController.java:43)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:174)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at es.proyecto.app.controller.UsersController$$SpringCGLIB$$0.createUser(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-18 20:28:32,717 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: User with id 4 retrieved successfully in getUserById
+2025-02-18 20:28:39,571 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: User with id 3 retrieved successfully in getUserById
+2025-02-18 20:28:47,787 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:28:47,793 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-02-18 20:28:47,827 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-02-18 20:36:33,015 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2025-02-18 20:36:33,113 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 13172 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 20:36:33,113 DEBUG [restartedMain] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-18 20:36:33,119 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 20:36:33,221 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 20:36:33,221 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 20:36:35,337 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-18 20:36:35,581 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 231 ms. Found 8 JPA repository interfaces.
+2025-02-18 20:36:37,120 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-02-18 20:36:37,136 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:36:37,144 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2025-02-18 20:36:37,151 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-18 20:36:37,291 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2025-02-18 20:36:37,291 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4067 ms
+2025-02-18 20:36:37,535 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-02-18 20:36:38,129 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13d59f46
+2025-02-18 20:36:38,129 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-02-18 20:36:38,340 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-18 20:36:38,488 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-18 20:36:38,585 INFO [restartedMain] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-18 20:36:39,332 INFO [restartedMain] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-18 20:36:39,511 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 20:36:39,511 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 20:36:41,541 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-18 20:36:41,551 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:36:42,071 INFO [restartedMain] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-18 20:36:43,731 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 20:36:43,791 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 5caee389-2333-4c83-90b7-6fedb20f2afd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 20:36:43,807 INFO [restartedMain] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-18 20:36:44,949 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-02-18 20:36:44,979 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:36:45,028 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2025-02-18 20:36:45,047 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.735 seconds (process running for 14.308)
+2025-02-18 20:37:01,645 INFO [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 20:37:01,653 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2025-02-18 20:37:01,653 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 0 ms
+2025-02-18 20:37:02,235 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 20:37:32,222 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: User with id 3 deleted successfully in deleteUser
+2025-02-18 20:37:46,785 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: User created successfully: null
+2025-02-18 20:37:55,180 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 20:38:34,776 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: felipeR670@example.com
+2025-02-18 20:38:34,973 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: felipeR670@example.com
+2025-02-18 20:46:36,795 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:46:36,800 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-02-18 20:46:36,820 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-02-18 20:46:44,983 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2025-02-18 20:46:45,115 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 7568 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 20:46:45,115 DEBUG [restartedMain] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-18 20:46:45,117 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 20:46:45,249 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 20:46:45,249 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 20:46:47,616 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-18 20:46:47,827 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 192 ms. Found 8 JPA repository interfaces.
+2025-02-18 20:46:49,393 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-02-18 20:46:49,426 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:46:49,433 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2025-02-18 20:46:49,433 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-18 20:46:49,556 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2025-02-18 20:46:49,556 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 4305 ms
+2025-02-18 20:46:49,828 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-02-18 20:46:50,441 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1aa1902d
+2025-02-18 20:46:50,442 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-02-18 20:46:50,653 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-18 20:46:50,820 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-18 20:46:50,943 INFO [restartedMain] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-18 20:46:51,766 INFO [restartedMain] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-18 20:46:51,945 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 20:46:51,948 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 20:46:54,053 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-18 20:46:54,059 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:46:54,714 INFO [restartedMain] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-18 20:46:56,258 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 20:46:56,322 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: d3a6a7db-eded-4013-88a3-0648b25bcf14
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 20:46:56,338 INFO [restartedMain] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-18 20:46:57,560 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-02-18 20:46:57,576 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:46:57,632 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2025-02-18 20:46:57,640 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.524 seconds (process running for 15.065)
+2025-02-18 20:47:46,489 INFO [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 20:47:46,489 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2025-02-18 20:47:46,489 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 0 ms
+2025-02-18 20:47:46,926 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to register user with email: jorge@example.com
+2025-02-18 20:47:47,501 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User registered successfully with email: jorge@example.com
+2025-02-18 20:48:06,064 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 20:48:45,113 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-18 20:48:45,280 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-18 20:52:00,420 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: User with id 6 retrieved successfully in getUserById
+2025-02-18 20:54:23,271 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:54:23,289 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-02-18 20:54:23,321 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-02-18 20:58:32,477 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2025-02-18 20:58:32,579 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 22116 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 20:58:32,587 DEBUG [restartedMain] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-02-18 20:58:32,587 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 20:58:32,678 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 20:58:32,678 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 20:58:34,706 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-18 20:58:34,903 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 180 ms. Found 8 JPA repository interfaces.
+2025-02-18 20:58:36,425 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2025-02-18 20:58:36,451 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:58:36,460 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2025-02-18 20:58:36,460 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-02-18 20:58:36,592 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2025-02-18 20:58:36,592 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 3914 ms
+2025-02-18 20:58:36,830 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2025-02-18 20:58:37,525 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c9e2daf
+2025-02-18 20:58:37,542 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2025-02-18 20:58:37,777 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-18 20:58:37,932 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-18 20:58:38,046 INFO [restartedMain] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2025-02-18 20:58:38,822 INFO [restartedMain] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-18 20:58:38,986 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 20:58:38,988 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 20:58:40,976 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-18 20:58:40,976 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 20:58:41,679 INFO [restartedMain] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-18 20:58:43,180 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 20:58:43,247 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: aaa89347-1619-4fcf-9beb-526bb920784a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 20:58:43,275 INFO [restartedMain] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-18 20:58:44,508 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2025-02-18 20:58:44,546 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 20:58:44,588 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2025-02-18 20:58:44,611 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.832 seconds (process running for 14.336)
+2025-02-18 20:59:03,808 INFO [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 20:59:03,808 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2025-02-18 20:59:03,808 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 0 ms
+2025-02-18 20:59:04,235 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to register user with email: jorge@example.com
+2025-02-18 20:59:04,538 ERROR [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Email already in use: jorge@example.com
+2025-02-18 21:03:39,200 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 21:03:39,203 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2025-02-18 21:03:39,220 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2025-02-18 21:03:44,440 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 20492 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:03:44,440 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:03:50,854 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 21:03:50,865 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 21:03:55,033 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:03:55,090 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 4bb543ca-1db7-45da-a055-bbcf1e88b41b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:03:56,447 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.842 seconds (process running for 14.4)
+2025-02-18 21:04:18,685 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: User with id 6 deleted successfully in deleteUser
+2025-02-18 21:04:48,425 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to register user with email: jorge@example.com
+2025-02-18 21:04:48,700 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User registered successfully with email: jorge@example.com
+2025-02-18 21:05:09,987 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: User with id 6 not found in getUserById
+2025-02-18 21:05:15,538 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users in getUsers
+2025-02-18 21:07:07,229 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: User with id 7 retrieved successfully in getUserById
+2025-02-18 21:13:11,347 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 14604 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:13:11,347 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:13:18,062 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 21:13:18,078 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 21:13:22,695 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:13:22,776 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 6b86ec5d-6588-4254-ad92-d923b4354825
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:13:24,384 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.872 seconds (process running for 15.302)
+2025-02-18 21:13:42,769 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: User with id 7 deleted successfully in deleteUser
+2025-02-18 21:13:59,381 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to register user with email: jorge@example.com
+2025-02-18 21:13:59,660 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User registered successfully with email: jorge@example.com
+2025-02-18 21:14:24,446 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: User with id 7 not found in getUserById
+2025-02-18 21:14:29,740 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: User with id 8 retrieved successfully in getUserById
+2025-02-18 21:30:11,171 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 10312 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:30:11,171 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:30:17,367 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 21:30:17,367 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 21:30:21,679 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:30:21,753 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: a1cf9600-84cd-4ce8-b78a-cf663012751c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:30:23,130 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.816 seconds (process running for 14.615)
+2025-02-18 21:32:22,021 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: User with id 8 retrieved successfully in getUserById
+2025-02-18 21:33:06,597 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-18 21:33:06,954 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-18 21:34:03,323 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: User with id 9 not found in getUserById
+2025-02-18 21:34:07,499 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: User with id 8 retrieved successfully in getUserById
+2025-02-18 21:34:52,258 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 8 and action: add
+2025-02-18 21:34:52,262 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=32
+2025-02-18 21:34:52,266 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: addProductToCart called with userId: 8, productId: 2, quantity: 32
+2025-02-18 21:34:52,394 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: New cart item created for userId: 8, productId: 2, quantity: 32
+2025-02-18 21:34:52,400 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: Product added to cart for userId: 8, productId: 2
+2025-02-18 21:34:52,423 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-18 21:36:50,001 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: manageCart called with userId: 8 and action: add
+2025-02-18 21:36:50,001 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=4, quantity=3
+2025-02-18 21:36:50,001 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: addProductToCart called with userId: 8, productId: 4, quantity: 3
+2025-02-18 21:36:50,026 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: New cart item created for userId: 8, productId: 4, quantity: 3
+2025-02-18 21:36:50,031 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: Product added to cart for userId: 8, productId: 4
+2025-02-18 21:36:50,044 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-18 21:37:17,044 WARN [http-nio-8080-exec-4] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2025-02-18 21:38:00,965 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 8 and action: modify
+2025-02-18 21:38:00,965 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=4, quantity=35
+2025-02-18 21:38:01,024 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product modified successfully
+2025-02-18 21:38:37,452 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 8 and action: null
+2025-02-18 21:38:37,452 ERROR [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Action is null
+2025-02-18 21:39:19,207 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: manageCart called with userId: 8 and action: remove
+2025-02-18 21:39:19,207 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=4, quantity=5
+2025-02-18 21:39:19,227 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Product removed successfully
+2025-02-18 21:40:55,409 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 12704 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:40:55,417 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:41:01,973 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 21:41:01,980 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 21:41:06,292 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:41:06,352 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 57a2e0b1-87c0-48a0-bb7e-88f9febef87f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:41:07,727 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.169 seconds (process running for 14.635)
+2025-02-18 21:43:45,309 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 10488 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:43:45,321 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:43:51,666 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 21:43:55,910 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:43:55,969 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: ab3b3370-610e-44c0-ab53-ba0ac0a2de2f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:43:57,404 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.9 seconds (process running for 14.426)
+2025-02-18 21:46:00,484 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 19652 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:46:00,492 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:46:11,005 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:46:11,075 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 661450e6-ee44-420a-ac42-8d1b2dccb187
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:46:12,349 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.736 seconds (process running for 14.211)
+2025-02-18 21:47:37,080 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 16348 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-18 21:47:37,096 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:47:47,469 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 21:47:47,538 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 37d32b2c-6da1-4a25-a9d8-cd67067054f5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-18 21:47:49,103 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.809 seconds (process running for 14.177)
+2025-02-18 21:49:04,507 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: User with id 8 deleted successfully in deleteUser

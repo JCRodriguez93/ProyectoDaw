@@ -52,7 +52,7 @@ public class ProductsControllerTest {
     @DisplayName("Crear producto con datos válidos")
     public void createProductWithValidDataAndThenReturnsCreated() {
         // Simulamos el comportamiento del servicio de creación de productos
-        when(productsService.createProduct(validProduct)).thenReturn(HttpStatus.CREATED);
+        doNothing().when(productsService).createProduct(validProduct);
 
         // Llamamos al método del controlador
         ResponseEntity<Products> response = productsController.createProduct(validProduct);

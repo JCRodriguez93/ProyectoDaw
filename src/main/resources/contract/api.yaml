@@ -8,6 +8,26 @@ servers:
     description: Servidor local
 paths:
 
+  # CAMBIOS PARA LA INTERFAZ GRÁFICA
+
+  /:
+    get:
+      summary: Página principal
+      tags:
+        - Home
+      operationId: getHomePage
+      responses:
+        "200":
+          description: Página principal cargada exitosamente
+          content:
+            text/html:
+              schema:
+                type: string
+
+
+  # -------------------------------------------------
+
+
   # mirar como hacer el login
   /auth/register:
     post:
@@ -685,13 +705,6 @@ paths:
                 $ref: "#/components/schemas/ErrorResponse"
 
 
-
-
-
-
-
-
-
   /Subcategory:
     get:
       summary: Obtener todas las subcategorías
@@ -872,8 +885,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
 
-
-
   /Products:
     get:
       summary: Obtener todos los productos
@@ -1052,12 +1063,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-
-
-
-
-
-
 
 
   /Orders:
