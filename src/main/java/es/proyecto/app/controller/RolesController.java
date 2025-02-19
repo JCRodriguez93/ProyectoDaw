@@ -33,16 +33,16 @@ public class RolesController implements RolesApi {
             List<Role> rolesEntityList = rolesService.getAllRoles();
 
             if (rolesEntityList.isEmpty()) {
-                logger.error("No roles found in getRoles");
+                logger.error("No roles found");
                 throw RolesException.NO_ROLE_FOUND_EXCEPTION;
             }
 
             RoleResponse response = new RoleResponse();
             response.setRoles(rolesEntityList);
-            logger.info("Successfully fetched all roles in getRoles");
+            logger.info("Successfully fetched all roles");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (RolesException e) {
-            logger.error("Error fetching all roles in getRoles: {}", e.getMessage());
+            logger.error("Error fetching all roles: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -51,27 +51,27 @@ public class RolesController implements RolesApi {
     public ResponseEntity<Role> putRoleId(String idRole, Role body) throws RolesException {
         try {
             if (!isValidId(idRole)) {
-                logger.error("Invalid role ID format in putRoleId: {}", idRole);
+                logger.error("Invalid role ID format: {}", idRole);
                 throw RolesException.INVALID_ID_EXCEPTION;
             }
             RolesEntity rolesEntity = rolesService.getRoleById(Integer.parseInt(idRole));
 
             if (rolesEntity == null) {
-                logger.error("Role with id {} not found in putRoleId", idRole);
+                logger.error("Role with id {} not found", idRole);
                 throw RolesException.NO_ROLE_FOUND_EXCEPTION;
             }
 
             rolesEntity.setIdRole(Integer.parseInt(idRole));
             rolesEntity.setRoleName(body.getRoleName());
             rolesService.updateRole(rolesEntity);
-            logger.info("Role with id {} updated successfully in putRoleId", idRole);
+            logger.info("Role with id {} updated successfully", idRole);
 
             return ResponseEntity.ok().build();
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in putRoleId: {}", idRole);
+            logger.error("Invalid ID format: {}", idRole);
             throw  RolesException.ERROR_UPDATING_ROLE_EXCEPTION;
         } catch (Exception e) {
-            logger.error("Error updating role with id {} in putRoleId: {}", idRole, e.getMessage());
+            logger.error("Error updating role with id {}. Message: {}", idRole, e.getMessage());
             throw  RolesException.ERROR_UPDATING_ROLE_EXCEPTION;
         }
     }
@@ -81,7 +81,6 @@ public class RolesController implements RolesApi {
             Integer.parseInt(id);
             return true;
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in isValidId: {}", id);
             return false;
         }
     }

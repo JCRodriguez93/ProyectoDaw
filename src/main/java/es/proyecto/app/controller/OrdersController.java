@@ -31,14 +31,14 @@ public class OrdersController implements OrdersApi {
     @Override
     public ResponseEntity<Orders> createOrder(Orders body) {
         if (body == null) {
-            logger.error("Null body provided in createOrder");
+            logger.error("Null body provided");
             throw OrderException.NULL_BODY_EXCEPTION;
         }
 
         // Comprobación de que el ID no sea el mismo
         if (body.getIdOrder() != null && ordersService.getOrderById(body.getIdOrder()) != null) {
             logger.error("Order with ID {} already exists", body.getIdOrder());
-            throw OrderException.DUPLICATED_ORDER_ID_EXCEPTION;
+            return new ResponseEntity<>(HttpStatus.CONFLICT); // Retorna 409 Conflict
         }
 
         // Comprobación de que el status sea válido
@@ -59,14 +59,14 @@ public class OrdersController implements OrdersApi {
     @Override
     public ResponseEntity<Void> deleteOrder(Integer idOrder) {
         if (!isValidId(String.valueOf(idOrder))) {
-            logger.error("Invalid order ID format in deleteOrder: {}", idOrder);
+            logger.error("Invalid order ID format: {}", idOrder);
             throw OrderException.INVALID_ORDER_ID_EXCEPTION;
         }
 
         Orders deleteOrder = ordersService.getOrderById(idOrder);
 
         if (deleteOrder == null) {
-            logger.error("Order with id {} not found in deleteOrder", idOrder);
+            logger.error("Order with id {} not found", idOrder);
             throw OrderException.NO_ORDER_FOUND_EXCEPTION;
         }
 
@@ -75,7 +75,7 @@ public class OrdersController implements OrdersApi {
             logger.info("Order with id {} deleted successfully", idOrder);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            logger.error("Error deleting order with id {} in deleteOrder: {}", idOrder, e.getMessage());
+            logger.error("Error deleting order with id {}. Message: {}", idOrder, e.getMessage());
             throw new OrderException("Error deleting order with id " + idOrder);
         }
     }
@@ -84,21 +84,21 @@ public class OrdersController implements OrdersApi {
     public ResponseEntity<Orders> getOrderById(Integer idOrder) {
         try {
             if (!isValidId(String.valueOf(idOrder))) {
-                logger.error("Invalid order ID format in getOrderById: {}", idOrder);
+                logger.error("Cannot obtain order with ID: {}", idOrder);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
             Orders order = ordersService.getOrderById(idOrder);
 
             if (order == null) {
-                logger.info("Order with id {} not found in getOrderById", idOrder);
+                logger.info("Order with id {} not found", idOrder);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                logger.info("Order with id {} retrieved successfully in getOrderById", idOrder);
+                logger.info("Order with id {} retrieved successfully", idOrder);
                 return new ResponseEntity<>(order, HttpStatus.OK);
             }
         } catch (Exception e) {
-            logger.error("Error retrieving order with id {} in getOrderById: {}", idOrder, e.getMessage());
+            logger.error("Error retrieving order with id {}. Message: {}", idOrder, e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -109,16 +109,16 @@ public class OrdersController implements OrdersApi {
             List<Orders> ordersList = ordersService.getAllOrders();
 
             if (ordersList.isEmpty()) {
-                logger.error("No orders found in getOrders");
+                logger.error("No orders found");
                 throw OrderException.NO_ORDER_FOUND_EXCEPTION;
             }
 
             OrdersResponse response = new OrdersResponse();
             response.setOrders(ordersList);
-            logger.info("Successfully fetched all orders in getOrders");
+            logger.info("Successfully fetched all orders");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (OrderException e) {
-            logger.error("Error fetching all orders in getOrders: {}", e.getMessage());
+            logger.error("Error fetching all orders: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -127,17 +127,17 @@ public class OrdersController implements OrdersApi {
     public ResponseEntity<Orders> updateOrder(Integer idOrder, Orders body) {
         try {
             if (body == null) {
-                logger.error("Null body provided in updateOrder");
+                logger.error("Cannot update order. Null body provided");
                 throw OrderException.NULL_BODY_EXCEPTION;
             }
             if (body.getIdOrder() == null) {
-                logger.error("Order ID is required for updating in updateOrder");
+                logger.error("Order ID is required for updating");
                 throw OrderException.MISSING_ORDER_ID_EXCEPTION;
             }
 
             Orders existingOrder = ordersService.getOrderById(idOrder);
             if (existingOrder == null) {
-                logger.error("No order found with ID {} in updateOrder", idOrder);
+                logger.error("No order found with ID {}", idOrder);
                 throw OrderException.NO_ORDER_FOUND_EXCEPTION;
             }
 
@@ -149,14 +149,14 @@ public class OrdersController implements OrdersApi {
             }
 
             HttpStatus status = ordersService.updateOrder(idOrder, body);
-            logger.info("Order with id {} updated successfully in updateOrder", idOrder);
+            logger.info("Order with id {} updated successfully", idOrder);
             return new ResponseEntity<>(status);
 
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in updateOrder: {}", idOrder);
+            logger.error("Invalid ID format: {}", idOrder);
             throw OrderException.INVALID_ORDER_ID_EXCEPTION;
         } catch (Exception e) {
-            logger.error("Error updating order with id {} in updateOrder: {}", idOrder, e.getMessage());
+            logger.error("Error updating order with id {}. Message: {}", idOrder, e.getMessage());
             throw new OrderException("Error updating order");
         }
     }
@@ -167,7 +167,6 @@ public class OrdersController implements OrdersApi {
             Integer.parseInt(id);
             return true;
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in isValidId: {}", id);
             return false;
         }
     }

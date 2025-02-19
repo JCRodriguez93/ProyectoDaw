@@ -75,9 +75,6 @@ public class CartController implements CartApi {
     @Override
     public ResponseEntity<List<CartProductResponse>> viewCart(Integer userId) {
         List<CartProductResponse> cartProducts = cartService.viewCart(userId);
-        if (cartProducts.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
         return ResponseEntity.ok(cartProducts);
     }
 }

@@ -43,9 +43,9 @@ public class AuthController implements AuthApi {
         if (user == null || !passwordEncoder.matches(body.getPassword(), user.getPassword())) {
             logger.error("Invalid login attempt for email: {}", body.getEmail());
             AuthResponse response = new AuthResponse();
-            response.setError("Credenciales incorrectas");
+            response.setError("Wrong credentials try again");
             response.setToken("");
-            response.setMessage("Credenciales incorrectas");
+            response.setMessage("Wrong credentials try again");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
         String token = jwtTokenProvider.generateToken(user.getEmail());
@@ -53,16 +53,17 @@ public class AuthController implements AuthApi {
         AuthResponse response = new AuthResponse();
         response.setError("");
         response.setToken(token);
-        response.setMessage("Inicio de sesión exitoso");
+        response.setMessage("Successful login");
         return ResponseEntity.ok(response);
     }
 
     @Override
     public ResponseEntity<LogoutResponse> logoutUser() {
         logger.info("Logging out user");
+
         LogoutResponse response = new LogoutResponse();
         response.setError("");
-        response.setMessage("Sesión cerrada exitosamente");
+        response.setMessage("Successful logout");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
@@ -70,13 +71,12 @@ public class AuthController implements AuthApi {
     public ResponseEntity<AuthResponse> registerUser(RegisterRequest body) {
         logger.info("Attempting to register user with email: {}", body.getEmail());
 
-        // Validación de datos nulos o vacíos
         if (body == null || body.getEmail() == null || body.getPassword() == null) {
             logger.error("Registration failed due to null or empty user data");
             AuthResponse response = new AuthResponse();
-            response.setError("Los datos del usuario no pueden estar vacíos");
+            response.setError("User data cannot be null");
             response.setToken("");
-            response.setMessage("Los datos del usuario no pueden estar vacíos");
+            response.setMessage("User data cannot be null");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
@@ -84,9 +84,9 @@ public class AuthController implements AuthApi {
         if (usersService.existsByEmail(body.getEmail())) {
             logger.error("Email already in use: {}", body.getEmail());
             AuthResponse response = new AuthResponse();
-            response.setError("Email ya está en uso");
+            response.setError("Email already in use");
             response.setToken("");
-            response.setMessage("Email ya está en uso");
+            response.setMessage("Email already in use");
             return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
         }
 
@@ -95,9 +95,9 @@ public class AuthController implements AuthApi {
         if (userRole == null) {
             logger.error("Role with ID 1 not found");
             AuthResponse response = new AuthResponse();
-            response.setError("Rol de usuario no encontrado");
+            response.setError("User role not found");
             response.setToken("");
-            response.setMessage("Rol de usuario no encontrado");
+            response.setMessage("User role not found");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
 
@@ -116,7 +116,7 @@ public class AuthController implements AuthApi {
         AuthResponse response = new AuthResponse();
         response.setError("");
         response.setToken("");
-        response.setMessage("Usuario registrado exitosamente");
+        response.setMessage("User registered successfully");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

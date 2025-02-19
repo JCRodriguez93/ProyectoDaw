@@ -44,12 +44,9 @@ public class SubcategoriesService {
         return HttpStatus.OK;
     }
 
-    public boolean deleteSubcategory(Integer idSubcategory) {
+    public void deleteSubcategory(Integer idSubcategory) {
         if (subcategoryRepository.existsById(idSubcategory)) {
             subcategoryRepository.deleteById(idSubcategory);
-            return true;
-        } else {
-            return false;
         }
     }
 

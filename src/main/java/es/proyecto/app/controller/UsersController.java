@@ -28,19 +28,18 @@ public class UsersController implements UsersApi {
     @Override
     public ResponseEntity<UserCreatedResponse> createUser(User body) {
         if (body == null) {
-            logger.error("Null body provided in createUser");
+            logger.error("Null body provided");
             throw UsersException.NULL_BODY_EXCEPTION;
         }
 
         if (body.getUserName() == null || body.getUserName().isEmpty()) {
-            logger.error("Invalid user name in createUser");
+            logger.error("Invalid user name when creating user");
             throw UsersException.MISSING_USER_NAME_EXCEPTION;
         }
 
-        // Verificar que el correo electrónico no está repetido
         if (usersService.existsByEmail(body.getEmail())) {
-            logger.error("Duplicate email in createUser");
-            throw UsersException.DUPLICATE_EMAIL_EXCEPTION;
+            logger.error("Duplicate email in database");
+            return new ResponseEntity<>(HttpStatus.CONFLICT); // Retorna 409 Conflict
         }
 
         usersService.createUser(body);
@@ -53,23 +52,23 @@ public class UsersController implements UsersApi {
     @Override
     public ResponseEntity<DeleteResponse> deleteUser(Integer idUser) {
         if (!isValidId(String.valueOf(idUser))) {
-            logger.error("Delete failure. Invalid user ID format in deleteUser: {}", idUser);
+            logger.error("Delete failure. Invalid user ID: {}", idUser);
             throw UsersException.INVALID_USER_ID_EXCEPTION;
         }
 
         User deletedUser = usersService.getUserById(idUser);
 
         if (deletedUser == null) {
-            logger.error("User with id {} not found in deleteUser", idUser);
+            logger.error("User with id {} not found", idUser);
             throw UsersException.NO_USER_FOUND_EXCEPTION;
         }
 
         try {
             usersService.deleteUser(idUser);
-            logger.info("User with id {} deleted successfully in deleteUser", idUser);
+            logger.info("User with id {} deleted successfully", idUser);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            logger.error("Error deleting user with id {} in deleteUser: {}", idUser, e.getMessage());
+            logger.error("Error deleting user with id {}. Message: {}", idUser, e.getMessage());
             throw new UsersException("Error deleting user with id " + idUser);
         }
     }
@@ -78,21 +77,21 @@ public class UsersController implements UsersApi {
     public ResponseEntity<User> getUserById(Integer idUser) {
         try {
             if (!isValidId(String.valueOf(idUser))) {
-                logger.error("Invalid user ID format in getUserById: {}", idUser);
+                logger.error("Invalid user ID format: {}", idUser);
                 return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
 
             User empleado = usersService.getUserById(idUser);
 
             if (empleado == null) {
-                logger.info("User with id {} not found in getUserById", idUser);
+                logger.info("User with id {} not found", idUser);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
-                logger.info("User with id {} retrieved successfully in getUserById", idUser);
+                logger.info("User with id {} retrieved successfully", idUser);
                 return new ResponseEntity<>(empleado, HttpStatus.OK);
             }
         } catch (Exception e) {
-            logger.error("Error retrieving user with id {} in getUserById: {}", idUser, e.getMessage());
+            logger.error("Error retrieving user with id {}. Message: {}", idUser, e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -102,15 +101,15 @@ public class UsersController implements UsersApi {
         try {
             List<User> userList = usersService.getAllUsers();
             if (userList.isEmpty()) {
-                logger.error("No users found in getUsers");
+                logger.error("No users found");
                 throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
             UserResponse response = new UserResponse();
             response.setUsers(userList);
-            logger.info("Successfully fetched all users in getUsers");
+            logger.info("Successfully fetched all users");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (UsersException e) {
-            logger.error("Error fetching all users in getUsers: {}", e.getMessage());
+            logger.error("Error fetching all users: {}", e.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -119,31 +118,30 @@ public class UsersController implements UsersApi {
     public ResponseEntity<Void> updateUser(Integer idUser, User body) {
         try {
             if (body == null) {
-                logger.error("Null body provided in updateUser");
+                logger.error("Null body provided. Cannot update user");
                 throw UsersException.NULL_BODY_EXCEPTION;
-            }
-            if (body.getIdUser() == null) {
-                logger.error("User ID is required for updating in updateUser");
-                throw UsersException.MISSING_ID_EXCEPTION;
             }
 
             User existingUser = usersService.getUserById(idUser);
             if (existingUser == null) {
-                logger.error("No user found with ID {} in updateUser", idUser);
-                throw UsersException.NO_USER_FOUND_EXCEPTION;  // Cambia a esta excepción
+                logger.error("No user found with ID {}", idUser);
+                throw UsersException.NO_USER_FOUND_EXCEPTION;
             }
+
+            body.setIdUser(idUser);  // Ensure body has the correct ID
             HttpStatus status = usersService.updateUser(idUser, body);
-            logger.info("User with id {} updated successfully in updateUser", idUser);
+            logger.info("User with id {} updated successfully", idUser);
             return new ResponseEntity<>(status);
 
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in updateUser: {}", idUser);
+            logger.error("Invalid ID format: {}", idUser);
             throw UsersException.INVALID_USER_ID_EXCEPTION;
         } catch (Exception e) {
-            logger.error("Error updating user with id {} in updateUser: {}", idUser, e.getMessage());
+            logger.error("Error updating user with id {}. Message: {}", idUser, e.getMessage());
             throw UsersException.ERROR_UPDATING_USER_EXCEPTION;
         }
     }
+
 
 
     private boolean isValidId(String id) {
@@ -151,7 +149,6 @@ public class UsersController implements UsersApi {
             Integer.parseInt(id);
             return true;
         } catch (NumberFormatException e) {
-            logger.error("Invalid ID format in isValidId: {}", id);
             return false;
         }
     }

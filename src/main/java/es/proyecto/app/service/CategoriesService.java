@@ -33,10 +33,9 @@ public class CategoriesService {
 
     }
 
-    public HttpStatus createCategory(Category idCategory) {
+    public void createCategory(Category idCategory) {
         CategoryEntity entity = mapper.toEntity(idCategory);
         categoryRepository.save(entity);
-        return HttpStatus.CREATED;
     }
 
     public Category getCategoryById(Integer idCategory) {
@@ -47,12 +46,9 @@ public class CategoriesService {
         return categoryRepository.findCategoryByName(name).isPresent();
     }
 
-    public boolean deleteCategory(Integer idCategory) {
+    public void deleteCategory(Integer idCategory) {
         if (categoryRepository.existsById(idCategory)) {
             categoryRepository.deleteById(idCategory);
-            return true;
-        } else {
-            return false;
         }
     }
 
