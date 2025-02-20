@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Iniciar Sesión</h2>
+<form id="login-form">
+    <input type="text" id="username" placeholder="Usuario" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button type="submit">Iniciar sesión</button>
+</form>
+
+<p id="error-message" style="color: red;"></p>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        fetch("/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Credenciales incorrectas");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Login exitoso:", data);
+            window.location.href = "/index.html"; // Redirigir después del login
+        })
+        .catch(error => {
+            document.getElementById("error-message").textContent = error.message;
+        });
+    });
+</script>
+
+</body>
+</html>
