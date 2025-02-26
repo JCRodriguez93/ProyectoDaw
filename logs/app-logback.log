@@ -1,20 +1,132 @@
-2025-02-20 01:06:19,571 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 20420 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:06:19,585 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:06:22,451 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:06:22,496 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+2025-02-26 17:43:38,768 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24528 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 17:43:38,783 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 17:43:52,825 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 17:43:52,919 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: c513eed9-a3a2-436b-a375-4209e993c704
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 17:43:54,602 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 16.617 seconds (process running for 26.542)
+2025-02-26 17:44:01,534 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to register user with email: jorge@example.com
+2025-02-26 17:44:02,077 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: User registered successfully with email: jorge@example.com
+2025-02-26 17:44:24,725 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 17:44:24,962 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 18:03:20,808 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21920 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 18:03:20,815 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 18:03:31,163 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 18:03:31,240 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 1d70a395-2a8b-46bc-ade4-a46e9bce4caa
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 18:03:32,531 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.571 seconds (process running for 14.133)
+2025-02-26 18:10:27,361 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21920 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 18:10:27,361 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 18:10:29,512 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 18:10:29,527 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: c4a8d011-9f0a-4b81-abd2-2f141d434b2b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 18:10:29,905 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 2.614 seconds (process running for 431.493)
+2025-02-26 18:10:32,134 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21920 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 18:10:32,139 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 18:10:34,474 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 18:10:34,700 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 606906cf-0098-424d-8622-3cdcef511064
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 18:10:34,826 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 2.767 seconds (process running for 436.415)
+2025-02-26 18:10:43,789 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21920 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 18:10:43,791 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 18:10:45,923 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'categoriesController': Unsatisfied dependency expressed through field 'categoriesService': Error creating bean with name 'categoriesService': Unsatisfied dependency expressed through field 'mapper': No qualifying bean of type 'es.proyecto.app.mapper.CategoryMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-02-26 18:10:46,015 ERROR [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mapper in es.proyecto.app.service.CategoriesService required a bean of type 'es.proyecto.app.mapper.CategoryMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'es.proyecto.app.mapper.CategoryMapper' in your configuration.
+
+2025-02-26 19:51:10,836 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 23656 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 19:51:10,842 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 19:51:19,704 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 19:51:19,770 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: e7d35251-59ce-4df4-b827-a88a743498c2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 19:51:20,873 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 10.744 seconds (process running for 13.042)
+2025-02-26 19:51:28,913 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 19:51:29,231 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 19:54:38,808 ERROR [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 19:55:03,469 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 19:55:03,594 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 19:57:05,947 ERROR [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:03:56,921 ERROR [http-nio-8080-exec-2] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:17:31,039 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 10776 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:17:31,043 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:17:37,239 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'usersService': Error creating bean with name 'usersService': Unsatisfied dependency expressed through field 'passwordEncoder': No qualifying bean of type 'org.springframework.security.crypto.password.PasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-02-26 20:17:37,308 ERROR [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field passwordEncoder in es.proyecto.app.service.UsersService required a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.password.PasswordEncoder' in your configuration.
+
+2025-02-26 20:19:10,044 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 23148 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:19:10,048 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:19:17,642 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 20:19:17,673 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 24e294e1-8bf8-466b-a7c6-9f57c200d1fa
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-26 20:19:18,115 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [es/proyecto/app/config/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class es.proyecto.app.security.JwtAuthenticationFilter does not have a registered order
+2025-02-26 20:19:18,195 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'securityFilterChain' defined in class path resource [es/proyecto/app/config/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class es.proyecto.app.security.JwtAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:896)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:849)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
@@ -27,607 +139,181 @@ org.springframework.beans.factory.CannotLoadBeanClassException: Error loading cl
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:12:14,865 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 8352 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:12:14,870 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:12:17,786 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:12:17,833 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'securityFilterChain' defined in class path resource [es/proyecto/app/config/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class es.proyecto.app.security.JwtAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1689)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1511)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:888)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'securityFilterChain' threw exception with message: The Filter class es.proyecto.app.security.JwtAuthenticationFilter does not have a registered order
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:178)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 42 common frames omitted
+Caused by: java.lang.IllegalArgumentException: The Filter class es.proyecto.app.security.JwtAuthenticationFilter does not have a registered order
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterAtOffsetOf(HttpSecurity.java:3297)
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.addFilterBefore(HttpSecurity.java:3290)
+	at es.proyecto.app.config.SecurityConfig.securityFilterChain(SecurityConfig.java:34)
+	at es.proyecto.app.config.SecurityConfig$$SpringCGLIB$$0.CGLIB$securityFilterChain$1(<generated>)
+	at es.proyecto.app.config.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:348)
+	at es.proyecto.app.config.SecurityConfig$$SpringCGLIB$$0.securityFilterChain(<generated>)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:20:38,898 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24296 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:20:38,902 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:20:41,607 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:20:41,650 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:25:23,492 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 16792 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:25:23,497 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:25:26,799 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:25:26,840 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:46:06,602 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 8752 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:46:06,605 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:46:09,734 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:46:09,776 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:48:13,708 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 14504 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:48:13,712 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:48:16,304 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:48:16,345 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:49:33,800 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 15108 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:49:33,804 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:49:36,374 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-2025-02-20 01:49:36,407 ERROR [restartedMain] org.springframework.boot.SpringApplication: Application run failed
-org.springframework.beans.factory.CannotLoadBeanClassException: Error loading class [es.proyecto.app.mapper.CartMapperImpl] for bean with name 'cartMapperImpl' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\mapper\CartMapperImpl.class]: problem with class file or dependent class
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1559)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:685)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:736)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:735)
-	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152)
-	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:115)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:197)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at es.proyecto.app.AppApplication.main(AppApplication.java:13)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: java.lang.ClassFormatError: Duplicate method name "toEntity" with signature "(LCartProductResponse;)Les.proyecto.app.entity.CartEntity;" in class file es/proyecto/app/mapper/CartMapperImpl
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
-	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
-	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.findClass(RestartClassLoader.java:136)
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:118)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
-	at java.base/java.lang.Class.forName0(Native Method)
-	at java.base/java.lang.Class.forName(Class.java:467)
-	at org.springframework.util.ClassUtils.forName(ClassUtils.java:304)
-	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:489)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1624)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1549)
-	... 23 common frames omitted
-2025-02-20 01:51:27,078 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 19068 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 01:51:27,082 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 01:51:34,552 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 01:51:34,598 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:146)
+	... 43 common frames omitted
+2025-02-26 20:24:19,067 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 16888 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:24:19,071 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:24:25,099 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\config\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-26 20:24:25,163 ERROR [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
 
-Using generated security password: 320e5123-3d98-4844-8b91-972e3884f11d
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in es.proyecto.app.config.SecurityConfig required a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' in your configuration.
+
+2025-02-26 20:26:16,152 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24160 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:26:16,156 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:26:22,256 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\config\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-26 20:26:22,325 ERROR [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in es.proyecto.app.config.SecurityConfig required a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' in your configuration.
+
+2025-02-26 20:27:03,391 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 4828 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:27:03,395 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:27:09,258 WARN [restartedMain] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig' defined in file [C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes\es\proyecto\app\config\SecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-26 20:27:09,323 ERROR [restartedMain] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in es.proyecto.app.config.SecurityConfig required a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'es.proyecto.app.security.JwtAuthenticationFilter' in your configuration.
+
+2025-02-26 20:28:31,412 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 6132 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:28:31,416 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:28:38,816 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 20:28:38,846 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: c51d381d-3da4-4131-9900-7c817bb861f6
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-02-20 01:51:35,601 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.168 seconds (process running for 10.359)
-2025-02-20 01:51:57,025 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Attempting to log in with email: null
-2025-02-20 01:51:57,284 ERROR [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Invalid login attempt for email: null
-2025-02-20 02:05:44,408 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AppApplicationTests using Java 17.0.13 with PID 7892 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:05:44,413 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:05:51,509 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:05:51,579 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+2025-02-26 20:28:39,876 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.045 seconds (process running for 10.081)
+2025-02-26 20:28:58,445 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 20:28:58,946 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 20:28:58,985 WARN [http-nio-8080-exec-1] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver: Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<es.swagger.codegen.models.AuthResponse> es.proyecto.app.controller.AuthController.loginUser(es.swagger.codegen.models.LoginRequest)
+2025-02-26 20:28:58,987 WARN [http-nio-8080-exec-1] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<es.swagger.codegen.models.AuthResponse> es.proyecto.app.controller.AuthController.loginUser(es.swagger.codegen.models.LoginRequest)]
+2025-02-26 20:29:48,797 ERROR [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:29:48,810 ERROR [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:31:00,867 ERROR [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:31:00,875 ERROR [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
+2025-02-26 20:39:25,458 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 18940 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 20:39:25,462 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 20:39:33,339 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 20:39:33,369 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
 
-Using generated security password: 2f8f8482-e71a-4034-aec0-ddfe541770e4
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 02:05:52,833 INFO [main] org.springframework.boot.StartupInfoLogger: Started AppApplicationTests in 8.81 seconds (process running for 11.07)
-2025-02-20 02:05:53,529 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 7892 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:05:53,530 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:05:55,674 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:05:55,701 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: 99971e85-9053-48d6-a11d-f412aff2dcb7
+Using generated security password: 752428ff-dc4d-44f4-a36c-0e9e8d72a56a
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-02-20 02:05:56,287 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 2.796 seconds (process running for 14.524)
-2025-02-20 02:05:56,341 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
-2025-02-20 02:05:56,452 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:05:56,468 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:05:56,483 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
-2025-02-20 02:05:56,484 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
-2025-02-20 02:05:56,503 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:05:56,505 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
-2025-02-20 02:05:56,523 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:05:56,526 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:05:56,544 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:05:56,548 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
-2025-02-20 02:05:56,576 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:05:56,582 ERROR [main] es.proyecto.app.controller.AuthController: Role with ID 1 not found
-2025-02-20 02:05:56,773 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
-2025-02-20 02:05:56,776 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
-2025-02-20 02:05:56,778 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
-2025-02-20 02:05:56,789 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
-2025-02-20 02:05:56,790 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
-2025-02-20 02:05:56,791 ERROR [main] es.proyecto.app.controller.CartController: Failed to add product to cart
-2025-02-20 02:05:56,801 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
-2025-02-20 02:05:56,802 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
-2025-02-20 02:05:56,803 INFO [main] es.proyecto.app.controller.CartController: Product modified successfully
-2025-02-20 02:05:56,811 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: null
-2025-02-20 02:05:56,812 ERROR [main] es.proyecto.app.controller.CartController: Action is null
-2025-02-20 02:05:56,823 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
-2025-02-20 02:05:56,824 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
-2025-02-20 02:05:56,825 ERROR [main] es.proyecto.app.controller.CartController: Failed to modify product in cart
-2025-02-20 02:05:56,833 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
-2025-02-20 02:05:56,838 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
-2025-02-20 02:05:56,843 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
-2025-02-20 02:05:56,849 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
-2025-02-20 02:05:56,850 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
-2025-02-20 02:05:56,851 INFO [main] es.proyecto.app.controller.CartController: Product added successfully
-2025-02-20 02:05:56,998 ERROR [main] es.proyecto.app.controller.CategoriesController: Category with id 999 not found
-2025-02-20 02:05:57,013 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 updated successfully
-2025-02-20 02:05:57,024 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 deleted successfully
-2025-02-20 02:05:57,037 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name
-2025-02-20 02:05:57,049 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name
-2025-02-20 02:05:57,062 ERROR [main] es.proyecto.app.controller.CategoriesController: No category found with ID 999
-2025-02-20 02:05:57,062 ERROR [main] es.proyecto.app.controller.CategoriesController: Error updating category with id 999. Exception message: No category found with the specified ID
-2025-02-20 02:05:57,073 INFO [main] es.proyecto.app.controller.CategoriesController: Category created successfully: 1
-2025-02-20 02:05:57,183 INFO [main] es.proyecto.app.controller.OrdersController: Order created successfully: 1
-2025-02-20 02:05:57,223 INFO [main] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
-2025-02-20 02:05:57,241 ERROR [main] es.proyecto.app.controller.OrdersController: Invalid order status provided: null
-2025-02-20 02:05:57,256 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 deleted successfully
-2025-02-20 02:05:57,270 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 retrieved successfully
-2025-02-20 02:05:57,285 ERROR [main] es.proyecto.app.controller.OrdersController: Null body provided
-2025-02-20 02:05:57,304 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 updated successfully
-2025-02-20 02:05:57,406 ERROR [main] es.proyecto.app.controller.ProductsController: Invalid product name
-2025-02-20 02:05:57,420 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 retrieved successfully
-2025-02-20 02:05:57,434 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 deleted successfully
-2025-02-20 02:05:57,475 INFO [main] es.proyecto.app.controller.ProductsController: Product created successfully: 1
-2025-02-20 02:05:57,493 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 updated successfully
-2025-02-20 02:05:57,531 ERROR [main] es.proyecto.app.controller.RolesController: Role with id 1 not found
-2025-02-20 02:05:57,531 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1. Message: No role found with the specified ID
-2025-02-20 02:05:57,552 ERROR [main] es.proyecto.app.controller.RolesController: Invalid role ID format: invalid
-2025-02-20 02:05:57,553 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id invalid. Message: Invalid ID provided for the role
-2025-02-20 02:05:57,572 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1. Message: Error updating role
-2025-02-20 02:05:57,586 INFO [main] es.proyecto.app.controller.RolesController: Role with id 1 updated successfully
-2025-02-20 02:05:57,698 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name 
-2025-02-20 02:05:57,714 INFO [main] es.proyecto.app.controller.SubcategoriesController: Subcategory created successfully: null
-2025-02-20 02:05:57,731 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name 
-2025-02-20 02:05:57,772 ERROR [main] es.proyecto.app.controller.UsersController: Invalid user name when creating user
-2025-02-20 02:05:57,789 INFO [main] es.proyecto.app.controller.UsersController: User created successfully: 1
-2025-02-20 02:05:57,805 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 updated successfully
-2025-02-20 02:05:57,819 ERROR [main] es.proyecto.app.controller.UsersController: Duplicate email in database
-2025-02-20 02:05:57,835 ERROR [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 02:05:57,853 ERROR [main] es.proyecto.app.controller.UsersController: No user found with ID 1
-2025-02-20 02:05:57,854 ERROR [main] es.proyecto.app.controller.UsersController: Error updating user with id 1. Message: No user found with the specified ID
-2025-02-20 02:05:57,867 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 02:05:57,880 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 retrieved successfully
-2025-02-20 02:05:57,892 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 deleted successfully
-2025-02-20 02:05:58,040 INFO [main] org.springframework.boot.StartupInfoLogger: Starting MockMvcPerformanceTest using Java 17.0.13 with PID 7892 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:05:58,041 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:05:59,747 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:05:59,763 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+2025-02-26 20:39:34,410 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.535 seconds (process running for 10.596)
+2025-02-26 20:39:42,706 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 20:39:43,216 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 20:42:25,725 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
+2025-02-26 20:42:25,727 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=4, quantity=5
+2025-02-26 20:42:25,729 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: addProductToCart called with userId: 3, productId: 4, quantity: 5
+2025-02-26 20:42:25,852 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: New cart item created for userId: 3, productId: 4, quantity: 5
+2025-02-26 20:42:25,859 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: Product added to cart for userId: 3, productId: 4
+2025-02-26 20:42:25,865 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-26 20:43:20,049 WARN [http-nio-8080-exec-10] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2025-02-26 20:43:26,803 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
+2025-02-26 20:43:26,803 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=4, quantity=15
+2025-02-26 20:43:26,839 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Product modified successfully
+2025-02-26 20:43:48,938 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
+2025-02-26 20:43:48,939 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=4, quantity=15
+2025-02-26 20:43:48,941 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: addProductToCart called with userId: 3, productId: 4, quantity: 15
+2025-02-26 20:43:48,948 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: Updated product quantity in cart for userId: 3, productId: 4, new quantity: 30
+2025-02-26 20:43:48,949 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: Product added to cart for userId: 3, productId: 4
+2025-02-26 20:43:48,963 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-26 20:44:11,774 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
+2025-02-26 20:44:11,774 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=4, quantity=14
+2025-02-26 20:44:11,794 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Product removed successfully
+2025-02-26 20:44:41,111 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
+2025-02-26 20:44:41,112 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=4, quantity=14
+2025-02-26 20:44:41,130 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Product removed successfully
+2025-02-26 20:58:09,312 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.RolesController: Successfully fetched all roles
+2025-02-26 20:58:15,147 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-02-26 20:58:21,698 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-02-26 20:58:28,671 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-02-26 20:58:51,473 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
+2025-02-26 21:02:36,597 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21896 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 21:02:36,601 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 21:02:44,302 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 21:02:44,332 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
 
-Using generated security password: 488da783-76df-4d48-b2f0-21867ff793bc
+Using generated security password: c5b1f721-d835-4433-b9af-3b7921d50a25
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-02-20 02:06:00,264 INFO [main] org.springframework.boot.StartupInfoLogger: Started MockMvcPerformanceTest in 2.297 seconds (process running for 18.501)
-2025-02-20 02:06:00,711 INFO [main] es.proyecto.app.controller.SubcategoriesController: Successfully fetched all subcategories
-2025-02-20 02:06:00,978 INFO [main] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-02-20 02:06:01,022 INFO [main] es.proyecto.app.controller.RolesController: Successfully fetched all roles
-2025-02-20 02:06:01,094 INFO [main] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-02-20 02:06:01,192 INFO [main] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-02-20 02:06:01,253 INFO [main] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
-2025-02-20 02:10:35,501 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 17664 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:10:35,506 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:10:44,050 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:10:44,111 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+2025-02-26 21:02:45,387 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.403 seconds (process running for 10.534)
+2025-02-26 21:02:56,763 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-02-26 21:02:57,231 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-02-26 21:03:57,997 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
+2025-02-26 21:03:58,000 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=2, quantity=14
+2025-02-26 21:03:58,002 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: addProductToCart called with userId: 3, productId: 2, quantity: 14
+2025-02-26 21:03:58,092 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: New cart item created for userId: 3, productId: 2, quantity: 14
+2025-02-26 21:03:58,096 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: Product added to cart for userId: 3, productId: 2
+2025-02-26 21:03:58,102 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Product added successfully
+2025-02-26 21:15:02,188 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 20092 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-02-26 21:15:02,194 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-02-26 21:15:09,641 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-26 21:15:09,675 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
 
-Using generated security password: 55119b9b-c7b8-4579-81cb-5ce31d54dfbc
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 02:10:45,311 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 10.225 seconds (process running for 12.415)
-2025-02-20 02:10:45,390 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
-2025-02-20 02:10:45,479 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:10:45,489 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:10:45,502 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
-2025-02-20 02:10:45,502 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
-2025-02-20 02:10:45,512 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:10:45,514 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
-2025-02-20 02:10:45,528 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:10:45,529 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:10:45,539 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:10:45,541 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
-2025-02-20 02:10:45,553 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:10:45,556 ERROR [main] es.proyecto.app.controller.AuthController: Role with ID 1 not found
-2025-02-20 02:12:05,749 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 16072 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:12:05,756 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:12:14,342 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:12:14,406 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: 8a090418-cf61-4108-8a05-886ef3d9034f
+Using generated security password: b0325aaf-6b49-4325-b960-7d6c2e15617c
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-02-20 02:12:15,688 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 10.287 seconds (process running for 12.301)
-2025-02-20 02:12:15,771 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
-2025-02-20 02:12:15,850 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:12:15,858 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:12:15,868 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
-2025-02-20 02:12:15,869 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
-2025-02-20 02:12:15,884 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:12:15,886 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
-2025-02-20 02:12:15,897 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:12:15,898 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:12:15,908 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:12:15,911 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
-2025-02-20 02:12:15,921 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:12:15,923 ERROR [main] es.proyecto.app.controller.AuthController: Role with ID 1 not found
-2025-02-20 02:13:09,267 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 10268 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 02:13:09,274 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 02:13:17,622 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 02:13:17,679 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: d1f2b1fc-61e7-46b3-8e94-5b213ad4334c
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 02:13:18,913 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 9.997 seconds (process running for 12.062)
-2025-02-20 02:13:19,014 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
-2025-02-20 02:13:19,087 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:13:19,093 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:13:19,103 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
-2025-02-20 02:13:19,104 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
-2025-02-20 02:13:19,115 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 02:13:19,117 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
-2025-02-20 02:13:19,129 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:13:19,131 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 02:13:19,142 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 02:13:19,143 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
-2025-02-20 14:01:33,169 INFO [main] org.springframework.boot.StartupInfoLogger: Starting UsersControllerTest using Java 17.0.13 with PID 11832 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 14:01:33,180 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 14:01:42,938 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 14:01:43,016 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: f8751b23-93a7-488c-a5ec-4c6e5601bf53
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 14:01:44,529 INFO [main] org.springframework.boot.StartupInfoLogger: Started UsersControllerTest in 11.9 seconds (process running for 14.97)
-2025-02-20 14:01:45,677 ERROR [main] es.proyecto.app.controller.UsersController: Invalid user name when creating user
-2025-02-20 14:01:45,848 INFO [main] es.proyecto.app.controller.UsersController: User created successfully: 1
-2025-02-20 14:01:45,895 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 updated successfully
-2025-02-20 14:01:45,920 ERROR [main] es.proyecto.app.controller.UsersController: Duplicate email in database
-2025-02-20 14:01:45,963 ERROR [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 14:01:45,985 ERROR [main] es.proyecto.app.controller.UsersController: No user found with ID 1
-2025-02-20 14:01:45,991 ERROR [main] es.proyecto.app.controller.UsersController: Error updating user with id 1. Message: No user found with the specified ID
-2025-02-20 14:01:46,009 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 14:01:46,018 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 retrieved successfully
-2025-02-20 14:01:46,046 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 deleted successfully
-2025-02-20 14:02:22,795 INFO [main] org.springframework.boot.StartupInfoLogger: Starting CategoriesControllerTest using Java 17.0.13 with PID 19204 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 14:02:22,805 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 14:02:32,135 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 14:02:32,214 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: fe78a494-f8c8-4d82-86b1-b0e845f4ec29
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 14:02:33,807 INFO [main] org.springframework.boot.StartupInfoLogger: Started CategoriesControllerTest in 11.595 seconds (process running for 14.782)
-2025-02-20 14:02:35,079 ERROR [main] es.proyecto.app.controller.CategoriesController: Category with id 999 not found
-2025-02-20 14:02:35,150 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 updated successfully
-2025-02-20 14:02:35,177 INFO [main] es.proyecto.app.controller.CategoriesController: Category with id 1 deleted successfully
-2025-02-20 14:02:35,199 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name
-2025-02-20 14:02:35,220 ERROR [main] es.proyecto.app.controller.CategoriesController: Invalid category name
-2025-02-20 14:02:35,257 ERROR [main] es.proyecto.app.controller.CategoriesController: No category found with ID 999
-2025-02-20 14:02:35,257 ERROR [main] es.proyecto.app.controller.CategoriesController: Error updating category with id 999. Exception message: No category found with the specified ID
-2025-02-20 14:02:35,279 INFO [main] es.proyecto.app.controller.CategoriesController: Category created successfully: 1
-2025-02-20 14:02:35,424 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
-2025-02-20 14:02:35,424 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
-2025-02-20 14:02:35,426 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
-2025-02-20 14:02:35,437 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
-2025-02-20 14:02:35,437 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
-2025-02-20 14:02:35,437 ERROR [main] es.proyecto.app.controller.CartController: Failed to add product to cart
-2025-02-20 14:02:35,445 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
-2025-02-20 14:02:35,445 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
-2025-02-20 14:02:35,445 INFO [main] es.proyecto.app.controller.CartController: Product modified successfully
-2025-02-20 14:02:35,451 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: null
-2025-02-20 14:02:35,451 ERROR [main] es.proyecto.app.controller.CartController: Action is null
-2025-02-20 14:02:35,460 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: modify
-2025-02-20 14:02:35,460 INFO [main] es.proyecto.app.controller.CartController: Attempting to modify product in cart: productId=2, quantity=10
-2025-02-20 14:02:35,463 ERROR [main] es.proyecto.app.controller.CartController: Failed to modify product in cart
-2025-02-20 14:02:35,471 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: remove
-2025-02-20 14:02:35,474 INFO [main] es.proyecto.app.controller.CartController: Attempting to remove product from cart: productId=2, quantity=null
-2025-02-20 14:02:35,474 ERROR [main] es.proyecto.app.controller.CartController: Failed to remove product from cart
-2025-02-20 14:02:35,483 INFO [main] es.proyecto.app.controller.CartController: manageCart called with userId: 3 and action: add
-2025-02-20 14:02:35,483 INFO [main] es.proyecto.app.controller.CartController: Attempting to add product to cart: productId=2, quantity=33
-2025-02-20 14:02:35,483 INFO [main] es.proyecto.app.controller.CartController: Product added successfully
-2025-02-20 14:02:35,591 ERROR [main] es.proyecto.app.controller.ProductsController: Invalid product name
-2025-02-20 14:02:35,612 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 retrieved successfully
-2025-02-20 14:02:35,627 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 deleted successfully
-2025-02-20 14:02:35,677 INFO [main] es.proyecto.app.controller.ProductsController: Product created successfully: 1
-2025-02-20 14:02:35,696 INFO [main] es.proyecto.app.controller.ProductsController: Product with id 1 updated successfully
-2025-02-20 14:02:35,791 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthControllerTest using Java 17.0.13 with PID 19204 (started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-02-20 14:02:35,791 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-02-20 14:02:38,028 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-20 14:02:38,058 WARN [main] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: 00ecb5f6-86d4-4b03-87aa-0e6e53b31ff2
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-02-20 14:02:38,569 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthControllerTest in 2.841 seconds (process running for 19.544)
-2025-02-20 14:02:38,606 INFO [main] es.proyecto.app.controller.AuthController: Logging out user
-2025-02-20 14:02:38,625 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 14:02:38,627 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 14:02:38,640 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: null
-2025-02-20 14:02:38,640 ERROR [main] es.proyecto.app.controller.AuthController: Registration failed due to null or empty user data
-2025-02-20 14:02:38,653 INFO [main] es.proyecto.app.controller.AuthController: Attempting to register user with email: newuser@test.com
-2025-02-20 14:02:38,655 ERROR [main] es.proyecto.app.controller.AuthController: Email already in use: newuser@test.com
-2025-02-20 14:02:38,667 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 14:02:38,667 ERROR [main] es.proyecto.app.controller.AuthController: Invalid login attempt for email: test@test.com
-2025-02-20 14:02:38,681 INFO [main] es.proyecto.app.controller.AuthController: Attempting to log in with email: test@test.com
-2025-02-20 14:02:38,683 INFO [main] es.proyecto.app.controller.AuthController: User logged in successfully: test@test.com
-2025-02-20 14:02:38,711 ERROR [main] es.proyecto.app.controller.RolesController: Role with id 1 not found
-2025-02-20 14:02:38,711 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1. Message: No role found with the specified ID
-2025-02-20 14:02:38,723 ERROR [main] es.proyecto.app.controller.RolesController: Invalid role ID format: invalid
-2025-02-20 14:02:38,723 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id invalid. Message: Invalid ID provided for the role
-2025-02-20 14:02:38,739 ERROR [main] es.proyecto.app.controller.RolesController: Error updating role with id 1. Message: Error updating role
-2025-02-20 14:02:38,757 INFO [main] es.proyecto.app.controller.RolesController: Role with id 1 updated successfully
-2025-02-20 14:02:38,792 ERROR [main] es.proyecto.app.controller.UsersController: Invalid user name when creating user
-2025-02-20 14:02:38,808 INFO [main] es.proyecto.app.controller.UsersController: User created successfully: 1
-2025-02-20 14:02:38,825 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 updated successfully
-2025-02-20 14:02:38,839 ERROR [main] es.proyecto.app.controller.UsersController: Duplicate email in database
-2025-02-20 14:02:38,883 ERROR [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 14:02:38,900 ERROR [main] es.proyecto.app.controller.UsersController: No user found with ID 1
-2025-02-20 14:02:38,900 ERROR [main] es.proyecto.app.controller.UsersController: Error updating user with id 1. Message: No user found with the specified ID
-2025-02-20 14:02:38,918 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 not found
-2025-02-20 14:02:38,930 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 retrieved successfully
-2025-02-20 14:02:38,942 INFO [main] es.proyecto.app.controller.UsersController: User with id 1 deleted successfully
-2025-02-20 14:02:39,037 INFO [main] es.proyecto.app.controller.OrdersController: Order created successfully: 1
-2025-02-20 14:02:39,052 INFO [main] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
-2025-02-20 14:02:39,068 ERROR [main] es.proyecto.app.controller.OrdersController: Invalid order status provided: null
-2025-02-20 14:02:39,094 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 deleted successfully
-2025-02-20 14:02:39,106 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 retrieved successfully
-2025-02-20 14:02:39,118 ERROR [main] es.proyecto.app.controller.OrdersController: Null body provided
-2025-02-20 14:02:39,138 INFO [main] es.proyecto.app.controller.OrdersController: Order with id 1 updated successfully
-2025-02-20 14:02:39,232 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name 
-2025-02-20 14:02:39,245 INFO [main] es.proyecto.app.controller.SubcategoriesController: Subcategory created successfully: null
-2025-02-20 14:02:39,259 ERROR [main] es.proyecto.app.controller.SubcategoriesController: Invalid subcategory name 
+2025-02-26 21:15:10,693 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.112 seconds (process running for 10.211)

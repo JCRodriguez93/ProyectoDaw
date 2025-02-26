@@ -108,4 +108,11 @@ public class UsersService {
             repository.deleteById(idUser);
         }
     }
+
+    //AÑADIDO
+    public UsersEntity getUserByEmail(String email) {
+        // Busca el usuario en la base de datos a partir del email
+        return repository.findByEmail(email);
+    }
+
 }
