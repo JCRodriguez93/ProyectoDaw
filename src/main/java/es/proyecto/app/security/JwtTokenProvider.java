@@ -50,3 +50,4 @@ public class JwtTokenProvider {
         invalidatedTokens.add(token);
     }
 }
+
