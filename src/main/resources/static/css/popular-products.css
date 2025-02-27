@@ -1,0 +1,117 @@
+/* Contenedor principal */
+.popular-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 20px; /* Espacio entre las dos secciones */
+    flex-wrap: wrap; /* Permite que las secciones se acomoden en móviles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/fondo-populares.jpg");
+}
+/* Controles de cantidad */
+.popular-quantity-controls {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Sección izquierda (Imagen y texto debajo) */
+.popular-left-section {
+    flex: 1; /* Ocupa el 50% en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px; /* Evita que la sección se vuelva demasiado pequeña */
+}
+
+
+
+
+/* Texto debajo de la imagen */
+.popular-left-text {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Sección derecha */
+.popular-right-section {
+    flex: 1; /* Ocupa el otro 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px; /* Evita que se haga demasiado pequeña */
+}
+
+/* Ajustes generales */
+.popular-section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Producto */
+.popular-product-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+/* Imagen del producto */
+.popular-product-image {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+
+
+/* Botón agregar al carrito */
+.popular-add-to-cart {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.popular-add-to-cart:hover {
+    background-color: #2980b9;
+}
+
+.popular-quantity {
+    width: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE: Cuando la pantalla sea menor a 768px (móviles) */
+@media (max-width: 768px) {
+    .popular-product {
+        flex-direction: column; /* Apila las secciones */
+        align-items: center; /* Centra el contenido */
+        text-align: center;
+    }
+
+    .popular-left-section, .popular-right-section {
+        flex: none;
+        width: 100%; /* Ocupa todo el ancho */
+    }
+}
+

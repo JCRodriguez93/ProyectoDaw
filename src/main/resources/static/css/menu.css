@@ -1,0 +1,101 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+header .content-section-logo,
+header .navbar {
+  flex: 1;
+}
+
+/* intento de hacer sticky el menú*/
+.navbar-dark {
+  margin-top: -20px;
+  background-color: #47474c;
+  z-index: 1000;
+  border-style: solid;
+  border-color: rgb(9, 2, 0);
+  box-shadow: 0 4px 20px -4px rgb(195, 192, 192); /* Ajusta estos valores según tus necesidades */}
+
+.navbar-dark .navbar-nav a.nav-link {
+  color: white;
+  font-size: 1.1em;
+}
+
+.dropdown-menu {
+  box-shadow: 0 3px 6px rgba(23, 23, 23, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+  border-radius: 0;
+  padding: 0.7em;
+}
+
+@media only screen and (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+
+}
+
+
+@media (max-width: 991px) {
+
+  /* Aplica solo en la versión hamburguesa */
+  .dropdown:hover .dropdown-menu {
+    display: block !important;
+    margin-top: 0;
+    /* Evita el pequeño retraso visual */
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+  }
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-menu li .dropdown-item {
+  color: gray;
+  font-size: 1em;
+  padding: 0.5em 1em;
+}
+
+.dropdown-menu li .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+@media only screen and (max-width: 992px) {
+  .dropdown-menu.show {
+    flex-wrap: wrap;
+    max-height: 350px;
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1140px) {
+  .dropdown:hover .dropdown-menu {
+    width: 40vw;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* Secciones de contenido */
+.content-section-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.content-section-logo img {
+  max-width: 150px;
+  /* Cambia este valor según tus necesidades */
+  max-height: 150px;
+  /* Cambia este valor según tus necesidades */
+
+}
