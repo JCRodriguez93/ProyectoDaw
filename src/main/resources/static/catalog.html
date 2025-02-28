@@ -10,112 +10,117 @@
 </head>
 
 <body style="margin-top: 300px;">
-    <!-- ancla para redirigir el index-->
-    <a id="top"></a>
-    <!--header-->
-    <div id="header-container"></div>
+<!-- ancla para redirigir el index-->
+<a id="top"></a>
+<!--header-->
+<div id="header-container"></div>
 
-    <!-- catalogo -->
-    <section>
-        <h2 style="margin-bottom: 20px; text-align: center;">Catalogo de productos</h2>
-        <div class="container-fluid catalog">
-            <div class="row">
-                <aside class="col-md-3 p-3">
-                    <h4>Filtros</h4>
-                    <form>
-                        <div class="mb-3">
-                            <label for="search" class="form-label">Buscar por nombre</label>
-                            <input type="text" class="form-control" id="search" placeholder="Nombre del producto">
-                        </div>
-                        <div class="mb-3">
-                            <label for="customRange3" class="form-label">Rango de precio: <span
-                                    id="rangeValue"></span></label>
-                            <input type="range" class="form-range" min="0" max="1000" step="50" id="customRange3"
-                                value="0">
-
-
-
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Categoría</label>
-                            <select class="form-select" id="category">
-                                <option value="todos">Todos</option>
-                                <option value="categoria1">Categoría 1</option>
-                                <option value="categoria2">Categoría 2</option>
-                                <option value="categoria3">Categoría 3</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Aplicar filtros</button>
-                    </form>
-                </aside>
-
-                <section class="col-md-9">
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                        <div class="col">
-                            <div class="card product-card h-100">
-                                <img src="http://placehold.it/200x200" class="card-img-top" alt="Producto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 1</h5>
-                                    <p class="card-text">Descripción breve del producto 1.</p>
-                                    <p class="card-text"><strong>$19.99</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card product-card h-100">
-                                <img src="http://placehold.it/200x200" class="card-img-top" alt="Producto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 2</h5>
-                                    <p class="card-text">Descripción breve del producto 2.</p>
-                                    <p class="card-text"><strong>$29.99</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card product-card h-100">
-                                <img src="http://placehold.it/200x200" class="card-img-top" alt="Producto 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 3</h5>
-                                    <p class="card-text">Descripción breve del producto 3.</p>
-                                    <p class="card-text"><strong>$39.99</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card product-card h-100">
-                                <img src="http://placehold.it/200x200" class="card-img-top" alt="Producto 4">
-                                <div class="card-body">
-                                    <h5 class="card-title">Producto 4</h5>
-                                    <p class="card-text">Descripción breve del producto 4.</p>
-                                    <p class="card-text"><strong>$49.99</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Más productos aquí -->
+<!-- catalogo -->
+<section>
+    <h2 style="margin-bottom: 20px; text-align: center;">Catálogo de productos</h2>
+    <div class="container-fluid catalog">
+        <div class="row">
+            <aside class="col-md-3 p-3">
+                <h4>Filtros</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="search" class="form-label">Buscar por nombre</label>
+                        <input type="text" class="form-control" id="search" placeholder="Nombre del producto">
                     </div>
-                </section>
-            </div>
+                    <div class="mb-3">
+                        <label for="customRange3" class="form-label">Rango de precio: <span
+                                id="rangeValue"></span></label>
+                        <input type="range" class="form-range" min="0" max="1000" step="50" id="customRange3"
+                               value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Categoría</label>
+                        <select class="form-select" id="category">
+                            <option value="todos">Todos</option>
+                            <option value="categoria1">Categoría 1</option>
+                            <option value="categoria2">Categoría 2</option>
+                            <option value="categoria3">Categoría 3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Aplicar filtros</button>
+                </form>
+            </aside>
+
+            <section class="col-md-9">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="productsContainer">
+                    <!-- Los productos se cargarán aquí dinámicamente -->
+                </div>
+            </section>
         </div>
+    </div>
 
-    </section>
+</section>
 
-    <!--footer-->
-    <div id="footer-div"></div>
+<!--footer-->
+<div id="footer-div"></div>
 
-    <script>
-        const rangeInput = document.getElementById("customRange3");
-        const rangeValue = document.getElementById("rangeValue");
+<script>
+    const rangeInput = document.getElementById("customRange3");
+    const rangeValue = document.getElementById("rangeValue");
 
-        rangeInput.addEventListener("input", function () {
-            rangeValue.textContent = `0€ - ${rangeInput.value}€`;
-        });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!--añadir el menú y el footer-->
-    <script src="js/fetch-div.js"></script>
-    <!-- menú sticky-->
-    <script src="js/sticky-menu.js"></script>
+    rangeInput.addEventListener("input", function () {
+        rangeValue.textContent = `0€ - ${rangeInput.value}€`;
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--añadir el menú y el footer-->
+<script src="js/fetch-div.js"></script>
+<!-- menú sticky-->
+<script src="js/sticky-menu.js"></script>
+<script src="js/generate-menu.js"></script>
+<!--TODO: mejorar la interfaz para mostrar que no hay productos en la subcategoria -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const subcategoryId = urlParams.get('category');
+        const subcategoryName = urlParams.get('subcategoryName'); // Suponiendo que también pasas el nombre de la subcategoría
+
+        if (subcategoryId) {
+            fetch("http://localhost:8080/Products")
+                .then(response => response.json())
+                .then(data => {
+                    const filteredProducts = data.products.filter(producto => producto.idSubcategory === parseInt(subcategoryId));
+                    mostrarProductos(filteredProducts, subcategoryName);
+                })
+                .catch(error => console.error("Error al obtener productos:", error));
+        }
+
+        function mostrarProductos(productos, subcategoryName) {
+            const productsContainer = document.getElementById("productsContainer");
+            productsContainer.innerHTML = ""; // Limpiar contenido estático
+
+            if (productos.length === 0) {
+                productsContainer.innerHTML = `<p>No existen productos de la categoría: ${subcategoryName}</p>`;
+            } else {
+                productos.forEach(producto => {
+                    const productElement = document.createElement("div");
+                    productElement.classList.add("col");
+
+                    productElement.innerHTML = `
+                        <div class="card product-card h-100">
+                            <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${producto.name}</h5>
+                                <p class="card-text">${producto.description}</p>
+                                <p class="card-text"><strong>${producto.price}</strong></p>
+                            </div>
+                        </div>
+                    `;
+
+                    productsContainer.appendChild(productElement);
+                });
+            }
+        }
+    });
+</script>
+
+
 </body>
 
 </html>

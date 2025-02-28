@@ -37,7 +37,7 @@ function generarMenu(categorias) {
             let subItem = document.createElement("li");
             let subLink = document.createElement("a");
             subLink.className = "dropdown-item";
-            subLink.href = "#"; // Aquí puedes enlazar a la página de la subcategoría
+            subLink.href = `catalog.html?category=${subcategoria.id_subcategory}`; // Enlazar a catalog.html con el ID de la subcategoría
             subLink.textContent = subcategoria.name;
 
             subItem.appendChild(subLink);
@@ -50,3 +50,4 @@ function generarMenu(categorias) {
         menu.appendChild(li);
     });
 }
+

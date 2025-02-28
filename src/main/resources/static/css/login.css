@@ -15,11 +15,11 @@
 }
 
 .fondo-form {
-    background-image: url("../img/fondo-populares.jpg");
+    background-image: url("../img/background/bg-popular.jpg");
 }
 
 .fondo-all {
-    background-image: url("img/background/bg-login.jpg");
+    background-image: url("../img/background/bg-login.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

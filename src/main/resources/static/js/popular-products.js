@@ -2,18 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:8080/Products")  // Ajusta la URL de la API según sea necesario
         .then(response => response.json())
         .then(data => {
-            // Seleccionamos un producto aleatorio de la lista
-            const randomProduct = data.products[Math.floor(Math.random() * data.products.length)];
+            // Seleccionamos dos productos aleatorios y nos aseguramos de que sean diferentes
+            let firstProductIndex = Math.floor(Math.random() * data.products.length);
+            let secondProductIndex;
+            do {
+                secondProductIndex = Math.floor(Math.random() * data.products.length);
+            } while (secondProductIndex === firstProductIndex);
 
-            // Actualizar la imagen y texto en la sección 'popular-left-section'
+            const firstProduct = data.products[firstProductIndex];
+            const secondProduct = data.products[secondProductIndex];
+
+            // Actualizar la imagen y texto en la sección 'popular-left-section' con el primer producto
             const leftImage = document.querySelector(".popular-left-image");
-            leftImage.src = randomProduct.imageUrl;
-            leftImage.alt = randomProduct.name;
+            leftImage.src = firstProduct.imageUrl;
+            leftImage.alt = firstProduct.name;
 
             const leftText = document.querySelector(".popular-left-text");
-            leftText.textContent = `Descubre nuestro producto más vendido: ${randomProduct.name}`;
+            leftText.textContent = `Descubre nuestro producto más vendido: ${firstProduct.name}`;
 
-            // Crear y mostrar el producto aleatorio en la sección de productos populares
+            // Crear y mostrar el segundo producto aleatorio en la sección de productos populares
             const productsContainer = document.querySelector(".popular-product-item-container");
             productsContainer.innerHTML = "";  // Limpiar contenido estático
 
@@ -21,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
             productElement.classList.add("popular-product-item");
 
             productElement.innerHTML = `
-                <img src="${randomProduct.imageUrl}" alt="${randomProduct.name}" class="popular-product-image">
-                <h3 class="popular-product-name">${randomProduct.name}</h3>
-                <p class="popular-product-description">${randomProduct.description}</p>
+                <img src="${secondProduct.imageUrl}" alt="${secondProduct.name}" class="popular-product-image">
+                <h3 class="popular-product-name">${secondProduct.name}</h3>
+                <p class="popular-product-description">${secondProduct.description}</p>
                 <div class="popular-quantity-controls">
                     <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus"
                         data-mdb-ripple-color="dark">
