@@ -11,3 +11,10 @@
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    max-height: 200px; /* Ajusta el alto máximo de la imagen según tu diseño */
+}
