@@ -1,3 +1,6 @@
+
+ // CAROUSEL PARA EL INDEX.HTML
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // Inicializar el carrusel de Bootstrap
