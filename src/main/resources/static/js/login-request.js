@@ -77,17 +77,18 @@ async function fetchUserData(authToken) {
     if (!response.ok) throw new Error("No se pudo obtener los usuarios");
 
     const data = await response.json();
-    const users = data.Users; // Extraemos el array de usuarios
+    const users = data.Users; // Extraemos el array de usuarios a ver que pasa xddd
 
     // Decodificamos el token para obtener el email
     const tokenParts = authToken.split('.')[1];
     const decodedPayload = JSON.parse(atob(tokenParts));
     const userEmail = decodedPayload.sub;
 
-    const user = users.find(u => u.email === userEmail);
-    if (user) {
+    const user = users.find(u => u.email === userEmail); //pillamos el emilio del usuario
+
+    if (user) { //si está, se actualiza el mensaje
       document.getElementById("welcome-message").innerText = `Bienvenido, ${user.userName}`;
-    } else {
+    } else { //si no, al caraho
       console.error("Usuario no encontrado");
     }
   } catch (error) {
@@ -98,13 +99,4 @@ function showError(element, message) {
   element.style.display = 'block';
   element.textContent = message;
 }
-
-
-
-
-
-
-
-
-
 

@@ -1058,3 +1058,422 @@ This generated password is for development use only. Your security configuration
 2025-03-01 19:18:36,247 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
 2025-03-01 19:18:36,308 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
 2025-03-01 19:18:36,384 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:44:50,970 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 11592 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 19:44:50,975 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 19:45:03,453 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 19:45:03,501 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: a8edbd28-30ce-451b-8d1c-2dbe8b3f35b7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 19:45:05,343 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 15.146 seconds (process running for 25.792)
+2025-03-01 19:45:06,768 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:45:06,768 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:06,909 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:06,964 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:21,320 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 19:45:21,535 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 19:45:21,620 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:45:22,048 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:45:22,084 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:45:22,094 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:22,178 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:22,224 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:43,640 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:45:43,643 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:43,819 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:45:43,929 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:46:43,501 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 19:46:43,628 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 19:46:43,663 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:46:44,071 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:46:44,100 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:46:44,139 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:46:44,226 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:46:44,264 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:47:20,365 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:47:20,371 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:47:20,400 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:47:20,439 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:47:20,479 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:47:51,695 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 14872 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 19:47:51,700 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 19:48:03,429 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 19:48:03,477 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 305fe542-3dd5-4973-928c-e83f80adffa8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 19:48:05,044 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.239 seconds (process running for 15.725)
+2025-03-01 19:48:15,531 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:48:22,791 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 19:48:22,990 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 19:48:23,030 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:48:23,330 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:48:23,354 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:48:23,413 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:48:23,457 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:48:23,516 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:15,819 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 14196 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 19:50:15,823 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 19:50:27,741 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 19:50:27,783 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 811c9f29-eb92-4223-944e-6103f69ff8b1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 19:50:29,632 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.67 seconds (process running for 16.145)
+2025-03-01 19:50:31,516 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:50:31,516 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:31,522 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:50:31,662 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:31,714 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:38,369 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:50:47,435 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 19:50:47,675 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 19:50:47,737 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:50:48,232 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 19:50:48,377 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 19:50:48,573 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:48,700 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 19:50:48,775 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:00:39,991 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 22396 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:00:39,997 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:00:52,229 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:00:52,263 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: caf5e6bf-e4dd-428b-b30f-afd8a7df2037
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:00:53,873 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.787 seconds (process running for 16.229)
+2025-03-01 20:00:58,506 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:00:58,507 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:00:58,629 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:00:58,677 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:01:34,650 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:01:34,875 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:01:34,970 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:01:35,590 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:01:35,718 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:01:35,733 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:01:35,944 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:01:36,116 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:02:04,719 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:02:04,766 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:02:04,849 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:02:04,927 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:02:05,144 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:38,653 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 13820 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:04:38,661 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:04:49,355 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:04:49,398 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 31ad1469-6b77-4219-acc2-2d2415a9d8f4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:04:50,953 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.11 seconds (process running for 14.506)
+2025-03-01 20:04:53,103 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:04:53,103 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:53,116 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:04:53,252 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:53,323 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:56,566 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:04:56,904 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:04:57,112 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:57,230 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:04:57,275 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:06,582 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:14,347 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:05:14,617 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:05:14,677 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:15,163 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:15,167 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:15,331 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:05:15,547 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:15,610 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:29,165 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:37,774 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:05:37,904 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:05:37,951 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:38,409 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:05:38,433 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:05:38,453 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:38,686 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:05:38,745 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:08:37,504 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24628 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:08:37,512 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:08:48,261 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:08:48,295 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 7efa0d36-f72c-4325-b14c-78b107eb79b6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:08:49,646 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.003 seconds (process running for 14.454)
+2025-03-01 20:08:55,444 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:08:55,444 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:08:55,457 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:08:55,606 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:08:55,681 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:01,457 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:09:01,550 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:01,588 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:09:01,808 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:01,881 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:05,434 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Logging out user
+2025-03-01 20:09:05,834 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:09:05,880 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:06,054 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:06,138 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:43,974 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:09:44,204 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:09:44,254 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:09:44,932 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:09:44,991 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:09:45,015 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:45,114 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:09:45,176 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:03,583 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:10:03,592 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:10:03,628 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:03,707 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:03,792 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:25,224 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24008 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:10:25,233 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:10:35,731 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:10:35,771 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 5424cbcc-c8f4-436d-b71a-ec6df328fb8a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:10:37,531 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.124 seconds (process running for 14.617)
+2025-03-01 20:10:44,129 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:44,129 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:10:44,141 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:10:44,276 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:44,334 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:10:53,280 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:11:00,802 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:11:01,045 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:11:01,100 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:11:01,562 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:11:01,580 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:11:01,582 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:11:01,875 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:11:02,030 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:12:34,113 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:12:34,119 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:12:34,292 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:12:34,396 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:12:52,640 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 22496 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:12:52,647 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:13:03,384 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:13:03,424 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 037cfa60-649e-4587-9188-3b3e295c86de
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:13:04,847 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.079 seconds (process running for 14.501)
+2025-03-01 20:13:17,809 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:13:17,809 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:13:17,969 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:13:18,045 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:13:31,131 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:13:31,359 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:13:31,465 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:13:32,061 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:13:32,069 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:13:32,171 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:13:32,463 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:13:32,635 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:16:45,972 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 1060 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:16:45,980 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:16:58,665 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:16:58,722 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 2a08d283-7bca-4df5-aa67-03b4c39e7912
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:17:00,299 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 15.472 seconds (process running for 17.366)
+2025-03-01 20:17:54,766 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:17:54,766 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:17:54,766 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:17:54,933 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:17:54,991 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:01,516 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:09,837 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:18:10,046 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:18:10,114 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:10,710 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:18:10,734 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:10,820 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:11,089 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:11,154 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:14,488 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Logging out user
+2025-03-01 20:18:14,947 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:18:14,960 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:15,087 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:15,200 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:34,148 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:18:34,266 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:18:34,299 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:34,835 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:34,843 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:18:34,862 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:34,948 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:35,021 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:38,659 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Logging out user
+2025-03-01 20:18:38,977 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:18:39,193 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:39,315 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:39,450 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:54,892 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:18:55,011 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:18:55,051 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:55,491 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:55,491 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:18:55,554 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:18:55,603 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:18:55,692 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:11,626 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:17,724 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:19:17,855 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:19:17,885 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:18,237 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:19:18,245 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:18,282 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:18,530 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:18,681 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:39,569 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:39,595 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:19:39,617 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:39,746 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:39,875 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:45,357 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:53,658 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:19:53,772 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:19:53,813 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:54,179 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:19:54,216 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:54,224 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:19:54,372 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:19:54,437 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:01,838 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:21:09,330 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:21:09,454 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:21:09,488 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:21:09,852 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:09,900 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:21:10,017 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:10,036 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:21:10,093 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:34,905 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:21:34,960 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:35,057 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:35,098 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:49,317 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:21:49,432 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:21:49,462 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:21:49,829 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:21:49,854 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:49,887 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:21:50,034 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:21:50,177 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:27:24,071 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 24048 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:27:24,072 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:27:34,454 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:27:34,490 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 4627bba2-ec8c-4507-b878-a94321f04de6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:27:35,964 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.748 seconds (process running for 14.215)
+2025-03-01 20:27:46,108 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:27:46,108 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:27:46,118 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:27:46,270 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:27:46,330 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:27:52,917 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:28:01,375 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:28:01,583 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:28:01,652 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:28:02,175 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:28:02,235 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:28:02,271 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:28:02,435 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:28:02,542 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:13,393 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:36:13,534 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:13,565 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:13,674 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:13,765 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:22,773 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:34,425 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:36:34,555 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:36:34,598 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:35,230 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:36:35,230 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:35,270 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:35,322 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:35,381 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:38,871 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: Logging out user
+2025-03-01 20:36:39,197 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:36:39,219 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:39,518 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:39,576 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:57,454 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-01 20:36:57,579 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-01 20:36:57,622 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:58,064 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:58,212 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:36:58,218 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:36:58,234 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:36:58,311 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:42:51,546 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 2084 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:42:51,551 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:43:02,536 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:43:02,576 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: e2635f4c-146f-4027-8766-4d37a922d7f5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:43:03,987 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.313 seconds (process running for 14.722)
+2025-03-01 20:43:12,395 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:43:12,395 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:43:12,413 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:43:12,522 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:43:12,581 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:44:26,027 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 13960 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-01 20:44:26,032 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-01 20:44:38,206 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01 20:44:38,256 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 50769e6a-732d-4786-a0d5-d6d2fe9518b2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-01 20:44:39,968 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 15.047 seconds (process running for 16.928)
+2025-03-01 20:44:41,651 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:44:41,651 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:44:41,659 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:44:41,879 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:44:41,936 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:45:06,071 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:45:35,986 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to log in with email: perico@example.com
+2025-03-01 20:45:36,247 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User logged in successfully: perico@example.com
+2025-03-01 20:45:36,296 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:45:36,796 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-01 20:45:36,820 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-01 20:45:36,834 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:45:37,094 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-01 20:45:37,197 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
