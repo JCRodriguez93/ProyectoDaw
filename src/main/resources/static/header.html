@@ -21,7 +21,8 @@
     
             <nav class="navbar navbar-expand-lg navbar-dark nav-menu"> <!--no funciona el sticky top-->
                 <div class="container-fluid">
-    
+
+                    <!-- AQUÍ EL LOGO PARA EL RESET DE LA PÁGINA-->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContentOne" aria-controls="navbarSupportedContentOne"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +34,22 @@
                           </a>
 
 
+                        <!-- AQUÍ SE CARGAN CATEGORÍAS Y SUBCATEGORIAS-->
 
                         <ul id="menuCategorias" class="navbar-nav me-auto mb-2 mb-lg-0">
                             <!-- Aquí el JS insertará las categorías y subcategorías dinámicamente -->
                         </ul>
 
+
+
+                        <!-- AQUÍ BOTÓN DE BUSCAR-->
+
                         <form class="d-flex" id="searchForm">
                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="searchInput">
                             <button class="btn btn-outline-light" type="submit">Buscar</button>
                         </form>
+
+
 
                     </div>
                     <!-- Navbar -->
@@ -57,27 +65,44 @@
                         </div>
                         <!-- Collapsible wrapper -->
                         <div class="collapse navbar-collapse" id="navbarSupportedContentTwo">
-    
+
+
+
+
+                            <!-- AQUÍ EL MENSAJE DE BIENVENIDA-->
+
                             <!-- Left links -->
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Bienvenido,</a>
+                                    <a id="welcome-message" class="nav-link" href="#">Bienvenido,</a>
                                 </li>
+
+                                <!-- AQUÍ EL ICONO DE LOGIN-->
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.html">
                                         <img src="img/menu/login.png" alt="Carrito" class="cart-icon" style="width: 24px;">
                                       </a>
-                                      
+
                                 </li>
+
+                                <!-- AQUÍ EL ICONO DE CARRITO-->
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="cart.html">
                                         <img src="img/menu/cart.png" alt="Carrito" class="cart-icon" style="width: 24px;">
                                     </a>
                                 </li>
-    
-    
+                                <!-- AQUÍ ICONO DE LOGOUT (SOLO VISIBLE SI SE HIZO LOGIN)-->
+                                <li class="nav-item">
+                                    <a id="logoutButton" class="nav-link" href="#">
+                                        <img src="img/menu/logout.png" alt="Logout" class="cart-icon" style="width: 24px;">
+                                    </a>
+                                </li>
+
+
                             </ul>
-                            
+
                         </div>
     
                     </nav>
@@ -89,6 +114,7 @@
     </div>
     <script src="js/login-request.js"></script>
 
+    <script src="js/logout-request.js"></script>
 
 
 
