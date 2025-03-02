@@ -2,7 +2,7 @@
 const authToken = localStorage.getItem('authToken');
 
 // Al cargar la página, aseguramos que el contenido se oculte temporalmente
-document.body.classList.remove('visible'); 
+document.body.classList.remove('visible');
 
 // Verificar si el token está disponible
 if (!authToken) {
@@ -14,22 +14,80 @@ if (!authToken) {
 
     // El token está presente, ahora puedes hacer peticiones con él
     async function viewCart() {
-        const response = await fetch('http://localhost:8080/cart', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${authToken}`,
-                'Content-Type': 'application/json'
-            }
-        });
+        try {
+            const response = await fetch('http://localhost:8080/cart', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
 
-        if (response.status === 200) {
-            const cartItems = await response.json();
-            // Aquí puedes procesar y mostrar los items en el carrito
-            console.log(cartItems);
-        } else if (response.status === 404) {
-            alert('Cart is empty or not found');
-        } else {
-            alert('Error: ' + response.statusText);
+            const cartContainer = document.querySelector('#cart tbody');
+            const cartFooter = document.querySelector('#cart tfoot');
+            cartContainer.innerHTML = '';  // Limpiar contenido estático
+            cartFooter.innerHTML = '';  // Limpiar el pie de tabla
+
+            if (response.status === 200) {
+                const cartItems = await response.json();
+
+                if (cartItems.length === 0) {
+                    // No hay productos en el carrito
+                    const emptyMessage = document.createElement('tr');
+                    emptyMessage.innerHTML = '<td colspan="5" class="text-center"><h3>No hay productos en tu carrito.</h3></td>';
+                    cartContainer.appendChild(emptyMessage);
+                } else {
+                    // Mostrar los productos en el carrito
+                    cartItems.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                            <td data-th="Producto">
+                                <div class="row">
+                                    <div class="col-sm-2"><img src="${item.imageUrl}" alt="${item.name}" class="img-fluid"></div>
+                                    <div class="col-sm-10">
+                                        <h4 class="nomargin">${item.name}</h4>
+                                        <p>${item.description}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Precio">€${item.price.toFixed(2)}</td>
+                            <td data-th="Cantidad">
+                                <input type="number" class="form-control text-center" value="${item.quantity}" min="1">
+                            </td>
+                            <td data-th="Subtotal" class="text-center">€${(item.price * item.quantity).toFixed(2)}</td>
+                            <td class="actions" data-th="">
+                                <button class="btn btn-info btn-sm btn-info"><i class="fas fa-sync-alt"></i></button>
+                                <button class="btn btn-danger btn-sm bg-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        `;
+
+                        cartContainer.appendChild(row);
+                    });
+
+                    // Calcular el total del carrito
+                    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                    cartFooter.innerHTML = `
+                        <tr>
+                            <td colspan="5" class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar comprando</a></td>
+                            <td colspan="2"></td>
+                            <td class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
+                            <td><a href="#" class="btn btn-success btn-block">Pagar <i class="fa fa-angle-right"></i></a></td>
+                        </tr>
+                    `;
+                }
+            } else if (response.status === 404) {
+                const emptyMessage = document.createElement('tr');
+                emptyMessage.innerHTML = '<td colspan="5" class="text-center"><h3>No hay productos en tu carrito.</h3></td>';
+                cartContainer.appendChild(emptyMessage);
+            } else {
+                alert('Error: ' + response.statusText);
+            }
+        } catch (error) {
+            console.error('Error al cargar el carrito:', error);
         }
     }
 

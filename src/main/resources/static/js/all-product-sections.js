@@ -76,22 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
             productElement.classList.add("popular-product-item");
 
             productElement.innerHTML = `
-                       <img src="${secondProduct.imageUrl}" alt="${secondProduct.name}" class="popular-product-image">
-                       <h3 class="popular-product-name">${secondProduct.name}</h3>
-                       <p class="popular-product-description">${secondProduct.description}</p>
-                       <div class="popular-quantity-controls">
-                           <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus"
-                               data-mdb-ripple-color="dark">
-                               &minus;
-                           </button>
-                           <input type="text" class="form-control text-center border border-secondary" id="quantity" value="1" aria-label="Example text with button addon" aria-describedby="button-minus">
-                           <button class="btn btn-white border border-secondary px-3 plus-button" type="button" id="button-plus"
-                               data-mdb-ripple-color="dark">
-                               &plus;
-                           </button>
-                       </div>
-                       <button class="popular-add-to-cart">Añadir al carrito</button>
-                   `;
+                <img src="${secondProduct.imageUrl}" alt="${secondProduct.name}" class="popular-product-image">
+                <h3 class="popular-product-name">${secondProduct.name}</h3>
+                <p class="popular-product-description">${secondProduct.description}</p>
+                <div class="popular-quantity-controls">
+                    <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus" data-mdb-ripple-color="dark">&minus;</button>
+                    <input type="text" class="form-control text-center border border-secondary" id="quantity" value="1" aria-label="Example text with button addon" aria-describedby="button-minus">
+                    <button class="btn btn-white border border-secondary px-3 plus-button" type="button" id="button-plus" data-mdb-ripple-color="dark">&plus;</button>
+                </div>
+                <button class="popular-add-to-cart">Añadir al carrito</button>
+            `;
 
             productsContainer.appendChild(productElement);
 
@@ -99,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const minusButton = productElement.querySelector("#button-minus");
             const plusButton = productElement.querySelector("#button-plus");
             const quantityInput = productElement.querySelector("#quantity");
+            const addToCartButton = productElement.querySelector(".popular-add-to-cart");
 
             // Función para disminuir la cantidad
             minusButton.addEventListener("click", () => {
@@ -112,6 +107,44 @@ document.addEventListener("DOMContentLoaded", () => {
             plusButton.addEventListener("click", () => {
                 let currentValue = parseInt(quantityInput.value);
                 quantityInput.value = currentValue + 1;
+            });
+
+            // Función para añadir al carrito
+            addToCartButton.addEventListener("click", async () => {
+                const authToken = localStorage.getItem('authToken');
+                if (!authToken) {
+                    alert("Necesitas estar logueado para añadir productos al carrito.");
+                    return;
+                }
+
+                const cartItem = {
+                    product_id: secondProduct.id,
+                    quantity: parseInt(quantityInput.value),
+                    action: "add"
+                };
+
+                console.log('Añadiendo producto al carrito:', cartItem);  // Log para depuración
+
+                try {
+                    const response = await fetch('http://localhost:8080/cart', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${authToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(cartItem)
+                    });
+
+                    if (response.status === 200) {
+                        alert('Producto añadido al carrito correctamente.');
+                    } else {
+                        const errorData = await response.json();
+                        alert('Error al añadir producto al carrito: ' + errorData.message);
+                    }
+                } catch (error) {
+                    console.error('Error al añadir producto al carrito:', error);
+                    alert('Error al añadir producto al carrito. Inténtalo de nuevo más tarde.');
+                }
             });
         })
         .catch(error => console.error("Error al cargar productos:", error));

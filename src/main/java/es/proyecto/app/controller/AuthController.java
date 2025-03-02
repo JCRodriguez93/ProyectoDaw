@@ -8,6 +8,7 @@ import es.proyecto.app.service.RolesService;
 import es.proyecto.app.service.UsersService;
 import es.swagger.codegen.api.AuthApi;
 import es.swagger.codegen.models.*;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @RestController
 public class AuthController implements AuthApi {
@@ -59,13 +62,25 @@ public class AuthController implements AuthApi {
 
     @Override
     public ResponseEntity<LogoutResponse> logoutUser() {
-        logger.info("Logging out user");
+        // Obtener la petición actual sin modificar la firma del método
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        String authHeader = request.getHeader("Authorization");
+
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            // Invalida el token usando tu método definido
+            jwtTokenProvider.invalidateToken(token);
+            logger.info("Token invalidado: {}", token);
+        } else {
+            logger.warn("No se encontró token en la cabecera para logout.");
+        }
 
         LogoutResponse response = new LogoutResponse();
         response.setError("");
         response.setMessage("Successful logout");
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+        return ResponseEntity.ok(response);
     }
+    //TODO: AHORA SI, está usando el método de logout (cambiar a inglés)
 
     @Override
     public ResponseEntity<AuthResponse> registerUser(RegisterRequest body) {

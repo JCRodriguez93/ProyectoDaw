@@ -12,7 +12,11 @@
             });
         }
     });
-
+logoutButton.addEventListener('click', function() {
+    const authToken = localStorage.getItem('authToken');
+    console.log('Token obtenido antes de logout:', authToken);
+    handleLogout(authToken);
+});
     // Función para manejar el logout
     async function handleLogout(authToken) {
         try {
@@ -30,12 +34,16 @@
                 const data = await response.json();
                 console.log('Logout response data:', data);
 
+                console.log(data.message);
                 // Verificamos que el logout fue exitoso
                 if (data.message === "Successful logout") {
                     // Limpiar el token del localStorage
                     console.log('Successful logout. Clearing local storage.');
                     localStorage.removeItem('authToken');
                     localStorage.removeItem('userId');
+                    alert('Revisar consola antes de redirigir.');
+
+                    console.log('Después de borrar:', localStorage.getItem('authToken'));
 
                     // Actualizar la UI
                     document.getElementById("welcome-message").innerText = 'Bienvenido,';
