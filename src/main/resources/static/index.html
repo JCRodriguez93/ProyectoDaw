@@ -114,7 +114,7 @@
     <div class="popular-left-section">
       <p class="popular-left-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quae omnis, iste in esse ad sapiente, et, repudiandae hic minus minima. Dolores aspernatur distinctio deserunt est veniam sapiente perferendis animi?</p>
       <!-- Aquí utilizamos una clase para manejar la imagen dinámicamente -->
-      <img id="dynamicImage" alt="Producto Más Vendido" class="popular-left-image hidden">
+      <img id="dynamicImage" alt="Producto Más Vendido" class="popular-left-image hidden" src="">
       <p class="popular-left-text">Descubre nuestros productos más vendidos y de alta calidad.</p>
     </div>
     <div class="popular-right-section">
@@ -153,7 +153,9 @@
       entrada.</p>
     <div class="newsletter-container">
       <form class="newsletter-form">
-        <input type="email" placeholder="Introduce tu correo electrónico" class="newsletter-input" required>
+        <label>
+          <input type="email" placeholder="Introduce tu correo electrónico" class="newsletter-input" required>
+        </label>
         <button type="submit" class="newsletter-button">Suscríbete al boletín</button>
       </form>
       <div class="social-media">
@@ -186,15 +188,16 @@
   </script>
   <!-- menú sticky y categorías-->
   <script src="js/sticky-menu.js"></script>
-  <!--añadir el menú y el footer-->
+  <!--añadir el menú y el footer + cargar en el header login-request y logout-request-->
   <script src="js/fetch-div.js"></script>
   <!--carousel-->
   <script src="js/carousel.js"></script>
   <!--generar los divs para los productos en el index.html -->
   <script src="js/all-product-sections.js"></script>
-
-<script src="js/login-request.js"></script>
-<script src="js/logout-request.js"></script>
+  <!--te lleva a login.html para que puedas iniciar en el sistema -->
+  <script src="js/login-request.js"></script>
+  <!--termina la sesión del usuario -->
+  <script src="js/logout-request.js"></script>
   </body>
 
 </html>
