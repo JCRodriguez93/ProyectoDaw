@@ -146,16 +146,4 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("No se encontró el contenedor 'product-details', asegurarse de que este script se ejecuta en 'products.html'.");
     }
 });
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.querySelector(".top-sellers-products")) {
-        const topSellers = new TopSellers("http://localhost:8080/Products", ".top-sellers-products");
-        topSellers.loadProducts();
-    }
-});
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.querySelector(".popular-product-item-container") || document.querySelector(".popular-left-image")) {
-        const popularProducts = new ProductosPopulares("http://localhost:8080/Products");
-        popularProducts.loadProducts();
-    }
-});
 

@@ -5,11 +5,9 @@ class TopSellers extends ProductSection {
     }
 
     generateStars(rating) {
-        let stars = "";
-        for (let i = 1; i <= 5; i++) {
-            stars += `<span class="star">${i <= rating ? "&#9733;" : "&#9734;"}</span>`;
-        }
-        return stars;
+        return Array(5).fill(0).map((_, i) =>
+            `<span class="star">${i < rating ? "&#9733;" : "&#9734;"}</span>`
+        ).join('');
     }
 
     displayProducts() {
@@ -17,6 +15,7 @@ class TopSellers extends ProductSection {
         this.container.innerHTML = "";
         const shuffledProducts = this.shuffleArray(this.products);
         const selectedProducts = shuffledProducts.slice(0, 4);
+
         selectedProducts.forEach(product => {
             const productElement = document.createElement("div");
             productElement.classList.add("product-item", "top-seller");
@@ -31,8 +30,11 @@ class TopSellers extends ProductSection {
     }
 }
 
-// Si existe el contenedor para top sellers (index.html)
-    if (document.querySelector(".top-sellers-products")) {
+// Inicialización si existe el contenedor de top sellers
+document.addEventListener("DOMContentLoaded", () => {
+    const topSellersContainer = document.querySelector(".top-sellers-products");
+    if (topSellersContainer) {
         const topSellers = new TopSellers("http://localhost:8080/Products", ".top-sellers-products");
         topSellers.loadProducts();
     }
+});

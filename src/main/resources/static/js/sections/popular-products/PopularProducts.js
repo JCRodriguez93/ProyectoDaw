@@ -1,7 +1,6 @@
 /* ===== PRODUCTOS POPULARES ===== */
 class ProductosPopulares extends ProductSection {
     constructor(apiUrl) {
-        // El contenedor para el producto popular se define de forma independiente
         super(apiUrl, ".popular-product-item-container");
     }
 
@@ -10,28 +9,40 @@ class ProductosPopulares extends ProductSection {
             console.error("No hay suficientes productos para mostrar en populares.");
             return;
         }
-        // Seleccionamos dos productos aleatorios y distintos
+
+        // Selección de dos productos aleatorios y distintos
+        const [firstProduct, secondProduct] = this.getRandomProducts();
+
+        // Actualizar la sección de la izquierda con el producto más vendido
+        this.updateLeftSection(firstProduct);
+
+        // Mostrar el segundo producto en la sección derecha
+        this.displayPopularProduct(secondProduct);
+    }
+
+    getRandomProducts() {
         let firstIndex = Math.floor(Math.random() * this.products.length);
         let secondIndex;
         do {
             secondIndex = Math.floor(Math.random() * this.products.length);
         } while (secondIndex === firstIndex);
-        const firstProduct = this.products[firstIndex];
-        const secondProduct = this.products[secondIndex];
 
-        // Actualizamos la sección de la izquierda con el producto más vendido
+        return [this.products[firstIndex], this.products[secondIndex]];
+    }
+
+    updateLeftSection(product) {
         const leftImage = document.querySelector(".popular-left-image");
-        if (leftImage) {
-            leftImage.src = firstProduct.imageUrl;
-            leftImage.alt = firstProduct.name;
-            leftImage.onclick = () => { window.location.href = `product.html?id=${firstProduct.idProduct}`; };
-        }
         const leftText = document.querySelector(".popular-left-text");
-        if (leftText) {
-            leftText.textContent = `Descubre nuestro producto más vendido: ${firstProduct.name}`;
+
+        if (leftImage) {
+            leftImage.src = product.imageUrl;
+            leftImage.alt = product.name;
+            leftImage.onclick = () => { window.location.href = `product.html?id=${product.idProduct}`; };
         }
-        // Mostramos el segundo producto en la sección derecha
-        this.displayPopularProduct(secondProduct);
+
+        if (leftText) {
+            leftText.textContent = `Descubre nuestro producto más vendido: ${product.name}`;
+        }
     }
 
     displayPopularProduct(product) {
@@ -55,37 +66,43 @@ class ProductosPopulares extends ProductSection {
     }
 
     addQuantityEvents(element, product) {
-        const minusButton = element.querySelector(".minus-button");
-        const plusButton = element.querySelector(".plus-button");
         const quantityInput = element.querySelector(".quantity-input");
-        const addToCartButton = element.querySelector(".popular-add-to-cart");
 
-        minusButton.addEventListener("click", () => {
+        element.querySelector(".minus-button").addEventListener("click", () => {
             let currentValue = parseInt(quantityInput.value);
             if (currentValue > 1) {
                 quantityInput.value = currentValue - 1;
             }
         });
-        plusButton.addEventListener("click", () => {
+
+        element.querySelector(".plus-button").addEventListener("click", () => {
             let currentValue = parseInt(quantityInput.value);
             quantityInput.value = currentValue + 1;
         });
-        addToCartButton.addEventListener("click", () => {
+
+        element.querySelector(".popular-add-to-cart").addEventListener("click", () => {
             this.addToCart(product.id, parseInt(quantityInput.value));
         });
     }
 
     async addToCart(productId, quantity) {
+        if (quantity <= 0 || isNaN(quantity)) {
+            alert("La cantidad debe ser un número válido y mayor que cero.");
+            return;
+        }
+
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
             alert("Necesitas estar logueado para añadir productos al carrito.");
             return;
         }
+
         const cartItem = {
             product_id: productId,
             quantity: quantity,
             action: "add"
         };
+
         try {
             const response = await fetch('http://localhost:8080/cart', {
                 method: 'POST',
@@ -108,8 +125,10 @@ class ProductosPopulares extends ProductSection {
     }
 }
 
-// Si existen contenedores para productos populares (index.html)
+// Inicialización si existen contenedores para productos populares (index.html)
+document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".popular-product-item-container") || document.querySelector(".popular-left-image")) {
         const popularProducts = new ProductosPopulares("http://localhost:8080/Products");
         popularProducts.loadProducts();
     }
+});
