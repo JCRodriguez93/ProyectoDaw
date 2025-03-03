@@ -224,45 +224,47 @@ async function loadProductDetails() {
         if (!response.ok) throw new Error("Error en la respuesta de la API");
         const product = await response.json();
         productDetails.innerHTML = `
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                        <a data-fslightbox="mygallery" class="rounded-4" target="_blank" data-type="image" href="${product.imageUrl}">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit zoom" src="${product.imageUrl}" alt="${product.name}">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h4 class="title">${product.name}</h4>
-                    <p class="product-price">${product.price}€</p>
-                    <p class="product-description">${product.description}</p>
-                    <div class="row">
-                        <dl class="row">
-                            <dt class="col-3">Type:</dt><dd class="col-9">${product.type}</dd>
-                            <dt class="col-3">Color:</dt><dd class="col-9">${product.color}</dd>
-                            <dt class="col-3">Material:</dt><dd class="col-9">${product.material}</dd>
-                            <dt class="col-3">Brand:</dt><dd class="col-9">${product.brand}</dd>
-                        </dl>
-                    </div>
-                     <div class="col-md-4 col-6 mb-3">
-                                                <label class="mb-2 d-block">Quantity</label>
-                                                <div class="input-group mb-3" style="width: 170px;">
-                                                    <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus" data-mdb-ripple-color="dark">
-                                                        &minus;
-                                                    </button>
-                                                    <input type="text" class="form-control text-center border border-secondary" id="quantity" value="1" aria-label="Example text with button addon" aria-describedby="button-minus">
-                                                    <button class="btn btn-white border border-secondary px-3 plus-button" type="button" id="button-plus" data-mdb-ripple-color="dark">
-                                                        &plus;
-                                                    </button>
-                                                </div>
-                                            </div>
 
-                                            <a href="#" class="btn btn-warning shadow-0">Buy now</a>
-                                            <a href="#" class="btn btn-primary shadow-0"><i class="me-1 fa fa-shopping-basket"></i> Add to cart</a>
-                                            <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"><i class="me-1 fa fa-heart fa-lg"></i> Save</a>
+                       <div class="row">
+                           <div class="col-lg-6">
+                               <div class="border rounded-4 mb-3 d-flex justify-content-center">
+                                   <a data-fslightbox="mygallery" class="rounded-4" target="_blank" data-type="image" href="${product.imageUrl}">
+                                       <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit zoom" src="${product.imageUrl}" alt="${product.name}">
+                                   </a>
+                               </div>
+                           </div>
+                           <div class="col-lg-6">
+                               <h4 class="title">${product.name}</h4>
+                               <p class="product-price">${product.price}€</p>
+                               <p class="product-description">${product.description}</p>
+                               <div class="row">
+                                   <dl class="row">
+                                       <dt class="col-3">Type:</dt><dd class="col-9">${product.type}</dd>
+                                       <dt class="col-3">Color:</dt><dd class="col-9">${product.color}</dd>
+                                       <dt class="col-3">Material:</dt><dd class="col-9">${product.material}</dd>
+                                       <dt class="col-3">Brand:</dt><dd class="col-9">${product.brand}</dd>
+                                   </dl>
+                               </div>
+                                <div class="col-md-4 col-6 mb-3">
+                                   <label class="mb-2 d-block">Quantity</label>
+                                   <div class="input-group mb-3" style="width: 170px;">
+                                       <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus" data-mdb-ripple-color="dark">
+                                           &minus;
+                                       </button>
+                                       <input type="text" class="form-control text-center border border-secondary" id="quantity" value="1" aria-label="Example text with button addon" aria-describedby="button-minus">
+                                       <button class="btn btn-white border border-secondary px-3 plus-button" type="button" id="button-plus" data-mdb-ripple-color="dark">
+                                           &plus;
+                                       </button>
+                                   </div>
+                               </div>
 
+                               <a href="#" class="btn btn-warning shadow-0" onclick="buyProduct()">Comprar</a>
+                               <a href="#" class="btn btn-primary shadow-0" onclick="addToCart()"><i class="me-1 fa fa-shopping-basket"></i>Añadir al carrito</a>
+                           </div>
                 </div>
             </div>
+            <hr style="border: 1px solid #000; width: 50%; margin: 20px auto;">
+
         `;
                 loadSimilarItems(product.subcategory);
     } catch (error) {
@@ -289,12 +291,11 @@ async function loadSimilarItems(idSubcategory) {
         console.log("Respuesta de productos similares:", similarProducts);
 
         if (!Array.isArray(similarProducts)) {
-            console.error("El formato de los productos similares no es un array.");
             similarItemsContainer.innerHTML = "<p>No se encontraron productos similares.</p>";
             return;
         }
 
-        // Opcional: barajar el array (similar a lo que hiciste en ProductosDestacados)
+        // Opcional: barajar el array (similar a lo que hice en ProductosDestacados)
         similarProducts = similarProducts.sort(() => 0.5 - Math.random());
         // Limitar a 4 productos
         const productsToShow = similarProducts.slice(0, 4);

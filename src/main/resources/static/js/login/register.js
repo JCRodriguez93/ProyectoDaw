@@ -45,7 +45,7 @@ $(document).ready(function() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Registro exitoso: " + data.message);
+        //alert("Registro exitoso: " + data.message);
         // Redirección después de 1.5 segundos para que el usuario vea el mensaje
         setTimeout(() => {
           window.location.href = "index.html";
