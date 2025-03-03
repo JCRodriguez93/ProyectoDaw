@@ -244,10 +244,23 @@ async function loadProductDetails() {
                             <dt class="col-3">Brand:</dt><dd class="col-9">${product.brand}</dd>
                         </dl>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <button class="btn btn-warning">Buy now</button>
-                        <button class="btn btn-primary"><i class="me-1 fa fa-shopping-basket"></i> Add to cart</button>
-                    </div>
+                     <div class="col-md-4 col-6 mb-3">
+                                                <label class="mb-2 d-block">Quantity</label>
+                                                <div class="input-group mb-3" style="width: 170px;">
+                                                    <button class="btn btn-white border border-secondary px-3 minus-button" type="button" id="button-minus" data-mdb-ripple-color="dark">
+                                                        &minus;
+                                                    </button>
+                                                    <input type="text" class="form-control text-center border border-secondary" id="quantity" value="1" aria-label="Example text with button addon" aria-describedby="button-minus">
+                                                    <button class="btn btn-white border border-secondary px-3 plus-button" type="button" id="button-plus" data-mdb-ripple-color="dark">
+                                                        &plus;
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <a href="#" class="btn btn-warning shadow-0">Buy now</a>
+                                            <a href="#" class="btn btn-primary shadow-0"><i class="me-1 fa fa-shopping-basket"></i> Add to cart</a>
+                                            <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"><i class="me-1 fa fa-heart fa-lg"></i> Save</a>
+
                 </div>
             </div>
         `;
@@ -257,35 +270,59 @@ async function loadProductDetails() {
     }
 
 }
-async function loadSimilarItems(subcategory) {
+async function loadSimilarItems(idSubcategory) {
     const similarItemsContainer = document.getElementById('similar-items');
-    if (!similarItemsContainer) return;
+    if (!similarItemsContainer) {
+        console.error("El contenedor 'similar-items' no se encontró en el DOM.");
+        return;
+    }
 
     try {
-        const response = await fetch(`http://localhost:8080/Products?subcategory=${subcategory}`);
-        if (!response.ok) throw new Error("Error en la respuesta de la API");
-        const similarProducts = await response.json();
+        const response = await fetch(`http://localhost:8080/Products?subcategory=${idSubcategory}`);
+        if (!response.ok) {
+            throw new Error("Error en la respuesta de la API");
+        }
 
-        similarProducts.forEach(product => {
-            const productElement = document.createElement("div");
-            productElement.classList.add("d-flex", "mb-3");
-            productElement.innerHTML = `
-                <a href="product.html?id=${product.idProduct}" class="me-3">
-                    <img src="${product.imageUrl}" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" alt="imagen de producto">
-                </a>
-                <div class="info">
-                    <a href="product.html?id=${product.idProduct}" class="nav-link mb-1">
-                        ${product.name}
+        let responseData = await response.json();
+        // Si la respuesta tiene la propiedad 'products', extraemos ese array.
+        let similarProducts = responseData.products ? responseData.products : responseData;
+        console.log("Respuesta de productos similares:", similarProducts);
+
+        if (!Array.isArray(similarProducts)) {
+            console.error("El formato de los productos similares no es un array.");
+            similarItemsContainer.innerHTML = "<p>No se encontraron productos similares.</p>";
+            return;
+        }
+
+        // Opcional: barajar el array (similar a lo que hiciste en ProductosDestacados)
+        similarProducts = similarProducts.sort(() => 0.5 - Math.random());
+        // Limitar a 4 productos
+        const productsToShow = similarProducts.slice(0, 4);
+
+        similarItemsContainer.innerHTML = "";
+        productsToShow.forEach(product => {
+            similarItemsContainer.innerHTML += `
+
+                <div class="d-flex mb-3">
+                    <a href="product.html?id=${product.idProduct}" class="me-3">
+                        <img src="${product.imageUrl}" style="min-width: 96px; height: 96px;" class="img-md img-thumbnail" alt="imagen producto">
                     </a>
-                    <strong class="text-dark">${product.price}€</strong>
+                    <div class="info">
+                        <a href="product.html?id=${product.idProduct}" class="nav-link mb-1">${product.name}</a>
+                        <strong class="text-dark">${product.price}€</strong>
+                    </div>
                 </div>
             `;
-            similarItemsContainer.appendChild(productElement);
         });
     } catch (error) {
-        console.error("Error al cargar los productos similares:", error);
+        console.error('Error al cargar los productos similares:', error);
+        similarItemsContainer.innerHTML = "<p>Error al cargar productos relacionados.</p>";
     }
 }
+
+
+
+
 /* ===== INSTANCIACIÓN Y EJECUCIÓN ===== */
 document.addEventListener("DOMContentLoaded", () => {
     // Si existe el contenedor de productos destacados (index.html)
@@ -306,5 +343,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Si estamos en product.html y existe el contenedor de detalles
     if (document.getElementById('product-details')) {
         loadProductDetails();
+    }
+});
+
+// Delegación de eventos: escuchamos los clics en el documento
+document.addEventListener("click", function(event) {
+    // Verificamos si el clic es en uno de los botones de cantidad
+    if (event.target && event.target.matches("#button-minus")) {
+        let quantityInput = document.querySelector("#quantity");
+        let currentQuantity = parseInt(quantityInput.value, 10);
+
+        if (currentQuantity > 1) {
+            quantityInput.value = currentQuantity - 1;
+        }
+    }
+
+    if (event.target && event.target.matches("#button-plus")) {
+        let quantityInput = document.querySelector("#quantity");
+        let currentQuantity = parseInt(quantityInput.value, 10);
+
+        quantityInput.value = currentQuantity + 1;
     }
 });

@@ -74,6 +74,4 @@ function generarMenu(categorias) {
 
 
 
-    // BOTÓN DE BUSCAR PRODUCTO
-
 
