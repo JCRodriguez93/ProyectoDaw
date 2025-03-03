@@ -31,10 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
             productsContainer.innerHTML = `<p>No se encontraron productos para ${mensaje}</p>`;
         } else {
             productos.forEach(producto => {
+                // Verifica que el producto tenga un id válido
+                if (!producto.idProduct) {
+                    console.error("Producto sin ID:", producto);
+                    return; // Salir si no tiene un ID válido
+                }
+
                 const productElement = document.createElement("div");
                 productElement.classList.add("col");
                 productElement.innerHTML = `
                     <div class="card product-card h-100">
+                        <a href="product.html?id=${producto.idProduct}" class="stretched-link"></a>
                         <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
                         <div class="card-body">
                             <h5 class="card-title">${producto.name}</h5>

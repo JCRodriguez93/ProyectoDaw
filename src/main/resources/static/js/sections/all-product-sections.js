@@ -4,6 +4,8 @@
 async function loadProductDetails() {
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
+    console.log("ID obtenido:", productId);
+
     const productDetails = document.getElementById('product-details');
     if (!productDetails) {
         console.error("El contenedor de detalles del producto no se encuentra en el DOM.");
