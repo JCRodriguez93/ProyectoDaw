@@ -33,11 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
         featuredProducts.loadProducts();
     }
 
+   /*
+   NO BORRAR POR SI ACASO PERO ESTO NO SIRVE DE MOMENTO
+   -----------------------------------------------------
     // Verificar si estamos en products.html antes de ejecutar
-    if (document.getElementById("product-details")) {
-        console.log("Cargando detalles del producto...");
-        loadProductDetails();
-    } else {
-        console.warn("No se encontró el contenedor 'product-details', asegurarse de que este script se ejecuta en 'products.html'.");
-    }
+       if (document.getElementById("product-details")) {
+           console.log("Cargando detalles del producto...");
+           loadProductDetails();
+       } else {
+           console.warn("No se encontró el contenedor 'product-details', asegurarse de que este script se ejecuta en 'products.html'.");
+       }
+
+   */
 });

@@ -1,3 +1,6 @@
+// FILTRO DE PRODUCTOS
+//...........................
+
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const subcategoryId = urlParams.get("category");
