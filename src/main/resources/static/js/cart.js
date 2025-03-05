@@ -41,32 +41,44 @@ if (!authToken) {
                     cartItems.forEach(item => {
                         const row = document.createElement('tr');
 
-                        row.innerHTML = `
-                            <td data-th="Producto">
-                                <div class="row">
-                                    <div class="col-sm-2"><img src="${item.imageUrl}" alt="${item.name}" class="img-fluid"></div>
-                                    <div class="col-sm-10">
-                                        <h4 class="nomargin">${item.name}</h4>
-                                        <p>${item.description}</p>
+                        // Asegurarse de que item.price sea un número antes de usar toFixed
+                        const price = parseFloat(item.price); // Convertir a número
+                        const subtotal = price * item.quantity;
+
+                        if (!isNaN(price)) {
+                            row.innerHTML = `
+                                <td data-th="Producto">
+                                    <div class="row">
+                                        <div class="col-sm-2"><img src="${item.imageUrl}" alt="${item.name}" class="img-fluid"></div>
+                                        <div class="col-sm-10">
+                                            <h4 class="nomargin">${item.name}</h4>
+                                            <p>${item.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td data-th="Precio">€${item.price.toFixed(2)}</td>
-                            <td data-th="Cantidad">
-                                <input type="number" class="form-control text-center" value="${item.quantity}" min="1">
-                            </td>
-                            <td data-th="Subtotal" class="text-center">€${(item.price * item.quantity).toFixed(2)}</td>
-                            <td class="actions" data-th="">
-                                <button class="btn btn-info btn-sm btn-info"><i class="fas fa-sync-alt"></i></button>
-                                <button class="btn btn-danger btn-sm bg-danger"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        `;
+                                </td>
+                                <td data-th="Precio">€${price.toFixed(2)}</td>
+                                <td data-th="Cantidad">
+                                    <input type="number" class="form-control text-center" value="${item.quantity}" min="1">
+                                </td>
+                                <td data-th="Subtotal" class="text-center">€${subtotal.toFixed(2)}</td>
+                                <td class="actions" data-th="">
+                                    <button class="btn btn-info btn-sm btn-info"><i class="fas fa-sync-alt"></i></button>
+                                    <button class="btn btn-danger btn-sm bg-danger"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            `;
+                        } else {
+                            console.error('Invalid price value:', item.price);
+                        }
 
                         cartContainer.appendChild(row);
                     });
 
                     // Calcular el total del carrito
-                    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                    const total = cartItems.reduce((sum, item) => {
+                        const price = parseFloat(item.price); // Asegurarse de que item.price sea un número
+                        return !isNaN(price) ? sum + price * item.quantity : sum;
+                    }, 0);
+
                     cartFooter.innerHTML = `
                         <tr>
                             <td colspan="5" class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
