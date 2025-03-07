@@ -81,11 +81,13 @@ class ProductosPopulares extends ProductSection {
         });
 
         element.querySelector(".popular-add-to-cart").addEventListener("click", () => {
-            this.addToCart(product.id, parseInt(quantityInput.value));
+            this.addToCart(product.idProduct, parseInt(quantityInput.value));
         });
     }
 
-    async addToCart(productId, quantity) {
+
+// AÑADIR PRODUCTOS AL CARRITO DESDE POPULAR PRODUCTS
+    async addToCart(idProduct, quantity) {
         if (quantity <= 0 || isNaN(quantity)) {
             alert("La cantidad debe ser un número válido y mayor que cero.");
             return;
@@ -98,7 +100,7 @@ class ProductosPopulares extends ProductSection {
         }
 
         const cartItem = {
-            product_id: productId,
+            product_id: idProduct,
             quantity: quantity,
             action: "add"
         };

@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             let filteredProducts = [];
-
             if (subcategoryId) {
                 // Filtrar por subcategoría
                 filteredProducts = data.products.filter(producto => producto.idSubcategory === parseInt(subcategoryId));
@@ -44,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 productElement.classList.add("col");
                 productElement.innerHTML = `
                     <div class="card product-card h-100">
+            //TODO: si quito ese idProduct, la carga del botón search sobre los productos al hacer clic deja de funcionar
+            //cambiar el nombre a un script más explicativo.
                         <a href="product.html?id=${producto.idProduct}" class="stretched-link"></a>
                         <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
                         <div class="card-body">

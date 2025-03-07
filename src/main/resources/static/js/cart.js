@@ -119,48 +119,100 @@ if (!authToken) {
         }
     }
 
-    // Función para actualizar la cantidad de un producto
-    async function updateCartItem(productId, quantity) {
-        try {
-            const response = await fetch(`http://localhost:8080/cart/${productId}`, {
-                method: 'PUT',
-                headers: {
-                    'Authorization': `Bearer ${authToken}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ quantity: quantity })
-            });
+  async function updateCartItem(productId, quantity) {
+      // Verificar que los parámetros sean válidos
+      if (!productId || isNaN(quantity) || quantity <= 0) {
+          alert('Los valores del producto o cantidad no son válidos.');
+          return;
+      }
 
-            if (response.ok) {
-                viewCart(); // Recargar el carrito
-            } else {
-                alert('No se pudo actualizar la cantidad.');
-            }
-        } catch (error) {
-            console.error('Error al actualizar el producto:', error);
-        }
-    }
+      try {
+          const response = await fetch('http://localhost:8080/cart', {
+              method: 'POST',
+              headers: {
+                  'Authorization': `Bearer ${authToken}`,
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  product_id: productId, // ID del producto
+                  quantity: quantity,    // Nueva cantidad
+                  action: 'modify'       // Acción de modificar
+              })
+          });
 
-    // Función para eliminar un producto del carrito
-    async function deleteCartItem(productId) {
-        try {
-            const response = await fetch(`http://localhost:8080/cart/${productId}`, {
-                method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${authToken}`,
-                    'Content-Type': 'application/json'
-                }
-            });
+          if (response.ok) {
+              viewCart(); // Recargar el carrito
+          } else {
+              const errorMessage = await response.json();
+              alert(errorMessage.message || 'No se pudo actualizar la cantidad.');
+          }
+      } catch (error) {
+          console.error('Error al actualizar el producto:', error);
+          alert('Hubo un error al actualizar el carrito.');
+      }
+  }
 
-            if (response.ok) {
-                viewCart(); // Recargar el carrito
-            } else {
-                alert('No se pudo eliminar el producto.');
-            }
-        } catch (error) {
-            console.error('Error al eliminar el producto:', error);
-        }
-    }
+
+  async function deleteCartItem(productId) {
+      // Verificar que el productId es válido
+      if (!productId) {
+          alert('El ID del producto no es válido.');
+          return;
+      }
+
+      try {
+          const response = await fetch('http://localhost:8080/cart', {
+              method: 'POST',
+              headers: {
+                  'Authorization': `Bearer ${authToken}`,
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  product_id: productId, // ID del producto
+                  action: 'remove'       // Acción de eliminar
+              })
+          });
+
+          if (response.ok) {
+              viewCart(); // Recargar el carrito
+          } else {
+              const errorMessage = await response.json();
+              alert(errorMessage.message || 'No se pudo eliminar el producto.');
+          }
+      } catch (error) {
+          console.error('Error al eliminar el producto:', error);
+          alert('Hubo un error al eliminar el producto.');
+      }
+  }
+
+
+  // Añadir eventos a los botones de actualizar y eliminar
+  function addEventListeners() {
+      document.querySelectorAll('.update').forEach(button => {
+          button.addEventListener('click', () => {
+              const productId = button.getAttribute('data-id');
+              const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
+              const newQuantity = parseInt(quantityInput.value, 10);
+
+              // Verificar que la cantidad es válida
+              if (newQuantity > 0) {
+                  updateCartItem(productId, newQuantity);
+              } else {
+                  alert('Por favor, ingrese una cantidad válida.');
+              }
+          });
+      });
+
+      document.querySelectorAll('.delete').forEach(button => {
+          button.addEventListener('click', () => {
+              const productId = button.getAttribute('data-id');
+              deleteCartItem(productId);
+          });
+      });
+  }
+
+
+
 
     // Añadir eventos a los botones de actualizar y eliminar
     function addEventListeners() {

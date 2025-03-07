@@ -58,6 +58,11 @@ async function loadProductDetails() {
             <hr style="border: 1px solid #000; width: 50%; margin: 20px auto;">
 
         `;
+
+        const idSubcategory = product.subcategory?.idSubcategory || product.subcategory;
+        console.log("ID de subcategoría procesado:", idSubcategory);
+        loadSimilarItems(idSubcategory);
+
                 loadSimilarItems(product.subcategory);
     } catch (error) {
         console.error("Error al cargar los detalles del producto:", error);
@@ -148,4 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("No se encontró el contenedor 'product-details', asegurarse de que este script se ejecuta en 'products.html'.");
     }
 });
+
+
 
