@@ -23,9 +23,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function filtrarProductosPorPrecio(precioMaximo) {
-        const productosFiltrados = allProducts.filter(producto => producto.price <= parseInt(precioMaximo));
-        mostrarProductos(productosFiltrados, subcategoryName);
+        if (parseInt(precioMaximo) === 0) {
+            mostrarProductos(allProducts, subcategoryName); // Mostrar todos los productos nuevamente
+        } else {
+            const productosFiltrados = allProducts.filter(producto => producto.price <= parseInt(precioMaximo));
+            mostrarProductos(productosFiltrados, subcategoryName);
+        }
     }
+
 
     function mostrarProductos(productos, subcategoryName) {
         const productsContainer = document.getElementById("productsContainer");
