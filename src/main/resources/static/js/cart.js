@@ -36,7 +36,8 @@ if (!authToken) {
 
                     for (const item of cartItems) {
                         const product_id = item.product_id; // Aquí ya tienes el ID correcto
-                        console.log(product_id); // Mostrará el ID de cada producto en el carrito
+                        console.log('Product ID:', product_id); // Mostrará el ID de cada producto en el carrito
+                        console.log('Item:', item); // Mostrará el objeto completo para ver los valores
 
                         // Función para obtener los detalles del producto (como la imageUrl y description)
                         async function getProductDetails(product_id) {
@@ -51,6 +52,7 @@ if (!authToken) {
 
                                 if (response.ok) {
                                     const product = await response.json();
+                                    console.log('Product Details:', product); // Ver detalles del producto
                                     return product; // Devuelve el producto encontrado
                                 } else {
                                     console.error('No se pudo obtener el producto:', response.statusText);
@@ -82,12 +84,12 @@ if (!authToken) {
                                 </td>
                                 <td data-th="Precio">€${price.toFixed(2)}</td>
                                 <td data-th="Cantidad">
-                                    <input type="number" class="form-control text-center quantity" value="${item.quantity}" min="1" data-id="${item.id}">
+                                    <input type="number" class="form-control text-center quantity" value="${item.quantity}" min="1" data-id="${item.product_id}">
                                 </td>
                                 <td data-th="Subtotal" class="text-center subtotal">€${subtotal.toFixed(2)}</td>
                                 <td class="actions">
-                                    <button class="btn btn-info btn-sm update" data-id="${item.id}"><i class="fas fa-sync-alt"></i></button>
-                                    <button class="btn btn-danger btn-sm delete" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-info btn-sm update" data-id="${item.product_id}"><i class="fas fa-sync-alt"></i></button>
+                                    <button class="btn btn-danger btn-sm delete" data-id="${item.product_id}"><i class="fas fa-trash-alt"></i></button>
                                 </td>
                             `;
 
@@ -120,6 +122,7 @@ if (!authToken) {
     }
 
   async function updateCartItem(productId, quantity) {
+      console.log('Updating Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
       // Verificar que los parámetros sean válidos
       if (!productId || isNaN(quantity) || quantity <= 0) {
           alert('Los valores del producto o cantidad no son válidos.');
@@ -153,7 +156,8 @@ if (!authToken) {
   }
 
 
-  async function deleteCartItem(productId) {
+  async function deleteCartItem(productId, quantity) {
+      console.log('Deleting Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
       // Verificar que el productId es válido
       if (!productId) {
           alert('El ID del producto no es válido.');
@@ -168,8 +172,9 @@ if (!authToken) {
                   'Content-Type': 'application/json'
               },
               body: JSON.stringify({
-                  product_id: productId, // ID del producto
-                  action: 'remove'       // Acción de eliminar
+                   product_id: productId, // ID del producto
+                   quantity: quantity,    // Nueva cantidad
+                   action: 'remove'       // Acción de modificar
               })
           });
 
@@ -193,8 +198,9 @@ if (!authToken) {
               const productId = button.getAttribute('data-id');
               const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
               const newQuantity = parseInt(quantityInput.value, 10);
+              console.log('Product ID:', productId); // Ver el ID del producto
+              console.log('New Quantity:', newQuantity); // Ver la nueva cantidad
 
-              // Verificar que la cantidad es válida
               if (newQuantity > 0) {
                   updateCartItem(productId, newQuantity);
               } else {
@@ -203,38 +209,23 @@ if (!authToken) {
           });
       });
 
-      document.querySelectorAll('.delete').forEach(button => {
-          button.addEventListener('click', () => {
-              const productId = button.getAttribute('data-id');
-              deleteCartItem(productId);
-          });
-      });
+     document.querySelectorAll('.delete').forEach(button => {
+         button.addEventListener('click', () => {
+             const productId = button.getAttribute('data-id');
+             const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
+             const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 0; // Obtener la cantidad del input, si existe
+
+             console.log('Delete button clicked, product ID:', productId);
+             console.log('Product quantity:', quantity); // Ver la cantidad que se está pasando
+
+             // Llamar a la función deleteCartItem, pasando la cantidad como 0 para eliminar el producto
+             deleteCartItem(productId, quantity || 0); // Si quantity es nulo o inválido, poner 0
+         });
+     });
+
+
   }
 
-
-
-
-    // Añadir eventos a los botones de actualizar y eliminar
-    function addEventListeners() {
-        document.querySelectorAll('.update').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
-                const newQuantity = parseInt(quantityInput.value, 10);
-                if (newQuantity > 0) {
-                    updateCartItem(productId, newQuantity);
-                }
-            });
-        });
-
-        document.querySelectorAll('.delete').forEach(button => {
-            button.addEventListener('click', () => {
-                const productId = button.getAttribute('data-id');
-                deleteCartItem(productId);
-            });
-        });
-    }
-
-    // Llamar a la función para mostrar el carrito
-    viewCart();
+  // Llamar a la función para mostrar el carrito
+  viewCart();
 }
