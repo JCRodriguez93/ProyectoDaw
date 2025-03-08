@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const subcategoryId = urlParams.get("subcategory"); // Ajustado para coincidir con la estructura del otro script
+    // Se espera que en la URL el parámetro se llame "subcategory"
+    const subcategoryId = urlParams.get("subcategory");
     const subcategoryName = urlParams.get("subcategoryName");
     const searchTerm = urlParams.get("search");
 
@@ -10,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
             let filteredProducts = [];
 
             if (subcategoryId) {
-                // Filtrar por subcategoría asegurando la estructura correcta
-                filteredProducts = data.products.filter(producto => producto.subcategory?.idSubcategory === parseInt(subcategoryId));
+                // Filtrar por subcategoría usando la propiedad idSubcategory directamente
+                filteredProducts = data.products.filter(producto => producto.idSubcategory === parseInt(subcategoryId));
                 mostrarProductos(filteredProducts, `Categoría: ${subcategoryName}`);
             } else if (searchTerm) {
                 // Filtrar por búsqueda de nombre
@@ -19,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     producto.name.toLowerCase().includes(searchTerm.toLowerCase())
                 );
                 mostrarProductos(filteredProducts, `Resultados para: "${searchTerm}"`);
+            } else {
+                // Si no se pasan parámetros, se muestran todos los productos
+                mostrarProductos(data.products, "Todos los productos");
             }
         })
         .catch(error => console.error("Error al obtener productos:", error));
@@ -31,16 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
             productsContainer.innerHTML = `<p>No se encontraron productos para ${mensaje}</p>`;
         } else {
             productos.forEach(producto => {
-                if (!producto.idProduct) {
+                // Se usa producto.idProduct; si no existe, se prueba con producto.id
+                const productId = producto.idProduct || producto.id;
+                if (!productId) {
                     console.error("Producto sin ID:", producto);
-                    return; // Evita procesar productos sin ID válido
+                    return; // Evitar procesar productos sin ID válido
                 }
 
                 const productElement = document.createElement("div");
                 productElement.classList.add("col");
                 productElement.innerHTML = `
                     <div class="card product-card h-100">
-                        <a href="product.html?id=${producto.idProduct}" class="stretched-link"></a>
+                        <a href="product.html?id=${productId}" class="stretched-link"></a>
                         <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
                         <div class="card-body">
                             <h5 class="card-title">${producto.name}</h5>

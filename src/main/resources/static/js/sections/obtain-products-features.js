@@ -3,8 +3,8 @@
 /* ===== CARGA DE DETALLES DEL PRODUCTO (PRODUCT.HTML) ===== */
 async function loadProductDetails() {
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
-    console.log("ID obtenido:", productId);
+    const idProduct = urlParams.get('id');
+    console.log("ID obtenido:", idProduct);
 
     const productDetails = document.getElementById('product-details');
     if (!productDetails) {
@@ -12,7 +12,7 @@ async function loadProductDetails() {
         return;
     }
     try {
-        const response = await fetch(`http://localhost:8080/Products/${productId}`);
+        const response = await fetch(`http://localhost:8080/Products/${idProduct}`);
         if (!response.ok) throw new Error("Error en la respuesta de la API");
         const product = await response.json();
         productDetails.innerHTML = `
@@ -59,11 +59,11 @@ async function loadProductDetails() {
 
         `;
 
-        const idSubcategory = product.subcategory?.idSubcategory || product.subcategory;
+        const idSubcategory = product.idSubcategory;
         console.log("ID de subcategoría procesado:", idSubcategory);
         loadSimilarItems(idSubcategory);
 
-                loadSimilarItems(product.subcategory);
+
     } catch (error) {
         console.error("Error al cargar los detalles del producto:", error);
     }
