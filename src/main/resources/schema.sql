@@ -82,9 +82,11 @@ CREATE TABLE Order_Products (
 );
 
 CREATE TABLE Cart (
-id_cart INT AUTO_INCREMENT PRIMARY KEY,
-id_user INT NOT NULL,
-id_product INT NOT NULL,
-quantity INT NOT NULL CHECK (quantity > 0),
-FOREIGN KEY (id_user) REFERENCES Users(id_user) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (id_product) REFERENCES Products(id_product) ON DELETE CASCADE ON UPDATE CASCADE );
+    id_cart INT AUTO_INCREMENT PRIMARY KEY,
+    id_user INT NOT NULL,
+    id_product INT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    FOREIGN KEY (id_user) REFERENCES Users(id_user) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_product) REFERENCES Products(id_product) ON DELETE CASCADE ON UPDATE CASCADE
+);
+

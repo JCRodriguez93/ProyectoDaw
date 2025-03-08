@@ -23,3 +23,13 @@
     height: 100%;
     object-fit: cover; /* Recorta la imagen para que mantenga proporción */
 }
+
+ .text-with-border {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);  /* Sombra sutil oscura */
+}
+
+ .carousel-caption {
+  background: rgba(6, 37, 6, 0.664); /* Fondo verde con transparencia */
+  background: linear-gradient(135deg, rgba(3, 30, 3, 0.888), rgba(21, 110, 111, 0.7)); /* Fondo verde difuminado */
+  color: white; /* Asegura que el texto sea blanco para mayor contraste */
+}

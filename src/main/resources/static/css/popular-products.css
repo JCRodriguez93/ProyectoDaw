@@ -6,7 +6,6 @@
     padding: 40px;
     gap: 20px; /* Espacio entre las dos secciones */
     flex-wrap: wrap; /* Permite que las secciones se acomoden en móviles */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/fondo-populares.jpg");
 }
 /* Controles de cantidad */
 .popular-quantity-controls {
