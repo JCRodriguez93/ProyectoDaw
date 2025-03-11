@@ -26,13 +26,14 @@ h1 {
   }
   
 
-  button{
-    background-color: rgba(12, 77, 77, 0.556) !important;
-  }
   
   .plus-button{
 background-color: rgb(58, 151, 58) !important;
   }
   .minus-button{
     background-color: rgb(194, 70, 70) !important;
+  }
+
+  button:not(.btn) {
+      background-color: rgba(12, 77, 77, 0.556) !important;
   }
