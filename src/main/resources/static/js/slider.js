@@ -1,6 +1,11 @@
+
+/*
+Con el slider no aparecen los productos
+........................................
+
 document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const subcategoryId = urlParams.get('category');
+const subcategoryId = urlParams.get('subcategory'); // Ahora coincide con la URL
     const subcategoryName = urlParams.get('subcategoryName');
     const rangeInput = document.getElementById("customRange3");
     const rangeValue = document.getElementById("rangeValue");
@@ -23,10 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function filtrarProductosPorPrecio(precioMaximo) {
+     console.log("Precio máximo seleccionado:", precioMaximo);
+        console.log("Productos antes del filtro:", allProducts);
         if (parseInt(precioMaximo) === 0) {
+                    console.log("Producto:", producto.name, "Precio:", producto.price);
+
             mostrarProductos(allProducts, subcategoryName); // Mostrar todos los productos nuevamente
         } else {
-            const productosFiltrados = allProducts.filter(producto => producto.price <= parseInt(precioMaximo));
+const productosFiltrados = allProducts.filter(producto => Number(producto.price) <= Number(precioMaximo));
             mostrarProductos(productosFiltrados, subcategoryName);
         }
     }
@@ -60,3 +69,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+*/

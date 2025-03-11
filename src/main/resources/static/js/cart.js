@@ -11,6 +11,7 @@ if (!authToken) {
     document.body.classList.add('visible');
 
     // Función para obtener y mostrar el carrito
+    // Función para obtener y mostrar el carrito
     async function viewCart() {
         try {
             const response = await fetch('http://localhost:8080/cart', {
@@ -108,9 +109,15 @@ if (!authToken) {
                             <td><a href="#" class="btn btn-success btn-block">Pagar <i class="fa fa-angle-right"></i></a></td>
                         </tr>
                     `;
-
                     addEventListeners();
                 }
+            } else if (response.status === 404) {
+                // Si el carrito no se encuentra, mostrar un mensaje amigable
+                console.log('Carrito no encontrado, mostrando mensaje de carrito vacío.');
+                const cartContainer = document.querySelector('#cart tbody');
+                const cartFooter = document.querySelector('#cart tfoot');
+                cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>No se pudo encontrar el carrito. Está vacío o no disponible.</h3></td></tr>';
+                cartFooter.innerHTML = ''; // No mostrar el pie del carrito si no hay productos
             } else {
                 console.error('Error al obtener el carrito:', response.statusText);
                 alert('Hubo un problema al cargar el carrito.');
@@ -120,6 +127,7 @@ if (!authToken) {
             alert('No se pudo conectar con el servidor.');
         }
     }
+
 
   async function updateCartItem(productId, quantity) {
       console.log('Updating Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
@@ -158,37 +166,67 @@ if (!authToken) {
 
   async function deleteCartItem(productId, quantity) {
       console.log('Deleting Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
+
       // Verificar que el productId es válido
       if (!productId) {
           alert('El ID del producto no es válido.');
           return;
       }
 
-      try {
-          const response = await fetch('http://localhost:8080/cart', {
-              method: 'POST',
-              headers: {
-                  'Authorization': `Bearer ${authToken}`,
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                   product_id: productId, // ID del producto
-                   quantity: quantity,    // Nueva cantidad
-                   action: 'remove'       // Acción de modificar
-              })
-          });
+      // Mostrar SweetAlert2 para confirmar la eliminación
+      Swal.fire({
+          title: "¿Estás seguro?",
+          text: "¡No podrás revertir esta acción!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Sí, eliminarlo",
+          cancelButtonText: "Cancelar"
+      }).then(async (result) => {
+          if (result.isConfirmed) {
+              try {
+                  const response = await fetch('http://localhost:8080/cart', {
+                      method: 'POST',
+                      headers: {
+                          'Authorization': `Bearer ${authToken}`,
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                          product_id: productId, // ID del producto
+                          quantity: quantity,    // Nueva cantidad
+                          action: 'remove'       // Acción de modificar
+                      })
+                  });
 
-          if (response.ok) {
-              viewCart(); // Recargar el carrito
-          } else {
-              const errorMessage = await response.json();
-              alert(errorMessage.message || 'No se pudo eliminar el producto.');
+                  if (response.ok) {
+                      // Mostrar mensaje de éxito con SweetAlert2
+                      Swal.fire({
+                          title: "¡Eliminado!",
+                          text: "El producto ha sido eliminado.",
+                          icon: "success"
+                      });
+                      viewCart(); // Recargar el carrito
+                  } else {
+                      const errorMessage = await response.json();
+                      Swal.fire({
+                          title: "Error",
+                          text: errorMessage.message || 'No se pudo eliminar el producto.',
+                          icon: "error"
+                      });
+                  }
+              } catch (error) {
+                  console.error('Error al eliminar el producto:', error);
+                  Swal.fire({
+                      title: "Error",
+                      text: 'Hubo un error al eliminar el producto.',
+                      icon: "error"
+                  });
+              }
           }
-      } catch (error) {
-          console.error('Error al eliminar el producto:', error);
-          alert('Hubo un error al eliminar el producto.');
-      }
+      });
   }
+
 
 
   // Añadir eventos a los botones de actualizar y eliminar
