@@ -29,3 +29,8 @@ button {
     background-color: rgba(12, 77, 77, 0.556) !important;
 
 }
+
+/* Escalar la interfaz para que se vea un poco más pequeña */
+.scale-container {
+  transform: scale(0.8);
+}
