@@ -1361,3 +1361,13 @@ Using generated security password: 4f96af17-b086-4526-913a-f0ddf2321928
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
 2025-03-18 02:34:49,689 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.308 seconds (process running for 10.435)
+2025-03-18 02:40:23,245 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 7348 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-18 02:40:23,246 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-18 02:40:31,132 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-18 02:40:31,162 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 0e807c58-4503-4f56-ba71-44ac36bb6567
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-18 02:40:32,225 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.654 seconds (process running for 10.731)

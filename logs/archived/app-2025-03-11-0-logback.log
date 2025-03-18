@@ -1,0 +1,421 @@
+2025-03-11 02:38:40,193 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 20464 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:38:40,193 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:38:47,867 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:38:47,903 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 8f9a90d6-e462-4540-a2a8-04900655d2da
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:38:49,001 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.415 seconds (process running for 10.561)
+2025-03-11 02:39:05,377 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:05,380 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:05,533 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:05,579 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:12,827 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 02:39:13,087 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 02:39:13,165 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:39:13,463 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:13,493 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:39:13,545 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:13,618 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:13,662 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:20,706 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:20,721 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:20,801 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:20,822 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:37,341 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:37,382 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:39:37,566 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 17 retrieved successfully
+2025-03-11 02:39:39,634 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: modify
+2025-03-11 02:39:39,636 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=17, quantity=4
+2025-03-11 02:39:39,656 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CartController: Product modified successfully
+2025-03-11 02:39:39,703 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 17 retrieved successfully
+2025-03-11 02:39:45,466 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:45,548 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:45,550 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:39:45,591 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:39:47,132 WARN [http-nio-8080-exec-3] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'idProduct': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "undefined"]
+2025-03-11 02:39:47,153 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:41:18,285 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:41:18,299 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:41:18,299 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:41:18,334 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:41:18,379 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:41:21,284 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:41:21,291 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:41:21,322 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:41:21,325 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:41:23,196 WARN [http-nio-8080-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'idProduct': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "undefined"]
+2025-03-11 02:41:23,221 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:42:44,476 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 11784 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:42:44,479 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:42:52,254 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:42:52,290 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: cca57b17-942c-426a-bb8e-664963b9b27e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:42:53,305 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.436 seconds (process running for 10.462)
+2025-03-11 02:43:13,225 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:43:13,225 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:43:13,244 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:43:13,430 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:43:13,467 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:43:13,539 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:43:16,526 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:43:16,595 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:43:16,609 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:43:16,705 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:43:18,255 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:43:18,301 WARN [http-nio-8080-exec-10] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'idProduct': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "undefined"]
+2025-03-11 02:43:52,798 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 4060 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:43:52,804 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:44:00,494 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:44:00,525 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 9700586f-c2c4-4392-a5b6-6f638efecc76
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:44:01,555 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.402 seconds (process running for 10.551)
+2025-03-11 02:44:11,770 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:11,772 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:11,915 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:13,693 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:13,714 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
+2025-03-11 02:44:13,829 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:22,194 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:22,305 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:22,345 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:24,016 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 2 retrieved successfully
+2025-03-11 02:44:24,042 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:24,121 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:32,007 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:32,075 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:32,075 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:35,968 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:44:35,974 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:36,028 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:39,484 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 22 retrieved successfully
+2025-03-11 02:44:39,533 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:44:39,656 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:46:55,958 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 26172 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:46:55,969 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:47:03,970 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:47:04,005 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: e32ce3e9-cd71-4931-92db-e3bd1631ee51
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:47:05,218 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.938 seconds (process running for 11.01)
+2025-03-11 02:47:18,519 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:18,519 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:18,534 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:47:18,690 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:18,748 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:20,874 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:28,252 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 02:47:28,442 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 02:47:28,481 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:28,906 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:47:28,918 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:28,924 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:28,966 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:29,024 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:37,716 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:47:37,716 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:47:37,780 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:40,093 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 02:47:40,096 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=25, quantity=1
+2025-03-11 02:47:40,100 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 25, quantity: 1
+2025-03-11 02:47:40,182 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 25, quantity: 1
+2025-03-11 02:47:40,189 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 25
+2025-03-11 02:47:40,193 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 02:47:44,390 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:47:44,460 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:44,490 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 17 retrieved successfully
+2025-03-11 02:47:44,522 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:47:53,453 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:47:53,456 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:47:53,477 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:53,554 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:53,592 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:47:58,937 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 02:47:58,937 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=7, quantity=6
+2025-03-11 02:47:58,939 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 7, quantity: 6
+2025-03-11 02:47:58,952 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 7, quantity: 6
+2025-03-11 02:47:58,952 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 7
+2025-03-11 02:47:58,956 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 02:48:07,984 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:48:07,993 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:48:08,054 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:48:10,870 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
+2025-03-11 02:48:10,888 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:48:10,991 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:48:13,605 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.OrdersController: Order created successfully: null
+2025-03-11 02:49:21,114 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 18556 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:49:21,114 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:49:28,806 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:49:28,839 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: e43c1161-4acb-4493-8927-f6b93ad5f528
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:49:29,982 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.458 seconds (process running for 10.574)
+2025-03-11 02:49:34,151 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:49:38,746 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 02:49:38,973 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 02:49:39,012 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:49:39,329 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:49:39,409 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:49:39,461 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:49:39,509 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:49:39,611 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:49:44,334 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:49:44,389 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:49:44,412 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:49:48,208 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
+2025-03-11 02:49:48,217 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:49:48,365 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:49:49,875 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.OrdersController: Order created successfully: null
+2025-03-11 02:50:04,892 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:50:04,900 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:50:05,056 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 17 retrieved successfully
+2025-03-11 02:50:05,153 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:50:05,182 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:50:20,033 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:50:20,042 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:50:20,106 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 17 retrieved successfully
+2025-03-11 02:50:20,215 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:50:20,246 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:50:23,446 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
+2025-03-11 02:50:23,447 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=17, quantity=4
+2025-03-11 02:50:23,478 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product removed successfully
+2025-03-11 02:50:23,536 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:50:23,560 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:51:38,715 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 12344 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:51:38,724 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:51:48,165 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:51:48,199 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 5fad44e3-9197-4cc2-ac23-17132f44bd38
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:51:49,389 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 11.511 seconds (process running for 12.756)
+2025-03-11 02:51:55,776 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:52:00,260 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 02:52:00,483 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 02:52:00,515 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:52:00,875 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:52:00,981 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:52:00,996 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:52:01,050 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:52:01,100 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:52:05,653 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:52:05,665 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:52:05,703 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:52:05,731 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:54:09,396 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 21900 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 02:54:09,400 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 02:54:17,062 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 02:54:17,093 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 0f4a2002-699d-4ae9-8945-c336d7c1cab4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 02:54:18,129 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.341 seconds (process running for 10.481)
+2025-03-11 02:54:24,807 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:54:32,447 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 02:54:32,661 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 02:54:32,690 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:54:33,160 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:54:33,170 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:54:33,231 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:54:33,232 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:54:33,284 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:54:33,284 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:54:37,030 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:54:37,076 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:54:37,168 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 25 retrieved successfully
+2025-03-11 02:54:37,285 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:54:50,537 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
+2025-03-11 02:54:50,539 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=25, quantity=1
+2025-03-11 02:54:50,590 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product removed successfully
+2025-03-11 02:54:50,651 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 02:54:57,473 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:54:57,522 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:54:57,549 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:03,800 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:03,836 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:55:03,899 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:27,944 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:27,947 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 02:55:28,004 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:55:28,052 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:55:28,103 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:55:38,071 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 02:55:38,073 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:38,138 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:42,039 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
+2025-03-11 02:55:42,054 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 02:55:42,125 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:01:34,550 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 3772 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-11 03:01:34,550 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-11 03:01:44,694 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-11 03:01:44,743 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 7cc21f42-9053-4ff3-8750-8badabd8f919
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-11 03:01:46,445 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.487 seconds (process running for 13.762)
+2025-03-11 03:01:53,915 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:01:53,922 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:01:53,944 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:01:54,127 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:01:54,290 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:01:54,397 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:36,722 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MTY1ODA3MiwiZXhwIjoxNzQxNjYxNjcyfQ.Jwtvq1vWv4FQdi3tj3ccNlJ-4zLiPVSqZHhbuuiJZLh5WaapHpRM417IkdrxMw55VT4D43EXppiryRlLBoZExw
+2025-03-11 03:02:37,263 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:02:37,282 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:37,363 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:37,461 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:46,093 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 03:02:46,275 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 03:02:46,314 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:02:46,521 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:02:46,552 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:02:46,589 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:46,664 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:46,704 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:59,052 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:02:59,057 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:02:59,110 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:06,229 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:03:06,233 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:06,319 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:03:13,383 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 03:03:13,385 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=11, quantity=8
+2025-03-11 03:03:13,390 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 11, quantity: 8
+2025-03-11 03:03:13,475 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 11, quantity: 8
+2025-03-11 03:03:13,480 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 11
+2025-03-11 03:03:13,486 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 03:03:17,235 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:03:17,236 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:17,326 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 03:03:17,463 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:03:24,395 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:24,398 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:03:24,454 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:28,963 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 14 retrieved successfully
+2025-03-11 03:03:29,006 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:29,060 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:03:33,185 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.OrdersController: Order created successfully: null
+2025-03-11 03:03:43,799 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:03:43,801 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:03:43,904 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Product with id 7 retrieved successfully
+2025-03-11 03:03:43,932 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:03:56,240 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
+2025-03-11 03:03:56,241 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=7, quantity=6
+2025-03-11 03:03:56,279 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Product removed successfully
+2025-03-11 03:03:56,342 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:04:04,915 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:04,920 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:04:04,931 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:05,031 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:05,097 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:18,364 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 03:04:18,365 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=4, quantity=30
+2025-03-11 03:04:18,367 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 4, quantity: 30
+2025-03-11 03:04:18,385 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 4, quantity: 30
+2025-03-11 03:04:18,386 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 4
+2025-03-11 03:04:18,391 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 03:04:23,178 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:23,202 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:04:23,268 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:04:23,330 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
+2025-03-11 03:04:36,873 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:36,911 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:36,904 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:04:36,954 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:37,018 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:45,116 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 03:04:45,116 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=9, quantity=23
+2025-03-11 03:04:45,117 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 9, quantity: 23
+2025-03-11 03:04:45,134 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 9, quantity: 23
+2025-03-11 03:04:45,135 INFO [http-nio-8080-exec-5] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 9
+2025-03-11 03:04:45,140 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 03:04:51,626 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:04:51,638 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:51,700 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:54,093 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
+2025-03-11 03:04:54,123 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:04:54,169 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:05:04,261 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.OrdersController: Order created successfully: null
+2025-03-11 03:05:21,636 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
+2025-03-11 03:06:29,689 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:06:29,692 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:06:29,697 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:06:29,734 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:06:29,778 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:06:34,382 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MTY1ODU2NiwiZXhwIjoxNzQxNjYyMTY2fQ.iuI3Q5OorxGStMIUl8qbaROui_tC7mLXFvY1BU5F-XKs4EnNPdBZB4EXFGxT77Juo7H-C6E7kos0y1WFhOHLHQ
+2025-03-11 03:06:34,521 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:06:34,525 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:06:34,560 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:06:34,614 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:12,317 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-11 03:07:12,387 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-11 03:07:12,404 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:07:12,575 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:07:12,585 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:12,611 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:07:12,626 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:12,665 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:21,576 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:07:21,580 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:21,631 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:07:26,249 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 18 retrieved successfully
+2025-03-11 03:07:26,262 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:07:26,297 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:07:37,835 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.OrdersController: Order created successfully: null
+2025-03-11 03:07:52,529 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.OrdersController: Successfully fetched all orders
+2025-03-11 03:08:08,268 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:08:08,271 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:08:08,299 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:08:25,918 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:08:25,932 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:08:25,980 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-11 03:08:32,458 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-11 03:08:32,459 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=11, quantity=9
+2025-03-11 03:08:32,460 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 11, quantity: 9
+2025-03-11 03:08:32,464 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: Updated product quantity in cart for userId: 6, productId: 11, new quantity: 17
+2025-03-11 03:08:32,465 INFO [http-nio-8080-exec-6] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 11
+2025-03-11 03:08:32,486 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-11 03:08:36,822 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-11 03:08:36,824 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-11 03:08:36,928 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:08:37,075 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
+2025-03-11 03:08:37,099 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Product with id 9 retrieved successfully
+2025-03-11 03:08:52,772 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: modify
+2025-03-11 03:08:52,772 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=4, quantity=1
+2025-03-11 03:08:52,790 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Product modified successfully
+2025-03-11 03:08:52,835 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:08:52,853 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
+2025-03-11 03:08:52,870 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 9 retrieved successfully
+2025-03-11 03:08:59,713 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: modify
+2025-03-11 03:08:59,713 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=9, quantity=1
+2025-03-11 03:08:59,724 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Product modified successfully
+2025-03-11 03:08:59,769 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
+2025-03-11 03:08:59,786 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
+2025-03-11 03:08:59,802 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Product with id 9 retrieved successfully
+2025-03-11 03:09:08,604 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
+2025-03-11 03:09:08,605 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=11, quantity=17
+2025-03-11 03:09:08,624 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Product removed successfully
+2025-03-11 03:09:08,686 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
+2025-03-11 03:09:08,700 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 9 retrieved successfully
