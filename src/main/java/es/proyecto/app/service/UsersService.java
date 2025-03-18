@@ -2,6 +2,7 @@ package es.proyecto.app.service;
 
 import es.proyecto.app.entity.RolesEntity;
 import es.proyecto.app.entity.UsersEntity;
+import es.proyecto.app.error.ProductException;
 import es.proyecto.app.error.UsersException;
 import es.proyecto.app.mapper.UsersMapper;
 import es.proyecto.app.repository.RolesRepository;
@@ -59,6 +60,7 @@ public class UsersService {
      * @param user Datos del usuario a crear.
      */
     public void createUser(User user) {
+        validatePassword(user.getPassword()); // Validar antes de encriptar
 
         UsersEntity entity = mapper.toEntity(user);
         entity.setPassword(passwordEncoder.encode(user.getPassword()));
@@ -85,8 +87,8 @@ public class UsersService {
         UsersEntity entityToUpdate = mapper.toEntity(user);
         entityToUpdate.setIdUser(idUser);
 
-        // Encriptar la nueva contraseña solo si se ha proporcionado
         if (user.getPassword() != null && !user.getPassword().isEmpty()) {
+            validatePassword(user.getPassword()); // Validar antes de encriptar
             entityToUpdate.setPassword(passwordEncoder.encode(user.getPassword()));
         } else {
             entityToUpdate.setPassword(existingUser.get().getPassword()); // Mantener la contraseña actual
@@ -114,5 +116,14 @@ public class UsersService {
         // Busca el usuario en la base de datos a partir del email
         return repository.findByEmail(email);
     }
+
+
+    private void validatePassword(String password) {
+        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@!%*?&+])[A-Za-z\\d$@!%*?&+]{8,25}$";
+        if (!password.matches(regex)) {
+            throw UsersException.INVALID_PASSWORD_EXCEPTION;
+        }
+    }
+
 
 }

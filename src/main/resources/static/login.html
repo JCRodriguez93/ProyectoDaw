@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/general-styles.css">
 <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/passwords.css">
 </head>
 <body >
   <main>
@@ -17,109 +18,109 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-xxl-9">
-            <div class="card border-light-subtle shadow-sm">
-              <div class="row g-0  bg-dark fondo-form"> <!--este es el color de fondo -->
-                <div class="text-center mb-3">
-                  <img src="img/menu/red-logo-tattoo-studio.png" alt="Company Logo" class="img-fluid logo-img" style="max-width: 150px;">
-                </div>
-                <div class="col-12 col-md-6 d-flex align-items-center justify-content-center fixed-height">
-                  <div class="col-12 col-lg-11 col-xl-9" >
-                    <h1 class="text-center mb-4" style="top: 0;">Iniciar sesión en la página</h1>
-                    <div class="card-body p-3 p-md-4 p-xl-4">
-                      <form id="loginForm" action="#">
-                        <div class="row gy-3 overflow-hidden">
-                            <div class="col-12">
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" name="email" id="login_email" placeholder="name@example.com" required>
-                                    <label for="login_email" class="form-label">Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" name="password" id="login_password" placeholder="Contraseña" required>
-                                    <label for="login_password" class="form-label">Contraseña</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember_me" id="remember_me">
-                                    <label class="form-check-label text-secondary" for="remember_me">
-                                        Mantener mi sesión activa
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <div class="d-grid">
-                                    <button class="btn btn-dark btn-lg" type="submit">Log in now</button>
-                                </div>
-                            </div>
-                            <div id="error-message" class="col-12 text-danger" style="display: none;">
-                                <p>Credenciales incorrectas. Por favor, intente de nuevo.</p>
-                            </div>
-                        </div>
-                    </form>
-
-                    </div>
-                  </div>
-                </div>
 
 
-
-
-
-
-
-
-
-
-
-                <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center fixed-height">
-                  <div class="card-body p-3 p-md-4 p-xl-4">
-                    <h1 class="text-center mb-4">Registrarse</h1>
-                    <form id="registerForm" action="#">
-                      <div class="row gy-3 overflow-hidden">
-                        <div class="col-12">
-                          <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="register_email" id="register_email" placeholder="name@example.com" required>
-                            <label for="register_email" class="form-label">Email</label>
+              <div class="scale-container">
+                  <div class="card border-light-subtle shadow-sm">
+                      <div class="row g-0  bg-dark fondo-form"> <!--este es el color de fondo -->
+                          <div class="text-center mb-3">
+                              <img src="img/menu/red-logo-tattoo-studio.png" alt="Company Logo" class="img-fluid logo-img" style="max-width: 150px;">
                           </div>
-                        </div>
-                        <div class="col-12 hidden" id="additionalFields">
-                          <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombre" required>
-                            <label for="first_name" class="form-label">Nombre</label>
-                          </div>
-                          <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" required>
-                            <label for="last_name" class="form-label">Apellidos</label>
-                          </div>
-                          <div class="form-floating mb-3">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
-                            <label for="password" class="form-label">Contraseña</label>
+                          <div class="col-12 col-md-6 d-flex align-items-center justify-content-center fixed-height">
+                              <div class="col-12 col-lg-11 col-xl-9" >
+                                  <h1 class="text-center mb-4" style="top: 0;">Iniciar sesión en la página</h1>
+                                  <div class="card-body p-3 p-md-4 p-xl-4">
+                                      <form id="loginForm" action="#">
+                                          <div class="row gy-3 overflow-hidden">
+                                              <div class="col-12">
+                                                  <div class="form-floating mb-3">
+                                                      <input type="email" class="form-control" name="email" id="login_email" placeholder="name@example.com" required>
+                                                      <label for="login_email" class="form-label">Email</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12">
+                                                  <div class="form-floating mb-3">
+                                                      <input type="password" class="form-control" name="password" id="login_password" placeholder="Contraseña" required>
+                                                      <label for="login_password" class="form-label">Contraseña</label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-12">
+                                                  <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" name="remember_me" id="remember_me">
+                                                      <label class="form-check-label text-secondary" for="remember_me">
+                                                          Mantener mi sesión activa
+                                                      </label>
+                                                  </div>
+                                              </div>
+                                              <div class="col-9">
+                                                  <div class="d-grid">
+                                                      <button class="btn btn-dark btn-lg" type="submit">Log in now</button>
+                                                  </div>
+                                              </div>
+                                              <div id="error-message" class="col-12 text-danger" style="display: none;">
+                                                  <p>Credenciales incorrectas. Por favor, intente de nuevo.</p>
+                                              </div>
+                                          </div>
+                                      </form>
+
+                                  </div>
+                              </div>
                           </div>
 
-                          <div class="form-floating mb-3">
-                            <input type="date" class="form-control" name="birthdate" id="birthdate" required>
-                            <label for="birthdate" class="form-label">Fecha de nacimiento</label>
+                          <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center fixed-height">
+                              <div class="card-body p-3 p-md-4 p-xl-4">
+                                  <h1 class="text-center mb-4">Registrarse</h1>
+                                  <form id="registerForm" action="#">
+                                      <div class="row gy-3 overflow-hidden">
+                                          <div class="col-12">
+                                              <div class="form-floating mb-3">
+                                                  <input type="email" class="form-control" name="register_email" id="register_email" placeholder="name@example.com" required>
+                                                  <label for="register_email" class="form-label">Email</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-12 hidden" id="additionalFields">
+                                              <div class="form-floating mb-3">
+                                                  <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Nombre" required>
+                                                  <label for="first_name" class="form-label">Nombre</label>
+                                              </div>
+                                              <div class="form-floating mb-3">
+                                                  <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Apellidos" required>
+                                                  <label for="last_name" class="form-label">Apellidos</label>
+                                              </div>
+                                              <div class="form-floating mb-3">
+                                                  <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+                                                  <label for="password" class="form-label">Contraseña</label>
+                                              </div>
+
+                                              <div class="form-floating mb-3">
+                                                  <input type="date" class="form-control" name="birthdate" id="birthdate" required>
+                                                  <label for="birthdate" class="form-label">Fecha de nacimiento</label>
+                                              </div>
+                                              <div class="col-12">
+                                                  <div class="d-grid">
+                                                      <button class="btn btn-dark btn-lg" type="submit">Registrar</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-12">
+                                              <div class="d-grid">
+                                                  <button class="btn btn-dark btn-lg" id="continueButton" type="button">Continue</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
                           </div>
-                          <div class="col-12">
-                            <div class="d-grid">
-                              <button class="btn btn-dark btn-lg" type="submit">Registrar</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <div class="d-grid">
-                            <button class="btn btn-dark btn-lg" id="continueButton" type="button">Continue</button>
-                          </div>
-                        </div>
                       </div>
-                    </form>
                   </div>
-                </div>
               </div>
-            </div>
-          </div>
+
+              </div>
+
+
+
+
+
         </div>
       </div>
     </section>
