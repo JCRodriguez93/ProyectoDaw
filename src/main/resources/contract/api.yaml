@@ -25,6 +25,7 @@ paths:
                 type: string
 
 
+
   # -------------------------------------------------
 
 
@@ -1065,6 +1066,8 @@ paths:
       operationId: getOrders
       tags:
         - Orders
+      security:
+        - bearerAuth: []  # Aquí añadimos la autenticación con el Bearer token
       responses:
         "200":
           description: Lista de pedidos obtenida exitosamente
@@ -1097,6 +1100,8 @@ paths:
       operationId: createOrder
       tags:
         - Orders
+      security:
+        - bearerAuth: []  # Aquí también añadimos la seguridad para la creación de un pedido
       requestBody:
         description: Datos del nuevo pedido
         required: true
@@ -1123,6 +1128,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /Orders/{idOrder}:
     get:
       summary: Obtener un pedido por ID
@@ -1130,6 +1136,8 @@ paths:
       operationId: getOrderById
       tags:
         - Orders
+      security:
+        - bearerAuth: []
       parameters:
         - name: idOrder
           in: path
@@ -1162,6 +1170,8 @@ paths:
       operationId: updateOrder
       tags:
         - Orders
+      security:
+        - bearerAuth: []    # Agrega esta línea para exigir autenticación
       parameters:
         - name: idOrder
           in: path
@@ -1399,7 +1409,6 @@ components:
         orderStatus:
           $ref: '#/components/schemas/OrderStatus'
       required:
-        - idOrder
         - idUser
         - totalQuantity
         - totalPrice
@@ -1440,34 +1449,6 @@ components:
         - quantity
 
 
-    Cart:
-      type: object
-      properties:
-        idCart:
-          type: integer
-          format: int32
-          description: Identificador único del carrito
-        idUser:
-          type: integer
-          format: int32
-          description: Identificador único del usuario
-        products:
-          type: array
-          items:
-            type: object
-            properties:
-              idProduct:
-                type: integer
-                format: int32
-                description: Identificador único del producto
-              quantity:
-                type: integer
-                format: int32
-                description: Cantidad de producto en el carrito
-      required:
-        - idCart
-        - idUser
-        - products
 
 
 
@@ -1573,6 +1554,34 @@ components:
         - updatedUser
 
 
+    Cart:
+      type: object
+      properties:
+        idCart:
+          type: integer
+          format: int32
+          description: Identificador único del carrito
+        idUser:
+          type: integer
+          format: int32
+          description: Identificador único del usuario
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              idProduct:
+                type: integer
+                format: int32
+                description: Identificador único del producto
+              quantity:
+                type: integer
+                format: int32
+                description: Cantidad de producto en el carrito
+      required:
+        - idCart
+        - idUser
+        - products
 
 
     ManageCartRequest:
@@ -1747,27 +1756,6 @@ components:
         - id_user
         - id_product
         - quantity
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     # esto de momento palante

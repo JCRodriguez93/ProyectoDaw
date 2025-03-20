@@ -1,10 +1,12 @@
 package es.proyecto.app.service;
 
 import es.proyecto.app.entity.OrdersEntity;
+import es.proyecto.app.entity.UsersEntity;
 import es.proyecto.app.mapper.OrderMapper;
 import es.proyecto.app.repository.OrderProductRepository;
 import es.proyecto.app.repository.OrdersRepository;
 import es.proyecto.app.repository.ProductsRepository;
+import es.proyecto.app.repository.UsersRepository;
 import es.swagger.codegen.models.Orders;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,15 +34,26 @@ public class OrdersService {
     @Autowired
     private ProductsRepository productsRepository;
 
+    @Autowired
+    private UsersRepository userRepository;
+
     public List<Orders> getAllOrders() {
         return mapper.toApiDomain(ordersRepository.findAll());
     }
 
-    public HttpStatus createOrder(Orders idOrder) {
-        OrdersEntity entity = mapper.toEntity(idOrder);
+    public HttpStatus createOrder(Orders order) {
+        // Buscar el usuario en la BD antes de asignarlo
+        UsersEntity user = userRepository.findById(order.getIdUser())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        // Convertir el DTO en entidad
+        OrdersEntity entity = mapper.toEntity(order);
+        entity.setUser(user); // Asegurar que el usuario está persistido
+
         ordersRepository.save(entity);
         return HttpStatus.CREATED;
     }
+
 
     public Orders getOrderById(Integer idOrder) {
         Optional<OrdersEntity> optionalOrdersEntity = ordersRepository.findById(idOrder);

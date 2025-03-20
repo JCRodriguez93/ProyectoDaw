@@ -1,17 +1,17 @@
-// Recuperar el token desde localStorage
+// Retrieve token and userId from localStorage
 const authToken = localStorage.getItem('authToken');
+const userId = localStorage.getItem('userId');
 
-// Al cargar la página, aseguramos que el contenido se oculte temporalmente
+// Hide page content until authentication is confirmed
 document.body.classList.remove('visible');
 
-// Verificar si el token está disponible
+// Redirect to login if token is missing
 if (!authToken) {
     window.location.href = 'login.html';
 } else {
     document.body.classList.add('visible');
 
-    // Función para obtener y mostrar el carrito
-    // Función para obtener y mostrar el carrito
+    // Function to fetch and display the cart
     async function viewCart() {
         try {
             const response = await fetch('http://localhost:8080/cart', {
@@ -31,19 +31,20 @@ if (!authToken) {
                 const cartItems = await response.json();
 
                 if (cartItems.length === 0) {
-                    cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>No hay productos en tu carrito.</h3></td></tr>';
+                    cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>Your cart is empty.</h3></td></tr>';
                 } else {
                     let total = 0;
 
-                    for (const item of cartItems) {
-                        const product_id = item.product_id; // Aquí ya tienes el ID correcto
-                        console.log('Product ID:', product_id); // Mostrará el ID de cada producto en el carrito
-                        console.log('Item:', item); // Mostrará el objeto completo para ver los valores
+                    // Store cartItems globally so we can use them when clearing the cart after payment
+                    window.cartItems = cartItems;
 
-                        // Función para obtener los detalles del producto (como la imageUrl y description)
-                        async function getProductDetails(product_id) {
+                    for (const item of cartItems) {
+                        const productId = item.product_id;
+
+                        // Function to fetch product details (like imageUrl and description)
+                        async function getProductDetails(productId) {
                             try {
-                                const response = await fetch(`http://localhost:8080/Products/${product_id}`, {
+                                const response = await fetch(`http://localhost:8080/Products/${productId}`, {
                                     method: 'GET',
                                     headers: {
                                         'Authorization': `Bearer ${authToken}`,
@@ -53,20 +54,17 @@ if (!authToken) {
 
                                 if (response.ok) {
                                     const product = await response.json();
-                                    console.log('Product Details:', product); // Ver detalles del producto
-                                    return product; // Devuelve el producto encontrado
+                                    return product;
                                 } else {
-                                    console.error('No se pudo obtener el producto:', response.statusText);
+                                    console.error('Failed to fetch product:', response.statusText);
                                 }
                             } catch (error) {
-                                console.error('Error al obtener el producto:', error);
+                                console.error('Error fetching product:', error);
                             }
                         }
 
-                        // Obtener los detalles del producto
-                        const product = await getProductDetails(product_id);
+                        const product = await getProductDetails(productId);
 
-                        // Si el producto es encontrado, crear la fila con la imagen y la descripción
                         if (product) {
                             const row = document.createElement('tr');
                             const price = parseFloat(item.price);
@@ -74,17 +72,17 @@ if (!authToken) {
                             total += subtotal;
 
                             row.innerHTML = `
-                                <td data-th="Producto">
+                                <td data-th="Product">
                                     <div class="row">
                                         <div class="col-sm-2"><img src="${product.imageUrl}" alt="${product.product_name}" class="img-fluid"></div>
                                         <div class="col-sm-10">
                                             <h4 class="nomargin">${item.product_name}</h4>
-                                            <p>${product.description}</p> <!-- Aquí se muestra la descripción del producto -->
+                                            <p>${product.description}</p>
                                         </div>
                                     </div>
                                 </td>
-                                <td data-th="Precio">€${price.toFixed(2)}</td>
-                                <td data-th="Cantidad">
+                                <td data-th="Price">€${price.toFixed(2)}</td>
+                                <td data-th="Quantity">
                                     <input type="number" class="form-control text-center quantity" value="${item.quantity}" min="1" data-id="${item.product_id}">
                                 </td>
                                 <td data-th="Subtotal" class="text-center subtotal">€${subtotal.toFixed(2)}</td>
@@ -93,177 +91,268 @@ if (!authToken) {
                                     <button class="btn btn-danger btn-sm delete" data-id="${item.product_id}"><i class="fas fa-trash-alt"></i></button>
                                 </td>
                             `;
-
                             cartContainer.appendChild(row);
                         }
                     }
 
+                    window.lastCartTotal = total;
+                    window.lastCartQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
                     cartFooter.innerHTML = `
-                        <tr>
-                            <td colspan="5" class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar comprando</a></td>
-                            <td colspan="2"></td>
-                            <td class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
-                            <td><a href="#" class="btn btn-success btn-block">Pagar <i class="fa fa-angle-right"></i></a></td>
-                        </tr>
-                    `;
+                       <tr>
+                           <td colspan="5" class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
+                       </tr>
+                       <tr>
+                           <td>
+                               <a href="http://localhost:8080/catalog.html" class="btn btn-warning">
+                                   <i class="fa fa-angle-left"></i> Continue Shopping
+                               </a>
+                           </td>
+                           <td colspan="2"></td>
+                           <td class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
+                           <td>
+                               <a href="#" id="pay-button" class="btn btn-success btn-block">
+                                   Pay <i class="fa fa-angle-right"></i>
+                               </a>
+                           </td>
+                       </tr>
+                   `;
+
                     addEventListeners();
                 }
             } else if (response.status === 404) {
-                // Si el carrito no se encuentra, mostrar un mensaje amigable
-                console.log('Carrito no encontrado, mostrando mensaje de carrito vacío.');
-                const cartContainer = document.querySelector('#cart tbody');
-                const cartFooter = document.querySelector('#cart tfoot');
-                cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>No se pudo encontrar el carrito. Está vacío o no disponible.</h3></td></tr>';
-                cartFooter.innerHTML = ''; // No mostrar el pie del carrito si no hay productos
+                cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>Cart not found. It may be empty.</h3></td></tr>';
+                cartFooter.innerHTML = '';
             } else {
-                console.error('Error al obtener el carrito:', response.statusText);
-                alert('Hubo un problema al cargar el carrito.');
+                alert('There was a problem loading the cart.');
             }
         } catch (error) {
-            console.error('Error de red al obtener el carrito:', error);
-            alert('No se pudo conectar con el servidor.');
+            alert('Could not connect to the server.');
         }
     }
 
+    // Function to update an item in the cart
+    async function updateCartItem(productId, quantity) {
+        if (!productId || isNaN(quantity) || quantity <= 0) {
+            alert('Invalid product or quantity.');
+            return;
+        }
 
-  async function updateCartItem(productId, quantity) {
-      console.log('Updating Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
-      // Verificar que los parámetros sean válidos
-      if (!productId || isNaN(quantity) || quantity <= 0) {
-          alert('Los valores del producto o cantidad no son válidos.');
-          return;
-      }
+        try {
+            const response = await fetch('http://localhost:8080/cart', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity,
+                    action: 'modify'
+                })
+            });
 
-      try {
-          const response = await fetch('http://localhost:8080/cart', {
-              method: 'POST',
-              headers: {
-                  'Authorization': `Bearer ${authToken}`,
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                  product_id: productId, // ID del producto
-                  quantity: quantity,    // Nueva cantidad
-                  action: 'modify'       // Acción de modificar
-              })
-          });
+            if (response.ok) {
+                viewCart();
+            } else {
+                alert('Failed to update the quantity.');
+            }
+        } catch (error) {
+            alert('There was an error updating the cart.');
+        }
+    }
 
-          if (response.ok) {
-              viewCart(); // Recargar el carrito
-          } else {
-              const errorMessage = await response.json();
-              alert(errorMessage.message || 'No se pudo actualizar la cantidad.');
-          }
-      } catch (error) {
-          console.error('Error al actualizar el producto:', error);
-          alert('Hubo un error al actualizar el carrito.');
-      }
-  }
+    // Function to delete an item from the cart (with confirmation)
+    async function deleteCartItem(productId, quantity) {
+        if (!productId) {
+            alert('Invalid product ID.');
+            return;
+        }
 
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This action cannot be undone!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it",
+            cancelButtonText: "Cancel"
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const response = await fetch('http://localhost:8080/cart', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${authToken}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            product_id: productId,
+                            quantity: quantity,
+                            action: 'remove'
+                        })
+                    });
 
-  async function deleteCartItem(productId, quantity) {
-      console.log('Deleting Cart Item:', { productId, quantity }); // Log para ver qué valores se están pasando
+                    if (response.ok) {
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "The product has been removed.",
+                            icon: "success"
+                        });
+                        viewCart();
+                    } else {
+                        Swal.fire({
+                            title: "Error",
+                            text: "Failed to remove the product.",
+                            icon: "error"
+                        });
+                    }
+                } catch (error) {
+                    Swal.fire({
+                        title: "Error",
+                        text: "There was an error removing the product.",
+                        icon: "error"
+                    });
+                }
+            }
+        });
+    }
 
-      // Verificar que el productId es válido
-      if (!productId) {
-          alert('El ID del producto no es válido.');
-          return;
-      }
+    // Function to add event listeners to update and delete buttons
+    function addEventListeners() {
+        document.querySelectorAll('.update').forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.getAttribute('data-id');
+                const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
+                const newQuantity = parseInt(quantityInput.value, 10);
 
-      // Mostrar SweetAlert2 para confirmar la eliminación
-      Swal.fire({
-          title: "¿Estás seguro?",
-          text: "¡No podrás revertir esta acción!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Sí, eliminarlo",
-          cancelButtonText: "Cancelar"
-      }).then(async (result) => {
-          if (result.isConfirmed) {
-              try {
-                  const response = await fetch('http://localhost:8080/cart', {
-                      method: 'POST',
-                      headers: {
-                          'Authorization': `Bearer ${authToken}`,
-                          'Content-Type': 'application/json'
-                      },
-                      body: JSON.stringify({
-                          product_id: productId, // ID del producto
-                          quantity: quantity,    // Nueva cantidad
-                          action: 'remove'       // Acción de modificar
-                      })
-                  });
+                if (newQuantity > 0) {
+                    updateCartItem(productId, newQuantity);
+                } else {
+                    alert('Please enter a valid quantity.');
+                }
+            });
+        });
 
-                  if (response.ok) {
-                      // Mostrar mensaje de éxito con SweetAlert2
-                      Swal.fire({
-                          title: "¡Eliminado!",
-                          text: "El producto ha sido eliminado.",
-                          icon: "success"
-                      });
-                      viewCart(); // Recargar el carrito
-                  } else {
-                      const errorMessage = await response.json();
-                      Swal.fire({
-                          title: "Error",
-                          text: errorMessage.message || 'No se pudo eliminar el producto.',
-                          icon: "error"
-                      });
-                  }
-              } catch (error) {
-                  console.error('Error al eliminar el producto:', error);
-                  Swal.fire({
-                      title: "Error",
-                      text: 'Hubo un error al eliminar el producto.',
-                      icon: "error"
-                  });
-              }
-          }
-      });
-  }
+        document.querySelectorAll('.delete').forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.getAttribute('data-id');
+                const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
+                const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 0;
+                deleteCartItem(productId, quantity || 0);
+            });
+        });
 
+        const payButton = document.getElementById('pay-button');
+        if (payButton) {
+            payButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                payOrder();
+            });
+        }
+    }
 
+    // Function to remove a cart item without confirmation (used when clearing the cart)
+    async function removeCartItemWithoutConfirm(productId, quantity) {
+        try {
+            const response = await fetch('http://localhost:8080/cart', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity,
+                    action: 'remove'
+                })
+            });
+            if (!response.ok) {
+                console.error(`Failed to remove product ${productId}`);
+            }
+        } catch (error) {
+            console.error(`Error removing product ${productId}:`, error);
+        }
+    }
 
-  // Añadir eventos a los botones de actualizar y eliminar
-  function addEventListeners() {
-      document.querySelectorAll('.update').forEach(button => {
-          button.addEventListener('click', () => {
-              const productId = button.getAttribute('data-id');
-              const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
-              const newQuantity = parseInt(quantityInput.value, 10);
-              console.log('Product ID:', productId); // Ver el ID del producto
-              console.log('New Quantity:', newQuantity); // Ver la nueva cantidad
+    // Function to clear the entire cart by removing each item individually
+    async function clearCart() {
+        try {
+            // Fetch current cart items
+            const response = await fetch('http://localhost:8080/cart', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${authToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (response.ok) {
+                const cartItems = await response.json();
+                // Remove each item without confirmation
+                for (const item of cartItems) {
+                    await removeCartItemWithoutConfirm(item.product_id, item.quantity);
+                }
+                viewCart(); // Refresh cart view
+            }
+        } catch (error) {
+            console.error('Error clearing cart:', error);
+        }
+    }
 
-              if (newQuantity > 0) {
-                  updateCartItem(productId, newQuantity);
-              } else {
-                  alert('Por favor, ingrese una cantidad válida.');
-              }
-          });
-      });
+    // Function to process payment
+    async function payOrder() {
+        const totalQuantity = window.lastCartQuantity;
+        const totalPrice = window.lastCartTotal;
+        const date = new Date().toISOString();
 
-     document.querySelectorAll('.delete').forEach(button => {
-         button.addEventListener('click', () => {
-             const productId = button.getAttribute('data-id');
-             const quantityInput = document.querySelector(`input[data-id="${productId}"]`);
-             const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 0; // Obtener la cantidad del input, si existe
+        const orderData = {
+            idUser: userId,
+            totalQuantity: totalQuantity,
+            totalPrice: totalPrice,
+            date: date,
+            orderStatus: 'PAGADO'
+        };
 
-             console.log('Delete button clicked, product ID:', productId);
-             console.log('Product quantity:', quantity); // Ver la cantidad que se está pasando
+        const token = localStorage.getItem('authToken');
 
-             // Llamar a la función deleteCartItem, pasando la cantidad como 0 para eliminar el producto
-             deleteCartItem(productId, quantity || 0); // Si quantity es nulo o inválido, poner 0
-         });
-     });
+        try {
+            const response = await fetch('http://localhost:8080/Orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(orderData)
+            });
 
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Order Completed',
+                    text: 'Your order has been successfully placed.',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    clearCart(); // Clear the cart after successful order
+                });
+            } else {
+                const errorData = await response.text();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: `There was a problem creating the order: ${errorData || 'Unknown error'}`
+                });
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Connection Error',
+                text: 'Could not connect to the server. Please try again later.'
+            });
+            console.error('Connection error:', error);
+        }
+    }
 
-  }
-
-  // Llamar a la función para mostrar el carrito
-  viewCart();
+    // Call viewCart to display the cart on page load
+    viewCart();
 }
