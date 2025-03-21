@@ -99,20 +99,18 @@ if (!authToken) {
                     window.lastCartQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
                     cartFooter.innerHTML = `
-                       <tr>
-                           <td colspan="5" class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
-                       </tr>
+
                        <tr>
                            <td>
                                <a href="http://localhost:8080/catalog.html" class="btn btn-warning">
-                                   <i class="fa fa-angle-left"></i> Continue Shopping
+                                   <i class="fa fa-angle-left"></i> Continuar comprando
                                </a>
                            </td>
                            <td colspan="2"></td>
                            <td class="text-center"><strong>Total €${total.toFixed(2)}</strong></td>
                            <td>
                                <a href="#" id="pay-button" class="btn btn-success btn-block">
-                                   Pay <i class="fa fa-angle-right"></i>
+                                   Pagar <i class="fa fa-angle-right"></i>
                                </a>
                            </td>
                        </tr>
@@ -121,7 +119,7 @@ if (!authToken) {
                     addEventListeners();
                 }
             } else if (response.status === 404) {
-                cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>Cart not found. It may be empty.</h3></td></tr>';
+                cartContainer.innerHTML = '<tr><td colspan="5" class="text-center"><h3>Sin productos en el carrito.</h3></td></tr>';
                 cartFooter.innerHTML = '';
             } else {
                 alert('There was a problem loading the cart.');

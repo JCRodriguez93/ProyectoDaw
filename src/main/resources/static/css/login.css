@@ -33,4 +33,5 @@ button {
 /* Escalar la interfaz para que se vea un poco más pequeña */
 .scale-container {
   transform: scale(0.8);
+  margin-top: -90px
 }

@@ -2,12 +2,10 @@ async function buyProduct() {
   // Primero, comprobamos que el usuario está logueado
   const authToken = localStorage.getItem('authToken');
   const userId = localStorage.getItem('userId'); // Se guarda en el login
+
+  // si no existe el token, te devuelve al login
   if (!authToken || !userId) {
-    Swal.fire({
-      title: "Error",
-      text: "No estás logueado. Inicia sesión para comprar.",
-      icon: "error"
-    });
+            window.location.href = "login.html";
     return;
   }
 
@@ -22,7 +20,7 @@ async function buyProduct() {
     return;
   }
 
-  // Obtenemos el precio del producto (asumimos que hay un elemento con clase "product-price")
+  // Obtenemos el precio del producto
   const priceText = document.querySelector(".product-price").textContent;
   // Quitamos el símbolo "€" y convertimos a número
   const price = parseFloat(priceText.replace("€", ""));
