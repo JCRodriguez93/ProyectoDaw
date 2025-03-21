@@ -2,7 +2,10 @@ package es.proyecto.app.security;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 
-
+/**
+ * Esta clase actualmente no tiene un uso específico,
+ * pero puede llegar a ser interesante para futuras modificaciones.
+ */
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
 
     private final String email;

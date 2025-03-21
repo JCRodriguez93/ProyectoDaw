@@ -80,7 +80,7 @@ public class AuthController implements AuthApi {
         response.setMessage("Successful logout");
         return ResponseEntity.ok(response);
     }
-    //TODO: AHORA SI, está usando el método de logout (cambiar a inglés)
+
 
     @Override
     public ResponseEntity<AuthResponse> registerUser(RegisterRequest body) {

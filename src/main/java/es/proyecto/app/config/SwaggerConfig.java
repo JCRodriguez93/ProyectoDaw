@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
 
+    /**
+     * El siguiente bean contiene el acceso a la API.
+     * Visible desde http://localhost:8080/swagger-ui/index.html
+     * @return API del micro-servicio.
+     */
     @Bean
     public OpenAPI openAPI(){
         return new OpenAPI().info(new Info()
