@@ -34,8 +34,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Desactiva CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // Permite acceso a todas las rutas
+                        .requestMatchers("/cart").authenticated() // Proteges la API
+                        .anyRequest().permitAll()
                 )
+
                 .formLogin(form -> form.disable()) // Desactiva el login predeterminado
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
                 // Agregado el filtro JWT antes del filtro de autenticación por defecto

@@ -1,221 +1,598 @@
-2025-03-20 00:18:15,523 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 10000 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-03-20 00:18:15,532 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-03-20 00:18:23,251 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-20 00:18:23,286 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+2025-03-21 19:18:51,094 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 7740 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-21 19:18:51,108 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-21 19:19:02,724 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-21 19:19:02,774 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
 
-Using generated security password: f5f644f9-915c-402c-a5aa-7f4d90610fe9
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-03-20 00:18:24,411 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.497 seconds (process running for 10.672)
-2025-03-20 00:19:15,039 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 17488 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-03-20 00:19:15,045 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-03-20 00:19:22,942 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-20 00:19:22,973 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: bfb42c31-fd1b-4af1-8dd5-ebf16bfb216a
+Using generated security password: 67c95429-2300-4368-94d4-cf73a327afb2
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-03-20 00:19:23,977 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 9.634 seconds (process running for 10.778)
-2025-03-20 00:19:29,907 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:19:35,114 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
-2025-03-20 00:19:35,325 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
-2025-03-20 00:19:35,365 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:19:35,838 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:19:35,918 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:19:35,937 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:19:35,989 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:19:36,070 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:19:41,073 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:19:41,167 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:19:41,189 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 19 retrieved successfully
-2025-03-20 00:19:41,213 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 29 retrieved successfully
-2025-03-20 00:19:41,241 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Product with id 26 retrieved successfully
-2025-03-20 00:19:44,381 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 00:19:53,212 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:19:53,211 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:19:53,228 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 19 retrieved successfully
-2025-03-20 00:19:53,308 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 29 retrieved successfully
-2025-03-20 00:19:53,342 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 26 retrieved successfully
-2025-03-20 00:30:25,422 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 8812 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-03-20 00:30:25,427 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-03-20 00:30:36,909 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-20 00:30:36,954 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+2025-03-21 19:19:04,519 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.259 seconds (process running for 17.14)
+2025-03-21 19:19:12,892 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:12,892 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:13,116 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:13,186 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:30,359 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:30,370 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:30,480 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:30,550 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:33,929 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:33,938 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:34,054 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:46,208 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:46,214 WARN [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'idProduct': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "null"]
+2025-03-21 19:19:54,037 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:19:54,103 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:54,188 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:19:54,278 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:20:04,644 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-21 19:20:04,893 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-21 19:20:04,989 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:20:05,373 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:20:05,376 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:20:05,415 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:20:05,509 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:20:05,567 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:35:57,335 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 14548 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-21 19:35:57,335 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-21 19:36:08,280 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-21 19:36:08,320 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
 
-Using generated security password: af3d6b7d-b418-4a0d-b022-76d4ccf729b0
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-03-20 00:30:38,672 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.891 seconds (process running for 15.061)
-2025-03-20 00:31:39,240 ERROR [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: Unauthorized access: no authenticated user found
-2025-03-20 00:31:39,299 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:31:39,315 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:31:45,087 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:31:51,255 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
-2025-03-20 00:31:51,417 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
-2025-03-20 00:31:51,455 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:31:51,932 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:31:51,939 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:31:52,026 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:31:52,084 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:31:52,145 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:31:55,522 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:31:55,570 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:31:55,659 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Product with id 19 retrieved successfully
-2025-03-20 00:31:55,687 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Product with id 29 retrieved successfully
-2025-03-20 00:31:55,714 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 26 retrieved successfully
-2025-03-20 00:32:01,927 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 00:32:03,983 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 00:32:03,984 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=19, quantity=1
-2025-03-20 00:32:04,027 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 00:32:04,055 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 00:32:04,060 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=29, quantity=15
-2025-03-20 00:32:04,074 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 00:32:04,096 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 00:32:04,097 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=26, quantity=1
-2025-03-20 00:32:04,108 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 00:33:01,225 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:33:01,231 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:33:01,231 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:33:01,295 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:33:01,343 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:33:03,086 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 00:33:03,100 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:33:03,180 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 00:33:04,987 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 00:33:04,988 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=11, quantity=1
-2025-03-20 00:33:04,990 INFO [http-nio-8080-exec-4] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 11, quantity: 1
-2025-03-20 00:33:05,004 INFO [http-nio-8080-exec-4] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 11, quantity: 1
-2025-03-20 00:33:05,009 INFO [http-nio-8080-exec-4] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 11
-2025-03-20 00:33:05,014 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 00:33:08,499 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 00:33:08,525 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 00:33:08,632 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 00:33:10,809 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 00:33:12,890 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 00:33:12,891 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=11, quantity=1
-2025-03-20 00:33:12,905 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 01:08:15,493 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 15076 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
-2025-03-20 01:08:15,497 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
-2025-03-20 01:08:25,738 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-20 01:08:25,791 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
-
-Using generated security password: 3407580e-2b74-4ee1-a412-a7484956219e
+Using generated security password: 00d6c2bf-d8ba-4368-9c84-71334bdf55ab
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-03-20 01:08:27,382 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.578 seconds (process running for 13.749)
-2025-03-20 01:08:39,760 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:39,760 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:08:39,766 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:08:39,931 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:39,997 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:42,977 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:08:47,559 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
-2025-03-20 01:08:47,768 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
-2025-03-20 01:08:47,810 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:08:48,091 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:08:48,106 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:08:48,119 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:48,275 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:48,370 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:53,190 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:08:53,255 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:08:58,627 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:08:58,638 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:08:58,728 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:09:00,165 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
-2025-03-20 01:09:00,168 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:09:00,248 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:09:02,800 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 01:09:02,802 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=12, quantity=1
-2025-03-20 01:09:02,805 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 12, quantity: 1
-2025-03-20 01:09:02,879 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 12, quantity: 1
-2025-03-20 01:09:02,883 INFO [http-nio-8080-exec-1] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 12
-2025-03-20 01:09:02,891 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 01:09:10,588 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 01:09:10,589 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=12, quantity=5
-2025-03-20 01:09:10,590 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 12, quantity: 5
-2025-03-20 01:09:10,597 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: Updated product quantity in cart for userId: 6, productId: 12, new quantity: 6
-2025-03-20 01:09:10,598 INFO [http-nio-8080-exec-3] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 12
-2025-03-20 01:09:10,623 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 01:09:18,734 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 01:09:27,066 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:09:27,096 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:09:27,157 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
-2025-03-20 01:09:34,744 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:09:34,810 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:09:34,815 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:09:34,908 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:09:34,953 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:09:40,336 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 01:09:40,337 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=11, quantity=13
-2025-03-20 01:09:40,339 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 11, quantity: 13
-2025-03-20 01:09:40,350 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 11, quantity: 13
-2025-03-20 01:09:40,351 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 11
-2025-03-20 01:09:40,359 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 01:09:46,715 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:09:46,736 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:09:46,756 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:09:48,454 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 01:09:48,455 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=4, quantity=1
-2025-03-20 01:09:48,456 INFO [http-nio-8080-exec-8] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 4, quantity: 1
-2025-03-20 01:09:48,468 INFO [http-nio-8080-exec-8] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 4, quantity: 1
-2025-03-20 01:09:48,469 INFO [http-nio-8080-exec-8] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 4
-2025-03-20 01:09:48,475 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 01:09:52,316 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 01:10:40,100 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:10:40,117 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:10:40,189 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
-2025-03-20 01:10:40,223 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 01:10:40,282 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:10:46,946 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: modify
-2025-03-20 01:10:46,946 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=12, quantity=4
-2025-03-20 01:10:46,968 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CartController: Product modified successfully
-2025-03-20 01:10:47,032 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
-2025-03-20 01:10:47,051 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 01:10:47,071 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:10:53,512 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: modify
-2025-03-20 01:10:53,513 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to modify product in cart: product_id=11, quantity=1
-2025-03-20 01:10:53,528 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product modified successfully
-2025-03-20 01:10:53,591 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 12 retrieved successfully
-2025-03-20 01:10:53,613 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 01:10:53,635 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:10:57,945 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 01:10:57,945 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=12, quantity=4
-2025-03-20 01:10:57,969 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 01:10:58,023 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 01:10:58,042 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:11:02,498 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:11:02,522 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:11:02,556 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:11:04,619 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 2 retrieved successfully
-2025-03-20 01:11:04,631 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:11:04,747 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:11:09,113 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
-2025-03-20 01:11:09,113 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=2, quantity=11
-2025-03-20 01:11:09,114 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 2, quantity: 11
-2025-03-20 01:11:09,126 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 2, quantity: 11
-2025-03-20 01:11:09,127 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 2
-2025-03-20 01:11:09,132 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product added successfully
-2025-03-20 01:11:16,798 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:11:16,798 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
-2025-03-20 01:11:16,869 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Product with id 11 retrieved successfully
-2025-03-20 01:11:16,912 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Product with id 4 retrieved successfully
-2025-03-20 01:11:16,965 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Product with id 2 retrieved successfully
-2025-03-20 01:11:18,975 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.OrdersController: Order created successfully: null
-2025-03-20 01:11:21,117 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 01:11:21,117 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=11, quantity=1
-2025-03-20 01:11:21,130 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 01:11:21,148 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 01:11:21,150 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=4, quantity=1
-2025-03-20 01:11:21,161 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 01:11:21,182 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: remove
-2025-03-20 01:11:21,183 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Attempting to remove product from cart: product_id=2, quantity=11
-2025-03-20 01:11:21,194 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CartController: Product removed successfully
-2025-03-20 01:11:25,779 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MjQyOTMyNywiZXhwIjoxNzQyNDMyOTI3fQ.HtiZWtWB18JCdmts5WFseFdqkctcFxnXL9YcuWuHdv341F4pWM5tKzuU5XyI4gtfEiiqsnARhcLxwEcymyCNTA
-2025-03-20 01:11:26,056 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:11:26,072 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
-2025-03-20 01:11:26,102 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
-2025-03-20 01:11:26,154 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:09,814 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 13.274 seconds (process running for 14.666)
+2025-03-21 19:36:17,938 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:36:17,952 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:17,964 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:18,157 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:18,224 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:21,546 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MjU4MTIwNCwiZXhwIjoxNzQyNTg0ODA0fQ.v1x-en3sElrekRiNyqv_BN_LQ2YcHFIOpnDkwVeGs7HAvvT0AbCqBXxqOBBbfeodT80tPb0ZWLa5PJvBtUb6jw
+2025-03-21 19:36:22,102 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:22,198 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:22,421 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:22,514 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:27,326 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:27,368 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:27,615 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:31,460 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:31,467 WARN [http-nio-8080-exec-9] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'idProduct': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: "null"]
+2025-03-21 19:36:35,870 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:35,881 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:35,953 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:38,617 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Product with id 2 retrieved successfully
+2025-03-21 19:36:38,630 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:38,674 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:45,978 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:46,005 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:46,048 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:52,140 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:36:52,177 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:36:52,219 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:37:00,110 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-21 19:37:00,302 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-21 19:37:00,373 ERROR [http-nio-8080-exec-7] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:00,829 ERROR [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:00,865 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:00,917 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:37:00,974 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:01,089 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:11,058 ERROR [http-nio-8080-exec-10] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:11,068 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:37:11,066 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:11,200 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:11,309 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:13,822 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:19,663 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-21 19:37:19,774 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-21 19:37:19,798 ERROR [http-nio-8080-exec-4] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:20,287 ERROR [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:20,308 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:37:20,424 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:20,515 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:20,580 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:33,823 ERROR [http-nio-8080-exec-7] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "es.proyecto.app.security.JwtTokenProvider.getRolesFromToken(String)" is null
+	at es.proyecto.app.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-03-21 19:37:33,865 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:33,892 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:37:33,982 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:37:34,037 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:42:47,328 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 15860 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-21 19:42:47,337 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-21 19:42:58,003 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-21 19:42:58,046 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: eef064da-2baf-4d61-bb06-52135b9813f6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-21 19:42:59,383 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.855 seconds (process running for 14.297)
+2025-03-21 19:43:07,222 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:43:07,222 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:07,237 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:43:07,446 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:07,534 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:14,696 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:43:14,756 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:43:14,777 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:14,986 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:15,065 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:16,965 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MjU4MjIzOSwiZXhwIjoxNzQyNTg1ODM5fQ.rhesWZx1AYLCsyRRGrLHOuQB4-30MEGbnctjs14KjkDPXoFnd0FpNjYgjInSmq-EH84FOdURm1akY_4PuQknug
+2025-03-21 19:43:17,449 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:43:17,537 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:17,636 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:17,716 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:24,643 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-21 19:43:24,909 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-21 19:43:24,971 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:43:25,697 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:25,755 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:43:25,773 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:43:25,800 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:43:25,874 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:43:25,891 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:10,594 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 6120 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-03-21 19:50:10,600 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-03-21 19:50:20,925 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-21 19:50:20,974 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 24b35908-66ef-403e-b352-d6435a3e1cb7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-21 19:50:22,346 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 12.563 seconds (process running for 13.992)
+2025-03-21 19:50:31,557 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:31,557 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:50:31,581 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:50:31,868 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:31,967 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:34,891 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MjU4MjYwNCwiZXhwIjoxNzQyNTg2MjA0fQ.3k1RJ_58u6ZZJGgGaQqIeEqtQuPdLKeR1nnXmFVOMV94GWkBXNluNxWuTYNdwR9-ECOdkNuKibPAYaufa74_Zw
+2025-03-21 19:50:35,507 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:50:35,600 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:35,719 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:35,780 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:42,358 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: Attempting to log in with email: jorge@example.com
+2025-03-21 19:50:42,559 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.AuthController: User logged in successfully: jorge@example.com
+2025-03-21 19:50:42,618 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:50:43,198 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:50:43,214 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:50:43,244 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:43,304 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:43,373 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:50:47,007 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:50:47,068 INFO [http-nio-8080-exec-1] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:51:02,424 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:51:02,448 INFO [http-nio-8080-exec-3] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:02,460 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:51:02,625 INFO [http-nio-8080-exec-8] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:02,761 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:04,691 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:51:04,699 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 15 retrieved successfully
+2025-03-21 19:51:04,956 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:06,870 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: manageCart called with userId: 6 and action: add
+2025-03-21 19:51:06,870 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Attempting to add product to cart: product_id=15, quantity=1
+2025-03-21 19:51:06,876 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: addProductToCart called with userId: 6, productId: 15, quantity: 1
+2025-03-21 19:51:07,021 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: New cart item created for userId: 6, productId: 15, quantity: 1
+2025-03-21 19:51:07,021 INFO [http-nio-8080-exec-7] es.proyecto.app.service.CartService: Product added to cart for userId: 6, productId: 15
+2025-03-21 19:51:07,031 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.CartController: Product added successfully
+2025-03-21 19:51:10,960 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:51:10,980 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.UsersController: Successfully fetched all users
+2025-03-21 19:51:11,186 INFO [http-nio-8080-exec-10] es.proyecto.app.controller.ProductsController: Product with id 15 retrieved successfully
+2025-03-21 19:51:16,532 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.AuthController: Token invalidado: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3JnZUBleGFtcGxlLmNvbSIsImlhdCI6MTc0MjU4MzA0MiwiZXhwIjoxNzQyNTg2NjQyfQ.6Yf_D2ZK7OMkC3MtlPLLkOXGUr84DJOzW25-d6iTfUtZ5mad8bPbc4IH6byxgEIe4Id1ZOqOtBWY_snF-U9hpw
+2025-03-21 19:51:17,042 INFO [http-nio-8080-exec-4] es.proyecto.app.controller.CategoriesController: Successfully retrieved categories
+2025-03-21 19:51:17,065 INFO [http-nio-8080-exec-6] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:17,160 INFO [http-nio-8080-exec-7] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-03-21 19:51:17,246 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products

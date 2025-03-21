@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import io.jsonwebtoken.security.Keys;
 import javax.crypto.SecretKey;
-
+import io.jsonwebtoken.Claims;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.Collections;
 
 @Component
 public class JwtTokenProvider {
@@ -44,6 +46,30 @@ public class JwtTokenProvider {
                 .setSigningKey(jwtSecret).build()
                 .parseClaimsJws(token).getBody().getSubject(); }
 
+    public List<String> getRolesFromToken(String token) {
+        Claims claims = getClaims(token);
+
+        if (claims == null || !claims.containsKey("roles")) {
+            return Collections.emptyList(); // ✅ Devuelve lista vacía de forma segura
+        }
+
+        Object rolesObject = claims.get("roles");
+
+        if (rolesObject instanceof List<?>) {
+            return ((List<?>) rolesObject).stream()
+                    .map(Object::toString) // Convierte cada objeto a String
+                    .toList();
+        }
+
+        return Collections.emptyList(); // Si no es una lista, devuelve lista vacía
+    }
+    private Claims getClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(jwtSecret)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
 
     // Método para invalidar el token
     public void invalidateToken(String token) {
