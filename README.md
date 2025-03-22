@@ -5,12 +5,14 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3.svg?logo=bootstrap&logoColor=white)  
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 
 
 ## Descripción
 
-Este proyecto es un backend desarrollado en IntelliJ IDEA para una tienda de productos de tatuajes. Su propósito es gestionar usuarios, productos y pedidos de manera eficiente, permitiendo una experiencia de compra fluida.
+Este proyecto es un microservicio **monolítico** desarrollado en IntelliJ IDEA para una tienda de productos de tatuajes. Su propósito es gestionar usuarios, productos y pedidos de manera eficiente, permitiendo una experiencia de compra fluida.
 
 La plataforma admite registro, inicio y cierre de sesión de usuarios, gestión de roles con distintos niveles de acceso y funcionalidades para la administración de productos clasificados en categorías y subcategorías. Además, cada usuario dispone de un carrito de compras personal y la posibilidad de realizar pedidos.
 
@@ -380,3 +382,76 @@ INSERT INTO Order_Products (id_order, id_product, quantity) VALUES
 (2, 7, 2);   -- Ana compra 2 Sillas Ergonómicas
 
 ```
+
+## Estructura del microservicio (back-end)
+
+* **Controller**  
+  * Contiene las clases que gestionan las solicitudes HTTP.  
+  * Se encarga de recibir peticiones, procesarlas y devolver respuestas apropiadas.  
+  * Llama a los servicios correspondientes para obtener datos o realizar operaciones.
+
+* **Entity**  
+  * Define las clases que representan las tablas en la base de datos.  
+  * Usa anotaciones de JPA como `@Entity`, `@Table`, `@Column`, etc.  
+  * Define relaciones entre entidades con `@OneToMany`, `@ManyToOne`, etc.
+
+* **Security**  
+  * Implementa la autenticación y autorización del microservicio.  
+  * Usa **JWT** para la autenticación basada en tokens.  
+  * Contiene filtros como `JwtAuthenticationFilter` y la configuración en `SecurityConfig`.
+
+* **Service**  
+  * Contiene la lógica de negocio del microservicio.  
+  * Se encarga de la manipulación y procesamiento de datos antes de enviarlos al `Controller`.  
+  * Usa anotaciones como `@Service` y se comunica con el `Repository`.
+
+* **Error**  
+  * Contiene clases que manejan excepciones personalizadas.  
+  * Extienden `RuntimeException` y permiten lanzar errores específicos.  
+
+* **Mapper**  
+  * Usa **MapStruct** para transformar objetos de una capa a otra.   
+  * La conversión se realiza entre las entidades (ejemplo: UsersEntity) hacia el modelo autogenerado Users y viceversa.
+
+* **Repository**  
+  * Implementa la capa de acceso a datos mediante **JPA**.  
+  * Usa interfaces que extienden `JpaRepository` para facilitar operaciones CRUD.  
+  * Permite definir consultas personalizadas con anotaciones como `@Query`.
+
+* **Config**  
+  * Contiene configuraciones globales del microservicio.  
+  * **Ejemplo: `SecurityConfig`**  
+    * Configura la seguridad del microservicio con `SecurityFilterChain`.  
+    * Implementa la autenticación con **JWT** y BCrypt para el cifrado de contraseñas.  
+    * Define qué rutas requieren autenticación y cuáles son públicas.  
+  * **Ejemplo: `SwaggerConfig`**  
+    * Habilita la documentación de la API con **Swagger**.  
+    * Permite acceder a la documentación en `http://localhost:8080/swagger-ui/index.html`.  
+    * Define información sobre la API, como el título, versión y contacto.  
+
+
+## Recursos estáticos del microservicio (front-end)
+
+* **css**  
+  * Contiene los ficheros de estilos que definen la apariencia de la web.  
+  * Aplica estilos globales y específicos para distintas páginas HTML.  
+  * Mejora la experiencia del usuario con diseño responsivo y animaciones.
+
+* **js**  
+  * Contiene los scripts que manejan la lógica del lado del cliente.  
+  * Se encarga de interactuar con los endpoints del backend para obtener y enviar datos.  
+  * Implementa funcionalidades dinámicas como botones de añadir/disminuir productos, carruseles e inserción de contenido con `innerHTML`.
+
+* **img**  
+  * Carpeta que almacena las imágenes utilizadas en la web.  
+  * Puede incluir logotipos, banners, imágenes de productos y otros elementos visuales.
+
+* **Páginas HTML**  
+  * **index.html** - Página principal de la tienda.  
+  * **header.html** - Cabecera común de la web, incluye navegación y logotipo.  
+  * **footer.html** - Pie de página con información adicional y enlaces.  
+  * **catalog.html** - Página donde se listan los productos disponibles.  
+  * **product.html** - Página de detalles de un producto específico.  
+  * **cart.html** - Página del carrito de compras donde se gestionan los productos añadidos.  
+  * **login.html** - Página de autenticación para que los usuarios inicien sesión.  
+
