@@ -10,14 +10,14 @@ INSERT INTO Users (user_name, user_surname, birth_date, email, password, role_id
 
 -- Insertar Categorías
 INSERT INTO Category (name, description) VALUES
-('Anillos y Pendientes', 'Accesorios pequeños para perforaciones.'),
+('Pearcings y Pendientes', 'Accesorios pequeños para perforaciones.'),
 ('Máquinas de Tatuar', 'Máquinas especializadas para realizar tatuajes.'),
 ('Mobiliario', 'Muebles para salones de tatuaje.'),
 ('Micropigmentación', 'Productos y equipos para micropigmentación.');
 
 -- Insertar Subcategorías
 INSERT INTO Subcategory (id_category, name, description) VALUES
-(1, 'Anillos', 'Anillos ajustables y fijos para perforaciones.'),
+(1, 'Pearcings', 'Anillos ajustables y fijos para perforaciones.'),  -- poner una frase con sentido
 (1, 'Pendientes', 'Pendientes de diferentes estilos y materiales.'),
 (2, 'Bobinas', 'Máquinas de tatuar con bobinas.'),
 (2, 'Rotativas', 'Máquinas rotativas de alta precisión.'),
@@ -31,19 +31,17 @@ INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUE
 (2, 'Dilatador Acrílico', 'Dilatador acrílico negro de 10 mm para lóbulo.', 12.00, 'img/pearcings/01-dilatador-acrilico.png'),
 (2, 'Dilatador de Acero', 'Dilatador de acero quirúrgico de 8 mm.', 15.00, 'img/pearcings/01-dilatador-acero.png'),
 (2, 'Aro Segmentado', 'Aro segmentado de acero quirúrgico para septum o cartílago.', 18.00, 'img/pearcings/03-aro-segmentado.png'),
-(2, 'Piercing Industrial', 'Barra industrial de titanio con diseño de flecha.', 25.00, 'img/pearcings/04-pearcing-industrial.png'),
-(2, 'Piercing Tragus', 'Piercing de tragus con bola de zirconia.', 20.00, 'img/pearcings/05-pearcing-tragus.png'),
-(2, 'Piercing Labret', 'Piercing labret de titanio con rosca interna.', 22.00, 'img/pearcings/06-pearcing-labret.png'),
+(1, 'Piercing Industrial', 'Barra industrial de titanio con diseño de flecha.', 25.00, 'img/pearcings/04-pearcing-industrial.png'),
+(1, 'Piercing Tragus', 'Piercing de tragus con bola de zirconia.', 20.00, 'img/pearcings/05-pearcing-tragus.png'),
+(1, 'Piercing Labret', 'Piercing labret de titanio con rosca interna.', 22.00, 'img/pearcings/06-pearcing-labret.png'),
 (2, 'Dilatador de Silicona', 'Dilatador flexible de silicona de 12 mm.', 10.00, 'img/pearcings/07-dilatador-silicona.png'),
 (2, 'Clicker para Septum', 'Clicker de acero con diseño tribal para septum.', 28.00, 'img/pearcings/08-clicker-septum.png'),
-(2, 'Piercing para Ceja', 'Barra curva de acero quirúrgico con bolas de titanio.', 16.00, 'img/pearcings/09-pearcing-ceja.png'),
+(1, 'Piercing para Ceja', 'Barra curva de acero quirúrgico con bolas de titanio.', 16.00, 'img/pearcings/09-pearcing-ceja.png'),
 (2, 'Horseshoe para Labio', 'Piercing horseshoe de acero con puntas cónicas.', 19.00, 'img/pearcings/02-horseshoe-labio.png');
 
 
 
-
-
--- Insertar máquinas de tatuar
+-- máquinas de tatuar también correctos
 INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUES
 (3, 'Máquina de Tatuar Bobina 8 Wrap', 'Máquina de tatuar con bobina de 8 wraps.', 100.00, 'img/maquinas/29-maquina-de-tatuar-8-wrap.png'),
 (3, 'Máquina de Tatuar Bobina 10 Wrap', 'Máquina de tatuar con bobina de 10 wraps.', 120.00, 'img/maquinas/28-maquina-bobina-10-wrap.png'),
@@ -57,9 +55,7 @@ INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUE
 (3, 'Máquina de Tatuar de Latón', 'Máquina de tatuar de latón con diseño clásico.', 140.00, 'img/maquinas/20-maquina-laton.png');
 
 
-
-
--- Insertar mobiliario para tienda de tatuajes (corrección: usar subcategoría 5, por ejemplo)
+-- el mobiliario también está correcto
 INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUES
 (5, 'Lámpara de Pie Ajustable', 'Lámpara de pie con brazo ajustable para iluminar estaciones de trabajo.', 75.00, 'img/mobiliario/30-lampara-de-pie.png'),
 (5, 'Mesa de Trabajo con Ruedas', 'Mesa de trabajo móvil con ruedas y espacio de almacenamiento.', 150.00, 'img/mobiliario/31-mesa-trabajo-ruedas.png'),
@@ -70,10 +66,9 @@ INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUE
 (5, 'Parasol de Ventana', 'Parasol para ventanas que proporciona privacidad y control de luz.', 40.00, 'img/mobiliario/36-parasol-ventana.png'),
 (5, 'Estantería de Pared', 'Estantería de pared para exhibir productos y materiales.', 95.00, 'img/mobiliario/37-estanteria-pared.png'),
 (5, 'Espejo de Cuerpo Entero', 'Espejo de cuerpo entero para revisión de tatuajes.', 120.00, 'img/mobiliario/38-espejo-cuerpo.png'),
-(5, 'Sillón Reclinable', 'Sillón reclinable para mayor comodidad de los clientes.', 250.00, 'img/mobiliario/39-sillon-reclinable.png');
+(6, 'Sillón Reclinable', 'Sillón reclinable para mayor comodidad de los clientes.', 250.00, 'img/mobiliario/39-sillon-reclinable.png');
 
-
--- Insertar productos micropigmentación correctos
+-- Insertar productos de micropigmentación está correcto
 INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUES
 (7, 'Agujas de Micropigmentación', 'Agujas desechables para micropigmentación.', 10.00, 'img/micropigmentacion/40-aguja-micropigmentacion.png'),
 (7, 'Anestésico Tópico', 'Crema anestésica para reducir el dolor durante la micropigmentación.', 25.00, 'img/micropigmentacion/42-anestesico-topico.png'),
@@ -81,10 +76,10 @@ INSERT INTO Products (id_subcategory, name, description, price, image_url) VALUE
 (7, 'Capa Protectora', 'Capa protectora para clientes durante el procedimiento.', 15.00, 'img/micropigmentacion/43-capa-protectora.png'),
 (7, 'Guantes Desechables', 'Guantes de nitrilo desechables para procedimientos de micropigmentación.', 12.00, 'img/micropigmentacion/46-guantes-desechables.png'),
 (7, 'Almohadillas para Cejas', 'Almohadillas adhesivas para diseño de cejas.', 8.00, 'img/micropigmentacion/41-almohadilla-cejas.png'),
-(7, 'Pigmento Orgánico', 'Pigmento orgánico para micropigmentación.', 30.00, 'img/micropigmentacion/48-pigmento-organico.png'),
-(7, 'Fijador de Pigmento', 'Producto para fijar el pigmento en la piel.', 20.00, 'img/micropigmentacion/45-fijador-pigmentacion.png'),
+(8, 'Pigmento Orgánico', 'Pigmento orgánico para micropigmentación.', 30.00, 'img/micropigmentacion/48-pigmento-organico.png'),
+(8, 'Fijador de Pigmento', 'Producto para fijar el pigmento en la piel.', 20.00, 'img/micropigmentacion/45-fijador-pigmentacion.png'),
 (7, 'Cinta Métrica para Cejas', 'Cinta métrica para medir y diseñar cejas.', 7.00, 'img/micropigmentacion/44-cinta-metrica-cejas.png'),
-(7, 'Removedor de Pigmento', 'Producto para corregir errores de micropigmentación.', 18.00, 'img/micropigmentacion/49-removedor-pigmentacion.png');
+(8, 'Removedor de Pigmento', 'Producto para corregir errores de micropigmentación.', 18.00, 'img/micropigmentacion/49-removedor-pigmentacion.png');
 
 
 -- Insertar Pedidos

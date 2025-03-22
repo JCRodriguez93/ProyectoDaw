@@ -168,14 +168,14 @@ if (!authToken) {
         }
 
         Swal.fire({
-            title: "Are you sure?",
-            text: "This action cannot be undone!",
+            title: "¿Estás seguro?",
+            text: "Esta acción no puede deshacerse",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it",
-            cancelButtonText: "Cancel"
+            confirmButtonText: "Si, borrar producto",
+            cancelButtonText: "Cancelar"
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
@@ -194,22 +194,22 @@ if (!authToken) {
 
                     if (response.ok) {
                         Swal.fire({
-                            title: "Deleted!",
-                            text: "The product has been removed.",
+                            title: "Borrado",
+                            text: "El producto ha sido eliminado.",
                             icon: "success"
                         });
                         viewCart();
                     } else {
                         Swal.fire({
                             title: "Error",
-                            text: "Failed to remove the product.",
+                            text: "Fallo al eliminar el producto.",
                             icon: "error"
                         });
                     }
                 } catch (error) {
                     Swal.fire({
                         title: "Error",
-                        text: "There was an error removing the product.",
+                        text: "Hubo un error al eliminar el producto.",
                         icon: "error"
                     });
                 }
@@ -327,12 +327,13 @@ if (!authToken) {
             if (response.ok) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Order Completed',
-                    text: 'Your order has been successfully placed.',
-                    confirmButtonText: 'OK'
+                    title: '¡Pedido completado!',
+                    text: 'Tu pedido se ha realizado con éxito.',
+                    confirmButtonText: 'Aceptar'
                 }).then(() => {
-                    clearCart(); // Clear the cart after successful order
+                    clearCart(); // Vaciar el carrito después de completar el pedido
                 });
+
             } else {
                 const errorData = await response.text();
                 Swal.fire({

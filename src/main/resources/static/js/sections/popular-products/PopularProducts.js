@@ -95,7 +95,7 @@ class ProductosPopulares extends ProductSection {
 
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
-            alert("Necesitas estar logueado para añadir productos al carrito.");
+             window.location.href = "login.html";
             return;
         }
 
@@ -114,12 +114,23 @@ class ProductosPopulares extends ProductSection {
                 },
                 body: JSON.stringify(cartItem)
             });
-            if (response.status === 200) {
-                alert('Producto añadido al carrito correctamente.');
-            } else {
-                const errorData = await response.json();
-                alert('Error al añadir producto al carrito: ' + errorData.message);
-            }
+           if (response.status === 200) {
+               Swal.fire({
+                   icon: 'success',
+                   title: '¡Éxito!',
+                   text: 'Producto añadido al carrito correctamente.',
+                   confirmButtonText: 'Aceptar'
+               });
+           } else {
+               const errorData = await response.json();
+               Swal.fire({
+                   icon: 'error',
+                   title: 'Error',
+                   text: 'Error al añadir producto al carrito: ' + errorData.message,
+                   confirmButtonText: 'Aceptar'
+               });
+           }
+
         } catch (error) {
             console.error('Error al añadir producto al carrito:', error);
             alert('Error al añadir producto al carrito. Inténtalo de nuevo más tarde.');
