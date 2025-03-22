@@ -455,3 +455,9 @@ INSERT INTO Order_Products (id_order, id_product, quantity) VALUES
   * **cart.html** - Página del carrito de compras donde se gestionan los productos añadidos.  
   * **login.html** - Página de autenticación para que los usuarios inicien sesión.  
 
+
+# Derechos de autor
+
+Se atribuye a Jorge Campos Rodríguez la titularidad de los derechos de autor sobre este producto conforme a la Ley de Propiedad Intelectual, Real Decreto Legislativo 1/1996, de 12 de abril, que establece que los derechos de autor sobre cualquier obra original de la mente, como software, textos, imágenes, música y otros, pertenecen automáticamente al autor desde el momento de su creación. Esto incluye los derechos exclusivos de reproducción, distribución, comunicación pública y transformación, los cuales son intransferibles sin la autorización explícita del titular de los derechos.
+
+Este producto se encuentra protegido bajo las leyes de propiedad intelectual españolas y está sujeto a los derechos exclusivos de su autor.
