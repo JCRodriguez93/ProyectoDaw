@@ -1,5 +1,6 @@
 .newsletter p, 
 .newsletter h2,
+.products h2,
 .top-sellers-description p,
 .top-sellers-description h2, 
 .popular-section-title, 
@@ -10,7 +11,8 @@ button{
     color: white;
 }
 
-h1 {
+h1,
+ .products h2{
     padding: 50px;
     text-align: center;
 }
