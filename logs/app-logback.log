@@ -1050,3 +1050,13 @@ This generated password is for development use only. Your security configuration
 2025-04-07 20:58:33,522 INFO [http-nio-8080-exec-2] es.proyecto.app.controller.ProductsController: Successfully fetched all products
 2025-04-07 20:58:33,564 INFO [http-nio-8080-exec-5] es.proyecto.app.controller.ProductsController: Successfully fetched all products
 2025-04-07 20:58:33,595 INFO [http-nio-8080-exec-9] es.proyecto.app.controller.ProductsController: Successfully fetched all products
+2025-04-07 21:01:50,043 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 1096 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-04-07 21:01:50,047 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-04-07 21:01:59,202 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-07 21:01:59,241 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 0159011a-36ae-45e6-8936-d29d9d24a8d6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-07 21:02:00,470 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 11.059 seconds (process running for 12.28)
