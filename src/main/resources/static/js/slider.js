@@ -1,72 +1,77 @@
+/**document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const subcategoryId = urlParams.get('subcategory');
+  const subcategoryName = urlParams.get('subcategoryName');
+  const rangeInput = document.getElementById("customRange3");
+  const rangeValue = document.getElementById("rangeValue");
 
-/*
-Con el slider no aparecen los productos
-........................................
+  let allProducts = [];
 
-document.addEventListener("DOMContentLoaded", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-const subcategoryId = urlParams.get('subcategory'); // Ahora coincide con la URL
-    const subcategoryName = urlParams.get('subcategoryName');
-    const rangeInput = document.getElementById("customRange3");
-    const rangeValue = document.getElementById("rangeValue");
+  // Cargar productos de la subcategoría indicada en la URL
+  if (subcategoryId) {
+    fetch("http://localhost:8080/Products")
+      .then(response => response.json())
+      .then(data => {
+        allProducts = data.products.filter(producto =>
+          Number(producto.idSubcategory) === Number(subcategoryId)
+        );
+        mostrarProductos(allProducts, subcategoryName);
+      })
+      .catch(error => console.error("Error al obtener productos:", error));
+  }
 
-    let allProducts = [];
+  // Actualiza el texto del slider y aplica el filtro al moverlo
+  rangeInput.addEventListener("input", function() {
+    const valorSeleccionado = rangeInput.value;
+    rangeValue.textContent = `${valorSeleccionado}€`;
+    filtrarProductosPorPrecio(valorSeleccionado);
+  });
 
-    if (subcategoryId) {
-        fetch("http://localhost:8080/Products")
-            .then(response => response.json())
-            .then(data => {
-                allProducts = data.products.filter(producto => producto.idSubcategory === parseInt(subcategoryId));
-                mostrarProductos(allProducts, subcategoryName);
-            })
-            .catch(error => console.error("Error al obtener productos:", error));
+  function filtrarProductosPorPrecio(precioMaximo) {
+
+    if (Number(precioMaximo) === 0) {
+      // Si el slider es 0, mostramos todos los productos
+      mostrarProductos(allProducts, subcategoryName);
+    } else {
+      // Filtrar solo los productos cuyo precio sea EXACTAMENTE igual al valor seleccionado
+      const productosFiltrados = allProducts.filter(producto =>
+        Number(producto.price) <= Number(precioMaximo)
+      );
+      console.log("Productos filtrados:", productosFiltrados);
+      mostrarProductos(productosFiltrados, subcategoryName);
     }
+  }
 
-    rangeInput.addEventListener("input", function() {
-        rangeValue.textContent = `${rangeInput.value}€`;
-        filtrarProductosPorPrecio(rangeInput.value);
-    });
+  function mostrarProductos(productos, subcategoryName) {
+    const productsContainer = document.getElementById("productsContainer");
+    productsContainer.innerHTML = ""; // Limpiar el contenedor
 
-    function filtrarProductosPorPrecio(precioMaximo) {
-     console.log("Precio máximo seleccionado:", precioMaximo);
-        console.log("Productos antes del filtro:", allProducts);
-        if (parseInt(precioMaximo) === 0) {
-                    console.log("Producto:", producto.name, "Precio:", producto.price);
-
-            mostrarProductos(allProducts, subcategoryName); // Mostrar todos los productos nuevamente
-        } else {
-const productosFiltrados = allProducts.filter(producto => Number(producto.price) <= Number(precioMaximo));
-            mostrarProductos(productosFiltrados, subcategoryName);
+    if (productos.length === 0) {
+      productsContainer.innerHTML = `<h4>No hay productos a ese precio</h4>`;
+    } else {
+      productos.forEach(producto => {
+        const productId = producto.idProduct;
+        if (!productId) {
+          console.error("Producto sin ID:", producto);
+          return;
         }
+        const productElement = document.createElement("div");
+        productElement.classList.add("col");
+        productElement.innerHTML = `
+          <div class="card product-card h-100">
+            <a href="product.html?id=${productId}" class="stretched-link"></a>
+            <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
+            <div class="card-body">
+              <h5 class="card-title">${producto.name}</h5>
+              <p class="card-text">${producto.description}</p>
+              <p class="card-text"><strong>${producto.price}€</strong></p>
+            </div>
+          </div>
+        `;
+        productsContainer.appendChild(productElement);
+      });
     }
-
-
-    function mostrarProductos(productos, subcategoryName) {
-        const productsContainer = document.getElementById("productsContainer");
-        productsContainer.innerHTML = ""; // Limpiar contenido estático
-
-        if (productos.length === 0) {
-            productsContainer.innerHTML = `<h4>No hay productos a ese precio</h4>`;
-        } else {
-            productos.forEach(producto => {
-                const productElement = document.createElement("div");
-                productElement.classList.add("col");
-
-                productElement.innerHTML = `
-                    <div class="card product-card h-100">
-                        <a href="product.html?id=${producto.id}" class="stretched-link"></a>
-                        <img src="${producto.imageUrl}" class="card-img-top" alt="${producto.name}">
-                        <div class="card-body">
-                            <h5 class="card-title">${producto.name}</h5>
-                            <p class="card-text">${producto.description}</p>
-                            <p class="card-text"><strong>${producto.price}€</strong></p>
-                        </div>
-                    </div>
-                `;
-
-                productsContainer.appendChild(productElement);
-            });
-        }
-    }
+  }
 });
-*/
+
+**/

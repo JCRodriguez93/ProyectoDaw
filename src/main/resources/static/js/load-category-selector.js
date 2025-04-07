@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Función que muestra los productos en la página (esta funciona bien)
+  /* ------------------------------------------------------------------
+      Función que muestra los productos en la página.
+      Recibe un array de productos y un mensaje descriptivo para mostrar.
+  ------------------------------------------------------------------- */
   function mostrarProductos(productos, mensaje) {
     const productsContainer = document.getElementById("productsContainer");
-    productsContainer.innerHTML = ""; // Limpiar contenido previo
-
+    productsContainer.innerHTML = ""; // Limpiar el contenedor
     if (productos.length === 0) {
       productsContainer.innerHTML = `<p>No se encontraron productos para ${mensaje}</p>`;
     } else {
       productos.forEach(producto => {
-        // Usamos producto.idProduct (como viene en el JSON)
         const productId = producto.idProduct;
         if (!productId) {
           console.error("Producto sin ID:", producto);
           return;
         }
-
         const productElement = document.createElement("div");
         productElement.classList.add("col");
         productElement.innerHTML = `
@@ -33,100 +33,157 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Función para cargar los productos de la categoría seleccionada
-  function loadProductsForCategory(selectedCategory) {
-    // Si se selecciona "todos", se muestran todos los productos
-    if (selectedCategory === "todos") {
-      fetch("http://localhost:8080/Products")
-        .then(response => response.json())
-        .then(data => {
-          mostrarProductos(data.products, "Todos los productos");
-        })
-        .catch(error => console.error("Error al obtener productos:", error));
-      return;
-    }
-
-    // Si se elige un ID específico de categoría, se obtiene el detalle de la categoría
-    // donde se incluyen las subcategorías
-    fetch(`http://localhost:8080/Category/${selectedCategory}`)
-      .then(response => response.json())
-      .then(categoryData => {
-        // Extraer los IDs de las subcategorías asociadas a la categoría
-        const subcategoryIds = categoryData.subcategories.map(subcat => subcat.id_subcategory);
-
-        // Obtener todos los productos y filtrar aquellos que pertenezcan a alguna de las subcategorías
-        fetch("http://localhost:8080/Products")
-          .then(response => response.json())
-          .then(data => {
-            // Aquí se corrige el nombre de la propiedad a "idSubcategory"
-            const filteredProducts = data.products.filter(producto =>
-              subcategoryIds.includes(producto.idSubcategory)
-            );
-            mostrarProductos(filteredProducts, `Categoría: ${categoryData.name}`);
-          })
-          .catch(error => console.error("Error al obtener productos:", error));
-      })
-      .catch(error => console.error("Error al obtener la categoría:", error));
-  }
-
-  // Función para cargar las categorías en el <select>
+  /* ------------------------------------------------------------------
+      Función para cargar todas las categorías y agregarlas al select.
+      Se asume que el HTML ya tiene un <select id="category">
+      con la opción "Todos" definida.
+  ------------------------------------------------------------------- */
   async function loadCategories() {
     try {
-      const response = await fetch('http://localhost:8080/Category');
-      if (!response.ok) throw new Error('No se pudieron cargar las categorías');
-
+      const response = await fetch("http://localhost:8080/Category");
+      if (!response.ok) throw new Error("No se pudieron cargar las categorías");
       const data = await response.json();
       const categories = data.categories;
-      const categorySelect = document.getElementById('category');
-
-      // Agregar las categorías al select
+      const categorySelect = document.getElementById("category");
+      // Se añaden las opciones a continuación de "Todos"
       categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category.id_category;
+        const option = document.createElement("option");
+        option.value = category.id_category; // Ej: 1, 2, 3, etc.
         option.textContent = category.name;
         categorySelect.appendChild(option);
       });
     } catch (error) {
-      console.error('Error al cargar las categorías:', error);
+      console.error("Error al cargar las categorías:", error);
     }
   }
 
-  // Cargar las categorías al iniciar la página
-  loadCategories();
+  /* ------------------------------------------------------------------
+      Función para obtener todos los productos desde la API.
+  ------------------------------------------------------------------- */
+  async function fetchAllProducts() {
+    try {
+      const response = await fetch("http://localhost:8080/Products");
+      const data = await response.json();
+      return data.products;
+    } catch (error) {
+      console.error("Error al obtener productos:", error);
+      return [];
+    }
+  }
 
-  // Agregar el evento al botón de "Aplicar filtros"
+  /* ------------------------------------------------------------------
+      Función para obtener el detalle de una categoría (incluye sus subcategorías)
+      a partir de su ID.
+  ------------------------------------------------------------------- */
+  async function fetchCategoryDetail(categoryId) {
+    try {
+      const response = await fetch(`http://localhost:8080/Category/${categoryId}`);
+      return await response.json();
+    } catch (error) {
+      console.error("Error al obtener la categoría:", error);
+      return null;
+    }
+  }
+
+  /* ------------------------------------------------------------------
+      Función que aplica los filtros combinados:
+      - Filtro por categoría (o "todos")
+      - Filtro por búsqueda (nombre del producto)
+      - Filtro por precio (utilizando el slider)
+
+      Esta función se llama al pulsar el botón "Aplicar filtros".
+  ------------------------------------------------------------------- */
+  async function aplicarFiltros() {
+    // Recoger valores de los controles
+    const selectedCategory = document.getElementById("category").value;
+    const searchText = document.getElementById("search").value.trim().toLowerCase();
+    const priceValue = Number(document.getElementById("customRange3").value);
+
+    let products = [];
+
+    // FILTRO POR CATEGORÍA:
+    if (selectedCategory === "todos") {
+      products = await fetchAllProducts();
+    } else {
+      const categoryData = await fetchCategoryDetail(selectedCategory);
+      if (!categoryData) {
+        console.error("No se pudo obtener el detalle de la categoría");
+        return;
+      }
+      // Extraer los IDs de las subcategorías correspondientes
+      const subcategoryIds = categoryData.subcategories.map(subcat => subcat.id_subcategory);
+      const allProducts = await fetchAllProducts();
+      // Se incluyen aquellos productos cuyo idSubcategory esté en la lista
+      products = allProducts.filter(producto =>
+        subcategoryIds.includes(producto.idSubcategory)
+      );
+    }
+
+    // FILTRO POR BUSQUEDA:
+    if (searchText) {
+      products = products.filter(producto =>
+        producto.name && producto.name.toLowerCase().includes(searchText)
+      );
+    }
+
+    // FILTRO POR PRECIO:
+    if (priceValue > 0) {
+      // Cambia acá la comparación si deseas exactitud (===) o establecer un valor máximo (<=)
+      products = products.filter(producto =>
+        Number(producto.price) <= priceValue
+      );
+    }
+
+    // Actualización de la URL (opcional) mostrando algunos de los filtros aplicados
+    let qp = new URLSearchParams();
+    if (selectedCategory !== "todos") {
+      qp.set("category", selectedCategory);
+      qp.set("categoryName", document.getElementById("category").selectedOptions[0].textContent);
+    }
+    if (searchText) {
+      qp.set("search", searchText);
+    }
+    if (priceValue > 0) {
+      qp.set("price", priceValue);
+    }
+    const nuevaUrl = "catalog.html" + (qp.toString() ? "?" + qp.toString() : "");
+    history.pushState(null, "", nuevaUrl);
+
+    // Construir un mensaje descriptivo de los filtros aplicados
+    let mensaje = "Filtros aplicados: ";
+    mensaje += selectedCategory === "todos"
+      ? "Todas las categorías"
+      : document.getElementById("category").selectedOptions[0].textContent;
+    if (searchText) mensaje += `, búsqueda: "${searchText}"`;
+    if (priceValue > 0) mensaje += `, precio <= ${priceValue}€`;
+
+    // Mostrar los productos filtrados
+    mostrarProductos(products, mensaje);
+  }
+
+  /* ------------------------------------------------------------------
+      Evento para actualizar la visualización del valor del slider.
+      (Esto es independiente del filtrado, ya que se muestra en tiempo real.)
+  ------------------------------------------------------------------- */
+  const rangeInput = document.getElementById("customRange3");
+  const rangeValueElem = document.getElementById("rangeValue");
+  rangeInput.addEventListener("input", function () {
+    rangeValueElem.textContent = `${rangeInput.value}€`;
+  });
+
+  /* ------------------------------------------------------------------
+      Asignar el evento al botón "Aplicar filtros"
+  ------------------------------------------------------------------- */
   const applyButton = document.querySelector("button[type='submit']");
   if (applyButton) {
     applyButton.addEventListener("click", function (e) {
-      e.preventDefault(); // Evitar comportamiento por defecto
-      const selectedCategory = document.getElementById("category").value;
-
-      if (selectedCategory === "todos") {
-        // Actualizar URL sin parámetros para "todos"
-        history.pushState(null, "", "catalog.html");
-        loadProductsForCategory(selectedCategory);
-      } else {
-        // Para una categoría específica, obtenemos el detalle de la categoría para actualizar la URL
-        fetch(`http://localhost:8080/Category/${selectedCategory}`)
-          .then(response => response.json())
-          .then(categoryData => {
-            if (categoryData.subcategories && categoryData.subcategories.length > 0) {
-              const qp = new URLSearchParams({
-                category: selectedCategory,
-                categoryName: categoryData.name
-              });
-              history.pushState(null, "", "catalog.html?" + qp.toString());
-
-            } else {
-              console.warn("No se encontraron subcategorías para esta categoría.");
-              history.pushState(null, "", "catalog.html");
-            }
-            loadProductsForCategory(selectedCategory);
-          })
-          .catch(error => console.error("Error al obtener la categoría para actualizar la URL:", error));
-      }
+      e.preventDefault(); // Evitar el envío de formulario o recarga
+      aplicarFiltros();
     });
   } else {
     console.error("Botón de aplicar filtros no encontrado.");
   }
+
+  // Cargar las categorías al iniciar la página
+  loadCategories();
 });
