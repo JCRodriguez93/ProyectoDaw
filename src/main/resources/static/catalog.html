@@ -59,30 +59,19 @@
 <!--footer-->
 <div id="footer-div"></div>
 
-<script>
-    const rangeInput = document.getElementById("customRange3");
-    const rangeValue = document.getElementById("rangeValue");
 
-    rangeInput.addEventListener("input", function () {
-        rangeValue.textContent = `0€ - ${rangeInput.value}€`;
-    });
-</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!--añadir el menú y el footer-->
 <script src="js/fetch-div.js"></script>
 <!-- menú sticky-->
 <script src="js/sticky-menu.js"></script>
-<script src="js/products-catalog-filter.js"></script>
-<!--slider con el precio -->
-<script src="js/slider.js"></script>
 
-<script src="js/sections/ProductSection.js"></script>
-<script src="js/sections/popular-products/PopularProducts.js"></script>
-<script src="js/sections/top-seller/TopSellers.js"></script>
-<script src="js/sections/featured-products/FeaturedProducts.js"></script>
-<!-- categorias de la parte inferior-->
-<script src="js/load-category-selector.js"></script>
+<!--script para obtener los productos en el catálogo desde el menú-->
+<script src="js/from-menu-catalog-filter.js"></script>
+
+<!-- script para los filtrados de la página por nombre, precio y categoría-->
+<script src="js/catalog-filter.js"></script>
 
 </body>
 
