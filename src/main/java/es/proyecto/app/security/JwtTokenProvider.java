@@ -50,7 +50,7 @@ public class JwtTokenProvider {
         Claims claims = getClaims(token);
 
         if (claims == null || !claims.containsKey("roles")) {
-            return Collections.emptyList(); // ✅ Devuelve lista vacía de forma segura
+            return Collections.emptyList(); //  Devuelve lista vacía de forma segura
         }
 
         Object rolesObject = claims.get("roles");
