@@ -2,7 +2,6 @@
 async function loadProductDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const idProduct = urlParams.get('id');
-  console.log("ID obtenido:", idProduct);
 
   const productDetails = document.getElementById('product-details');
   if (!productDetails) {
@@ -16,7 +15,6 @@ async function loadProductDetails() {
 
     // Obtener los datos de la subcategoría del producto
     const idSubcategory = product.idSubcategory;
-    console.log("ID de subcategoría procesado:", idSubcategory);
     const subcatResponse = await fetch(`http://localhost:8080/Subcategory/${idSubcategory}`);
     if (!subcatResponse.ok) throw new Error("Error en la respuesta de la API de subcategoría");
     const subcategory = await subcatResponse.json();
@@ -33,7 +31,7 @@ async function loadProductDetails() {
     const breadcrumbHTML = `
       <nav class="d-flex">
         <h6 class="mb-0">
-          <a href="index.html" class="text-white-50">Home</a>
+          <a href="index.html" class="text-white-50">Inicio</a>
           <span class="text-white-50 mx-2"> > </span>
           <a href="catalog.html?category=${categoryId}&categoryName=${encodeURIComponent(categoryName)}" class="text-white-50">${categoryName}</a>
           <span class="text-white-50 mx-2"> > </span>
@@ -175,7 +173,6 @@ async function loadSimilarItems(idSubcategory) {
         let responseData = await response.json();
         // Si la respuesta tiene la propiedad 'products', extraemos ese array.
         let similarProducts = responseData.products ? responseData.products : responseData;
-        console.log("Respuesta de productos similares:", similarProducts);
 
         if (!Array.isArray(similarProducts)) {
             similarItemsContainer.innerHTML = "<p>No se encontraron productos similares.</p>";
@@ -233,7 +230,6 @@ document.addEventListener("click", function(event) {
 document.addEventListener("DOMContentLoaded", () => {
     // Verificar si estamos en products.html antes de ejecutar
     if (document.getElementById("product-details")) {
-        console.log("Cargando detalles del producto...");
         loadProductDetails(); // Llamar a la función cuando el DOM esté listo
     } else {
         console.warn("No se encontró el contenedor 'product-details', asegurarse de que este script se ejecuta en 'products.html'.");
