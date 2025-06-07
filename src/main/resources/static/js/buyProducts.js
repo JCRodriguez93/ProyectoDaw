@@ -37,7 +37,7 @@ async function buyProduct() {
 
   try {
     // Enviamos la orden al endpoint Orders
-    const response = await fetch('http://localhost:8080/Orders', {
+    const response = await fetch('http://192.168.1.34:8080/Orders', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,

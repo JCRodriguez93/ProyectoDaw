@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchCategorias() {
-    fetch("http://localhost:8080/Category")
+    fetch("http://192.168.1.34:8080/Category")
         .then(response => response.json())
         .then(data => generarMenu(data.categories))
         .catch(error => console.error("Error al obtener categorías:", error));

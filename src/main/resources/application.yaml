@@ -2,9 +2,10 @@ spring:
   application:
     name: app
   datasource:
-    url: jdbc:mysql://localhost:3306/dawproject
-    username: root
-    password: 1234
+    url: jdbc:mysql://192.168.1.34:3306/dawproject
+    username: appuser
+    password: securepassword
+
     driverClassName: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

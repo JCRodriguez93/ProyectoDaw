@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function loadCategories() {
       try {
-        const response = await fetch("http://localhost:8080/Category");
+        const response = await fetch("http://192.168.1.34:8080/Category");
         if (!response.ok) throw new Error("No se pudieron cargar las categorías");
         const data = await response.json();
         const categories = data.categories;
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function fetchAllProducts() {
       try {
-        const response = await fetch("http://localhost:8080/Products");
+        const response = await fetch("http://192.168.1.34:8080/Products");
         const data = await response.json();
         return data.products;
       } catch (error) {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function fetchCategoryDetail(categoryId) {
       try {
-        const response = await fetch(`http://localhost:8080/Category/${categoryId}`);
+        const response = await fetch(`http://192.168.1.34:8080/Category/${categoryId}`);
         return await response.json();
       } catch (error) {
         console.error("Error al obtener la categoría:", error);
