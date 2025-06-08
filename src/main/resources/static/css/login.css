@@ -21,6 +21,7 @@
 .fondo-all {
     background-image: url("../img/background/bg-login.jpg");
     background-size: cover;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -34,4 +35,8 @@ button {
 .scale-container {
   transform: scale(0.8);
   margin-top: -90px
+}
+
+.container {
+margin-top: 30px
 }
