@@ -34,7 +34,7 @@ class TopSellers extends ProductSection {
 document.addEventListener("DOMContentLoaded", () => {
     const topSellersContainer = document.querySelector(".top-sellers-products");
     if (topSellersContainer) {
-        const topSellers = new TopSellers("http://192.168.1.34:8080/Products", ".top-sellers-products");
+        const topSellers = new TopSellers("http://localhost:8080/Products", ".top-sellers-products");
         topSellers.loadProducts();
     }
 });

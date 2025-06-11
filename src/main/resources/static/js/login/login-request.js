@@ -38,7 +38,7 @@ async function handleLogin(event) {
 async function loginUser(email, password) {
   try {
     // Hacer una petición fetch al endpoint
-    const response = await fetch('http://192.168.1.34:8080/auth/login', {
+    const response = await fetch('http://localhost:8080/auth/login', {
       method: 'POST',  // Solicitud (en este caso POST) para enviar los datos
       headers: { 'Content-Type': 'application/json' },  // Definir el tipo de contenido como JSON
       body: JSON.stringify({ email, password })  // Enviar los datos de login (email y contraseña) como JSON
@@ -66,7 +66,7 @@ async function saveUserSession(token) {
     const userEmail = decodedPayload.sub;  // El campo 'sub' normalmente contiene el email del usuario en un JWT.
 
     // Hacer una solicitud GET para obtener la lista de usuarios desde el servidor
-    const response = await fetch("http://192.168.1.34:8080/Users", {
+    const response = await fetch("http://localhost:8080/Users", {
       method: "GET",  // Solicitud GET (obtener datos)
       headers: { "Authorization": `Bearer ${token}` }  // Incluir el token en los encabezados para autorizar la solicitud
     });
@@ -104,7 +104,7 @@ async function checkUserSession() {
 async function fetchUserData(authToken) {
   try {
     // Hacer una solicitud GET al servidor para obtener la lista de usuarios
-    const response = await fetch("http://192.168.1.34:8080/Users", {
+    const response = await fetch("http://localhost:8080/Users", {
       method: "GET",  // Solicitud GET (obtener datos)
       headers: { "Authorization": `Bearer ${authToken}` }  // Incluir el token en los encabezados para autorizar la solicitud
     });
