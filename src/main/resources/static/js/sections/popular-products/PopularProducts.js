@@ -106,7 +106,7 @@ class ProductosPopulares extends ProductSection {
         };
 
         try {
-            const response = await fetch('http://localhost:8080/cart', {
+            const response = await fetch('https://proyectodaw-32ua.onrender.com/cart', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -141,7 +141,7 @@ class ProductosPopulares extends ProductSection {
 // Inicialización si existen contenedores para productos populares (index.html)
 document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".popular-product-item-container") || document.querySelector(".popular-left-image")) {
-        const popularProducts = new ProductosPopulares("http://localhost:8080/Products");
+        const popularProducts = new ProductosPopulares("https://proyectodaw-32ua.onrender.com/Products");
         popularProducts.loadProducts();
     }
 });
