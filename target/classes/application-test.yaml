@@ -1,0 +1,9 @@
+spring:
+  sql:
+    init:
+      platform: mysql
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+
+# para posibles futuras pruebas de integracción.

@@ -1,0 +1,97 @@
+/* PRODUCTOS */
+
+
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Aumenta el espacio entre los elementos */
+    max-width: 1200px; /* Ancho máximo para centrar los productos */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido esté bien distribuido */
+    height: 280px; /* Establece una altura fija para uniformidad */
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+
+.product-image {
+    width: 100%; /* El ancho sigue siendo el 100% del contenedor */
+    height: 150px; /* Altura ajustada para darle una forma más cuadrada pero no perfecta */
+    object-fit: contain; /* Asegura que la imagen se recorte y ajuste sin distorsionarse */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.2rem;
+
+}
+
+.product-price {
+    font-size: 1.1rem ;
+    color: #007BFF;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+/* Diseño responsivo */
+@media screen and (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    .product-item {
+        height: auto; /* Deja que la altura se ajuste automáticamente */
+    }
+
+    .product-image {
+        height: 120px; /* Reduce la altura de las imágenes */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr; /* Cambia a 1 columna en pantallas muy pequeñas */
+    }
+
+    .product-item {
+        width: 90%; /* Asegura que los productos ocupen casi todo el ancho */
+        margin: 0 auto;
+    }
+}
+
+.icon-hover:hover {
+            border-color: #3b71ca !important;
+            background-color: white !important;
+            color: #3b71ca !important;
+        }
+
+        .icon-hover:hover i {
+            color: #3b71ca !important;
+        }
+
+        .zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.5);
+}

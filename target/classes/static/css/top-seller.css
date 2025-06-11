@@ -1,0 +1,127 @@
+/* Contenedor principal */
+.top-sellers {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px;
+    margin: 40px;
+}
+
+/* Descripción de la sección de productos */
+.top-sellers-description {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.top-sellers-description h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.top-sellers-description p {
+    font-size: 1.1rem;
+}
+
+/* Contenedor de productos */
+.top-sellers-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Muestra 4 productos por fila */
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: 700px;
+    flex: 2;
+}
+
+/* Elementos de cada producto */
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+.product-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+.product-name-seller{
+    font-size: 1.2rem;
+    gap: 10px;
+}
+
+.product-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #f1c40f; /* Estrella amarilla */
+}
+
+/* Estilo para la descripción */
+.product-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+ .popular-right-section img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+.popular-left-section img {
+    width: 250px;
+    height: 350px;
+    object-fit: contain;
+
+}
+/* Responsividad: diseño ajustado en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .top-sellers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-sellers-description {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .top-sellers-products {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+
+    .product-item {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-sellers-products {
+        grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+}
+
+
+.popular-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Añade un espacio entre los elementos, ajusta según tus necesidades */
+  }
+  
+  .popular-quantity-controls input {
+    width: 50px; /* Ajusta el ancho del input según tus necesidades */
+  }
+  

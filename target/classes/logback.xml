@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%-30(%d %p) %-30.30([%t] %C): %msg%n%throwable</Pattern>
+        </layout>
+    </appender>
+
+    <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/app-logback.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d %p [%t] %C: %msg%n%throwable</Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/app-%d{yyyy-MM-dd}-%i-logback.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Reducir logs innecesarios -->
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+
+    <!-- Mantener logs de mi aplicación -->
+    <logger name="es.proyecto.app" level="INFO" additivity="false">
+        <appender-ref ref="File" />
+        <appender-ref ref="Console" />
+    </logger>
+
+    <!-- Mostrar solo advertencias y errores globales -->
+    <root level="WARN">
+        <appender-ref ref="File" />
+        <appender-ref ref="Console" />
+    </root>
+
+</configuration>

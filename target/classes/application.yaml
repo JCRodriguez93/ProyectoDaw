@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: app
+  datasource:
+    url: jdbc:mysql://bv4uoel3p6dbt5ejlk1h-mysql.services.clever-cloud.com:3306/bv4uoel3p6dbt5ejlk1h
+    username: uhizf9kiahf0wiet
+    password: AoKQQ5JLuGUoIB5lYnG6
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+    api-docs:
+      path: /v3/api-docs
+  logging:
+    level:
+      root: WARN
+      es.proyecto.app: INFO
+jwt:
+  expiration: 3600000

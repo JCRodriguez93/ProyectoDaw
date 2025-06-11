@@ -1,0 +1,42 @@
+.hidden {
+    display: none;
+}
+
+.fixed-height {
+    min-height: 450px;
+}
+
+.transition {
+    transition: all 0.5s ease-in-out;
+}
+
+.visible {
+    display: block;
+}
+
+.fondo-form {
+    background-image: url("../img/background/bg-popular.jpg");
+}
+
+.fondo-all {
+    background-image: url("../img/background/bg-login.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button {
+    background-color: rgba(12, 77, 77, 0.556) !important;
+
+}
+
+/* Escalar la interfaz para que se vea un poco más pequeña */
+.scale-container {
+  transform: scale(0.8);
+  margin-top: -90px
+}
+
+.container {
+margin-top: 30px
+}
