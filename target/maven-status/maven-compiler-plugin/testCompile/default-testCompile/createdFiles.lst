@@ -1,0 +1,11 @@
+es\proyecto\app\Controller\CartControllerTest.class
+es\proyecto\app\Controller\CategoriesControllerTest.class
+es\proyecto\app\mapper\CategoryMapperTest.class
+es\proyecto\app\Controller\RolesControllerTest.class
+es\proyecto\app\Controller\OrdersControllerTest.class
+es\proyecto\app\Controller\ProductsControllerTest.class
+es\proyecto\app\Controller\UsersControllerTest.class
+es\proyecto\app\endpointPerformance\MockMvcPerformanceTest.class
+es\proyecto\app\Controller\SubcategoriesControllerTest.class
+es\proyecto\app\AppApplicationTests.class
+es\proyecto\app\Controller\AuthControllerTest.class
