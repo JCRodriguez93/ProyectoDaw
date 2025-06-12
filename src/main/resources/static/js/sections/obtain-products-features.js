@@ -15,7 +15,7 @@ async function loadProductDetails() {
 
     // Obtener los datos de la subcategoría del producto
     const idSubcategory = product.idSubcategory;
-    const subcatResponse = await fetch(`https://jorgedaw.store/${idSubcategory}`);
+    const subcatResponse = await fetch(`https://jorgedaw.store/Subcategory/${idSubcategory}`);
     if (!subcatResponse.ok) throw new Error("Error en la respuesta de la API de subcategoría");
     const subcategory = await subcatResponse.json();
     const subcategoryName = subcategory.name;
