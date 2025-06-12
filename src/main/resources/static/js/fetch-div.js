@@ -40,7 +40,7 @@ async function handleLogout(authToken) {
         console.log('Handling logout. Auth token:', authToken);
         // Si existe un token, hacemos la petición de logout
         if (authToken) {
-            const response = await fetch('https://proyectodaw-32ua.onrender.com/auth/logout', {
+            const response = await fetch('https://jorgedaw.store/auth/logout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

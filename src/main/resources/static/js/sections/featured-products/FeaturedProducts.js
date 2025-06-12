@@ -29,7 +29,7 @@ class ProductosDestacados extends ProductSection {
 // Un solo evento DOMContentLoaded para manejar todo
 document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector(".products-container")) {
-        const featuredProducts = new ProductosDestacados("https://proyectodaw-32ua.onrender.com/Products", ".products-container");
+        const featuredProducts = new ProductosDestacados("https://jorgedaw.store/Products", ".products-container");
         featuredProducts.loadProducts();
     }
 

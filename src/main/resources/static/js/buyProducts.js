@@ -37,7 +37,7 @@ async function buyProduct() {
 
   try {
     // Enviamos la orden al endpoint Orders
-    const response = await fetch('https://proyectodaw-32ua.onrender.com/Orders', {
+    const response = await fetch('https://jorgedaw.store/Orders', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,

@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function loadCategories() {
       try {
-        const response = await fetch("https://proyectodaw-32ua.onrender.com/Category");
+        const response = await fetch("https://jorgedaw.store/Category");
         if (!response.ok) throw new Error("No se pudieron cargar las categorías");
         const data = await response.json();
         const categories = data.categories;
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function fetchAllProducts() {
       try {
-        const response = await fetch("https://proyectodaw-32ua.onrender.com/Products");
+        const response = await fetch("https://jorgedaw.store/Products");
         const data = await response.json();
         return data.products;
       } catch (error) {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ------------------------------------------------------------------- */
     async function fetchCategoryDetail(categoryId) {
       try {
-        const response = await fetch(`https://proyectodaw-32ua.onrender.com/Category/${categoryId}`);
+        const response = await fetch(`https://jorgedaw.store/Category/${categoryId}`);
         return await response.json();
       } catch (error) {
         console.error("Error al obtener la categoría:", error);

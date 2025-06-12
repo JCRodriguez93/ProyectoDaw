@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchCategorias() {
-    fetch("https://proyectodaw-32ua.onrender.com/Category")
+    fetch("https://jorgedaw.store/Category")
         .then(response => response.json())
         .then(data => generarMenu(data.categories))
         .catch(error => console.error("Error al obtener categorías:", error));

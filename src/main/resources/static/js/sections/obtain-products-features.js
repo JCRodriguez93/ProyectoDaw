@@ -9,20 +9,20 @@ async function loadProductDetails() {
     return;
   }
   try {
-    const productResponse = await fetch(`https://proyectodaw-32ua.onrender.com/Products/${idProduct}`);
+    const productResponse = await fetch(`https://jorgedaw.store/Products/${idProduct}`);
     if (!productResponse.ok) throw new Error("Error en la respuesta de la API del producto");
     const product = await productResponse.json();
 
     // Obtener los datos de la subcategoría del producto
     const idSubcategory = product.idSubcategory;
-    const subcatResponse = await fetch(`https://proyectodaw-32ua.onrender.com/${idSubcategory}`);
+    const subcatResponse = await fetch(`https://jorgedaw.store/${idSubcategory}`);
     if (!subcatResponse.ok) throw new Error("Error en la respuesta de la API de subcategoría");
     const subcategory = await subcatResponse.json();
     const subcategoryName = subcategory.name;
     const categoryId = subcategory.id_category;
 
     // Obtener los datos de la categoría
-    const catResponse = await fetch(`https://proyectodaw-32ua.onrender.com/Category/${categoryId}`);
+    const catResponse = await fetch(`https://jorgedaw.store/Category/${categoryId}`);
     if (!catResponse.ok) throw new Error("Error en la respuesta de la API de categoría");
     const category = await catResponse.json();
     const categoryName = category.name;
@@ -124,7 +124,7 @@ async function addToCart(idProduct, quantity) {
     };
 
     try {
-        const response = await fetch('https://proyectodaw-32ua.onrender.com/cart', {
+        const response = await fetch('https://jorgedaw.store/cart', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${authToken}`,
@@ -165,7 +165,7 @@ async function loadSimilarItems(idSubcategory) {
     }
 
     try {
-        const response = await fetch(`https://proyectodaw-32ua.onrender.com/Products?subcategory=${idSubcategory}`);
+        const response = await fetch(`https://jorgedaw.store/Products?subcategory=${idSubcategory}`);
         if (!response.ok) {
             throw new Error("Error en la respuesta de la API");
         }
