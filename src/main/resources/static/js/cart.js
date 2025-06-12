@@ -44,7 +44,7 @@ if (!authToken) {
                         // Function to fetch product details (like imageUrl and description)
                         async function getProductDetails(productId) {
                             try {
-                                const response = await fetch(`https://jorgedaw.store/${productId}`, {
+                                const response = await fetch(`https://jorgedaw.store/Products/${productId}`, {
                                     method: 'GET',
                                     headers: {
                                         'Authorization': `Bearer ${authToken}`,
