@@ -39,6 +39,19 @@ public class AuthController implements AuthApi {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
+    /**
+     * Inicia sesión de un usuario existente verificando sus credenciales (email y contraseña).
+     *
+     * <p>Este método recibe un objeto {@link LoginRequest} con el email y la contraseña
+     * del usuario. Comprueba si el usuario existe y si la contraseña coincide con la almacenada.
+     * Si las credenciales son válidas, genera un token JWT y devuelve una respuesta exitosa.
+     * Si no, devuelve un error de autenticación.</p>
+     *
+     * @param body Objeto {@link LoginRequest} que contiene el email y la contraseña del usuario.
+     * @return {@link ResponseEntity} con un objeto {@link AuthResponse}.
+     *         Si la autenticación falla, retorna HTTP 401 con mensaje de error.
+     *         Si es exitosa, retorna HTTP 200 con el token JWT generado.
+     */
     @Override
     public ResponseEntity<AuthResponse> loginUser(LoginRequest body) {
         logger.info("Attempting to log in with email: {}", body.getEmail());
@@ -60,6 +73,16 @@ public class AuthController implements AuthApi {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     * Cierra la sesión del usuario invalidando el token JWT recibido en la cabecera Authorization.
+     *
+     * <p>Este método recupera la cabecera "Authorization" de la petición HTTP actual,
+     * extrae el token JWT y lo invalida utilizando {@code jwtTokenProvider.invalidateToken()}.
+     * Si no se encuentra un token válido, se registra una advertencia.</p>
+     *
+     * @return {@link ResponseEntity} con un objeto {@link LogoutResponse}.
+     *         Siempre retorna HTTP 200 con un mensaje de éxito, incluso si no se encontró token.
+     */
     @Override
     public ResponseEntity<LogoutResponse> logoutUser() {
         // Obtener la petición actual sin modificar la firma del método
@@ -82,6 +105,22 @@ public class AuthController implements AuthApi {
     }
 
 
+    /**
+     * Registra un nuevo usuario en el sistema.
+     *
+     * <p>Este método valida los datos proporcionados en la solicitud {@link RegisterRequest},
+     * comprueba si el email ya está en uso y si el rol de usuario especificado existe.
+     * Si todo es válido, crea un nuevo usuario utilizando {@code usersService}.</p>
+     *
+     * @param body Objeto {@link RegisterRequest} que contiene la información del usuario a registrar.
+     * @return {@link ResponseEntity} con un objeto {@link AuthResponse}:
+     *         <ul>
+     *             <li>HTTP 201 (CREATED) si el usuario fue creado correctamente.</li>
+     *             <li>HTTP 400 (BAD_REQUEST) si los datos del usuario están incompletos o nulos.</li>
+     *             <li>HTTP 409 (CONFLICT) si el email ya está registrado.</li>
+     *             <li>HTTP 500 (INTERNAL_SERVER_ERROR) si el rol no existe.</li>
+     *         </ul>
+     */
     @Override
     public ResponseEntity<AuthResponse> registerUser(RegisterRequest body) {
         logger.info("Attempting to register user with email: {}", body.getEmail());
