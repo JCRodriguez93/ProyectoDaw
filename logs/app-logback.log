@@ -338,3 +338,15 @@ Using generated security password: bbad8a7c-d49c-4a08-b012-a709298eb940
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
 2025-06-24 01:35:26,192 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 15.306 seconds (process running for 16.378)
+2025-06-24 14:36:51,267 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting AppApplication using Java 17.0.13 with PID 6696 (C:\Users\Spekt\Desktop\DAW\proyecto\app\target\classes started by Spekt in C:\Users\Spekt\Desktop\DAW\proyecto\app)
+2025-06-24 14:36:51,267 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2025-06-24 14:36:58,824 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-24 14:36:58,834 WARN [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-24 14:37:03,315 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-24 14:37:03,360 WARN [restartedMain] org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration: 
+
+Using generated security password: 448a8c6e-0e30-47f7-9960-b0f5caed64b6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-06-24 14:37:04,782 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started AppApplication in 14.382 seconds (process running for 16.025)

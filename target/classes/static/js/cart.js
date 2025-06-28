@@ -14,7 +14,7 @@ if (!authToken) {
     // Function to fetch and display the cart
     async function viewCart() {
         try {
-            const response = await fetch('http://localhost:8080/cart', {
+            const response = await fetch('https://jorgedaw.store/cart', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -44,7 +44,7 @@ if (!authToken) {
                         // Function to fetch product details (like imageUrl and description)
                         async function getProductDetails(productId) {
                             try {
-                                const response = await fetch(`http://localhost:8080/Products/${productId}`, {
+                                const response = await fetch(`https://jorgedaw.store/Products/${productId}`, {
                                     method: 'GET',
                                     headers: {
                                         'Authorization': `Bearer ${authToken}`,
@@ -102,7 +102,7 @@ if (!authToken) {
 
                        <tr>
                            <td>
-                               <a href="http://localhost:8080/catalog.html" class="btn btn-warning">
+                               <a href="https://jorgedaw.store/catalog.html" class="btn btn-warning">
                                    <i class="fa fa-angle-left"></i> Continuar comprando
                                </a>
                            </td>
@@ -137,7 +137,7 @@ if (!authToken) {
         }
 
         try {
-            const response = await fetch('http://localhost:8080/cart', {
+            const response = await fetch('https://jorgedaw.store/cart', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -179,7 +179,7 @@ if (!authToken) {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    const response = await fetch('http://localhost:8080/cart', {
+                    const response = await fetch('https://jorgedaw.store/cart', {
                         method: 'POST',
                         headers: {
                             'Authorization': `Bearer ${authToken}`,
@@ -254,7 +254,7 @@ if (!authToken) {
     // Function to remove a cart item without confirmation (used when clearing the cart)
     async function removeCartItemWithoutConfirm(productId, quantity) {
         try {
-            const response = await fetch('http://localhost:8080/cart', {
+            const response = await fetch('https://jorgedaw.store/cart', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -278,7 +278,7 @@ if (!authToken) {
     async function clearCart() {
         try {
             // Fetch current cart items
-            const response = await fetch('http://localhost:8080/cart', {
+            const response = await fetch('https://jorgedaw.store/cart', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${authToken}`,
@@ -315,7 +315,7 @@ if (!authToken) {
         const token = localStorage.getItem('authToken');
 
         try {
-            const response = await fetch('http://localhost:8080/Orders', {
+            const response = await fetch('https://jorgedaw.store/Orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

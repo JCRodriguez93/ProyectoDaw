@@ -26,6 +26,18 @@ public class SubcategoriesController implements SubcategoryApi {
 
     private static final Logger logger = LoggerFactory.getLogger(SubcategoriesController.class);
 
+    /**
+     * Crea una nueva subcategoría en la base de datos.
+     * <p>
+     * Valida que el cuerpo de la petición no sea nulo y que el nombre de la subcategoría esté presente y no vacío.
+     * Además, comprueba que no exista una subcategoría con el mismo nombre en la misma categoría para evitar duplicados.
+     * Si alguna validación falla, lanza la excepción correspondiente de {@link SubcategoryException}.
+     * En caso de éxito, invoca el servicio para crear la subcategoría y devuelve un estado HTTP 201 (CREATED).
+     *
+     * @param body el objeto {@link Subcategory} con los datos de la nueva subcategoría
+     * @return un {@link ResponseEntity} con código HTTP 201 (CREATED) si la subcategoría se crea correctamente
+     * @throws SubcategoryException si el cuerpo es nulo, el nombre es inválido o ya existe una subcategoría con el mismo nombre en la categoría
+     */
     @Override
     public ResponseEntity<Subcategory> createSubcategory(Subcategory body) {
         if (body == null) {
@@ -50,8 +62,19 @@ public class SubcategoriesController implements SubcategoryApi {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
-
+    /**
+     * Elimina una subcategoría identificada por su ID.
+     * <p>
+     * Valida que el ID proporcionado sea válido. Si no es válido, lanza {@link SubcategoryException#INVALID_SUBCATEGORY_ID_EXCEPTION}.
+     * Verifica que la subcategoría con el ID dado exista; si no, lanza {@link SubcategoryException#NO_SUBCATEGORY_FOUND_EXCEPTION}.
+     * Intenta eliminar la subcategoría mediante el servicio correspondiente.
+     * En caso de éxito, devuelve un {@code ResponseEntity} con estado HTTP 204 (NO_CONTENT).
+     * Si ocurre algún error durante la eliminación, lanza una {@link SubcategoryException} con el mensaje correspondiente.
+     *
+     * @param idSubcategory el identificador de la subcategoría a eliminar
+     * @return un {@link ResponseEntity} con estado HTTP 204 (NO_CONTENT) si la eliminación fue exitosa
+     * @throws SubcategoryException si el ID es inválido, no se encuentra la subcategoría, o hay un error durante la eliminación
+     */
     @Override
     public ResponseEntity<Void> deleteSubcategory(Integer idSubcategory) {
         if (!isValidId(String.valueOf(idSubcategory))) {
@@ -76,6 +99,17 @@ public class SubcategoriesController implements SubcategoryApi {
         }
     }
 
+    /**
+     * Obtiene todas las subcategorías disponibles.
+     * <p>
+     * Llama al servicio para recuperar la lista completa de subcategorías.
+     * Si la lista está vacía, lanza {@link SubcategoryException#NO_SUBCATEGORY_FOUND_EXCEPTION}.
+     * En caso de éxito, devuelve un {@link ResponseEntity} con la lista de subcategorías y código HTTP 200 (OK).
+     * Si ocurre algún error, captura la excepción y devuelve un estado HTTP 500 (INTERNAL_SERVER_ERROR).
+     *
+     * @return un {@link ResponseEntity} que contiene un objeto {@link SubcategoriesResponse} con la lista de subcategorías,
+     *         o un código HTTP 500 si hay un error.
+     */
     @Override
     public ResponseEntity<SubcategoriesResponse> getSubcategories() {
         try {
@@ -96,6 +130,18 @@ public class SubcategoriesController implements SubcategoryApi {
         }
     }
 
+    /**
+     * Obtiene una subcategoría específica por su ID.
+     * <p>
+     * Valida el formato del ID; si es inválido, devuelve un estado HTTP 400 (BAD_REQUEST).
+     * Intenta recuperar la subcategoría desde el servicio.
+     * Si no se encuentra, devuelve un estado HTTP 404 (NOT_FOUND).
+     * En caso de éxito, devuelve la subcategoría con estado HTTP 200 (OK).
+     * Si ocurre cualquier error durante la operación, devuelve un estado HTTP 500 (INTERNAL_SERVER_ERROR).
+     *
+     * @param idSubcategory el identificador de la subcategoría a obtener
+     * @return un {@link ResponseEntity} que contiene la subcategoría solicitada o el código de estado HTTP correspondiente
+     */
     @Override
     public ResponseEntity<Subcategory> getSubcategoryById(Integer idSubcategory) {
         try {
@@ -119,6 +165,21 @@ public class SubcategoriesController implements SubcategoryApi {
         }
     }
 
+    /**
+     * Actualiza una subcategoría existente con los datos proporcionados.
+     * <p>
+     * Verifica que el cuerpo de la petición no sea nulo y que incluya el ID de la categoría.
+     * Busca la subcategoría existente por el ID proporcionado; si no existe, lanza excepción.
+     * Llama al servicio para actualizar la subcategoría y devuelve el código HTTP correspondiente.
+     * Captura excepciones específicas como formato inválido del ID y errores generales,
+     * lanzando excepciones personalizadas según el caso.
+     *
+     * @param idSubcategory el ID de la subcategoría a actualizar
+     * @param body el objeto {@link Subcategory} con los nuevos datos para actualizar
+     * @return un {@link ResponseEntity} con el estado HTTP resultante de la operación
+     * @throws SubcategoryException si el cuerpo es nulo, falta el ID, la subcategoría no existe,
+     *                              el ID es inválido o se produce un error al actualizar
+     */
     @Override
     public ResponseEntity<Subcategory> updateSubcategory(Integer idSubcategory, Subcategory body) {
         try {
@@ -149,6 +210,17 @@ public class SubcategoriesController implements SubcategoryApi {
         }
     }
 
+    /**
+     * Verifica si una cadena dada representa un identificador numérico válido.
+     * <p>
+     * Este método intenta convertir la cadena a un {@code Integer}. Si la conversión tiene éxito,
+     * se considera un ID válido. Si lanza una excepción {@code NumberFormatException},
+     * se considera inválido.
+     *
+     * @param id la cadena a validar como identificador numérico.
+     * @return {@code true} si la cadena puede convertirse a {@code Integer},
+     *         {@code false} en caso contrario.
+     */
     private boolean isValidId(String id) {
         try {
             Integer.parseInt(id);

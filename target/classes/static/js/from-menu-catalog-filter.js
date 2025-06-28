@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const subcategoryName = urlParams.get("subcategoryName");
     const searchTerm = urlParams.get("search");
 
-    fetch("http://localhost:8080/Products")
+    fetch("https://jorgedaw.store/Products")
         .then(response => response.json())
         .then(data => {
             let filteredProducts = [];

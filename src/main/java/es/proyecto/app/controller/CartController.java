@@ -1,14 +1,11 @@
 package es.proyecto.app.controller;
 
 import es.proyecto.app.entity.UsersEntity;
-import es.proyecto.app.security.JwtTokenProvider;
 import es.proyecto.app.service.CartService;
 import es.proyecto.app.service.UsersService;
 import es.swagger.codegen.api.CartApi;
 import es.swagger.codegen.models.CartProductResponse;
 import es.swagger.codegen.models.ManageCartRequest;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +32,15 @@ public class CartController implements CartApi {
 
 
     /**
-     * Obtiene el userId del usuario autenticado extrayendo el username del SecurityContext.
+     * Obtiene el ID del usuario autenticado actualmente.
+     * <p>
+     * Este método recupera el `Authentication` del contexto de seguridad de Spring,
+     * extrae el email desde el token JWT (mediante `auth.getName()`), y luego busca
+     * al usuario correspondiente en la base de datos para obtener su ID.
+     *
+     * @return el ID del usuario autenticado como {@link Integer},
+     *         o {@code null} si el usuario no está autenticado
+     *         o no se encuentra en la base de datos.
      */
     private Integer getAuthenticatedUserId() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -58,7 +63,28 @@ public class CartController implements CartApi {
 
 
 
-
+    /**
+     * Gestiona las acciones relacionadas con el carrito de un usuario autenticado.
+     * <p>
+     * Según el valor del campo {@code action} en la petición {@link ManageCartRequest},
+     * se realizará una de las siguientes operaciones sobre el carrito:
+     * <ul>
+     *     <li><b>ADD</b>: Añade un producto con la cantidad especificada.</li>
+     *     <li><b>MODIFY</b>: Modifica la cantidad de un producto ya existente.</li>
+     *     <li><b>REMOVE</b>: Elimina la cantidad indicada de un producto del carrito.</li>
+     * </ul>
+     * Si el usuario no está autenticado o si los datos enviados no son válidos, se responderá con el
+     * estado HTTP correspondiente.
+     *
+     * @param body objeto {@link ManageCartRequest} que contiene la acción, el ID del producto y la cantidad.
+     * @return una {@link ResponseEntity} con el código de estado:
+     *         <ul>
+     *             <li>{@code 200 OK} si la operación fue exitosa.</li>
+     *             <li>{@code 400 Bad Request} si hay errores de validación o acción inválida.</li>
+     *             <li>{@code 401 Unauthorized} si el usuario no está autenticado.</li>
+     *             <li>{@code 404 Not Found} si se intenta modificar o eliminar un producto que no existe en el carrito.</li>
+     *         </ul>
+     */
     @Override
     public ResponseEntity<Void> manageCart(ManageCartRequest body) {
         Integer userId = getAuthenticatedUserId();
@@ -112,6 +138,20 @@ public class CartController implements CartApi {
         }
     }
 
+    /**
+     * Recupera los productos del carrito del usuario autenticado.
+     * <p>
+     * Este método obtiene el ID del usuario autenticado y solicita al servicio del carrito
+     * la lista de productos asociados a dicho usuario. Si el usuario no está autenticado
+     * o si el carrito está vacío, se devuelve el estado HTTP correspondiente.
+     *
+     * @return una {@link ResponseEntity} que contiene:
+     * <ul>
+     *     <li>Una lista de {@link CartProductResponse} con los productos del carrito y {@code 200 OK} si hay contenido.</li>
+     *     <li>{@code 401 Unauthorized} si no hay un usuario autenticado.</li>
+     *     <li>{@code 404 Not Found} si el carrito está vacío o no existe.</li>
+     * </ul>
+     */
     @Override
     public ResponseEntity<List<CartProductResponse>> viewCart() {
         Integer userId = getAuthenticatedUserId();

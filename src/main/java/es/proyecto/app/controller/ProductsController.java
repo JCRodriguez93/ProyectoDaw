@@ -26,6 +26,18 @@ public class ProductsController implements ProductsApi {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductsController.class);
 
+    /**
+     * Crea un nuevo producto en el sistema.
+     * <p>
+     * Valida que el objeto {@code body} no sea nulo y que el nombre del producto esté presente y no vacío.
+     * En caso de validaciones fallidas, lanza excepciones específicas.
+     * Si todo es correcto, delega la creación del producto al servicio {@code productsService} y devuelve
+     * una respuesta HTTP con código 201 (CREATED).
+     *
+     * @param body el objeto {@link Products} que contiene los datos del producto a crear
+     * @return una {@link ResponseEntity} con código de estado 201 (CREATED) en caso de éxito
+     * @throws ProductException si el cuerpo es nulo o el nombre del producto no es válido
+     */
     @Override
     public ResponseEntity<Products> createProduct(Products body) {
         if (body == null) {
@@ -43,7 +55,17 @@ public class ProductsController implements ProductsApi {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
+    /**
+     * Elimina un producto existente identificado por su ID.
+     * <p>
+     * Válida el formato del ID del producto y verifica que el producto exista antes de proceder a su eliminación.
+     * En caso de ID inválido o producto no encontrado, lanza excepciones específicas.
+     * Si la eliminación falla por alguna razón, captura la excepción y lanza una excepción personalizada.
+     *
+     * @param idProduct el identificador del producto a eliminar
+     * @return una {@link ResponseEntity} con código HTTP 204 (NO_CONTENT) si la eliminación fue exitosa
+     * @throws ProductException si el ID es inválido, el producto no existe o ocurre un error al eliminar
+     */
     @Override
     public ResponseEntity<Void> deleteProduct(Integer idProduct) {
         if (!isValidId(String.valueOf(idProduct))) {
@@ -68,6 +90,19 @@ public class ProductsController implements ProductsApi {
         }
     }
 
+    /**
+     * Obtiene un producto por su identificador.
+     * <p>
+     * Valida que el ID proporcionado tenga un formato válido. Si el ID no es válido, devuelve
+     * una respuesta con estado HTTP 400 (BAD_REQUEST). Si no se encuentra el producto,
+     * devuelve estado HTTP 404 (NOT_FOUND). En caso de éxito, devuelve el producto y
+     * estado HTTP 200 (OK).
+     * <p>
+     * En caso de cualquier excepción, devuelve estado HTTP 500 (INTERNAL_SERVER_ERROR).
+     *
+     * @param idProduct el identificador del producto a buscar
+     * @return una {@link ResponseEntity} que contiene el producto y el código HTTP correspondiente
+     */
     @Override
     public ResponseEntity<Products> getProductById(Integer idProduct) {
         try {
@@ -91,6 +126,16 @@ public class ProductsController implements ProductsApi {
         }
     }
 
+    /**
+     * Obtiene todos los productos disponibles.
+     * <p>
+     * Recupera la lista completa de productos a través del servicio de productos.
+     * Si no se encuentran productos, lanza una excepción {@link ProductException}.
+     * En caso de éxito, devuelve una respuesta con estado HTTP 200 (OK) y la lista de productos.
+     * Si ocurre un error durante la obtención, devuelve estado HTTP 500 (INTERNAL_SERVER_ERROR).
+     *
+     * @return una {@link ResponseEntity} que contiene un objeto {@link ProductsResponse} con la lista de productos y el código HTTP correspondiente
+     */
     @Override
     public ResponseEntity<ProductsResponse> getProducts() {
         try {
@@ -110,6 +155,21 @@ public class ProductsController implements ProductsApi {
         }
     }
 
+    /**
+     * Actualiza un producto existente identificado por su ID.
+     * <p>
+     * Valida que el cuerpo del producto no sea nulo y que contenga un ID válido.
+     * Luego verifica que el producto con el ID dado exista.
+     * Si alguna validación falla, lanza la excepción correspondiente de {@link ProductException}.
+     * En caso de éxito, actualiza el producto y devuelve el estado HTTP resultante.
+     * <p>
+     * También captura errores de formato de ID y excepciones generales, lanzando excepciones específicas.
+     *
+     * @param idProduct el identificador del producto que se desea actualizar
+     * @param body el objeto {@link Products} con los datos actualizados del producto
+     * @return un {@link ResponseEntity} que contiene el estado HTTP de la operación
+     * @throws ProductException si el cuerpo es nulo, falta el ID, el producto no existe, el ID es inválido, o ocurre un error durante la actualización
+     */
     @Override
     public ResponseEntity<Products> updateProduct(Integer idProduct, Products body) {
         try {
@@ -140,6 +200,17 @@ public class ProductsController implements ProductsApi {
         }
     }
 
+    /**
+     * Verifica si una cadena dada representa un identificador numérico válido.
+     * <p>
+     * Este método intenta convertir la cadena a un {@code Integer}. Si la conversión tiene éxito,
+     * se considera un ID válido. Si lanza una excepción {@code NumberFormatException},
+     * se considera inválido.
+     *
+     * @param id la cadena a validar como identificador numérico.
+     * @return {@code true} si la cadena puede convertirse a {@code Integer},
+     *         {@code false} en caso contrario.
+     */
     private boolean isValidId(String id) {
         try {
             Integer.parseInt(id);
