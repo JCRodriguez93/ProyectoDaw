@@ -15,7 +15,40 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * SubcategoriesController es la implementación de SubcategoryApi.
+ * Controlador REST para la gestión de subcategorías.
+ * <p>
+ * Esta clase implementa la interfaz {@link SubcategoryApi} generada por Swagger Codegen y
+ * define los endpoints para crear, eliminar, obtener y actualizar subcategorías.
+ * <p>
+ * Se encarga de validar las solicitudes, controlar errores mediante excepciones específicas
+ * y delegar la lógica de negocio al servicio {@link SubcategoriesService}.
+ * <p>
+ * Además, registra eventos relevantes y errores mediante el sistema de logging {@code SLF4J}.
+ *
+ * <h2>Operaciones soportadas:</h2>
+ * <ul>
+ *     <li>Creación de nuevas subcategorías.</li>
+ *     <li>Eliminación de subcategorías por ID.</li>
+ *     <li>Obtención de todas las subcategorías o una específica por ID.</li>
+ *     <li>Actualización de subcategorías existentes.</li>
+ * </ul>
+ *
+ * <p>Las respuestas HTTP se ajustan a los estándares REST, utilizando códigos como:
+ * <ul>
+ *     <li>201 (CREATED) al crear.</li>
+ *     <li>204 (NO_CONTENT) al eliminar.</li>
+ *     <li>200 (OK) al obtener datos correctamente.</li>
+ *     <li>400 (BAD_REQUEST) en caso de parámetros inválidos.</li>
+ *     <li>404 (NOT_FOUND) si no existe la subcategoría solicitada.</li>
+ *     <li>500 (INTERNAL_SERVER_ERROR) para errores inesperados.</li>
+ * </ul>
+ *
+ * <p>Las validaciones específicas, como evitar nombres duplicados dentro de la misma categoría,
+ * se realizan antes de delegar en el servicio.
+ *
+ * @see SubcategoriesService
+ * @see SubcategoryApi
+ * @see es.proyecto.app.error.SubcategoryException
  */
 @Slf4j
 @RestController

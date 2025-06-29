@@ -13,15 +13,34 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Filtro de autenticación JWT que intercepta las peticiones HTTP para validar el token JWT
+ * y establecer el contexto de seguridad si el token es válido.
+ */
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtTokenProvider jwtTokenProvider;
 
+    /**
+     * Construye un filtro de autenticación JWT con el proveedor de tokens especificado.
+     *
+     * @param jwtTokenProvider Proveedor para validar y extraer información del token JWT.
+     */
     public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
+    /**
+     * Procesa la solicitud HTTP interceptando la cabecera Authorization para validar el token JWT.
+     * Si el token es válido, establece la autenticación en el contexto de seguridad.
+     *
+     * @param request     Petición HTTP entrante.
+     * @param response    Respuesta HTTP.
+     * @param filterChain Cadena de filtros.
+     * @throws ServletException En caso de error de servlet.
+     * @throws IOException      En caso de error de entrada/salida.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         // Obtener el token de la cabecera Authorization
@@ -50,6 +69,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
+    /**
+     * Extrae el token JWT de la cabecera Authorization de la petición HTTP.
+     *
+     * @param request Petición HTTP.
+     * @return El token JWT si está presente y correctamente formado, o {@code null} en caso contrario.
+     */
     private String getTokenFromRequest(HttpServletRequest request) {
         String bearerToken = request.getHeader("Authorization");
         if (bearerToken != null && bearerToken.startsWith("Bearer ")) {

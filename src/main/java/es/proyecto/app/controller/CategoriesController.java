@@ -16,7 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * CategoryController es la implementación de CategoryApi.
+ * Controlador REST responsable de gestionar las operaciones relacionadas con las categorías.
+ *
+ * <p>Implementa la interfaz {@link CategoryApi} generada automáticamente mediante Swagger Codegen.
+ * Expone endpoints para crear, recuperar, actualizar y eliminar categorías dentro del sistema.
+ * Las respuestas están diseñadas conforme a los códigos de estado HTTP estándar, con validaciones
+ * detalladas y excepciones personalizadas a través de {@link CategoryException}.</p>
+ *
+ * <p>Este controlador utiliza el servicio {@link CategoriesService} para acceder a la lógica
+ * de negocio. Además, hace uso de la librería SLF4J para el registro de logs de auditoría
+ * y errores.</p>
+ *
+ * <p>Todos los endpoints están documentados siguiendo buenas prácticas REST y validan exhaustivamente
+ * la entrada del cliente antes de realizar operaciones sobre la base de datos.</p>
+ *
+ * @author Jorge
  */
 @Slf4j
 @RestController

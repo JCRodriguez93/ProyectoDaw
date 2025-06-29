@@ -20,6 +20,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Servicio para gestionar las operaciones relacionadas con el carrito de compras.
+ * Permite ver el contenido del carrito, agregar, modificar y eliminar productos.
+ */
 @Slf4j
 @Validated
 @Transactional
@@ -38,6 +42,12 @@ public class CartService {
     private ProductsRepository productsRepository;
     private static final Logger logger = LoggerFactory.getLogger(CartService.class);
 
+    /**
+     * Obtiene la lista de productos en el carrito de un usuario.
+     *
+     * @param userId Identificador del usuario.
+     * @return Lista de productos en el carrito con sus detalles.
+     */
     public List<CartProductResponse> viewCart(Integer userId) {
         List<CartEntity> cartEntities = cartRepository.findByUser_IdUser(userId);
         return cartEntities.stream()
@@ -45,7 +55,15 @@ public class CartService {
                 .collect(Collectors.toList());
     }
 
-    //TODO: arreglar los métodos de esta clase eliminando las pruebas de control
+    /**
+     * Añade un producto al carrito de un usuario. Si el producto ya existe en el carrito, actualiza la cantidad.
+     *
+     * @param userId Identificador del usuario.
+     * @param productId Identificador del producto a añadir.
+     * @param quantity Cantidad de producto a añadir.
+     * @return {@code true} si la operación fue exitosa.
+     * @throws IllegalArgumentException si el usuario o producto no existen.
+     */
     public boolean addProductToCart(Integer userId, Integer productId, Integer quantity) {
         logger.info("addProductToCart called with userId: {}, productId: {}, quantity: {}", userId, productId, quantity);
 
@@ -88,6 +106,14 @@ public class CartService {
     }
 
 
+    /**
+     * Modifica la cantidad de un producto ya existente en el carrito de un usuario.
+     *
+     * @param userId Identificador del usuario.
+     * @param productId Identificador del producto a modificar.
+     * @param quantity Nueva cantidad para el producto.
+     * @return {@code true} si la modificación fue exitosa; {@code false} si el producto no existe en el carrito.
+     */
     public boolean modifyProductInCart(Integer userId, Integer productId, Integer quantity) {
         Optional<CartEntity> existingCartItem = cartRepository.findByUser_IdUserAndProduct_IdProduct(userId, productId);
         if (existingCartItem.isEmpty()) {
@@ -100,6 +126,15 @@ public class CartService {
         return true;
     }
 
+    /**
+     * Elimina una cantidad de un producto del carrito de un usuario.
+     * Si la cantidad a eliminar es mayor o igual a la cantidad actual, elimina el producto del carrito.
+     *
+     * @param userId Identificador del usuario.
+     * @param productId Identificador del producto a eliminar.
+     * @param quantity Cantidad a eliminar.
+     * @return {@code true} si la operación fue exitosa; {@code false} si el producto no existe en el carrito.
+     */
     public boolean removeProductFromCart(Integer userId, Integer productId, Integer quantity) {
         Optional<CartEntity> existingCartItem = cartRepository.findByUser_IdUserAndProduct_IdProduct(userId, productId);
         if (existingCartItem.isPresent()) {

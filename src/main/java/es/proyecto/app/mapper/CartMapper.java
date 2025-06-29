@@ -9,6 +9,11 @@ import org.mapstruct.factory.Mappers;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Mapper para convertir entre {@link CartEntity} y {@link CartProductResponse}.
+ * Utiliza MapStruct para realizar el mapeo automático entre las entidades
+ * de la base de datos y los modelos usados en la API.
+ */
 @Mapper(componentModel = "spring")
 public interface CartMapper {
 

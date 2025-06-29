@@ -18,6 +18,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Controlador REST encargado de gestionar las operaciones del carrito de compras.
+ *
+ * <p>Implementa la interfaz {@link CartApi} generada por Swagger Codegen. Expone endpoints
+ * protegidos mediante autenticación JWT para que los usuarios puedan gestionar su carrito,
+ * añadiendo, modificando o eliminando productos, así como visualizando el contenido del mismo.</p>
+ *
+ * <p>Este controlador utiliza los servicios {@link CartService} y {@link UsersService} para
+ * interactuar con la lógica de negocio relacionada con el carrito y los usuarios autenticados.</p>
+ *
+ * <p>Las operaciones están diseñadas para responder con códigos HTTP adecuados según el resultado
+ * de la operación (éxito, error de validación, no autorizado, no encontrado, etc.).</p>
+ *
+ * @author Jorge
+ */
 @Slf4j
 @RestController
 public class CartController implements CartApi {

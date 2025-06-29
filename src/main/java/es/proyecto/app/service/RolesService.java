@@ -24,12 +24,30 @@ public class RolesService {
     @Autowired
     private RolesRepository repository;
 
+    /**
+     * Obtiene todos los roles registrados.
+     *
+     * @return lista de roles convertidos a modelo API.
+     */
     public List<Role> getAllRoles() {
         return mapper.toApiDomain(repository.findAll());
     }
+
+    /**
+     * Obtiene un rol por su identificador.
+     *
+     * @param id identificador del rol.
+     * @return entidad {@link RolesEntity} si existe, o {@code null} si no se encuentra.
+     */
     public RolesEntity getRoleById(Integer id) {
         return repository.findById(id).orElse(null);
     }
+
+    /**
+     * Actualiza un rol existente o lo guarda si no existe.
+     *
+     * @param rolesEntity entidad {@link RolesEntity} con los datos del rol a actualizar o crear.
+     */
     public void updateRole(RolesEntity rolesEntity) {
         repository.save(rolesEntity);
     }

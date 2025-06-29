@@ -14,7 +14,34 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * UsersController es la implementación de UsersApi.
+ * Controlador REST para la gestión de usuarios en el sistema.
+ * <p>
+ * Esta clase implementa la interfaz {@link UsersApi} generada por Swagger Codegen
+ * y expone los endpoints para crear, obtener, actualizar y eliminar usuarios.
+ * <p>
+ * Se encarga de validar las peticiones HTTP, gestionar los códigos de estado apropiados,
+ * y manejar excepciones específicas relacionadas con la gestión de usuarios.
+ * <p>
+ * La lógica de negocio está delegada en el servicio {@link UsersService}, mientras que
+ * el controlador se centra en la interacción HTTP y validación básica de datos.
+ * <p>
+ * Las operaciones admitidas incluyen:
+ * <ul>
+ *   <li>Crear un nuevo usuario (POST).</li>
+ *   <li>Eliminar un usuario por ID (DELETE).</li>
+ *   <li>Obtener un usuario por ID (GET).</li>
+ *   <li>Obtener todos los usuarios (GET).</li>
+ *   <li>Actualizar un usuario existente (PUT).</li>
+ * </ul>
+ *
+ * Los códigos HTTP utilizados incluyen 201 (CREATED), 204 (NO_CONTENT), 200 (OK), 400 (BAD_REQUEST),
+ * 404 (NOT_FOUND), 409 (CONFLICT) y 500 (INTERNAL_SERVER_ERROR) para reflejar el estado de cada operación.
+ *
+ * <p>También registra eventos y errores relevantes usando SLF4J para facilitar el monitoreo y depuración.
+ *
+ * @see UsersService
+ * @see UsersApi
+ * @see es.proyecto.app.error.UsersException
  */
 @Slf4j
 @RestController

@@ -36,28 +36,32 @@ public class UsersService {
     private RolesRepository rolesRepository;
 
     /**
-     * Obtener todos los usuarios.
-     * @return Lista de usuarios.
+     * Obtiene todos los usuarios registrados.
+     *
+     * @return lista de usuarios en formato API.
      */
     public List<User> getAllUsers() {
         return mapper.toApiDomain(repository.findAll());
     }
 
     /**
-     * Obtener un usuario por su ID.
+     * Obtiene un usuario por su ID.
      *
-     * @param idUser ID del usuario.
-     * @return Entidad del usuario o null si no se encuentra.
+     * @param idUser identificador del usuario.
+     * @return usuario en formato API o {@code null} si no se encuentra.
      */
     public User getUserById(Integer idUser) {
         Optional<UsersEntity> optionalUsersEntity = repository.findById(Integer.valueOf(idUser));
         return optionalUsersEntity.map(mapper::toApiDomain).orElse(null);
     }
 
+
     /**
-     * Crear un nuevo usuario.
+     * Crea un nuevo usuario.
+     * Valida y encripta la contraseña antes de guardarlo.
      *
-     * @param user Datos del usuario a crear.
+     * @param user objeto usuario con los datos a crear.
+     * @throws UsersException si la contraseña no cumple con el formato requerido.
      */
     public void createUser(User user) {
         validatePassword(user.getPassword()); // Validar antes de encriptar
@@ -68,10 +72,15 @@ public class UsersService {
     }
 
     /**
-     * Actualizar un usuario existente.
-     * @param idUser ID del usuario a actualizar.
-     * @param user Datos del usuario a actualizar.
-     * @return Usuario actualizado o null si no se encuentra.
+     * Actualiza un usuario existente.
+     * Valida el rol, actualiza la contraseña solo si se proporciona,
+     * y mantiene la contraseña actual si no se modifica.
+     *
+     * @param idUser identificador del usuario a actualizar.
+     * @param user   objeto usuario con los nuevos datos.
+     * @return {@link HttpStatus#OK} si se actualizó correctamente,
+     *         {@link HttpStatus#NOT_FOUND} si el usuario no existe.
+     * @throws UsersException si el rol especificado no existe o la contraseña es inválida.
      */
     public HttpStatus updateUser(Integer idUser, User user) {
         Optional<RolesEntity> role = rolesRepository.findById(user.getRoleId());
@@ -97,13 +106,27 @@ public class UsersService {
         repository.save(entityToUpdate);
         return HttpStatus.OK;
     }
+
+    /**
+     * Verifica si un email ya está registrado en el sistema.
+     *
+     * @param email correo electrónico a verificar.
+     * @return {@code true} si el email existe, {@code false} en caso contrario.
+     */
     public boolean existsByEmail(String email) { return repository.existsByEmail(email); }
+
+    /**
+     * Busca un usuario por su correo electrónico.
+     *
+     * @param email correo electrónico del usuario.
+     * @return entidad {@link UsersEntity} si existe, o {@code null} si no.
+     */
     public UsersEntity findByEmail(String email) { return repository.findByEmail(email); }
 
     /**
-     * Eliminar un usuario por su ID.
+     * Elimina un usuario por su ID.
      *
-     * @param idUser ID del usuario a eliminar.
+     * @param idUser identificador del usuario a eliminar.
      */
     public void deleteUser(Integer idUser) {
         if (repository.existsById(idUser)) {
@@ -111,13 +134,26 @@ public class UsersService {
         }
     }
 
-    //AÑADIDO
+    /**
+     * Obtiene un usuario por su correo electrónico.
+     *
+     * @param email correo electrónico del usuario.
+     * @return entidad {@link UsersEntity} si existe, o {@code null} si no.
+     */
     public UsersEntity getUserByEmail(String email) {
         // Busca el usuario en la base de datos a partir del email
         return repository.findByEmail(email);
     }
 
 
+    /**
+     * Valida el formato de la contraseña según la expresión regular:
+     * Al menos una letra minúscula, una mayúscula, un número, un carácter especial,
+     * y longitud entre 8 y 25 caracteres.
+     *
+     * @param password contraseña a validar.
+     * @throws UsersException si la contraseña no cumple con el formato requerido.
+     */
     private void validatePassword(String password) {
         String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@!%*?&+])[A-Za-z\\d$@!%*?&+]{8,25}$";
         if (!password.matches(regex)) {

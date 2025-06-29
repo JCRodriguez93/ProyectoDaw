@@ -8,6 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Repositorio para la gestión de la entidad {@link ProductsEntity}.
+ * <p>
+ * Proporciona métodos CRUD estándar para operaciones sobre productos.
+ * </p>
+ */
 @Repository
 public interface ProductsRepository extends JpaRepository<ProductsEntity, Integer> {
 

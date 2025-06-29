@@ -16,7 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * RolesController es la implementación de RolesApi.
+ * Controlador REST para la gestión de roles del sistema.
+ * <p>
+ * Implementa la interfaz {@link RolesApi} generada por Swagger Codegen,
+ * proporcionando los endpoints para obtener y modificar roles.
+ * </p>
+ * <p>
+ * Utiliza {@link RolesService} para las operaciones de negocio y manejo de datos.
+ * Maneja excepciones específicas {@link RolesException} para controlar errores comunes.
+ * </p>
+ *
+ * @author Jorge
  */
 @Slf4j
 @RestController

@@ -8,6 +8,15 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
+/**
+ * Mapper para convertir entre {@link UsersEntity} y {@link User}.
+ * <p>
+ * Utiliza MapStruct para mapear automáticamente los campos entre la entidad de base de datos
+ * y el modelo de la API.
+ * </p>
+ *
+ * Incluye métodos para convertir objetos individuales y listas completas de usuarios.
+ */
 @Mapper(componentModel = "spring")
 public interface UsersMapper {
 

@@ -17,7 +17,24 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * OrdersController es la implementación de OrdersApi.
+ * Controlador REST que gestiona las operaciones relacionadas con los pedidos del sistema.
+ *
+ * <p>Esta clase implementa la interfaz {@link OrdersApi}, generada automáticamente a partir del
+ * contrato Swagger. Expone endpoints para crear, consultar, actualizar y eliminar pedidos.
+ * También proporciona validaciones específicas para los estados permitidos y la estructura
+ * del cuerpo de la petición.</p>
+ *
+ * <p>El controlador actúa como intermediario entre la capa de presentación y el servicio
+ * {@link OrdersService}, delegando la lógica de negocio a dicha capa y manejando la construcción
+ * de respuestas HTTP adecuadas según el resultado de las operaciones.</p>
+ *
+ * <p>El sistema utiliza logs detallados (mediante {@link Logger}) para registrar eventos relevantes
+ * como errores, validaciones fallidas o éxitos en la gestión de pedidos.</p>
+ *
+ * <p>Las posibles excepciones se gestionan a través de la clase personalizada {@link OrderException},
+ * que encapsula distintos tipos de errores relacionados con los pedidos.</p>
+ *
+ * @author Jorge
  */
 @Slf4j
 @RestController

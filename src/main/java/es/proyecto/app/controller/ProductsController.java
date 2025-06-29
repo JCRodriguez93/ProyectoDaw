@@ -15,7 +15,28 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * ProductsController es la implementación de ProductsApi.
+ * Controlador REST encargado de gestionar las operaciones relacionadas con los productos.
+ *
+ * <p>Implementa la interfaz {@link ProductsApi}, generada automáticamente a partir de la especificación OpenAPI.
+ * Expone los endpoints necesarios para crear, obtener, actualizar y eliminar productos en el sistema.</p>
+ *
+ * <p>El controlador actúa como intermediario entre las peticiones HTTP entrantes y la lógica de negocio
+ * proporcionada por el servicio {@link ProductsService}. También maneja la validación de parámetros de entrada
+ * y lanza excepciones específicas ({@link ProductException}) ante condiciones erróneas.</p>
+ *
+ * <p>Todos los métodos están equipados con un sistema de logging que permite registrar tanto las acciones exitosas
+ * como los errores, facilitando la trazabilidad y el mantenimiento de la aplicación.</p>
+ *
+ * <p>Las respuestas HTTP siguen las convenciones estándar:</p>
+ * <ul>
+ *     <li><b>200 OK</b>: operación exitosa</li>
+ *     <li><b>201 Created</b>: producto creado correctamente</li>
+ *     <li><b>204 No Content</b>: eliminación exitosa</li>
+ *     <li><b>400 Bad Request</b>: parámetros inválidos</li>
+ *     <li><b>404 Not Found</b>: producto inexistente</li>
+ *     <li><b>500 Internal Server Error</b>: error inesperado en el sistema</li>
+ * </ul>
+ *
  */
 @Slf4j
 @RestController

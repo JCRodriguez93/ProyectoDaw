@@ -7,14 +7,20 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuración de Swagger/OpenAPI para la documentación automática de la API REST.
+ * <p>
+ * Una vez iniciado el servidor, la documentación estará disponible en:
+ * <a href="http://localhost:8080/swagger-ui/index.html">Swagger UI</a>
+ */
 @Configuration
 public class SwaggerConfig {
 
 
     /**
-     * El siguiente bean contiene el acceso a la API.
-     * Visible desde http://localhost:8080/swagger-ui/index.html
-     * @return API del micro-servicio.
+     * Define la configuración principal de la documentación OpenAPI.
+     *
+     * @return un objeto {@link OpenAPI} que contiene la información básica del servicio REST.
      */
     @Bean
     public OpenAPI openAPI(){

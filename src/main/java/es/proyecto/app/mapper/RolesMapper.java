@@ -8,6 +8,15 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
+/**
+ * Mapper para convertir entre {@link RolesEntity} y {@link Role}.
+ * <p>
+ * Utiliza MapStruct para mapear automáticamente los campos entre la entidad de base de datos
+ * y el modelo de la API.
+ * </p>
+ *
+ * Proporciona métodos para convertir objetos individuales y listas completas de roles.
+ */
 @Mapper(componentModel = "spring")
 public interface RolesMapper {
 

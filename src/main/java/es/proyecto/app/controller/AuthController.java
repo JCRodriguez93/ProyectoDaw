@@ -19,6 +19,25 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+/**
+ * Controlador REST responsable de gestionar la autenticación y el registro de usuarios.
+ *
+ * <p>Implementa los endpoints definidos en la interfaz {@link AuthApi}, generada por Swagger Codegen.
+ * Este controlador incluye las operaciones para:
+ * <ul>
+ *     <li>Iniciar sesión y generar un token JWT.</li>
+ *     <li>Cerrar sesión invalidando el token JWT.</li>
+ *     <li>Registrar nuevos usuarios en el sistema.</li>
+ * </ul>
+ *
+ * <p>Utiliza servicios como {@link UsersService}, {@link RolesService} y {@link JwtTokenProvider}
+ * para interactuar con la lógica de negocio y la seguridad.</p>
+ *
+ * <p>Todos los endpoints devuelven respuestas normalizadas con objetos como
+ * {@link AuthResponse} o {@link LogoutResponse}, incluyendo mensajes y estados HTTP adecuados.</p>
+ *
+ * @author Jorge
+ */
 @RestController
 public class AuthController implements AuthApi {
 

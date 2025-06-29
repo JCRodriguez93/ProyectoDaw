@@ -10,6 +10,15 @@ import org.threeten.bp.OffsetDateTime;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Mapper para convertir entre {@link OrdersEntity} y {@link Orders}.
+ * <p>
+ * Utiliza MapStruct para mapear automáticamente los campos entre la entidad de base de datos
+ * y el modelo de la API.
+ * </p>
+ *
+ * Esta interfaz define métodos para convertir tanto objetos individuales como listas de pedidos.
+ */
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
 

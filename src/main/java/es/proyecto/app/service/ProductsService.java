@@ -26,24 +26,55 @@ public class ProductsService {
     @Autowired
     private ProductsRepository repository;
 
+    /**
+     * Obtiene todos los productos registrados.
+     *
+     * @return lista de productos convertidos a modelo API.
+     */
     public List<Products> getAllProducts() {
         return mapper.toApiDomain(repository.findAll());
     }
 
+    /**
+     * Crea un nuevo producto.
+     *
+     * @param product objeto {@link Products} con los datos del producto a crear.
+     */
     public void createProduct(Products product) {
         ProductsEntity entity = mapper.toEntity(product);
         repository.save(entity);
     }
 
+    /**
+     * Obtiene un producto por su identificador.
+     *
+     * @param idProduct identificador del producto.
+     * @return objeto {@link Products} si existe, o {@code null} si no se encuentra.
+     */
     public Products geProductById(Integer idProduct) {
         Optional<ProductsEntity> optionalProductEntity = repository.findById(idProduct);
         return optionalProductEntity.map(mapper::toApiDomain).orElse(null);
     }
+
+    /**
+     * Elimina un producto por su identificador.
+     *
+     * @param idProduct identificador del producto a eliminar.
+     */
     public void deleteProduct(Integer idProduct) {
         if (repository.existsById(idProduct)) {
             repository.deleteById(idProduct);
         }
     }
+
+    /**
+     * Actualiza un producto existente.
+     *
+     * @param idProduct identificador del producto a actualizar.
+     * @param product   objeto {@link Products} con los datos actualizados.
+     * @return {@link HttpStatus#OK} si la actualización fue exitosa,
+     *         {@link HttpStatus#NOT_FOUND} si el producto no existe.
+     */
     public HttpStatus updateProduct(Integer idProduct, Products product) {
 
         Optional<ProductsEntity> existingProduct = repository.findById(idProduct);
