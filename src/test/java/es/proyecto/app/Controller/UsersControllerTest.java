@@ -64,27 +64,27 @@ public class UsersControllerTest {
         // Verificamos que el servicio de usuarios se llame con el usuario correcto
         verify(usersService).createUser(user);
     }
-    //hecho
-//    @Test
-//    @DisplayName("Crear usuario con email duplicado")
-//    public void createUserWithDuplicateEmailAndThenThrowException() throws UsersException {
-//        // Creamos un usuario utilizando el patrón Builder
-//        UsersEntity user = UsersEntity.builder()
-//                .email("duplicate@example.com")
-//                .userName("John Doe")
-//                .build();
-//
-//        // Configuramos el mock para que el correo del usuario ya exista
-//        when(usersService.existsByEmail(user.getEmail())).thenReturn(true);
-//
-//        // Llamamos al método del controlador y esperamos que se lance la excepción correspondiente
-//        UsersException exception = assertThrows(UsersException.class, () -> {
-//            usersController.createUser(user);
-//        });
-//
-//        // Verificamos el mensaje de la excepción
-//        assertEquals("Duplicate email in database", exception.getMessage());
-//    }
+    @Test
+    @DisplayName("Crear usuario con email duplicado → 409 CONFLICT")
+    void createUserWithDuplicateEmailAndThenReturnConflict() {
+        // 1. Creamos un User (modelo de API) con un email que ya existe
+        User duplicateUser = new User();
+        duplicateUser.setUserName("John");
+        duplicateUser.setUserSurname("Doe");
+        duplicateUser.setUserBirth(LocalDateTime.now());
+        duplicateUser.setEmail("duplicate@example.com");
+        duplicateUser.setPassword("password123");
+        duplicateUser.setRoleId(2); // obligatorio
+
+        // 2. Simulamos que ese email ya está registrado
+        when(usersService.existsByEmail(duplicateUser.getEmail())).thenReturn(true);
+
+        // 3. Llamamos al endpoint
+        ResponseEntity<UserCreatedResponse> response = usersController.createUser(duplicateUser);
+
+        // 4. Verificamos que devuelve 409 CONFLICT
+        assertEquals(HttpStatus.CONFLICT, response.getStatusCode());
+    }
 
     //hecho
     @Test

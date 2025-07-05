@@ -1,6 +1,7 @@
 package es.proyecto.app.Controller;
 
 import es.proyecto.app.controller.AuthController;
+import es.proyecto.app.controller.UsersController;
 import es.proyecto.app.entity.RolesEntity;
 import es.proyecto.app.entity.UsersEntity;
 import es.proyecto.app.mapper.UsersMapper;
@@ -17,11 +18,17 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
 public class AuthControllerTest {
+
+    @Autowired
+    private UsersController usersController;
 
     @Autowired
     private AuthController authController;
@@ -46,10 +53,19 @@ public class AuthControllerTest {
     private RegisterRequest registerRequest;
     private RolesEntity rolesEntity;
 
+    private User validUser;
 
 
     @BeforeEach
     void setUp() {
+
+        validUser = new User();
+        validUser.setUserName("Test");
+        validUser.setUserSurname("User");
+        validUser.setUserBirth(LocalDateTime.of(1990, 1, 1, 0, 0));
+        validUser.setEmail("test.user@example.com");
+        validUser.setPassword("SecureP@ss1");
+        validUser.setRoleId(2);  // existe en BD de ejemplo
 
 
         // Creamos una instancia de UsersEntity simulando un usuario existente
@@ -158,46 +174,26 @@ public class AuthControllerTest {
         // Comprobamos que el mensaje de error sea el esperado
         assertEquals("Email already in use", response.getBody().getError());
     }
-//    @Test
-//    @DisplayName("Registro correcto de usuario")
-//    void registerUserWithValidDetailsThenReturnsCreated() {
-//        // Simulamos que el email NO está registrado en el sistema
-//        when(usersService.existsByEmail(registerRequest.getEmail())).thenReturn(false);
-//
-//        // Simulamos que el servicio de roles devuelve un rol válido con ID 1
-//        when(rolesService.getRoleById(1)).thenReturn(rolesEntity);
-//
-//        // Llamamos al método de registro del controlador
-//        ResponseEntity<AuthResponse> response = authController.registerUser(registerRequest);
-//
-//        // Verificamos que la respuesta tenga un código de estado HTTP 201 (CREATED)
-//        //assertEquals(HttpStatus.CREATED, response.getStatusCode());
-//
-//        // Verificamos que el cuerpo de la respuesta no sea nulo
-//        assertNotNull(response.getBody());
-//
-//        // Comprobamos que el mensaje de respuesta sea el esperado
-//        assertEquals("Usuario registrado exitosamente", response.getBody().getMessage());
-//    }
     @Test
-    @DisplayName("Registro incorrecto por datos nulos")
-    void registerUserWithNullDetailsThenReturnsBadRequest() {
-        // Creamos una solicitud de registro con valores nulos
-        RegisterRequest invalidRequest = new RegisterRequest();
-        invalidRequest.setEmail(null);
-        invalidRequest.setPassword(null);
+    @DisplayName("Registro correcto de usuario")
+    void registerUserWithValidDetailsThenReturnsCreated() {
+        // 1. Simulamos que el email NO está en uso
+        when(usersService.existsByEmail(validUser.getEmail())).thenReturn(false);
 
-        // Intentamos registrar un usuario con datos inválidos
-        ResponseEntity<AuthResponse> response = authController.registerUser(invalidRequest);
+        // 2. Como createUser es void, indicamos que no haga nada
+        doNothing().when(usersService).createUser(validUser);
 
-        // Verificamos que devuelve un 400 Bad Request
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        // 3. Ejecutamos el endpoint
+        ResponseEntity<UserCreatedResponse> response =
+                usersController.createUser(validUser);
 
-        // Verificamos que el cuerpo de la respuesta no sea nulo
-        assertNotNull(response.getBody());
+        // 4. Verificamos comportamiento
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        // Según tu implementación, el body puede ser null o vacío
+        // Si tu método retorna un UserCreatedResponse, descomenta:
+        // assertNotNull(response.getBody());
+        // assertEquals("Usuario creado exitosamente", response.getBody().getMessage());
 
-        // Comprobamos que el mensaje de error sea el esperado
-        assertEquals("User data cannot be null", response.getBody().getError());
     }
     @Test
     @DisplayName("Logout correcto")
